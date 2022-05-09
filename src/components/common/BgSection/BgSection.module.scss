@@ -1,0 +1,25 @@
+.bgImage {
+  height: 100%;
+  object-fit: cover;
+  object-position: 100% 30%;
+  width: 100%;
+}
+
+.horizontal {
+  height: 382px;
+  width: 100%;
+}
+
+.vertical {
+  height: 100%;
+  width: 448px;
+}
+
+.content {
+  height: inherit;
+  left: 0%;
+  position: absolute;
+  text-align: center;
+  top: 0%;
+  width: inherit;
+}
