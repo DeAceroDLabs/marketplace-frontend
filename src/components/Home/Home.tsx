@@ -1,19 +1,21 @@
-import View from "components/View";
+import BgSection from "components/common/BgSection";
+import View from "components/common/View";
 import React from "react";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
   const homeHeader = (
-    <h2 className={styles.header}>This is a header for Home</h2>
+    <BgSection bgImage="/background.png">
+      <div className={styles["header-content"]}>
+        <div className={styles["header-title"]}>
+          Somos tu aliado de confianza para hacer crecer tu negocio
+        </div>
+      </div>
+      <div className={styles.red}></div>
+    </BgSection>
   );
 
-  const homeBody = <h2 className={styles.body}>This is a body for Home</h2>;
-
-  const homeFooter = (
-    <h2 className={styles.footer}>This is a footer for Home</h2>
-  );
-
-  return <View header={homeHeader} body={homeBody} footer={homeFooter} />;
+  return <View header={homeHeader} />;
 };
 
 export default Home;
