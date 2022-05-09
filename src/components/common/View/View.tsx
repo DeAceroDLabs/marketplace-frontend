@@ -7,7 +7,7 @@ interface ViewProps {
   footer?: React.ReactNode;
 }
 
-const View: React.FunctionComponent<ViewProps> = ({ header, body, footer }) => (
+const View: React.FC<ViewProps> = ({ header, body, footer }) => (
   <>
     <div className={styles.header}>
       <div>{header}</div>
