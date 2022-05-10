@@ -1,4 +1,5 @@
 import BgSection from "components/common/BgSection";
+import Card from "components/common/Card";
 import View from "components/common/View";
 import React from "react";
 import styles from "./Home.module.scss";
@@ -15,7 +16,12 @@ const Home: React.FunctionComponent = () => {
     </BgSection>
   );
 
-  return <View header={homeHeader} />;
+  const homeBody = (
+    <Card size="large">
+    </Card>
+  );
+
+  return <View header={homeHeader} body={homeBody} />;
 };
 
 export default Home;
