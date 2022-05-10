@@ -1,10 +1,25 @@
 import BgSection from "components/common/BgSection";
 import Card from "components/common/Card";
 import View from "components/common/View";
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
+  const [categories] = useState<string[]>([
+    "Mallas",
+    "Clavos",
+    "Cadenas",
+    "Grapas",
+    "Cribas",
+    "Otros",
+  ]);
+
+  const [selectedCategory, setselectedCategory] = useState("Mallas");
+
+  const onSelectCategory = (category: string) => {
+    setselectedCategory(category);
+  };
+
   const homeHeader = (
     <BgSection bgImage="/background.png">
       <div className={styles["header-content"]}>
@@ -18,9 +33,22 @@ const Home: React.FunctionComponent = () => {
 
   const homeBody = (
     <div>
-      <Card size="small" title="Malla Graduada Triple Nudo Venadera -XTREME" imgSrc="/small-card-image.png"></Card>
-      <Card size="medium" title="Malla Ciclónica Galvanizada" imgSrc="/medium-card-image.png"></Card>
-      <Card size="large" title="Grapa Cartonera" imgSrc="/large-card-image.png" secondaryInfo="$1080-$1200"></Card>
+      <Card
+        size="small"
+        title="Malla Graduada Triple Nudo Venadera -XTREME"
+        imgSrc="/small-card-image.png"
+      ></Card>
+      <Card
+        size="medium"
+        title="Malla Ciclónica Galvanizada"
+        imgSrc="/medium-card-image.png"
+      ></Card>
+      <Card
+        size="large"
+        title="Grapa Cartonera"
+        imgSrc="/large-card-image.png"
+        secondaryInfo="$1080-$1200"
+      ></Card>
     </div>
   );
 
