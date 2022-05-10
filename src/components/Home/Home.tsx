@@ -17,8 +17,11 @@ const Home: React.FunctionComponent = () => {
   );
 
   const homeBody = (
-    <Card size="large">
-    </Card>
+    <div>
+      <Card size="small"></Card>
+      <Card size="medium"></Card>
+      <Card size="large"></Card>
+    </div>
   );
 
   return <View header={homeHeader} body={homeBody} />;
