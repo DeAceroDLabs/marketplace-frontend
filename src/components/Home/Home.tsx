@@ -18,9 +18,9 @@ const Home: React.FunctionComponent = () => {
 
   const homeBody = (
     <div>
-      <Card size="small"></Card>
-      <Card size="medium"></Card>
-      <Card size="large"></Card>
+      <Card size="small" title="Malla Graduada Triple Nudo Venadera -XTREME" imgSrc="/card-image.png"></Card>
+      <Card size="medium" title="Malla Ciclónica Galvanizada" imgSrc="/medium-card-image.png"></Card>
+      <Card size="large" title="Grapa Cartonera" imgSrc="/large-card-image.png" secondaryInfo="$1080-$1200"></Card>
     </div>
   );
 
