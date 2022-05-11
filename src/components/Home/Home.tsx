@@ -1,5 +1,4 @@
 import BgSection from "components/common/BgSection";
-import Card from "components/common/Card";
 import Section from "components/common/Section";
 import Tabs from "components/common/Tabs";
 import View from "components/common/View";
