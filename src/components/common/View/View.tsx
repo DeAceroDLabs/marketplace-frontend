@@ -3,17 +3,17 @@ import styles from "./View.module.scss";
 
 interface ViewProps {
   header?: React.ReactNode;
-  body?: React.ReactNode;
+  children?: React.ReactNode;
   footer?: React.ReactNode;
 }
 
-const View: React.FC<ViewProps> = ({ header, body, footer }) => (
+const View: React.FC<ViewProps> = ({ header, children, footer }) => (
   <>
     <div className={styles.header}>
       <div>{header}</div>
     </div>
     <div className={styles.body}>
-      <div>{body}</div>
+      <div>{children}</div>
     </div>
     <div className={styles.footer}>
       <div>{footer}</div>
