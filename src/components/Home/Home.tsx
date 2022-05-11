@@ -16,8 +16,6 @@ const Home: React.FunctionComponent = () => {
     "category 6",
     "category 7",
     "category 8",
-    "category 9",
-    "category 10",
   ]);
 
   const homeHeader = (
@@ -35,24 +33,6 @@ const Home: React.FunctionComponent = () => {
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
         <Tabs tabsTitles={categories} variant="secondary" />
-        <div>
-          <Card
-            size="small"
-            title="Malla Graduada Triple Nudo Venadera -XTREME"
-            imgSrc="/small-card-image.png"
-          ></Card>
-          <Card
-            size="medium"
-            title="Malla Ciclónica Galvanizada"
-            imgSrc="/medium-card-image.png"
-          ></Card>
-          <Card
-            size="large"
-            title="Grapa Cartonera"
-            imgSrc="/large-card-image.png"
-            secondaryInfo="$1080-$1200"
-          ></Card>
-        </div>
       </Section>
     </View>
   );
