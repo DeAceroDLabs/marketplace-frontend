@@ -1,0 +1,6 @@
+@use 'styles/typography';
+
+.title {
+  font-size: typography.$header-m-size;
+  font-weight: typography.$header-m-weight;
+}
