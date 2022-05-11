@@ -3,14 +3,12 @@ import styles from "./Card.module.scss";
 interface CardProps {
   title:  string;
   size?: "small" | "medium" | "large";
-  children?: React.ReactNode;
   secondaryInfo?: string
   imgSrc: string;
 }
 
 const Card: React.FC<CardProps> = ({
   title,
-  children,
   size = "small",
   imgSrc,
   secondaryInfo,
