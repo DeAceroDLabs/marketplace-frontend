@@ -12,7 +12,7 @@ const Tab: React.FC<TabProps> = ({ title, variant, active, onSelect }) => {
   return (
     <button
       key={title}
-      className={`${styles.button} ${styles[variant]} ${styles[active]}`}
+      className={`${styles.tab} ${styles[variant]} ${styles[active]}`}
       onClick={() => setActive()}
     >
       {title}
