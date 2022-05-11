@@ -1,12 +1,13 @@
 @use 'styles/colors';
 @use 'styles/typography';
 
-.button {
+.tab {
   cursor: pointer;
+  margin: 0 12px;
 }
 
 .secondary {
-  width: 197px;
+  min-width: 197px;
   height: 42px;
   background: #FFFFFF;
   border: 1px solid colors.$accent;
