@@ -1,0 +1,20 @@
+@use 'styles/colors';
+@use 'styles/typography';
+
+.button {
+  cursor: pointer;
+}
+
+.secondary {
+  width: 197px;
+  height: 42px;
+  background: #FFFFFF;
+  border: 1px solid colors.$accent;
+  color: colors.$accent;
+  border-radius: 80px;
+}
+
+.secondary.active {
+  background-color: colors.$accent;
+  color: colors.$neutral-inverse;
+}

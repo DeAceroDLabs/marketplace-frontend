@@ -2,7 +2,7 @@
 @use 'styles/typography';
 
 .header-title {
-  color: colors.$text-neutral-inverse;
+  color: colors.$neutral-inverse;
   font-size: typography.$header-m-size;
   font-weight: typography.$header-m-weight;
   z-index: 1;
