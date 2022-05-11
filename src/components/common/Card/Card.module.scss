@@ -1,16 +1,18 @@
 @use 'styles/colors';
 @use 'styles/typography';
 
-.card{
+.card {
   border-radius: 8px;
   margin: 10px;
   border: 1px solid #E6E6E6;
-  .cardImage{
+
+  .cardImage {
     border-radius: 8px 8px 0px 0px;
     width: 100%;
     border-bottom: 1px solid #E6E6E6;
   }
-  .cardInfo{
+
+  .cardInfo {
     font-size: typography.$header-s-size;
     display: flex;
     flex-direction: row;
@@ -18,49 +20,55 @@
     padding: 16px 20px;
     border-radius: 0px 0px 8px 8px;
     height: 54px;
-  
+
   }
-  
 }
 
-
-.small{
+.small {
   width: 417px;
   box-shadow: 0px 16px 16px rgba(153, 153, 153, 0.15);
-  .cardImage{
+
+  .cardImage {
     height: 210px;
   }
-  .cardInfo{
+
+  .cardInfo {
     height: 54px;
   }
 }
 
-.medium{
+.medium {
   width: 307px;
   box-shadow: 0px 16px 16px rgba(153, 153, 153, 0.15);
-  .cardImage{
+
+  .cardImage {
     height: 290px;
   }
-  .cardInfo{
+
+  .cardInfo {
     height: 54px;
-  
+
   }
 }
 
 
-.large{
+.large {
   width: 417px;
-  .cardImage{
+
+  .cardImage {
     height: 432px;
   }
-  .cardInfo{
+
+  .cardInfo {
     height: 32px;
   }
-  .cardName{
+
+  .cardName {
     width: 50%;
   }
-  .secondaryInfo{
-    color: colors.$text-accent;
+
+  .secondaryInfo {
+    color: colors.$accent;
     font-weight: typography.$header-s-weight;
     width: 50%;
     text-align: right;
