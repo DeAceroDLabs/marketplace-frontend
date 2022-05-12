@@ -2,20 +2,26 @@ import BgSection from "components/common/BgSection";
 import Section from "components/common/Section";
 import Tabs from "components/common/Tabs";
 import View from "components/common/View";
-import React, { useState } from "react";
+import { fetchCategories } from "config/api";
+import { Category } from "config/api.types";
+import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
-  const [categories] = useState<string[]>([
-    "category 1",
-    "category 2",
-    "category 3",
-    "category 4",
-    "category 5",
-    "category 6",
-    "category 7",
-    "category 8",
-  ]);
+  const [categories, setCategories] = useState<string[]>([]);
+
+  useEffect(() => {
+    const getCategoriesNames = (categories: Category[]) => {
+      return categories.map((category: Category) => {
+        return category.NomCategoria;
+      });
+    };
+    fetchCategories().then((data) => {
+      const categories = data;
+      const categoriesNames = getCategoriesNames(categories);
+      setCategories(categoriesNames);
+    });
+  }, []);
 
   const homeHeader = (
     <BgSection bgImage="/background.png">
