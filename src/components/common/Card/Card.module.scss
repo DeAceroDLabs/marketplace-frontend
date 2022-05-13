@@ -3,7 +3,7 @@
 
 .card {
   border-radius: 8px;
-  margin: 10px;
+  margin: 17px 10px;
   border: 1px solid #E6E6E6;
 
   .cardImage {
@@ -25,15 +25,13 @@
 }
 
 .small {
-  width: 417px;
+  width: 350px;
   box-shadow: 0px 16px 16px rgba(153, 153, 153, 0.15);
-
   .cardImage {
-    height: 210px;
+    height: 176.25px;
   }
-
   .cardInfo {
-    height: 54px;
+    height: 45.32px;
   }
 }
 
