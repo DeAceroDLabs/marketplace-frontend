@@ -1,50 +1,54 @@
+import React, { useEffect, useState } from "react";
+import { fetchCategories, fetchProducts } from "config/api";
+import { Product } from "config/api.types";
 import BgSection from "components/common/BgSection";
 import Card from "components/common/Card";
 import GridContainer from "components/common/GridContainer";
 import Section from "components/common/Section";
 import Tabs from "components/common/Tabs";
 import View from "components/common/View";
-import { fetchCategories, fetchProducts } from "config/api";
-import { Category, Product } from "config/api.types";
-import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
+import { TabItem } from "components/common/common.types";
 
 const Home: React.FunctionComponent = () => {
-  const [categoriesNames, setCategoriesNames] = useState<string[]>([]);
-  const [categories, setCategories] = useState<Category[]>([]);
+  const [categories, setCategories] = useState<TabItem[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
-  const [activeCategory, setActiveCategory] = useState(categoriesNames[0]);
+  const [activeCategory, setActiveCategory] = useState({} as TabItem);
 
   useEffect(() => {
-    const getCategoriesNames = (categories: Category[]) => {
-      return categories.map((category: Category) => {
-        return category.NomCategoria;
-      });
-    };
     fetchCategories().then((data) => {
-      const categories = data;
+      const categories = data.map(
+        (category) =>
+          ({
+            id: category.IdCategoria,
+            title: category.NomCategoria,
+          } as TabItem)
+      );
       setCategories(categories);
-      const categoriesNames = getCategoriesNames(categories);
-      setCategoriesNames(categoriesNames);
     });
   }, []);
 
   useEffect(() => {
-    const getCategoryId = (categoryTitle: string) => {
-      return categories.find(
-        (category) => category.NomCategoria === categoryTitle
-      )?.IdCategoria;
-    };
-    const categoryId = getCategoryId(activeCategory) || 0;
-    fetchProducts(categoryId).then((data) => {
-      const products = data;
-      setProducts(products);
-    });
+    activeCategory?.id &&
+      fetchProducts(activeCategory.id).then((data) => {
+        const products = data;
+        setProducts(products);
+      });
   }, [activeCategory, categories]);
 
-  const setCategoryActive = (categoryTitle: string) => {
-    setActiveCategory(categoryTitle);
+  const setCategoryActive = (category: TabItem) => {
+    setActiveCategory(category);
   };
+
+  const productsCards = products.map((product) => {
+    return (
+      <Card
+        key={product.ClaProducto}
+        title={product.NomProducto}
+        imgSrc={product.CategoriaUrlImagen}
+      />
+    );
+  });
 
   const homeHeader = (
     <BgSection bgImage="/background.png">
@@ -57,21 +61,11 @@ const Home: React.FunctionComponent = () => {
     </BgSection>
   );
 
-  const productsCards = products.map((product) => {
-    return (
-      <Card
-        key={product.ClaProducto}
-        title={product.NomProducto}
-        imgSrc={product.CategoriaUrlImagen}
-      />
-    );
-  });
-
   return (
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
         <Tabs
-          tabsTitles={categoriesNames}
+          options={categories}
           variant="secondary"
           onSelectTab={setCategoryActive}
         />
