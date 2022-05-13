@@ -1,4 +1,4 @@
-import { Category } from "./api.types";
+import { API, Category, Product } from "./api.types";
 
 const fetchData = (url: string) => {
   async function fetchUrl() {
@@ -10,7 +10,11 @@ const fetchData = (url: string) => {
 };
 
 const fetchCategories = (): Promise<Category[]> => {
-  return fetchData("/categories");
+  return fetchData(API.categories);
 };
 
-export { fetchCategories };
+const fetchProducts = (categoryId: number): Promise<Product[]> => {
+  return fetchData(API.products(categoryId));
+};
+
+export { fetchCategories, fetchProducts };
