@@ -1,32 +1,38 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Tab from "./Tab/Tab";
+import { TabItem } from "../common.types";
 import styles from "./Tabs.module.scss";
 
 interface TabsProps {
   variant?: "primary" | "secondary";
-  tabsTitles: string[];
-  onSelectTab: (tab: string) => void;
+  options: TabItem[];
+  onSelectTab: (tab: TabItem) => void;
 }
 
 const Tabs: React.FC<TabsProps> = ({
   variant = "primary",
-  tabsTitles,
+  options,
   onSelectTab,
 }) => {
-  const [activeTab, setactiveTab] = useState(tabsTitles[0]);
+  const [activeTab, setactiveTab] = useState(options[0]);
 
-  const setActive = (tabTitle: string) => {
-    setactiveTab(tabTitle);
-    onSelectTab(tabTitle);
+  useEffect(() => {
+    setActive(options[0]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [options]);
+
+  const setActive = (tab: TabItem) => {
+    setactiveTab(tab);
+    onSelectTab(tab);
   };
 
-  const tabs = tabsTitles.map((title: string) => {
+  const tabs = options.map((tab) => {
     return (
       <Tab
-        key={title}
+        key={tab.id}
         variant={variant}
-        title={title}
-        active={activeTab === title ? "active" : ""}
+        tab={tab}
+        active={activeTab === tab ? "active" : ""}
         onSelect={setActive}
       />
     );
