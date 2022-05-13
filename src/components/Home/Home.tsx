@@ -1,5 +1,6 @@
 import BgSection from "components/common/BgSection";
 import Card from "components/common/Card";
+import GridContainer from "components/common/GridContainer";
 import Section from "components/common/Section";
 import Tabs from "components/common/Tabs";
 import View from "components/common/View";
@@ -53,7 +54,7 @@ const Home: React.FunctionComponent = () => {
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
         <Tabs tabsTitles={categories} variant="secondary" />
-        {productsCards}
+        <GridContainer>{productsCards}</GridContainer>
       </Section>
     </View>
   );
