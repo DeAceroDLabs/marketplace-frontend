@@ -4,7 +4,7 @@ export const API = {
 };
 
 export type Category = {
-  IdCategoria: string;
+  IdCategoria: number;
   NomCategoria: string;
   UrlImagen: string;
 };

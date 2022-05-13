@@ -10,8 +10,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./Home.module.scss";
 
 const Home: React.FunctionComponent = () => {
-  const [categories, setCategories] = useState<string[]>([]);
+  const [categoriesNames, setCategoriesNames] = useState<string[]>([]);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
+  const [activeCategory, setActiveCategory] = useState(categoriesNames[0]);
 
   useEffect(() => {
     const getCategoriesNames = (categories: Category[]) => {
@@ -21,17 +23,28 @@ const Home: React.FunctionComponent = () => {
     };
     fetchCategories().then((data) => {
       const categories = data;
+      setCategories(categories);
       const categoriesNames = getCategoriesNames(categories);
-      setCategories(categoriesNames);
+      setCategoriesNames(categoriesNames);
     });
   }, []);
 
   useEffect(() => {
-    fetchProducts(1).then((data) => {
+    const getCategoryId = (categoryTitle: string) => {
+      return categories.find(
+        (category) => category.NomCategoria === categoryTitle
+      )?.IdCategoria;
+    };
+    const categoryId = getCategoryId(activeCategory) || 0;
+    fetchProducts(categoryId).then((data) => {
       const products = data;
       setProducts(products);
     });
-  }, []);
+  }, [activeCategory, categories]);
+
+  const setCategoryActive = (categoryTitle: string) => {
+    setActiveCategory(categoryTitle);
+  };
 
   const homeHeader = (
     <BgSection bgImage="/background.png">
@@ -46,14 +59,22 @@ const Home: React.FunctionComponent = () => {
 
   const productsCards = products.map((product) => {
     return (
-      <Card title={product.NomProducto} imgSrc={product.CategoriaUrlImagen} />
+      <Card
+        key={product.ClaProducto}
+        title={product.NomProducto}
+        imgSrc={product.CategoriaUrlImagen}
+      />
     );
   });
 
   return (
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
-        <Tabs tabsTitles={categories} variant="secondary" />
+        <Tabs
+          tabsTitles={categoriesNames}
+          variant="secondary"
+          onSelectTab={setCategoryActive}
+        />
         <GridContainer>{productsCards}</GridContainer>
       </Section>
     </View>
