@@ -1,21 +1,21 @@
+import { TabItem } from "components/common/common.types";
 import styles from "./Tab.module.scss";
 
 interface TabProps {
-  title: string;
+  tab: TabItem;
   variant: "primary" | "secondary";
   active: "active" | "";
-  onSelect: (tabTitle: string) => void;
+  onSelect: (tabId: TabItem) => void;
 }
 
-const Tab: React.FC<TabProps> = ({ title, variant, active, onSelect }) => {
-  const setActive = () => onSelect(title);
+const Tab: React.FC<TabProps> = ({ tab, variant, active, onSelect }) => {
+  const setActive = () => onSelect(tab);
   return (
     <button
-      key={title}
       className={`${styles.tab} ${styles[variant]} ${styles[active]}`}
       onClick={() => setActive()}
     >
-      {title}
+      {tab.title}
     </button>
   );
 };
