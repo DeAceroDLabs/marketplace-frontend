@@ -7,7 +7,7 @@ const Search: React.FunctionComponent = () => {
   return (
     <NotFound title="No encontramos un producto que coincida con tu búsqueda" imgSrc="/not-found.jpg" >
       <div>
-      Navega por las <a href='/'>categorías</a> para encontrar un producto similar
+      Navega por las <a className={styles.a} href='/'>categorías</a> para encontrar un producto similar
       </div>
 
     </NotFound>
