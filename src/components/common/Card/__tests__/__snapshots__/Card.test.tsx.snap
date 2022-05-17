@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Card with no issue 1`] = `
+<div>
+  <div
+    className="card small"
+  >
+    <img
+      alt="card"
+      className="cardImage"
+      src="./mock/image/route"
+    />
+    <div
+      className="cardInfo"
+    >
+      <div
+        className="cardName"
+      >
+         
+        Mock Title
+      </div>
+      <div
+        className="secondaryInfo"
+      >
+         
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,7 +1,7 @@
 import { TabItem } from "components/common/common.types";
 import styles from "./Tab.module.scss";
 
-interface TabProps {
+export interface TabProps {
   tab: TabItem;
   variant: "primary" | "secondary";
   active: "active" | "";
