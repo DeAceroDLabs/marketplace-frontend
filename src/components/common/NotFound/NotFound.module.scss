@@ -1,0 +1,31 @@
+@use 'styles/colors';
+@use 'styles/typography';
+
+
+
+
+
+
+.container{
+    margin: 5%;
+    height: 544px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 20px rgba(181, 181, 181, 0.25);
+    .image{
+        width: 330px;
+    }
+    .containerInfo{
+        width: 40%;
+        margin: 3%;
+        .title{
+
+            font-weight: 700;
+            font-size: typography.$header-m-size;
+        }
+        .info{
+            font-size: typography.$body-m-size;
+        }
+    }
+}
