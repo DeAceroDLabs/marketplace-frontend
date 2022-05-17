@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders BgSection with no issue 1`] = `
+<div
+  className="container horizontal"
+>
+  <div
+    className="content"
+  />
+</div>
+`;

@@ -1,6 +1,9 @@
 {
   "setupFiles": ["<rootDir>/src/setupTests.js"],
   "testRegex": "/*.test.tsx$",
+  "collectCoverageFrom": [
+    "!<rootDir>/src/**/*.tsx"
+  ],
   "collectCoverage": true,
   "coverageReporters": ["lcov"],
   "coverageDirectory": "test-coverage",

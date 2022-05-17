@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Section with no issue 1`] = `
+<div
+  className="section"
+>
+  <div
+    className="title"
+  >
+     
+     
+  </div>
+  <div
+    className="body"
+  >
+     
+     
+  </div>
+</div>
+`;

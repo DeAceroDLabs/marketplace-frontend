@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Tab with no issue 1`] = `
+<button
+  className="tab primary active"
+  onClick={[Function]}
+>
+  tab 1
+</button>
+`;
