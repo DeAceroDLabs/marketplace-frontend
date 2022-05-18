@@ -1,15 +1,15 @@
 @use 'styles/colors';
 @use 'styles/typography';
 
-.searchContainer{
+.searchContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: #F97513;
   height: 100px;
-  
 
-  .searchBar{
+
+  .searchBar {
     width: 900px;
     height: 20px;
     background-color: #FFFFFF;
@@ -17,14 +17,17 @@
     display: flex;
     align-items: center;
     padding: 10px;
-    button{
+
+    button {
       background-color: white;
       border: none;
     }
-    i{
+
+    i {
       color: #777;
     }
-    input{
+
+    input {
       flex: 1;
       height: 20px;
       border: none;

@@ -14,7 +14,7 @@ const Search: React.FunctionComponent = () => {
     if (products.length) {
       return (
         <View>
-          <SearchBar/>
+          <SearchBar />
           <Section title="Search page">
             <div className={styles.body}> Search bar </div>
           </Section>
@@ -25,9 +25,8 @@ const Search: React.FunctionComponent = () => {
 
   return (
     <div>
-      <SearchBar/>
+      <SearchBar />
       <ProductsNotFound />
-
     </div>
   );
 };
