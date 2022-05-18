@@ -2,7 +2,6 @@ import styles from "./NotFound.module.scss";
 
 interface NotFoundProps {
   title:  string;
-  buttonInfo?: string;
   imgSrc: string;
   children: React.ReactNode;
   
@@ -10,7 +9,6 @@ interface NotFoundProps {
 
 const NotFound: React.FC<NotFoundProps> = ({
   title,
-  buttonInfo,
   imgSrc,
   children,
 }) => {
