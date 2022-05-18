@@ -4,12 +4,13 @@ import View from "components/common/View";
 import styles from "./Search.module.scss";
 import ProductsNotFound from "./ProductsNotFound";
 import { useState } from "react";
+import { Product } from "config/api.types";
 
 const Search: React.FunctionComponent = () => {
-  const [items] = useState([]);
+  const [products, setProducts] = useState<Product[]>([]);
 
   {
-    if (items.length) {
+    if (products.length) {
       return (
         <View>
           <Section title="Search page">
