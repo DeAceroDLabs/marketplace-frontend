@@ -1,25 +1,29 @@
 @use 'styles/colors';
 @use 'styles/typography';
 
-.container{
+.container {
     margin: 5%;
     height: 544px;
     display: flex;
     justify-content: center;
     align-items: center;
     box-shadow: 0px 5px 20px rgba(181, 181, 181, 0.25);
-    .image{
+
+    .image {
         width: 330px;
     }
-    .containerInfo{
+
+    .containerInfo {
         width: 40%;
         margin: 3%;
-        .title{
+
+        .title {
 
             font-weight: typography.$header-s-weight;
             font-size: typography.$header-m-size;
         }
-        .info{
+
+        .info {
             font-size: typography.$body-m-size;
         }
     }
