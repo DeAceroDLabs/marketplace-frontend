@@ -1,19 +1,14 @@
 import styles from "./NotFound.module.scss";
 
 interface NotFoundProps {
-  title:  string;
+  title: string;
   imgSrc: string;
   children: React.ReactNode;
-  
 }
 
-const NotFound: React.FC<NotFoundProps> = ({
-  title,
-  imgSrc,
-  children,
-}) => {
+const NotFound: React.FC<NotFoundProps> = ({ title, imgSrc, children }) => {
   return (
-    <div >
+    <div>
       <div className={styles.container}>
         <img className={styles.image} src={imgSrc} alt="Not found img" />
         <div className={styles.containerInfo}>
