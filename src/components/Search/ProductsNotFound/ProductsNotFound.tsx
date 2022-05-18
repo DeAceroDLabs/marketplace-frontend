@@ -9,10 +9,10 @@ const Search: React.FunctionComponent = () => {
       imgSrc="/not-found.jpg"
     >
       <div>
-        Navega por las{" "}
+        Navega por las
         <a className={styles.a} href="/">
           categorías
-        </a>{" "}
+        </a>
         para encontrar un producto similar
       </div>
     </NotFound>
