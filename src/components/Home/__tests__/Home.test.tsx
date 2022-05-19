@@ -1,5 +1,5 @@
 import { render, waitFor, screen, fireEvent } from "@testing-library/react";
-import { debug } from "console";
+import renderer from "react-test-renderer";
 import mockFetch from "setupTests";
 import Home from "../Home";
 
@@ -21,6 +21,12 @@ describe("Home", () => {
       expect(screen.getByText("category 1 product 1")).toBeInTheDocument();
     });
   };
+
+  it("renders Home with no issue", () => {
+    const component = renderer.create(<Home />);
+    let tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   it("loads categories into screen", async () => {
     loadInitialState();

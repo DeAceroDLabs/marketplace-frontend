@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders Home with no issue 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div>
+      <div
+        className="container horizontal"
+      >
+        <img
+          alt=""
+          className="bgImage"
+          src="/background.png"
+        />
+        <div
+          className="content"
+        >
+          <div
+            className="header-content"
+          >
+            <div
+              className="header-title"
+            >
+              Somos tu aliado de confianza para hacer crecer tu negocio
+            </div>
+          </div>
+          <div
+            className="red"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="body"
+  >
+    <div>
+      <div
+        className="section"
+      >
+        <div
+          className="title"
+        >
+           
+          Catálogo de Productos
+           
+        </div>
+        <div
+          className="body"
+        >
+           
+          <div
+            className="tabs"
+          />
+          <div
+            className="container"
+          />
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="footer"
+  >
+    <div />
+  </div>,
+]
+`;
