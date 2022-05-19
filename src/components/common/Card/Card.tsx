@@ -1,9 +1,9 @@
 import styles from "./Card.module.scss";
 
 interface CardProps {
-  title:  string;
+  title: string;
   size?: "small" | "medium" | "large";
-  secondaryInfo?: string
+  secondaryInfo?: string;
   imgSrc: string;
 }
 

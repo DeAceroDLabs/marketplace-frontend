@@ -1,5 +1,5 @@
-@use 'styles/colors';
-@use 'styles/typography';
+@use "styles/colors";
+@use "styles/typography";
 
 .tab {
   cursor: pointer;
@@ -9,7 +9,7 @@
 .secondary {
   min-width: 197px;
   height: 42px;
-  background: #FFFFFF;
+  background: #ffffff;
   border: 1px solid colors.$accent;
   color: colors.$accent;
   border-radius: 80px;
