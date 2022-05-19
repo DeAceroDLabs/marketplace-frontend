@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchBar with no issue 1`] = `
+<div
+  className="searchContainer"
+>
+  <form
+    action="/"
+    method="POST"
+  >
+    <div
+      className="searchBar"
+    >
+      <input
+        id="site-search"
+        name="search"
+        placeholder="¿Qué estás buscando?"
+        type="text"
+      />
+      <button
+        type="submit"
+      >
+        <i
+          className="fa fa-search"
+        />
+      </button>
+    </div>
+  </form>
+</div>
+`;
