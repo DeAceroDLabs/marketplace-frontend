@@ -2,29 +2,25 @@
 @use 'styles/typography';
 
 .searchContainer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #F97513;
-  height: 100px;
-
+  z-index: 2;
+  width: 70%;
 
   .searchBar {
-    width: 900px;
+    margin: 2%;
     height: 20px;
-    background-color: #FFFFFF;
+    background-color: colors.$color-background-01;
     border-radius: 80px;
     display: flex;
     align-items: center;
     padding: 10px;
 
     button {
-      background-color: white;
+      background-color: colors.$color-background-01;
       border: none;
     }
 
     i {
-      color: #777;
+      color: #333333;
     }
 
     input {

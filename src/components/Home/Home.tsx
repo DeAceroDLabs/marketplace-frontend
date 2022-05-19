@@ -9,6 +9,7 @@ import Tabs from "components/common/Tabs";
 import View from "components/common/View";
 import styles from "./Home.module.scss";
 import { TabItem } from "components/common/common.types";
+import SearchBar from "components/SearchBar";
 
 const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
@@ -56,6 +57,7 @@ const Home: React.FunctionComponent = () => {
         <div className={styles["header-title"]}>
           Somos tu aliado de confianza para hacer crecer tu negocio
         </div>
+        <SearchBar/>
       </div>
       <div className={styles.red}></div>
     </BgSection>
