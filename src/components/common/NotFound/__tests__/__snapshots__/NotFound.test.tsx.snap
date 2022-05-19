@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders NotFound with no issue 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <img
+      alt="Not found img"
+      className="image"
+      src="path/to/mock/image"
+    />
+    <div
+      className="containerInfo"
+    >
+      <div
+        className="title"
+      >
+        Mock Title
+      </div>
+      <div
+        className="info"
+      />
+    </div>
+  </div>
+</div>
+`;

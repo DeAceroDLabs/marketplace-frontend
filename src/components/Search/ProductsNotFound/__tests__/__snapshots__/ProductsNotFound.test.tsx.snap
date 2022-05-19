@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders ProductsNotFound with no issue 1`] = `
+<div>
+  <div
+    className="container"
+  >
+    <img
+      alt="Not found img"
+      className="image"
+      src="/not-found.jpg"
+    />
+    <div
+      className="containerInfo"
+    >
+      <div
+        className="title"
+      >
+        No encontramos un producto que coincida con tu búsqueda
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Navega por las
+          <a
+            className="a"
+            href="/"
+          >
+            categorías
+          </a>
+          para encontrar un producto similar
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
