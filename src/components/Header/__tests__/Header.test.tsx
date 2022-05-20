@@ -11,4 +11,13 @@ describe("Header", () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  it("renders Header with color being on a different page", () => {
+    const view = render(
+      <MemoryRouter initialEntries={["/search/mock"]}>
+        <Header />
+      </MemoryRouter>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });
