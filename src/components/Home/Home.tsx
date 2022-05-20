@@ -9,7 +9,7 @@ import Tabs from "components/common/Tabs";
 import View from "components/common/View";
 import styles from "./Home.module.scss";
 import { TabItem } from "components/common/common.types";
-import SearchBar from "components/SearchBar";
+import SearchBar from "components/common/SearchBar";
 
 const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
