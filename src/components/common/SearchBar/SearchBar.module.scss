@@ -8,7 +8,7 @@
 
   .searchBar {
     margin: 2%;
-    height: 20px;
+    height: Hug (56px);    
     background-color: colors.$color-background-01;
     border-radius: 80px;
     display: flex;
@@ -22,6 +22,7 @@
 
     i {
       color: #333333;
+      font-size: 20px;
     }
 
     input {
@@ -30,6 +31,7 @@
       border: none;
       outline: none;
       padding-right: 20px;
+      font-size: typography.$header-s-size;
     }
   }
 }
