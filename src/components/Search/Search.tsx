@@ -7,20 +7,17 @@ import { useState } from "react";
 import { Product } from "config/api.types";
 
 const Search: React.FunctionComponent = () => {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products] = useState<Product[]>([]);
 
-  {
-    if (products.length) {
-      return (
-        <View>
-          <Section title="Search page">
-            <div className={styles.body}> Search bar </div>
-          </Section>
-        </View>
-      );
-    }
+  if (products.length) {
+    return (
+      <View>
+        <Section title="Search page">
+          <div className={styles.body}> Search bar </div>
+        </Section>
+      </View>
+    );
   }
-
   return <ProductsNotFound />;
 };
 
