@@ -25,6 +25,32 @@ Array [
             >
               Somos tu aliado de confianza para hacer crecer tu negocio
             </div>
+            <div
+              className="searchContainer"
+            >
+              <form
+                action="/"
+                method="POST"
+              >
+                <div
+                  className="searchBar"
+                >
+                  <input
+                    id="site-search"
+                    name="search"
+                    placeholder="¿Qué estás buscando?"
+                    type="text"
+                  />
+                  <button
+                    type="submit"
+                  >
+                    <i
+                      className="fa fa-search"
+                    />
+                  </button>
+                </div>
+              </form>
+            </div>
           </div>
           <div
             className="red"

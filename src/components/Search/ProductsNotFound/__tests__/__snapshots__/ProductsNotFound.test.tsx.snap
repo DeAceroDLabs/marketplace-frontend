@@ -22,14 +22,14 @@ exports[`renders ProductsNotFound with no issue 1`] = `
         className="info"
       >
         <div>
-          Navega por las
+          Navega por las 
           <a
             className="a"
             href="/"
           >
             categorías
           </a>
-          para encontrar un producto similar
+           para encontrar un producto similar
         </div>
       </div>
     </div>
