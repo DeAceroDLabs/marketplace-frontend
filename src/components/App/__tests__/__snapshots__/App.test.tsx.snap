@@ -28,28 +28,24 @@ Array [
             <div
               className="searchContainer"
             >
-              <form
-                action="/"
-                method="POST"
+              <div
+                className="searchBar"
               >
-                <div
-                  className="searchBar"
+                <input
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="¿Qué estás buscando?"
+                  type="text"
+                  value=""
+                />
+                <button
+                  onClick={[Function]}
                 >
-                  <input
-                    id="site-search"
-                    name="search"
-                    placeholder="¿Qué estás buscando?"
-                    type="text"
+                  <i
+                    className="fa fa-search"
                   />
-                  <button
-                    type="submit"
-                  >
-                    <i
-                      className="fa fa-search"
-                    />
-                  </button>
-                </div>
-              </form>
+                </button>
+              </div>
             </div>
           </div>
           <div
