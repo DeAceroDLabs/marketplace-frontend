@@ -1,44 +1,38 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Search with no issue 1`] = `
-Array [
+<div>
   <div
-    className="header"
+    className="container"
   >
-    <div />
-  </div>,
-  <div
-    className="body"
-  >
-    <div>
+    <img
+      alt="Not found img"
+      className="image"
+      src="/not-found.jpg"
+    />
+    <div
+      className="containerInfo"
+    >
       <div
-        className="section"
+        className="title"
       >
-        <div
-          className="title"
-        >
-           
-          Search page
-           
-        </div>
-        <div
-          className="body"
-        >
-           
-          <div
-            className="body"
+        No encontramos un producto que coincida con tu búsqueda
+      </div>
+      <div
+        className="info"
+      >
+        <div>
+          Navega por las 
+          <a
+            className="a"
+            href="/"
           >
-             Search bar 
-          </div>
-           
+            categorías
+          </a>
+           para encontrar un producto similar
         </div>
       </div>
     </div>
-  </div>,
-  <div
-    className="footer"
-  >
-    <div />
-  </div>,
-]
+  </div>
+</div>
 `;
