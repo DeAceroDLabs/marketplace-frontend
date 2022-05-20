@@ -1,0 +1,20 @@
+@use "styles/colors";
+
+.header {
+  position: absolute;
+  height: 109px;
+  width: 100%;
+  top: 0;
+  z-index: 1;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
+
+.color {
+  background-color: colors.$color-background-03;
+}
+
+.clean {
+  background-color: transparent;
+}
