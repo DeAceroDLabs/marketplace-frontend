@@ -1,7 +1,6 @@
 @use "styles/colors";
 
 .header {
-  position: absolute;
   height: 109px;
   width: 100%;
   top: 0;
@@ -17,4 +16,5 @@
 
 .clean {
   background-color: transparent;
+  position: absolute
 }
