@@ -9,11 +9,7 @@ const Header: React.FC = () => {
   const backgroundColor = pathIsHome ? "clean" : "color";
   return (
     <div className={`${styles.header} ${styles[backgroundColor]}`}>
-      {!pathIsHome && (
-        <div className={styles["show-search-bar"]}>
-          <SearchBar />
-        </div>
-      )}
+      {!pathIsHome && <SearchBar />}
     </div>
   );
 };
