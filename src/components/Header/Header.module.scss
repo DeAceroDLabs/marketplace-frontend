@@ -4,17 +4,28 @@
   height: 109px;
   width: 100%;
   top: 0;
-  z-index: 1;
-  align-items: center;
   display: flex;
+  align-items: center;
   text-align: center;
+  justify-content: center;
 }
 
 .color {
   background-color: colors.$color-background-03;
+
+  .search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .clean {
   background-color: transparent;
-  position: absolute
+  position: absolute;
+
+  .search {
+    display: none;
+  }
+
 }
