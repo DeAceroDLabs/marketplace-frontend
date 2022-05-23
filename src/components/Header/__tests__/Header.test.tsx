@@ -12,7 +12,7 @@ describe("Header", () => {
     expect(view).toMatchSnapshot();
   });
 
-  it("renders Header with color being on a different page", () => {
+  it("renders Header with color being on a different page and not double search bar on home", () => {
     const view = render(
       <MemoryRouter initialEntries={["/search/mock"]}>
         <Header />

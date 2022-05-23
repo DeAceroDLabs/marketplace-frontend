@@ -1,19 +1,63 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders Header with color being on a different page 1`] = `
+exports[`Header renders Header with color being on a different page and not double search bar on home 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
         class="header color"
-      />
+      >
+        <div
+          class="searchContainer"
+        >
+          <div
+            class="searchBar"
+          >
+            <input
+              id="site-search"
+              name="search"
+              placeholder="¿Qué estás buscando?"
+              type="text"
+            />
+            <button
+              type="submit"
+            >
+              <i
+                class="fa fa-search"
+              />
+            </button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
       class="header color"
-    />
+    >
+      <div
+        class="searchContainer"
+      >
+        <div
+          class="searchBar"
+        >
+          <input
+            id="site-search"
+            name="search"
+            placeholder="¿Qué estás buscando?"
+            type="text"
+          />
+          <button
+            type="submit"
+          >
+            <i
+              class="fa fa-search"
+            />
+          </button>
+        </div>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
