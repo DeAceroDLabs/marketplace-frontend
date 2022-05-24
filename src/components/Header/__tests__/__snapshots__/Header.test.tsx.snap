@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header renders Header with color being on a different page and not double search bar on home 1`] = `
+exports[`Header renders Header with color being on a different page 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
