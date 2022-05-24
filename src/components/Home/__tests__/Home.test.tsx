@@ -13,7 +13,7 @@ describe("Home", () => {
   });
 
   const loadInitialState = async () => {
-    render(
+    const view = render(
       <BrowserRouter>
         <Home />
       </BrowserRouter>
@@ -24,15 +24,11 @@ describe("Home", () => {
     await waitFor(() => {
       expect(screen.getByText("category 1 product 1")).toBeInTheDocument();
     });
+    return view;
   };
 
   it("renders Home with no issue", () => {
-    const view = render(
-      <BrowserRouter>
-        <Home />
-      </BrowserRouter>
-    );
-    expect(view).toMatchSnapshot();
+    expect(loadInitialState()).toMatchSnapshot();
   });
 
   it("loads categories into screen", async () => {
