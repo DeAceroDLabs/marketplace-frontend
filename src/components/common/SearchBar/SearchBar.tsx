@@ -16,6 +16,12 @@ const SearchBar: React.FunctionComponent = () => {
     navigateToSearch(query);
   };
 
+  const onPressEnter = (e: any) => {
+    if (e.key === "Enter") {
+      fetchSearch();
+    }
+  };
+
   return (
     <div className={styles["search-container"]}>
       <div className={styles["search-bar"]}>
@@ -23,6 +29,7 @@ const SearchBar: React.FunctionComponent = () => {
           type="text"
           placeholder="¿Qué estás buscando?"
           onChange={(e) => setQuery(e.target.value)}
+          onKeyDown={onPressEnter}
         />
         <button onClick={fetchSearch}>
           <i className="fa fa-search"></i>
