@@ -23,7 +23,7 @@ describe("Header", () => {
   });
 
   it("does not display search bar on home screen", () => {
-    const view = render(
+    render(
       <MemoryRouter initialEntries={["/"]}>
         <Header />
       </MemoryRouter>
