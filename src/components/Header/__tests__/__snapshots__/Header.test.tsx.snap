@@ -9,20 +9,16 @@ Object {
         class="header color"
       >
         <div
-          class="searchContainer"
+          class="search-container"
         >
           <div
-            class="searchBar"
+            class="search-bar"
           >
             <input
-              id="site-search"
-              name="search"
               placeholder="¿Qué estás buscando?"
               type="text"
             />
-            <button
-              type="submit"
-            >
+            <button>
               <i
                 class="fa fa-search"
               />
@@ -37,20 +33,16 @@ Object {
       class="header color"
     >
       <div
-        class="searchContainer"
+        class="search-container"
       >
         <div
-          class="searchBar"
+          class="search-bar"
         >
           <input
-            id="site-search"
-            name="search"
             placeholder="¿Qué estás buscando?"
             type="text"
           />
-          <button
-            type="submit"
-          >
+          <button>
             <i
               class="fa fa-search"
             />
