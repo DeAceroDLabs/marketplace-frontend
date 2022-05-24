@@ -1,92 +1,228 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Home renders Home with no issue 1`] = `
-Array [
-  <div
-    className="header"
-  >
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
     <div>
       <div
-        className="container horizontal"
+        class="header"
       >
-        <img
-          alt=""
-          className="bgImage"
-          src="/background.png"
-        />
-        <div
-          className="content"
-        >
+        <div>
           <div
-            className="header-content"
+            class="container horizontal"
           >
+            <img
+              alt=""
+              class="bgImage"
+              src="/background.png"
+            />
             <div
-              className="header-title"
-            >
-              Somos tu aliado de confianza para hacer crecer tu negocio
-            </div>
-            <div
-              className="searchContainer"
+              class="content"
             >
               <div
-                className="searchBar"
+                class="header-content"
               >
-                <input
-                  id="site-search"
-                  name="search"
-                  placeholder="¿Qué estás buscando?"
-                  type="text"
-                />
-                <button
-                  type="submit"
+                <div
+                  class="header-title"
                 >
-                  <i
-                    className="fa fa-search"
-                  />
-                </button>
+                  Somos tu aliado de confianza para hacer crecer tu negocio
+                </div>
+                <div
+                  class="search-container"
+                >
+                  <div
+                    class="search-bar"
+                  >
+                    <input
+                      placeholder="¿Qué estás buscando?"
+                      type="text"
+                    />
+                    <button>
+                      <i
+                        class="fa fa-search"
+                      />
+                    </button>
+                  </div>
+                </div>
               </div>
+              <div
+                class="red"
+              />
             </div>
           </div>
-          <div
-            className="red"
-          />
         </div>
       </div>
-    </div>
-  </div>,
-  <div
-    className="body"
-  >
-    <div>
       <div
-        className="section"
+        class="body"
       >
-        <div
-          className="title"
-        >
-           
-          Catálogo de Productos
-           
+        <div>
+          <div
+            class="section"
+          >
+            <div
+              class="title"
+            >
+               
+              Catálogo de Productos
+               
+            </div>
+            <div
+              class="body"
+            >
+               
+              <div
+                class="tabs"
+              />
+              <div
+                class="container"
+              />
+               
+            </div>
+          </div>
         </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="header"
+    >
+      <div>
         <div
-          className="body"
+          class="container horizontal"
         >
-           
-          <div
-            className="tabs"
+          <img
+            alt=""
+            class="bgImage"
+            src="/background.png"
           />
           <div
-            className="container"
-          />
-           
+            class="content"
+          >
+            <div
+              class="header-content"
+            >
+              <div
+                class="header-title"
+              >
+                Somos tu aliado de confianza para hacer crecer tu negocio
+              </div>
+              <div
+                class="search-container"
+              >
+                <div
+                  class="search-bar"
+                >
+                  <input
+                    placeholder="¿Qué estás buscando?"
+                    type="text"
+                  />
+                  <button>
+                    <i
+                      class="fa fa-search"
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              class="red"
+            />
+          </div>
         </div>
       </div>
     </div>
+    <div
+      class="body"
+    >
+      <div>
+        <div
+          class="section"
+        >
+          <div
+            class="title"
+          >
+             
+            Catálogo de Productos
+             
+          </div>
+          <div
+            class="body"
+          >
+             
+            <div
+              class="tabs"
+            />
+            <div
+              class="container"
+            />
+             
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="footer"
+    >
+      <div />
+    </div>
   </div>,
-  <div
-    className="footer"
-  >
-    <div />
-  </div>,
-]
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
 `;

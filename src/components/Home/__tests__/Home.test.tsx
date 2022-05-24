@@ -1,5 +1,5 @@
 import { render, waitFor, screen, fireEvent } from "@testing-library/react";
-import renderer from "react-test-renderer";
+import { BrowserRouter } from "react-router-dom";
 import mockFetch from "setupTests";
 import Home from "../Home";
 
@@ -13,7 +13,11 @@ describe("Home", () => {
   });
 
   const loadInitialState = async () => {
-    render(<Home />);
+    render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
     await waitFor(() => {
       expect(screen.getByText("mock category 1")).toBeInTheDocument();
     });
@@ -23,9 +27,12 @@ describe("Home", () => {
   };
 
   it("renders Home with no issue", () => {
-    const component = renderer.create(<Home />);
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
+    const view = render(
+      <BrowserRouter>
+        <Home />
+      </BrowserRouter>
+    );
+    expect(view).toMatchSnapshot();
   });
 
   it("loads categories into screen", async () => {

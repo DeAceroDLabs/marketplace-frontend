@@ -1,8 +1,14 @@
-import renderer from "react-test-renderer";
+import { render } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import SearchBar from "../SearchBar";
 
-it("renders SearchBar with no issue", () => {
-  const component = renderer.create(<SearchBar />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+describe("Search Bar", () => {
+  it("renders SearchBar with no issue", () => {
+    const view = render(
+      <BrowserRouter>
+        <SearchBar />
+      </BrowserRouter>
+    );
+    expect(view).toMatchSnapshot();
+  });
 });

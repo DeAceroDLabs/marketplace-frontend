@@ -29,19 +29,18 @@ Array [
               Somos tu aliado de confianza para hacer crecer tu negocio
             </div>
             <div
-              className="searchContainer"
+              className="search-container"
             >
               <div
-                className="searchBar"
+                className="search-bar"
               >
                 <input
-                  id="site-search"
-                  name="search"
+                  onChange={[Function]}
                   placeholder="¿Qué estás buscando?"
                   type="text"
                 />
                 <button
-                  type="submit"
+                  onClick={[Function]}
                 >
                   <i
                     className="fa fa-search"
