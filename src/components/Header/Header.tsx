@@ -1,7 +1,6 @@
-import SearchBar from "components/common/SearchBar";
 import { useLocation } from "react-router-dom";
-import styles from "./Header.module.scss";
 import SearchBar from "components/common/SearchBar";
+import styles from "./Header.module.scss";
 
 const Header: React.FC = () => {
   const location = useLocation();

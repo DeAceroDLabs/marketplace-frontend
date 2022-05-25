@@ -17,6 +17,7 @@ Object {
             <input
               placeholder="¿Qué estás buscando?"
               type="text"
+              value=""
             />
             <button>
               <i
@@ -41,6 +42,7 @@ Object {
           <input
             placeholder="¿Qué estás buscando?"
             type="text"
+            value=""
           />
           <button>
             <i
