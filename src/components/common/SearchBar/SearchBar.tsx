@@ -30,6 +30,7 @@ const SearchBar: React.FunctionComponent = () => {
           placeholder="¿Qué estás buscando?"
           onChange={(e) => setQuery(e.target.value)}
           onKeyDown={onPressEnter}
+          value={query}
         />
         <button onClick={fetchSearch}>
           <i className="fa fa-search"></i>

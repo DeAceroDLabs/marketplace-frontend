@@ -39,6 +39,7 @@ Array [
                   onKeyDown={[Function]}
                   placeholder="¿Qué estás buscando?"
                   type="text"
+                  value=""
                 />
                 <button
                   onClick={[Function]}
