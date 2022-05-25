@@ -1,10 +1,6 @@
 import { fireEvent, screen, render, waitFor } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
 import SearchBar from "../SearchBar";
-import axios from "axios";
-
-jest.mock("axios");
-const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("Search Bar", () => {
   const view = render(
@@ -38,9 +34,6 @@ describe("Search Bar", () => {
         <SearchBar />
       </BrowserRouter>
     );
-    mockedAxios.post.mockResolvedValue({
-      data: [],
-    });
     fireEvent.click(screen.getByRole("button"));
     await waitFor(() => {
       expect(
@@ -57,9 +50,6 @@ describe("Search Bar", () => {
         <SearchBar />
       </BrowserRouter>
     );
-    mockedAxios.post.mockResolvedValue({
-      data: [],
-    });
     const input = screen.getByPlaceholderText("¿Qué estás buscando?");
     fireEvent.keyDown(input, {
       key: "Enter",

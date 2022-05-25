@@ -1,4 +1,3 @@
-import { searchProducts } from "config/api";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.scss";
@@ -11,14 +10,9 @@ const SearchBar: React.FunctionComponent = () => {
     navigate(`search/${query}`);
   };
 
-  const fetchSearch = () => {
-    searchProducts(query).then((response) => console.log(response));
-    navigateToSearch(query);
-  };
-
   const onPressEnter = (e: any) => {
     if (e.key === "Enter") {
-      fetchSearch();
+      navigateToSearch(query);
     }
   };
 
@@ -32,7 +26,7 @@ const SearchBar: React.FunctionComponent = () => {
           onKeyDown={onPressEnter}
           value={query}
         />
-        <button onClick={fetchSearch}>
+        <button onClick={() => navigateToSearch(query)}>
           <i className="fa fa-search"></i>
         </button>
       </div>
