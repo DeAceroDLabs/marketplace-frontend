@@ -1,7 +1,7 @@
 export const API = {
   categories: "categories",
   products: (categoryId: number) => `categories/${categoryId}/products`,
-  search: "search",
+  search: "/search",
 };
 
 export type Category = {
