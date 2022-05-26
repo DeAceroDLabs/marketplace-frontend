@@ -15,10 +15,11 @@ const Search: React.FunctionComponent = () => {
   useEffect(() => {
     setProducts([]);
     setLoading(true);
-    query && searchProducts(query).then((response) => {
-      setProducts(response.data);
-      setLoading(false);
-    });
+    query &&
+      searchProducts(query).then((response) => {
+        setProducts(response.data);
+        setLoading(false);
+      });
   }, [query]);
 
   if (loading) {
