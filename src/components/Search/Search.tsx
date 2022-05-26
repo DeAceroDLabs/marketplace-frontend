@@ -6,33 +6,33 @@ import ProductsNotFound from "./ProductsNotFound";
 import { useState, useEffect } from "react";
 import { Product } from "config/api.types";
 import { searchProducts } from "config/api";
-import { useLocation } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 
 const Search: React.FunctionComponent = () => {
-  const location = useLocation();
-  const [spinner, setSpinner] = useState(false);
-  const query = location.pathname.split("/").pop() || "";
+  const [loading, setLoading] = useState(false);
+  const { query } = useParams() || "";
   const [products, setProducts] = useState<Product[]>([]);
 
   console.log(query);
 
   useEffect(() => {
-    setSpinner(true);
+    setProducts([])
+    setLoading(true);
     searchProducts(query).then((response) => {
-      setSpinner(false);
       setProducts(response.data);
+      setLoading(false);
     });
   }, [query]);
 
   if (products.length > 0) {
     return (
       <View>
-        {spinner && (
+        {loading && (
           <div className={styles.title}>
             <div className={styles.query}>Cargando productos...</div>
           </div>
         )}
-        {!spinner && (
+        {!loading && (
           <div className={styles.title}>
             <div className={styles.query}>“{query}”</div>
             <div className={styles.results}>"{products.length} resultados"</div>
@@ -44,12 +44,12 @@ const Search: React.FunctionComponent = () => {
 
   return (
     <div>
-      {spinner && (
+      {loading && (
         <div className={styles.title}>
           <div className={styles.query}>Cargando productos...</div>
         </div>
       )}
-      {!spinner && <ProductsNotFound />}
+      {!loading && <ProductsNotFound />}
     </div>
   );
 };

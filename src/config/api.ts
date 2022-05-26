@@ -24,7 +24,7 @@ const fetchProducts = (categoryId: number): Promise<Product[]> => {
   return fetchData(API.products(categoryId));
 };
 
-const searchProducts = (query: string): Promise<any> => {
+const searchProducts = (query: string | undefined): Promise<any> => {
   const body = {
     q: query,
   };
