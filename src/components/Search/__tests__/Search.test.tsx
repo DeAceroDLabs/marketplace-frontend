@@ -1,8 +1,23 @@
-import renderer from "react-test-renderer";
 import Search from "../Search";
+import axios from "axios";
+import { render, waitFor } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 
-it("renders Search with no issue", () => {
-  const component = renderer.create(<Search />);
-  let tree = component.toJSON();
-  expect(tree).toMatchSnapshot();
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
+
+describe("Search", () => {
+  it("renders Search without problem", async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: [],
+    });
+    const view = render(
+      <MemoryRouter>
+        <Search />
+      </MemoryRouter>
+    );
+    await waitFor(() => {
+      expect(view).toMatchSnapshot();
+    });
+  });
 });
