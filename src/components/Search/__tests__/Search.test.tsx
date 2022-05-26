@@ -45,7 +45,7 @@ describe("Search", () => {
     });
   });
 
-  it("renders when found products", async () => {
+  it("renders when loading and then results", async () => {
     mockedAxios.post.mockResolvedValue({
       data: [productsResponse],
     });
@@ -55,10 +55,27 @@ describe("Search", () => {
       </MemoryRouter>
     );
     await (() => {
-      expect(screen.getByText(/No encontramos/)).toBeInTheDocument();
+      expect(screen.getByText(/Cargando/)).toBeInTheDocument();
     });
     await (() => {
       expect(screen.getByText(/resultados/)).toBeInTheDocument();
+    });
+  });
+
+  it("renders when loading and then not found products", async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: [],
+    });
+    render(
+      <MemoryRouter initialEntries={["/search/mock"]}>
+        <Search />
+      </MemoryRouter>
+    );
+    await (() => {
+      expect(screen.getByText(/Cargando/)).toBeInTheDocument();
+    });
+    await (() => {
+      expect(screen.getByText(/No encontramos/)).toBeInTheDocument();
     });
   });
 });
