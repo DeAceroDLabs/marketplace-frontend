@@ -16,8 +16,9 @@
 }
 
 .results {
+    font-size: typography.$text-body-s;
     color: colors.$color-text-disabled;
     position: relative;
-    top: 3px;
+    top: 10px;
 
 }
