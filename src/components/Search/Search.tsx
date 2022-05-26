@@ -23,7 +23,12 @@ const Search: React.FunctionComponent = () => {
   }, [query]);
 
   if (loading) {
-    return <div className={styles.query}>Cargando productos...</div>;
+    return (
+      <div className={styles.title}>
+        <div className={styles.query}>“{query}”</div>{" "}
+        <div className={styles.query}>Cargando productos...</div>{" "}
+      </div>
+    );
   }
 
   if (products.length > 0) {
@@ -31,7 +36,7 @@ const Search: React.FunctionComponent = () => {
       <View>
         <div className={styles.title}>
           <div className={styles.query}>“{query}”</div>
-          <div className={styles.results}>"{products.length} resultados"</div>
+          <div className={styles.results}>{products.length} resultados</div>
         </div>
       </View>
     );
