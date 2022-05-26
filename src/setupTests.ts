@@ -31,7 +31,7 @@ const categoriesResponse: Category[] = [
   },
 ];
 
-const productsResponse: Product[] = getProductsByCategory(1);
+export const productsResponse: Product[] = getProductsByCategory(1);
 const productsResponse2: Product[] = getProductsByCategory(2);
 
 export default async function mockFetch(url: RequestInfo): Promise<Response> {
