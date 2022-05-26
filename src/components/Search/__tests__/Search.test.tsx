@@ -12,6 +12,12 @@ jest.mock("axios");
 const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 describe("Search", () => {
+  const renderView = () =>
+    render(
+      <MemoryRouter>
+        <Search />
+      </MemoryRouter>
+    );
   beforeEach(() => {
     jest.spyOn(Router, "useParams").mockReturnValue({ query: "1234" });
   });
@@ -20,11 +26,7 @@ describe("Search", () => {
     mockedAxios.post.mockResolvedValue({
       data: [productsResponse],
     });
-    render(
-      <MemoryRouter initialEntries={["/search/mock"]}>
-        <Search />
-      </MemoryRouter>
-    );
+    renderView();
     await waitFor(() => {
       expect(screen.getByText(/Cargando/)).toBeInTheDocument();
     });
@@ -37,11 +39,7 @@ describe("Search", () => {
     mockedAxios.post.mockResolvedValue({
       data: [],
     });
-    render(
-      <MemoryRouter initialEntries={["/search/mock"]}>
-        <Search />
-      </MemoryRouter>
-    );
+    renderView();
     await waitFor(() => {
       expect(screen.getByText(/Cargando/)).toBeInTheDocument();
     });
