@@ -27,14 +27,15 @@ const Search: React.FunctionComponent = () => {
   if (products.length > 0) {
     return (
       <View>
-        {spinner && <div className={styles.title}> <div className={styles.query}>Loading products ..</div> </div>}
+        {spinner && (
+          <div className={styles.title}>
+            <div className={styles.query}>Loading products ..</div>
+          </div>
+        )}
         {!spinner && (
           <div className={styles.title}>
-            <div className={styles.query}>“{query}”</div>{" "}
-            <div className={styles.results}>
-              {" "}
-              "{products.length} resultados"
-            </div>
+            <div className={styles.query}>“{query}”</div>
+            <div className={styles.results}>"{products.length} resultados"</div>
           </div>
         )}
       </View>
