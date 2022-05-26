@@ -29,7 +29,7 @@ const Search: React.FunctionComponent = () => {
       <View>
         {spinner && (
           <div className={styles.title}>
-            <div className={styles.query}>Loading products ..</div>
+            <div className={styles.query}>Cargando productos...</div>
           </div>
         )}
         {!spinner && (
@@ -46,7 +46,7 @@ const Search: React.FunctionComponent = () => {
     <div>
       {spinner && (
         <div className={styles.title}>
-          <div className={styles.query}>Loading products ..</div>
+          <div className={styles.query}>Cargando productos...</div>
         </div>
       )}
       {!spinner && <ProductsNotFound />}
