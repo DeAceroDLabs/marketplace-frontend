@@ -25,8 +25,8 @@ const Search: React.FunctionComponent = () => {
   if (loading) {
     return (
       <div className={styles.title}>
-        <div className={styles.query}>“{query}”</div>{" "}
-        <div className={styles.query}>Cargando productos...</div>{" "}
+        <div className={styles.query}></div>
+        <div className={styles.query}>Cargando productos...</div>
       </div>
     );
   }
