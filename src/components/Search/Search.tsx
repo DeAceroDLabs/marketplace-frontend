@@ -9,13 +9,13 @@ import { useParams } from "react-router-dom";
 
 const Search: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
-  const { query } = useParams() || "";
+  const { query } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
 
   useEffect(() => {
     setProducts([]);
     setLoading(true);
-    searchProducts(query).then((response) => {
+    query && searchProducts(query).then((response) => {
       setProducts(response.data);
       setLoading(false);
     });
