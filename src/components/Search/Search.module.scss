@@ -1,2 +1,23 @@
 @use "styles/colors";
 @use "styles/typography";
+
+
+.title {
+    margin: 2%;
+    display: flex;
+    align-self: flex-end;
+    .query {
+        color: colors.$color-text-02;
+        font-size: typography.$header-s-size;
+        font-weight: typography.$header-s-weight;
+        margin-right: 10px;
+    }
+
+}
+
+.results {
+    color: colors.$color-text-disabled;
+    position: relative;
+    top: 3px;
+
+}
