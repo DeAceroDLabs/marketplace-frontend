@@ -2,23 +2,32 @@
 @use "styles/typography";
 
 
-.title {
-    margin: 2%;
+.info {
+    margin: 1.5%;
     display: flex;
+    justify-content: center;
     align-self: flex-end;
+    border: 1px solid colors.$color-semantic-primary;
+    border-radius: 8px;
+    padding: 2px 26px 2px 16px;
+    width: 373px;
+    height: 36px;
+
     .query {
         color: colors.$color-text-02;
         font-size: typography.$header-s-size;
         font-weight: typography.$header-s-weight;
-        margin-right: 10px;
+        margin-right: 0.5%;
+    }
+
+    .results-number{
+        font-size: typography.$text-body-s;
+        color: colors.$color-text-disabled;
+        position: relative;
+        top: 9px;
+
     }
 
 }
 
-.results {
-    font-size: typography.$text-body-s;
-    color: colors.$color-text-disabled;
-    position: relative;
-    top: 10px;
 
-}

@@ -6,6 +6,8 @@ import { useState, useEffect } from "react";
 import { Product } from "config/api.types";
 import { searchProducts } from "config/api";
 import { useParams } from "react-router-dom";
+import Card from "components/common/Card";
+import GridContainer from "components/common/GridContainer";
 
 const Search: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
@@ -22,10 +24,20 @@ const Search: React.FunctionComponent = () => {
       });
   }, [query]);
 
+  const productsCards = products.map((product) => {
+    return (
+      <Card
+        key={product.ClaProducto}
+        title={product.NomProducto}
+        imgSrc={product.CategoriaUrlImagen}
+        size="medium"
+      />
+    );
+  });
+
   if (loading) {
     return (
-      <div className={styles.title}>
-        <div className={styles.query}></div>
+      <div className={styles.info}>
         <div className={styles.query}>Cargando productos...</div>
       </div>
     );
@@ -34,10 +46,13 @@ const Search: React.FunctionComponent = () => {
   if (products.length > 0) {
     return (
       <View>
-        <div className={styles.title}>
+        <div className={styles.info}>
           <div className={styles.query}>“{query}”</div>
-          <div className={styles.results}>{products.length} resultados</div>
+          <div className={styles["results-number"]}>
+            {products.length} resultados
+          </div>
         </div>
+        <GridContainer>{productsCards}</GridContainer>
       </View>
     );
   }
