@@ -47,4 +47,15 @@ describe("Search", () => {
       expect(screen.getByText(/No encontramos/)).toBeInTheDocument();
     });
   });
+
+  it("renders the product cards if found products", async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: [productsResponse],
+    });
+    renderView();
+    await waitFor(() => {
+      const altImg = screen.getByAltText(/card/i);
+      expect(altImg).toBeInTheDocument();
+    });
+  });
 });
