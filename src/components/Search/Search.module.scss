@@ -6,8 +6,6 @@
     margin: 1.5%;
     display: flex;
     align-items: flex-end;
-    border: 1px solid colors.$color-semantic-primary;
-    border-radius: 8px;
     padding: 2px 26px 2px 16px;
     width: fit-content;
 
@@ -21,6 +19,8 @@
     .results-number{
         font-size: typography.$text-body-s;
         color: colors.$color-text-disabled;
+        position: relative;
+        top: -2px;
 
     }
 
