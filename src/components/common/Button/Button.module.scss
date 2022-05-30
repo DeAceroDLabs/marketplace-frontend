@@ -1,7 +1,7 @@
 @use "styles/colors";
 @use "styles/typography";
 
-.primary{
+.primary {
   width: 180px;
   display: flex;
   padding: 5px;
@@ -10,6 +10,7 @@
   color: colors.$color-background-01;
   font-size: 26px;
   text-align: center;
+
   .text {
     font-size: typography.$header-s-size;
 

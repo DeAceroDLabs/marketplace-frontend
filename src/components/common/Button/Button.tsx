@@ -8,7 +8,13 @@ interface ButtonProps {
   variant: "primary" | "secondary";
 }
 
-const Button: React.FC<ButtonProps> = ({ text, children, link, secondaryText,variant }) => {
+const Button: React.FC<ButtonProps> = ({
+  text,
+  children,
+  link,
+  secondaryText,
+  variant,
+}) => {
   return (
     <a href={link} className={styles[variant]}>
       {children}
