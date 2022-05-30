@@ -10,9 +10,11 @@ const Header: React.FC = () => {
   return (
     <div className={`${styles.header} ${styles[backgroundColor]}`}>
       <div className={styles["logo-container"]}>
-        <a href="/"><div id="logo" className={styles.logo}>
-          Logo
-        </div></a>
+        <a href="/">
+          <div id="logo" className={styles.logo}>
+            Logo
+          </div>
+        </a>
       </div>
       {!pathIsHome && <SearchBar />}
       <div className={styles["icon-container"]}>
