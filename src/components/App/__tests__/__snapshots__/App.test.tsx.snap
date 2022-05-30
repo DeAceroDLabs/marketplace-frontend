@@ -4,7 +4,52 @@ exports[`renders App with no issue 1`] = `
 Array [
   <div
     className="header clean"
-  />,
+  >
+    <div
+      className="logo-container"
+    >
+      <a
+        href="/"
+      >
+        <div
+          className="logo"
+          id="logo"
+        >
+          Logo
+        </div>
+      </a>
+    </div>
+    <div
+      className="icon-container"
+    >
+      <a
+        href="/login"
+      >
+        <i
+          className="fa fa-user"
+          id="user-icon"
+        />
+      </a>
+      <div
+        className="login"
+      >
+        Hola, 
+        <b>
+          <a
+            href="/login"
+          >
+            Ingresa
+          </a>
+        </b>
+      </div>
+      <span
+        className="material-symbols-outlined"
+        id="shopping-cart"
+      >
+        shopping_cart
+      </span>
+    </div>
+  </div>,
   <div
     className="header"
   >
