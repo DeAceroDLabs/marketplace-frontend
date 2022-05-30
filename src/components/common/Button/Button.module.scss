@@ -1,0 +1,34 @@
+@use "styles/colors";
+@use "styles/typography";
+
+.primary{
+  width: 180px;
+  display: flex;
+  padding: 5px;
+  align-items: end;
+  justify-content: space-evenly;
+  color: colors.$color-background-01;
+  font-size: 26px;
+  text-align: center;
+  .text {
+    font-size: typography.$header-s-size;
+
+  }
+
+}
+
+.primary:link {
+  color: colors.$color-background-01;
+  text-decoration-line: none;
+}
+
+.primary:visited {
+  color: colors.$color-background-01;
+  text-decoration-line: none;
+}
+
+
+.primary:active {
+  color: colors.$color-background-01;
+  text-decoration-line: none;
+}

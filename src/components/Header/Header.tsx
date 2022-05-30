@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styles from "./Header.module.scss";
 import SearchBar from "components/common/SearchBar";
+import Button from "components/common/Button";
 
 const Header: React.FC = () => {
   const location = useLocation();
@@ -18,19 +19,18 @@ const Header: React.FC = () => {
       </div>
       {!pathIsHome && <SearchBar />}
       <div className={styles["icon-container"]}>
-        <a href="/login">
+        <Button
+          link="/login"
+          variant="primary"
+          text="Hola,"
+          secondaryText="Ingresa"
+        >
           <i id="user-icon" className="fa fa-user"></i>
-        </a>
-        <div className={styles.login}>
-          Hola,&nbsp;
-          <b>
-            <a href="/login">Ingresa</a>
-          </b>
-        </div>
-        <span id="shopping-cart" className="material-symbols-outlined">
-          shopping_cart
-        </span>
+        </Button>
       </div>
+      <span id="shopping-cart" className="material-symbols-outlined">
+        shopping_cart
+      </span>
     </div>
   );
 };
