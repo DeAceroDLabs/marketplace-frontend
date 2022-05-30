@@ -23,32 +23,30 @@ Array [
       className="icon-container"
     >
       <a
+        className="primary"
         href="/login"
       >
         <i
           className="fa fa-user"
           id="user-icon"
         />
-      </a>
-      <div
-        className="login"
-      >
-        Hola, 
-        <b>
-          <a
-            href="/login"
-          >
+        <div
+          className="text"
+        >
+          Hola,
+           
+          <b>
             Ingresa
-          </a>
-        </b>
-      </div>
-      <span
-        className="material-symbols-outlined"
-        id="shopping-cart"
-      >
-        shopping_cart
-      </span>
+          </b>
+        </div>
+      </a>
     </div>
+    <span
+      className="material-symbols-outlined"
+      id="shopping-cart"
+    >
+      shopping_cart
+    </span>
   </div>,
   <div
     className="header"

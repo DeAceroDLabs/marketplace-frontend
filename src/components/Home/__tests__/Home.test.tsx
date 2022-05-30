@@ -8,6 +8,7 @@ describe("Home", () => {
     jest.spyOn(window, "fetch").mockImplementation(mockFetch);
   });
 
+  
   afterEach(() => {
     jest.restoreAllMocks();
   });
