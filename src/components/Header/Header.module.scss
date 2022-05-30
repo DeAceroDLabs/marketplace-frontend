@@ -1,4 +1,5 @@
 @use "styles/colors";
+@use 'styles/typography';
 
 .header {
   height: 109px;
@@ -8,7 +9,7 @@
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: center;
+  justify-content: end;
 }
 
 .color {
@@ -19,4 +20,83 @@
 .clean {
   background-color: transparent;
   position: absolute;
+}
+
+.logo-container {
+  padding-right: 3%;
+  width: 20%;
+  margin-right: auto;
+  a:link {
+    color: colors.$color-text-02;
+    text-decoration-line: none;
+  }
+
+  a:visited {
+    color: colors.$color-text-02;
+    text-decoration-line: none;
+  }
+
+
+  a:active {
+    color: colors.$color-text-02;
+    text-decoration-line: none;
+  }
+
+  .logo {
+    margin-left: 10%;
+    width: 90%;
+    max-width: 197px;
+    height: 49px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 64px;
+    border-radius: 80px;
+    font-size: typography.$header-m-size;
+    font-weight: typography.$header-m-weight;
+  }
+}
+
+.icon-container {
+  padding: 1%;
+  width: 35%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: end;
+  color: colors.$color-background-01;
+  font-size: 26px;
+  text-align: center;
+
+  a:link {
+    color: colors.$color-background-01;
+    text-decoration-line: none;
+  }
+
+  a:visited {
+    color: colors.$color-background-01;
+    text-decoration-line: none;
+  }
+
+
+  a:active {
+    color: colors.$color-background-01;
+    text-decoration-line: none;
+  }
+
+  .login {
+    font-size: typography.$header-s-size;
+
+  }
+
+  span {
+    align-items: center;
+    font-size: 33px;
+    position: relative;
+    top: 3px;
+    margin-right: 9px;
+
+
+  }
 }
