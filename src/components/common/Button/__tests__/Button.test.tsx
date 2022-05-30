@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import Button from "../Button";
 
 describe("c", () => {
-  it("user-icon renders on Button without problem", () => {
+  it("renders welcome on Button without problem", () => {
     render(
       <MemoryRouter>
         <Button
@@ -14,7 +14,7 @@ describe("c", () => {
         ></Button>
       </MemoryRouter>
     );
-    const userIcon = screen.getByText("Hola,");
-    expect(userIcon).toBeInTheDocument();
+    const welcome = screen.getByText("Hola,");
+    expect(welcome).toBeInTheDocument();
   });
 });
