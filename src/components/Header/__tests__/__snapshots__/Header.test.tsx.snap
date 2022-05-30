@@ -9,6 +9,20 @@ Object {
         class="header color"
       >
         <div
+          class="logo-container"
+        >
+          <a
+            href="/"
+          >
+            <div
+              class="logo"
+              id="logo"
+            >
+              Logo
+            </div>
+          </a>
+        </div>
+        <div
           class="search-container"
         >
           <div
@@ -26,6 +40,36 @@ Object {
             </button>
           </div>
         </div>
+        <div
+          class="icon-container"
+        >
+          <a
+            href="/login"
+          >
+            <i
+              class="fa fa-user"
+              id="user-icon"
+            />
+          </a>
+          <div
+            class="login"
+          >
+            Hola, 
+            <b>
+              <a
+                href="/login"
+              >
+                Ingresa
+              </a>
+            </b>
+          </div>
+          <span
+            class="material-symbols-outlined"
+            id="shopping-cart"
+          >
+            shopping_cart
+          </span>
+        </div>
       </div>
     </div>
   </body>,
@@ -33,6 +77,20 @@ Object {
     <div
       class="header color"
     >
+      <div
+        class="logo-container"
+      >
+        <a
+          href="/"
+        >
+          <div
+            class="logo"
+            id="logo"
+          >
+            Logo
+          </div>
+        </a>
+      </div>
       <div
         class="search-container"
       >
@@ -50,6 +108,36 @@ Object {
             />
           </button>
         </div>
+      </div>
+      <div
+        class="icon-container"
+      >
+        <a
+          href="/login"
+        >
+          <i
+            class="fa fa-user"
+            id="user-icon"
+          />
+        </a>
+        <div
+          class="login"
+        >
+          Hola, 
+          <b>
+            <a
+              href="/login"
+            >
+              Ingresa
+            </a>
+          </b>
+        </div>
+        <span
+          class="material-symbols-outlined"
+          id="shopping-cart"
+        >
+          shopping_cart
+        </span>
       </div>
     </div>
   </div>,
@@ -114,13 +202,103 @@ Object {
     <div>
       <div
         class="header clean"
-      />
+      >
+        <div
+          class="logo-container"
+        >
+          <a
+            href="/"
+          >
+            <div
+              class="logo"
+              id="logo"
+            >
+              Logo
+            </div>
+          </a>
+        </div>
+        <div
+          class="icon-container"
+        >
+          <a
+            href="/login"
+          >
+            <i
+              class="fa fa-user"
+              id="user-icon"
+            />
+          </a>
+          <div
+            class="login"
+          >
+            Hola, 
+            <b>
+              <a
+                href="/login"
+              >
+                Ingresa
+              </a>
+            </b>
+          </div>
+          <span
+            class="material-symbols-outlined"
+            id="shopping-cart"
+          >
+            shopping_cart
+          </span>
+        </div>
+      </div>
     </div>
   </body>,
   "container": <div>
     <div
       class="header clean"
-    />
+    >
+      <div
+        class="logo-container"
+      >
+        <a
+          href="/"
+        >
+          <div
+            class="logo"
+            id="logo"
+          >
+            Logo
+          </div>
+        </a>
+      </div>
+      <div
+        class="icon-container"
+      >
+        <a
+          href="/login"
+        >
+          <i
+            class="fa fa-user"
+            id="user-icon"
+          />
+        </a>
+        <div
+          class="login"
+        >
+          Hola, 
+          <b>
+            <a
+              href="/login"
+            >
+              Ingresa
+            </a>
+          </b>
+        </div>
+        <span
+          class="material-symbols-outlined"
+          id="shopping-cart"
+        >
+          shopping_cart
+        </span>
+      </div>
+    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
