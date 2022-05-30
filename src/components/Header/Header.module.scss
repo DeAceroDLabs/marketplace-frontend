@@ -9,7 +9,23 @@
   display: flex;
   align-items: center;
   text-align: center;
-  justify-content: end;
+  justify-content: space-between;
+
+  span {
+    font-size: 33px;
+    position: relative;
+    top: 3px;
+    margin-right: 2%;
+    color: colors.$color-background-01;
+
+  }
+
+  .icon-container {
+
+    margin-left: 2%;
+    margin-right: 1%;
+    width: fit-content;
+  }
 }
 
 .color {
@@ -20,12 +36,14 @@
 .clean {
   background-color: transparent;
   position: absolute;
+
+  .logo-container {
+    margin-right: auto;
+  }
 }
 
 .logo-container {
-  padding-right: 3%;
-  width: 20%;
-  margin-right: auto;
+  padding-right: 1%;
 
   a:link {
     color: colors.$color-text-02;
@@ -57,47 +75,5 @@
     border-radius: 80px;
     font-size: typography.$header-m-size;
     font-weight: typography.$header-m-weight;
-  }
-}
-
-.icon-container {
-  padding: 1%;
-  width: 35%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: end;
-  color: colors.$color-background-01;
-  font-size: 26px;
-  text-align: center;
-
-  a:link {
-    color: colors.$color-background-01;
-    text-decoration-line: none;
-  }
-
-  a:visited {
-    color: colors.$color-background-01;
-    text-decoration-line: none;
-  }
-
-
-  a:active {
-    color: colors.$color-background-01;
-    text-decoration-line: none;
-  }
-
-  .login {
-    font-size: typography.$header-s-size;
-
-  }
-
-  span {
-    align-items: center;
-    font-size: 33px;
-    position: relative;
-    top: 3px;
-    margin-right: 9px;
-
-
   }
 }
