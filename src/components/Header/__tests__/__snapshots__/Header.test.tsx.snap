@@ -44,32 +44,30 @@ Object {
           class="icon-container"
         >
           <a
+            class="primary"
             href="/login"
           >
             <i
               class="fa fa-user"
               id="user-icon"
             />
-          </a>
-          <div
-            class="login"
-          >
-            Hola, 
-            <b>
-              <a
-                href="/login"
-              >
+            <div
+              class="text"
+            >
+              Hola,
+               
+              <b>
                 Ingresa
-              </a>
-            </b>
-          </div>
-          <span
-            class="material-symbols-outlined"
-            id="shopping-cart"
-          >
-            shopping_cart
-          </span>
+              </b>
+            </div>
+          </a>
         </div>
+        <span
+          class="material-symbols-outlined"
+          id="shopping-cart"
+        >
+          shopping_cart
+        </span>
       </div>
     </div>
   </body>,
@@ -113,32 +111,30 @@ Object {
         class="icon-container"
       >
         <a
+          class="primary"
           href="/login"
         >
           <i
             class="fa fa-user"
             id="user-icon"
           />
-        </a>
-        <div
-          class="login"
-        >
-          Hola, 
-          <b>
-            <a
-              href="/login"
-            >
+          <div
+            class="text"
+          >
+            Hola,
+             
+            <b>
               Ingresa
-            </a>
-          </b>
-        </div>
-        <span
-          class="material-symbols-outlined"
-          id="shopping-cart"
-        >
-          shopping_cart
-        </span>
+            </b>
+          </div>
+        </a>
       </div>
+      <span
+        class="material-symbols-outlined"
+        id="shopping-cart"
+      >
+        shopping_cart
+      </span>
     </div>
   </div>,
   "debug": [Function],
@@ -221,32 +217,30 @@ Object {
           class="icon-container"
         >
           <a
+            class="primary"
             href="/login"
           >
             <i
               class="fa fa-user"
               id="user-icon"
             />
-          </a>
-          <div
-            class="login"
-          >
-            Hola, 
-            <b>
-              <a
-                href="/login"
-              >
+            <div
+              class="text"
+            >
+              Hola,
+               
+              <b>
                 Ingresa
-              </a>
-            </b>
-          </div>
-          <span
-            class="material-symbols-outlined"
-            id="shopping-cart"
-          >
-            shopping_cart
-          </span>
+              </b>
+            </div>
+          </a>
         </div>
+        <span
+          class="material-symbols-outlined"
+          id="shopping-cart"
+        >
+          shopping_cart
+        </span>
       </div>
     </div>
   </body>,
@@ -272,32 +266,30 @@ Object {
         class="icon-container"
       >
         <a
+          class="primary"
           href="/login"
         >
           <i
             class="fa fa-user"
             id="user-icon"
           />
-        </a>
-        <div
-          class="login"
-        >
-          Hola, 
-          <b>
-            <a
-              href="/login"
-            >
+          <div
+            class="text"
+          >
+            Hola,
+             
+            <b>
               Ingresa
-            </a>
-          </b>
-        </div>
-        <span
-          class="material-symbols-outlined"
-          id="shopping-cart"
-        >
-          shopping_cart
-        </span>
+            </b>
+          </div>
+        </a>
       </div>
+      <span
+        class="material-symbols-outlined"
+        id="shopping-cart"
+      >
+        shopping_cart
+      </span>
     </div>
   </div>,
   "debug": [Function],
