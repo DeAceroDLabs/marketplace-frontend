@@ -11,12 +11,9 @@
   text-align: center;
   justify-content: space-between;
 
-  span {
-    font-size: 33px;
+  .shopping-cart-icon {
     margin-right: 2%;
     color: colors.$color-background-01;
-    position: relative;
-    top: 3px;
 
   }
 
@@ -25,24 +22,6 @@
     margin-right: 1%;
     width: fit-content;
 
-    i {
-      font-size: 26px;
-    }
-
-    a:link {
-      color: colors.$color-background-01;
-      text-decoration-line: none;
-    }
-
-    a:visited {
-      color: colors.$color-background-01;
-      text-decoration-line: none;
-    }
-
-    a:active {
-      color: colors.$color-background-01;
-      text-decoration-line: none;
-    }
   }
 }
 
@@ -61,7 +40,7 @@
 }
 
 .logo-container {
-  padding-right: 1%;
+
 
   a:link {
     color: colors.$color-text-02;
