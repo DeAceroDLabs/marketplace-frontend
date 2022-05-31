@@ -2,34 +2,21 @@
 @use "styles/typography";
 
 .primary {
-  width: 180px;
+  width: 220px;
+  background-color: transparent;
+  border: none;
   display: flex;
-  padding: 5px;
-  align-items: flex-end;
   justify-content: space-evenly;
   color: colors.$color-background-01;
-  font-size: 26px;
-  text-align: center;
+  font-size: typography.$header-s-size;
+  align-items: flex-end;
+
+  cursor: pointer;
+  padding: 10px 16px 0;
 
   .text {
     font-size: typography.$header-s-size;
 
   }
 
-}
-
-.primary:link {
-  color: colors.$color-background-01;
-  text-decoration-line: none;
-}
-
-.primary:visited {
-  color: colors.$color-background-01;
-  text-decoration-line: none;
-}
-
-
-.primary:active {
-  color: colors.$color-background-01;
-  text-decoration-line: none;
 }

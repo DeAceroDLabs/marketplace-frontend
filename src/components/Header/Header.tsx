@@ -1,9 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
 import SearchBar from "components/common/SearchBar";
 import Button from "components/common/Button";
 
 const Header: React.FC = () => {
+  const navigate = useNavigate();
   const location = useLocation();
   const activePath = location.pathname;
   const pathIsHome = activePath === "/";
@@ -18,14 +19,18 @@ const Header: React.FC = () => {
         </a>
       </div>
       {!pathIsHome && <SearchBar />}
-      <div className={styles["icon-container"]}>
+      <div className={styles["login-container"]}>
         <Button
-          link="/login"
-          variant="primary"
-          text="Hola,"
-          secondaryText="Ingresa"
+          color="primary"
+          action={() => {
+            navigate(`/login`);
+          }}
         >
           <i id="user-icon" className="fa fa-user"></i>
+          Hola,&nbsp;
+          <b>
+            <a href="/login">Ingresa</a>
+          </b>
         </Button>
       </div>
       <span id="shopping-cart" className="material-symbols-outlined">

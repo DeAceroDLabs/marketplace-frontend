@@ -1,28 +1,16 @@
 import styles from "./Button.module.scss";
 
 interface ButtonProps {
-  link: string;
-  text?: string;
   children?: React.ReactNode;
-  secondaryText?: string;
-  variant: "primary" | "secondary";
+  color: "primary" | "secondary";
+  action: () => void;
 }
 
-const Button: React.FC<ButtonProps> = ({
-  text,
-  children,
-  link,
-  secondaryText,
-  variant,
-}) => {
+const Button: React.FC<ButtonProps> = ({ children, color, action }) => {
   return (
-    <a href={link} className={styles[variant]}>
+    <button className={styles[color]} onClick={action}>
       {children}
-      <div className={styles.text}>
-        {text}&nbsp;
-        {secondaryText && <b>{secondaryText}</b>}
-      </div>
-    </a>
+    </button>
   );
 };
 
