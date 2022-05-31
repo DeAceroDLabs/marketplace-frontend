@@ -2,6 +2,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./Header.module.scss";
 import SearchBar from "components/common/SearchBar";
 import Button from "components/common/Button";
+import PersonIcon from "@mui/icons-material/Person";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -26,16 +28,18 @@ const Header: React.FC = () => {
             navigate(`/login`);
           }}
         >
-          <i id="user-icon" className="fa fa-user"></i>
-          Hola,
-          <b>
-            <a href="/login">Ingresa</a>
-          </b>
+          <div className={styles["person-icon"]}>
+            <PersonIcon sx={{ fontSize: 38 }} />
+          </div>
+          <div>
+            Hola,&nbsp;
+            <b>Ingresa</b>
+          </div>
         </Button>
       </div>
-      <span id="shopping-cart" className="material-symbols-outlined">
-        shopping_cart
-      </span>
+      <div className={styles["shopping-cart-icon"]}>
+        <ShoppingCartIcon sx={{ fontSize: 33 }} />
+      </div>
     </div>
   );
 };
