@@ -2,11 +2,10 @@
 @use "styles/typography";
 
 .primary {
-  width: 220px;
+  width: 180px;
   background-color: transparent;
   border: none;
   display: flex;
-  justify-content: space-evenly;
   color: colors.$color-background-01;
   font-size: typography.$header-s-size;
   align-items: center;
