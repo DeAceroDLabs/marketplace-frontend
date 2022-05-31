@@ -13,18 +13,36 @@
 
   span {
     font-size: 33px;
-    position: relative;
-    top: 3px;
     margin-right: 2%;
     color: colors.$color-background-01;
+    position: relative;
+    top: 7px;
 
   }
 
-  .icon-container {
-
+  .login-container {
     margin-left: 2%;
     margin-right: 1%;
     width: fit-content;
+
+    i {
+      font-size: 26px;
+    }
+
+    a:link {
+      color: colors.$color-background-01;
+      text-decoration-line: none;
+    }
+
+    a:visited {
+      color: colors.$color-background-01;
+      text-decoration-line: none;
+    }
+
+    a:active {
+      color: colors.$color-background-01;
+      text-decoration-line: none;
+    }
   }
 }
 
