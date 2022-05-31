@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.scss";
 import SearchIcon from '@mui/icons-material/Search';
-import { pink } from "@mui/material/colors";
 
 const SearchBar: React.FunctionComponent = () => {
   const navigate = useNavigate();
