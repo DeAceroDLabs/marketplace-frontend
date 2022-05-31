@@ -53,13 +53,4 @@ describe("Header", () => {
     expect(logo).toBeInTheDocument();
   });
 
-  it("shopping-cart renders on Header without problem", () => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    );
-    const shoppingCart = document.getElementById('shopping-cart');
-    expect(shoppingCart).toBeInTheDocument();
-  });
 });

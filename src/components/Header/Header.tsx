@@ -28,7 +28,7 @@ const Header: React.FC = () => {
             navigate(`/login`);
           }}
         >
-          <div className={styles["person-icon"]}>
+          <div id="user-icon" className={styles["person-icon"]}>
             <PersonIcon sx={{ fontSize: 38 }} />
           </div>
           <div>
