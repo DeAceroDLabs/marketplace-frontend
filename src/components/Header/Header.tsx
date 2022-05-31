@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           }}
         >
           <i id="user-icon" className="fa fa-user"></i>
-          Hola,&nbsp;
+          Hola,
           <b>
             <a href="/login">Ingresa</a>
           </b>
