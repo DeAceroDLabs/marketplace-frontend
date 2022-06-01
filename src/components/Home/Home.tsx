@@ -15,6 +15,7 @@ const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchCategories().then((data) => {
@@ -30,10 +31,12 @@ const Home: React.FunctionComponent = () => {
   }, []);
 
   useEffect(() => {
+    setLoading(true);
     activeCategory?.id &&
       fetchProducts(activeCategory.id).then((data) => {
         const products = data;
         setProducts(products);
+        setLoading(false);
       });
   }, [activeCategory, categories]);
 
@@ -41,15 +44,28 @@ const Home: React.FunctionComponent = () => {
     setActiveCategory(category);
   };
 
-  const productsCards = products.map((product) => {
-    return (
-      <Card
-        key={product.ClaProducto}
-        title={product.NomProducto}
-        imgSrc={product.CategoriaUrlImagen}
-      />
-    );
-  });
+  let productsCards;
+  if (loading) {
+    console.log("loading");
+    
+    productsCards = [...Array(6)].map((product) => {
+      return (
+        <Card size="small" title={" "} imgSrc={"nou"} loading="loading-true" />
+      );
+    });
+  } else {
+    productsCards = products.map((product) => {
+      return (
+        <Card
+          loading="loading-false"
+          key={product.ClaProducto}
+          title={product.NomProducto}
+          imgSrc={product.CategoriaUrlImagen}
+          size="small"
+        />
+      );
+    });
+  }
 
   const homeHeader = (
     <BgSection bgImage="/background.png">

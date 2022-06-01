@@ -23,6 +23,7 @@
   }
 }
 
+
 .small {
   width: 90%;
   max-width: 418px;
@@ -75,5 +76,55 @@
     font-weight: typography.$header-s-weight;
     width: 50%;
     text-align: right;
+  }
+}
+
+.loading-true {
+
+  .cardImage {
+    background: linear-gradient(127deg, #FFFFFF, rgb(219, 214, 214));
+    background-size: 400% 400%;
+    animation: gradient 4s ease infinite;
+  }
+
+  .cardInfo {
+
+    .cardName {
+      background: linear-gradient(-45deg, #FFFFFF, rgb(219, 214, 214));
+      background-size: 400% 400%;
+      animation: gradient 4s ease infinite;
+      height: 20px;
+      width: 70px;
+    }
+  }
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+
+
+
+.loading-false {
+
+  .cardImage {
+    background: transparent;
+  }
+
+  .cardInfo {
+
+    .cardName {
+      background: transparent;
+    }
   }
 }
