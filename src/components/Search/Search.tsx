@@ -13,6 +13,7 @@ const Search: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   const { query } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
+  let productsCards = [];
 
   useEffect(() => {
     setProducts([]);
@@ -24,26 +25,34 @@ const Search: React.FunctionComponent = () => {
       });
   }, [query]);
 
-  const productsCards = products.map((product) => {
-    return (
-      <Card
-        key={product.ClaProducto}
-        title={product.NomProducto}
-        imgSrc={product.CategoriaUrlImagen}
-        size="medium"
-      />
-    );
-  });
-
   if (loading) {
+    productsCards = [...Array(12)].map(() => {
+      return (
+        <Card title={" "} size="medium" loading="loading-true" />
+      );
+    });
     return (
-      <div className={styles.info}>
-        <div className={styles.query}>Cargando productos...</div>
-      </div>
+      <View>
+        <div className={styles.info}>
+          <div className={styles.query}>Cargando productos...</div>
+        </div>
+        <GridContainer>{productsCards}</GridContainer>
+      </View>
     );
   }
 
   if (products.length > 0) {
+    productsCards = products.map((product) => {
+      return (
+        <Card
+          key={product.ClaProducto}
+          title={product.NomProducto}
+          imgSrc={product.CategoriaUrlImagen}
+          size="medium"
+          loading="loading-false"
+        />
+      );
+    });
     return (
       <View>
         <div className={styles.info}>
