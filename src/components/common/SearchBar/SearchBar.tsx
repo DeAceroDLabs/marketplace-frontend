@@ -1,14 +1,15 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.scss";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
+import Button from "../Button";
 
 const SearchBar: React.FunctionComponent = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
   const navigateToSearch = (query: string) => {
-    navigate(`search/${query}`);
+    navigate(`../search/${query}`);
   };
 
   const onPressEnter = (e: any) => {
@@ -27,9 +28,9 @@ const SearchBar: React.FunctionComponent = () => {
           onKeyDown={onPressEnter}
           value={query}
         />
-        <button onClick={() => navigateToSearch(query)}>
-          <SearchIcon sx={{ fontSize: 30 }}/>
-        </button>
+        <Button action={() => navigateToSearch(query)}>
+          <SearchIcon sx={{ fontSize: 30 }} className={styles.search} />
+        </Button>
       </div>
     </div>
   );

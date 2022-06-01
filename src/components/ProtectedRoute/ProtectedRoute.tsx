@@ -7,7 +7,7 @@ interface ProtectedRouteProps {
   children?: React.ReactNode;
 }
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
-  redirectPath = "/",
+  redirectPath = "/login",
   children,
 }) => {
   const user = useContext(UserContext);

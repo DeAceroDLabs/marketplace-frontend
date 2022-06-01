@@ -14,30 +14,25 @@
   .shopping-cart-icon {
     margin-right: 2%;
     color: colors.$color-background-01;
-
   }
 
   .login-container {
     margin-left: 2%;
     margin-right: 1%;
     width: fit-content;
-
   }
+}
+
+.logo-container {
+  margin-right: auto;
+  margin-left: 2%;
 }
 
 .color {
   background-color: colors.$color-background-03;
-
-  .logo-container {
-    margin-right: 2%;
-  }
 }
 
 .clean {
   background-color: transparent;
   position: absolute;
-
-  .logo-container {
-    margin-right: auto;
-  }
 }

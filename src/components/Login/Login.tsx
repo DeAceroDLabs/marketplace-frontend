@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import Section from "components/common/Section";
 import View from "components/common/View";
 import UserContext from "config/userContext";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Login: React.FunctionComponent = () => {
   const navigate = useNavigate();
@@ -10,8 +10,11 @@ const Login: React.FunctionComponent = () => {
   const [user, setUsername] = useState(username);
   const submitUser = () => {
     setUser(user);
-    navigate(`home`);
+    navigate(`../`);
   };
+  if (username) {
+    return <Navigate to={"/"} />;
+  }
   return (
     <View>
       <Section title="Login">
