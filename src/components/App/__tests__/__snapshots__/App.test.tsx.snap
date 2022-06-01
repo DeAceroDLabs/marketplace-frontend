@@ -138,6 +138,7 @@ Array [
         </div>
       </div>
     </div>
+    <div />
   </div>,
   <div
     className="body"
@@ -149,21 +150,34 @@ Array [
         <div
           className="title"
         >
-           
-          Catálogo de Productos
-           
+
+          Login
+
         </div>
         <div
           className="body"
         >
-           
-          <div
-            className="tabs"
-          />
-          <div
-            className="container"
-          />
-           
+
+          <form
+            onSubmit={[Function]}
+          >
+            <input
+              onChange={[Function]}
+              placeholder="username"
+              type="text"
+              value=""
+            />
+            <input
+              placeholder="password"
+              type="text"
+            />
+            <button
+              type="submit"
+            >
+              Log In
+            </button>
+          </form>
+
         </div>
       </div>
     </div>
