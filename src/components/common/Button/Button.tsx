@@ -12,7 +12,7 @@ const Button: React.FC<ButtonProps> = ({
   action,
 }) => {
   return (
-    <button className={styles[color]} onClick={action}>
+    <button className={`${styles.button} ${styles[color]}`} onClick={action}>
       {children}
     </button>
   );
