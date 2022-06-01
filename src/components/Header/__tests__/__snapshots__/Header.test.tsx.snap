@@ -104,6 +104,8 @@ Object {
           </button>
         </div>
       </div>
+        class="header clean"
+      />
     </div>
   </body>,
   "container": <div>
@@ -206,6 +208,8 @@ Object {
         </button>
       </div>
     </div>
+      class="header clean"
+    />
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
