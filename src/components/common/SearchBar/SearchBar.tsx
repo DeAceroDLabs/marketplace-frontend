@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./SearchBar.module.scss";
+import SearchIcon from '@mui/icons-material/Search';
 
 const SearchBar: React.FunctionComponent = () => {
   const navigate = useNavigate();
@@ -27,7 +28,7 @@ const SearchBar: React.FunctionComponent = () => {
           value={query}
         />
         <button onClick={() => navigateToSearch(query)}>
-          <i className="fa fa-search"></i>
+          <SearchIcon sx={{ fontSize: 30 }}/>
         </button>
       </div>
     </div>

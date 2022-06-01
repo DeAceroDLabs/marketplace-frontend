@@ -1,0 +1,39 @@
+@use "styles/colors";
+@use "styles/typography";
+
+button {
+  cursor: pointer;
+}
+
+.primary {
+  width: fit-content;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  color: colors.$color-background-01;
+  font-size: typography.$header-s-size;
+  align-items: center;
+
+  .text {
+    font-size: typography.$header-s-size;
+
+  }
+
+}
+
+.logo {
+  border: none;
+  margin-left: 10%;
+  width: 90%;
+  max-width: 197px;
+  height: 49px;
+  background-color: #F2F2F2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 64px;
+  border-radius: 80px;
+  font-size: typography.$header-m-size;
+  font-weight: typography.$header-m-weight;
+}

@@ -8,7 +8,6 @@
 
   .search-bar {
     margin: auto;
-    margin-top: 24px;
     background-color: colors.$color-background-01;
     border-radius: 80px;
     display: flex;
@@ -17,6 +16,7 @@
     width: 100%;
 
     button {
+      cursor: pointer;
       background-color: colors.$color-background-01;
       border: none;
     }
