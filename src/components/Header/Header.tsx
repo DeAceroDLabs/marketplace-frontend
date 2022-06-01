@@ -4,6 +4,7 @@ import SearchBar from "components/common/SearchBar";
 import Button from "components/common/Button";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import FactoryIcon from "@mui/icons-material/Factory";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();
@@ -13,12 +14,15 @@ const Header: React.FC = () => {
   const backgroundColor = pathIsHome ? "clean" : "color";
   return (
     <div className={`${styles.header} ${styles[backgroundColor]}`}>
-      <div className={styles["logo-container"]}>
-        <a href="/">
-          <div id="logo" className={styles.logo}>
-            Logo
-          </div>
-        </a>
+      <div id="logo" className={styles["logo-container"]}>
+        <Button
+          color="logo"
+          action={() => {
+            navigate(`/`);
+          }}
+        >
+          <FactoryIcon />
+        </Button>
       </div>
       {!pathIsHome && <SearchBar />}
       <div className={styles["login-container"]}>
@@ -38,7 +42,12 @@ const Header: React.FC = () => {
         </Button>
       </div>
       <div className={styles["shopping-cart-icon"]}>
-        <ShoppingCartIcon sx={{ fontSize: 33 }} />
+      <Button color="primary"
+          action={() => {
+            navigate(`/cart`);
+          }}>
+      <ShoppingCartIcon sx={{ fontSize: 33 }} />
+      </Button>
       </div>
     </div>
   );
