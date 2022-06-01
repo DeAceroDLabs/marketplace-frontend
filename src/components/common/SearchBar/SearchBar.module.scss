@@ -15,17 +15,6 @@
     padding: 10px 25px;
     width: 100%;
 
-    button {
-      cursor: pointer;
-      background-color: colors.$color-background-01;
-      border: none;
-    }
-
-    i {
-      color: #333333;
-      font-size: 20px;
-    }
-
     input {
       flex: 1;
       border: none;
@@ -33,6 +22,10 @@
       padding-right: 20px;
       font-size: typography.$header-s-size;
       overflow: auto;
+    }
+
+    .search {
+      color: black;
     }
   }
 }

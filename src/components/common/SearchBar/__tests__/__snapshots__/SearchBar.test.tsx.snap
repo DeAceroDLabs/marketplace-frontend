@@ -16,10 +16,12 @@ Object {
             type="text"
             value=""
           />
-          <button>
+          <button
+            class="transparent"
+          >
             <svg
               aria-hidden="true"
-              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bq05nv-MuiSvgIcon-root"
+              class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search css-bq05nv-MuiSvgIcon-root"
               data-testid="SearchIcon"
               focusable="false"
               viewBox="0 0 24 24"
@@ -45,10 +47,12 @@ Object {
           type="text"
           value=""
         />
-        <button>
+        <button
+          class="transparent"
+        >
           <svg
             aria-hidden="true"
-            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-bq05nv-MuiSvgIcon-root"
+            class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search css-bq05nv-MuiSvgIcon-root"
             data-testid="SearchIcon"
             focusable="false"
             viewBox="0 0 24 24"

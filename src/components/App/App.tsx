@@ -16,10 +16,10 @@ const App = () => {
       <Router>
         <Header />
         <Routes>
-          <Route path="/" element={<Login />}></Route>
+          <Route path="/login" element={<Login />}></Route>
           <Route element={<ProtectedRoute />}>
-            <Route path="/home" element={<Home />}></Route>
-            <Route path="/search/:product" element={<Search />}></Route>
+            <Route path="/" element={<Home />}></Route>
+            <Route path="/search/:query" element={<Search />}></Route>
           </Route>
         </Routes>
       </Router>
