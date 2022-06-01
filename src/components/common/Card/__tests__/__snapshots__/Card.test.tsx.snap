@@ -3,7 +3,7 @@
 exports[`renders Card with no issue 1`] = `
 <div>
   <div
-    className="card small"
+    className="card small loading-false"
   >
     <img
       alt="card"
