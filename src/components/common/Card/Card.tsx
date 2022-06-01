@@ -5,7 +5,7 @@ interface CardProps {
   size?: "small" | "medium" | "large";
   loading?: "loading-true" | "loading-false";
   secondaryInfo?: string;
-  imgSrc: string;
+  imgSrc?: string;
 }
 
 const Card: React.FC<CardProps> = ({

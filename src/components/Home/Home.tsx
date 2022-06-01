@@ -47,9 +47,9 @@ const Home: React.FunctionComponent = () => {
 
   if (loading) {
     
-    productsCards = [...Array(6)].map((product) => {
+    productsCards = [...Array(6)].map(() => {
       return (
-        <Card size="small" title={" "} imgSrc={"nou"} loading="loading-true" />
+        <Card size="small" title={" "} loading="loading-true" />
       );
     });
   } else {
