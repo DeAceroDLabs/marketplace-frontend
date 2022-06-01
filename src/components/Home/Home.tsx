@@ -16,6 +16,7 @@ const Home: React.FunctionComponent = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
   const [loading, setLoading] = useState(false);
+  let productsCards = [];
 
   useEffect(() => {
     fetchCategories().then((data) => {
@@ -44,9 +45,7 @@ const Home: React.FunctionComponent = () => {
     setActiveCategory(category);
   };
 
-  let productsCards;
   if (loading) {
-    console.log("loading");
     
     productsCards = [...Array(6)].map((product) => {
       return (
