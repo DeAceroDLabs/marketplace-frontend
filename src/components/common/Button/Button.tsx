@@ -2,7 +2,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children?: React.ReactNode;
-  color: "primary" | "secondary";
+  color: "logo" | "primary" | "secondary";
   action: () => void;
 }
 

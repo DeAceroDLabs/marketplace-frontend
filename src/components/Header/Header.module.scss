@@ -28,6 +28,9 @@
 .color {
   background-color: colors.$color-background-03;
 
+  .logo-container {
+    margin-right: 2%;
+  }
 }
 
 .clean {
@@ -36,41 +39,5 @@
 
   .logo-container {
     margin-right: auto;
-  }
-}
-
-.logo-container {
-
-
-  a:link {
-    color: colors.$color-text-02;
-    text-decoration-line: none;
-  }
-
-  a:visited {
-    color: colors.$color-text-02;
-    text-decoration-line: none;
-  }
-
-
-  a:active {
-    color: colors.$color-text-02;
-    text-decoration-line: none;
-  }
-
-  .logo {
-    margin-left: 10%;
-    width: 90%;
-    max-width: 197px;
-    height: 49px;
-    background-color: #F2F2F2;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 64px;
-    border-radius: 80px;
-    font-size: typography.$header-m-size;
-    font-weight: typography.$header-m-weight;
   }
 }
