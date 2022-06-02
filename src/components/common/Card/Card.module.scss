@@ -87,15 +87,13 @@
     animation: gradient 4s ease infinite;
   }
 
-  .cardInfo {
 
-    .cardName {
-      background: linear-gradient(-45deg, #FFFFFF, rgb(219, 214, 214));
-      background-size: 400% 400%;
-      animation: gradient 4s ease infinite;
-      height: 20px;
-      width: 70px;
-    }
+  .cardName {
+    background: linear-gradient(-45deg, #FFFFFF, rgb(219, 214, 214));
+    background-size: 400% 400%;
+    animation: gradient 4s ease infinite;
+    height: 20px;
+    width: 70px;
   }
 
   @keyframes gradient {
