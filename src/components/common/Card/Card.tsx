@@ -11,7 +11,7 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({
   title,
   size = "small",
-  loading = "loading-false",
+  loading = false,
   imgSrc,
   secondaryInfo,
 }) => {
