@@ -26,9 +26,9 @@ const Search: React.FunctionComponent = () => {
   }, [query]);
 
   if (loading) {
-    productsCards = [...Array(12)].map(() => {
+    productsCards = Array.from(Array(12).keys()).map((item) => {
       return (
-        <Card title={" "} size="medium" loading="loading-true" />
+        <Card key={item} title={" "} size="medium" loading="loading-true" />
       );
     });
     return (
@@ -43,6 +43,7 @@ const Search: React.FunctionComponent = () => {
 
   if (products.length > 0) {
     productsCards = products.map((product) => {
+      console.log(product.ClaProducto);
       return (
         <Card
           key={product.ClaProducto}
