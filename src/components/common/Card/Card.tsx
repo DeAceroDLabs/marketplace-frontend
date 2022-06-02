@@ -3,7 +3,7 @@ import styles from "./Card.module.scss";
 interface CardProps {
   title: string;
   size?: "small" | "medium" | "large";
-  loading?: "loading-true" | "loading-false";
+  loading?: boolean;
   secondaryInfo?: string;
   imgSrc?: string;
 }
@@ -15,13 +15,15 @@ const Card: React.FC<CardProps> = ({
   imgSrc,
   secondaryInfo,
 }) => {
+  const loadingClass = loading ? "loading" : "";
   return (
     <div>
-      <div className={`${styles.card} ${styles[size]} ${styles[loading]}`}>
-        {(loading === "loading-false") && (
+      <div className={`${styles.card} ${styles[size]} ${styles[loadingClass]}`}>
+        {!loading ? (
           <img className={styles.cardImage} src={imgSrc} alt="card" />
+        ) : (
+          <div className={styles.cardImage} />
         )}
-        {loading === "loading-true" && <div className={styles.cardImage} />}
         <div className={styles.cardInfo}>
           <div className={styles.cardName}> {title}</div>
           <div className={styles.secondaryInfo}> {secondaryInfo}</div>

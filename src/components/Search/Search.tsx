@@ -27,9 +27,7 @@ const Search: React.FunctionComponent = () => {
 
   if (loading) {
     productsCards = Array.from(Array(12).keys()).map((item) => {
-      return (
-        <Card key={item} title={" "} size="medium" loading="loading-true" />
-      );
+      return <Card key={item} title={" "} size="medium" loading={true} />;
     });
     return (
       <View>
@@ -49,7 +47,7 @@ const Search: React.FunctionComponent = () => {
           title={product.NomProducto}
           imgSrc={product.CategoriaUrlImagen}
           size="medium"
-          loading="loading-false"
+          loading={false}
         />
       );
     });
