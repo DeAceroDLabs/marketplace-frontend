@@ -79,7 +79,7 @@
   }
 }
 
-.loading-true {
+.loading {
 
   .cardImage {
     background: linear-gradient(127deg, #FFFFFF, rgb(219, 214, 214));
@@ -109,22 +109,6 @@
 
     100% {
       background-position: 0% 50%;
-    }
-  }
-}
-
-
-
-.loading-false {
-
-  .cardImage {
-    background: transparent;
-  }
-
-  .cardInfo {
-
-    .cardName {
-      background: transparent;
     }
   }
 }

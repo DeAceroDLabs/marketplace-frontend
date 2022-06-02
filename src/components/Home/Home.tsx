@@ -46,21 +46,18 @@ const Home: React.FunctionComponent = () => {
   };
 
   if (loading) {
-    
     productsCards = Array.from(Array(6).keys()).map((item) => {
-      return (
-        <Card key={item} size="small" title={" "} loading="loading-true" />
-      );
+      return <Card key={item} size="small" title={" "} loading={true} />;
     });
   } else {
     productsCards = products.map((product) => {
       return (
         <Card
-          loading="loading-false"
           key={product.ClaProducto}
           title={product.NomProducto}
           imgSrc={product.CategoriaUrlImagen}
           size="small"
+          loading={false}
         />
       );
     });
