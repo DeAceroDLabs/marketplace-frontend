@@ -43,7 +43,6 @@ const Search: React.FunctionComponent = () => {
 
   if (products.length > 0) {
     productsCards = products.map((product) => {
-      console.log(product.ClaProducto);
       return (
         <Card
           key={product.ClaProducto}
