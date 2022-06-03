@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders LoadingCards with no issue 1`] = `
+Array [
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div>
+    <div
+      className="card small loading"
+      role="group"
+    >
+      <div
+        className="cardImage"
+      />
+      <div
+        className="cardInfo"
+      >
+        <div
+          className="cardName"
+        >
+           
+           
+        </div>
+        <div
+          className="secondaryInfo"
+        >
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;
