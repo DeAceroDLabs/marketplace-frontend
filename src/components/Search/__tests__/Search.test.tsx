@@ -40,6 +40,7 @@ describe("Search", () => {
       data: [],
     });
     renderView();
+
     await waitFor(() => {
       expect(screen.getByText(/Cargando/)).toBeInTheDocument();
     });
@@ -53,6 +54,20 @@ describe("Search", () => {
       data: [productsResponse],
     });
     renderView();
+    await waitFor(() => {
+      const altImg = screen.getByAltText(/card/i);
+      expect(altImg).toBeInTheDocument();
+    });
+  });
+
+  it("renders loading cards and then products", async () => {
+    mockedAxios.post.mockResolvedValue({
+      data: [productsResponse],
+    });
+    renderView();
+    await waitFor(() => {
+      expect(screen.getAllByRole("group")[0]).toHaveClass("card medium loading");
+    });
     await waitFor(() => {
       const altImg = screen.getByAltText(/card/i);
       expect(altImg).toBeInTheDocument();

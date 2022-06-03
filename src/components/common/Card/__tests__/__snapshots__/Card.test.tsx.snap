@@ -4,6 +4,7 @@ exports[`renders Card with no issue 1`] = `
 <div>
   <div
     className="card small "
+    role="group"
   >
     <img
       alt="card"

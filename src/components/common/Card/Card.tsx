@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({
   const loadingClass = loading ? "loading" : "";
   return (
     <div>
-      <div className={`${styles.card} ${styles[size]} ${styles[loadingClass]}`}>
+      <div role="group" className={`${styles.card} ${styles[size]} ${styles[loadingClass]}`}>
         {!loading ? (
           <img className={styles.cardImage} src={imgSrc} alt="card" />
         ) : (
