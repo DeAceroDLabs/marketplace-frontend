@@ -27,7 +27,7 @@ const Search: React.FunctionComponent = () => {
 
   if (loading) {
     productsCards = Array.from(Array(12).keys()).map((item) => {
-      return <Card key={item} title={" "} size="medium" loading={true} />;
+      return <Card key={item} title={" "} size="medium" loading={true} data-testid="loading"/>;
     });
     return (
       <View>
