@@ -7,13 +7,14 @@ import { Product } from "config/api.types";
 import { searchProducts } from "config/api";
 import { useParams } from "react-router-dom";
 import Card from "components/common/Card";
+import LoadingCard from "components/common/LoadingCard";
 import GridContainer from "components/common/GridContainer";
 
 const Search: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
   const { query } = useParams();
   const [products, setProducts] = useState<Product[]>([]);
-  let productsCards = [];
+  let productsCards;
 
   useEffect(() => {
     setProducts([]);
@@ -26,9 +27,7 @@ const Search: React.FunctionComponent = () => {
   }, [query]);
 
   if (loading) {
-    productsCards = Array.from(Array(12).keys()).map((item) => {
-      return <Card key={item} title={" "} size="medium" loading={true} data-testid="loading"/>;
-    });
+    productsCards = <LoadingCard cards={12} variant="medium" />;
     return (
       <View>
         <div className={styles.info}>

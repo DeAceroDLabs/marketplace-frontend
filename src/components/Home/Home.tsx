@@ -3,6 +3,7 @@ import { fetchCategories, fetchProducts } from "config/api";
 import { Product } from "config/api.types";
 import BgSection from "components/common/BgSection";
 import Card from "components/common/Card";
+import LoadingCard from "components/common/LoadingCard";
 import GridContainer from "components/common/GridContainer";
 import Section from "components/common/Section";
 import Tabs from "components/common/Tabs";
@@ -16,7 +17,7 @@ const Home: React.FunctionComponent = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
   const [loading, setLoading] = useState(false);
-  let productsCards = [];
+  let productsCards;
 
   useEffect(() => {
     fetchCategories().then((data) => {
@@ -46,9 +47,7 @@ const Home: React.FunctionComponent = () => {
   };
 
   if (loading) {
-    productsCards = Array.from(Array(6).keys()).map((item) => {
-      return <Card key={item} size="small" title={" "} loading={true} />;
-    });
+    productsCards = <LoadingCard cards={6} variant="small" />;
   } else {
     productsCards = products.map((product) => {
       return (
