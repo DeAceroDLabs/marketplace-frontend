@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { fetchCategories, fetchProducts } from "config/api";
 import { Product } from "config/api.types";
 import BgSection from "components/common/BgSection";
@@ -11,6 +12,7 @@ import View from "components/common/View";
 import styles from "./Home.module.scss";
 import { TabItem } from "components/common/common.types";
 import SearchBar from "components/common/SearchBar";
+import Button from "components/common/Button";
 
 const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
@@ -18,6 +20,7 @@ const Home: React.FunctionComponent = () => {
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
   const [loading, setLoading] = useState(false);
   let productsCards;
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCategories().then((data) => {
@@ -49,7 +52,7 @@ const Home: React.FunctionComponent = () => {
   if (loading) {
     productsCards = <LoadingCard cards={6} variant="small" />;
   } else {
-    productsCards = products.map((product) => {
+    productsCards = products.slice(0, 6).map((product) => {
       return (
         <Card
           key={product.ClaProducto}
@@ -70,7 +73,6 @@ const Home: React.FunctionComponent = () => {
         </div>
         <SearchBar />
       </div>
-      <div className={styles.red}></div>
     </BgSection>
   );
 
@@ -83,6 +85,25 @@ const Home: React.FunctionComponent = () => {
           onSelectTab={setCategoryActive}
         />
         <GridContainer>{productsCards}</GridContainer>
+
+        {products.length > 6 && (
+          <div className={styles["see-more-container"]}>
+            <Button
+              color="transparent"
+              action={() => {
+                navigate(
+                  `/search/${
+                    activeCategory.title.slice(-1) === "s"
+                      ? activeCategory.title.slice(0, -1)
+                      : activeCategory.title
+                  }`
+                );
+              }}
+            >
+              <div className={styles["see-more"]}>Ver más</div>
+            </Button>
+          </div>
+        )}
       </Section>
     </View>
   );
