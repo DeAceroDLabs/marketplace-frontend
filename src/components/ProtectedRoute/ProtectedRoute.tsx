@@ -1,5 +1,5 @@
 import UserContext from "config/userContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 
 interface ProtectedRouteProps {
@@ -12,9 +12,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
 }) => {
   const navigate = useNavigate();
   const user = useContext(UserContext);
-  if (!user.username) {
-    navigate(`../`);
-  }
+  useEffect(() => {
+    if (!user.username) {
+      navigate(redirectPath);
+    }
+  }, [user.username, navigate, redirectPath]);
+
   return children ? <>{children}</> : <Outlet />;
 };
 
