@@ -1,3 +1,102 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders App with no issue 1`] = `null`;
+exports[`renders App with no issue 1`] = `
+Array [
+  <div
+    className="header"
+  >
+    <div>
+      <div
+        className="container horizontal"
+      >
+        <img
+          alt=""
+          className="bgImage"
+          src="/background.png"
+        />
+        <div
+          className="content"
+        >
+          <div
+            className="header-content"
+          >
+            <div
+              className="header-title"
+            >
+              Somos tu aliado de confianza para hacer crecer tu negocio
+            </div>
+            <div
+              className="search-container"
+            >
+              <div
+                className="search-bar"
+              >
+                <input
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  placeholder="¿Qué estás buscando?"
+                  type="text"
+                  value=""
+                />
+                <button
+                  className="button transparent"
+                  onClick={[Function]}
+                >
+                  <svg
+                    aria-hidden={true}
+                    className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium search css-bq05nv-MuiSvgIcon-root"
+                    data-testid="SearchIcon"
+                    focusable="false"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            className="red"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="body"
+  >
+    <div>
+      <div
+        className="section"
+      >
+        <div
+          className="title"
+        >
+           
+          Catálogo de Productos
+           
+        </div>
+        <div
+          className="body"
+        >
+           
+          <div
+            className="tabs"
+          />
+          <div
+            className="container"
+          />
+           
+        </div>
+      </div>
+    </div>
+  </div>,
+  <div
+    className="footer"
+  >
+    <div />
+  </div>,
+]
+`;

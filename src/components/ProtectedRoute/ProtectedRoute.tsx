@@ -1,6 +1,6 @@
 import UserContext from "config/userContext";
 import { useContext } from "react";
-import { Navigate, Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 
 interface ProtectedRouteProps {
   redirectPath?: string;
@@ -10,11 +10,12 @@ const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
   redirectPath = "/login",
   children,
 }) => {
+  const navigate = useNavigate();
   const user = useContext(UserContext);
   if (!user.username) {
-    return <Navigate to={redirectPath} />;
+    navigate(`../`);
   }
-  return children ? <>children</> : <Outlet />;
+  return children ? <>{children}</> : <Outlet />;
 };
 
 export default ProtectedRoute;

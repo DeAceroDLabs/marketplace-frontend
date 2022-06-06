@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Header from "../Header";
-import { screen } from '@testing-library/react';
+import { screen } from "@testing-library/react";
 
 describe("Header", () => {
   it("renders Header without problem", () => {
@@ -31,26 +31,4 @@ describe("Header", () => {
     const searchBar = screen.queryByPlaceholderText("¿Qué estás buscando?");
     expect(searchBar).not.toBeInTheDocument();
   });
-
-
-  it("user-icon renders on Header without problem", () => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    );
-    const userIcon = document.getElementById('user-icon');
-    expect(userIcon).toBeInTheDocument();
-  });
-
-  it("logo renders on Header without problem", () => {
-    render(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    );
-    const logo = document.getElementById('logo');
-    expect(logo).toBeInTheDocument();
-  });
-
 });
