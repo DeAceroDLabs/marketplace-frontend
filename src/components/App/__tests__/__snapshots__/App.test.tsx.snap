@@ -57,9 +57,6 @@ Array [
               </div>
             </div>
           </div>
-          <div
-            className="red"
-          />
         </div>
       </div>
     </div>

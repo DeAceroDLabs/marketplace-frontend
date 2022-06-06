@@ -8,7 +8,6 @@ describe("Home", () => {
     jest.spyOn(window, "fetch").mockImplementation(mockFetch);
   });
 
-  
   afterEach(() => {
     jest.restoreAllMocks();
   });
@@ -41,6 +40,13 @@ describe("Home", () => {
     fireEvent.click(screen.getByText("mock category 2"));
     await waitFor(() => {
       expect(screen.getByText("category 2 product 1")).toBeInTheDocument();
+    });
+  });
+
+  it("renders see more", async () => {
+    await loadInitialState();
+    await waitFor(() => {
+      expect(screen.getByText("Ver más")).toBeInTheDocument();
     });
   });
 });
