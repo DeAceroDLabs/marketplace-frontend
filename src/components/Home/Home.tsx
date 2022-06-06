@@ -91,13 +91,7 @@ const Home: React.FunctionComponent = () => {
             <Button
               color="transparent"
               action={() => {
-                navigate(
-                  `/search/${
-                    activeCategory.title.slice(-1) === "s"
-                      ? activeCategory.title.slice(0, -1)
-                      : activeCategory.title
-                  }`
-                );
+                navigate(`/search/${activeCategory.title}`);
               }}
             >
               <div className={styles["see-more"]}>Ver más</div>
