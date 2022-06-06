@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Section from "components/common/Section";
 import View from "components/common/View";
@@ -14,9 +14,11 @@ const Login: React.FunctionComponent = () => {
     navigate(`../`);
   };
 
-  if (username) {
-    navigate(`../`);
-  }
+  useEffect(() => {
+    if (username) {
+      navigate(`../`);
+    }
+  }, [username, navigate]);
 
   return (
     <View>
