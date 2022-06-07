@@ -66,7 +66,9 @@ describe("Search", () => {
     });
     renderView();
     await waitFor(() => {
-      expect(screen.getAllByRole("group")[0]).toHaveClass("card medium loading");
+      expect(screen.getAllByRole("group")[0]).toHaveClass(
+        "card medium loading"
+      );
     });
     await waitFor(() => {
       const altImg = screen.getByAltText(/card/i);
