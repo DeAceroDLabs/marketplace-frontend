@@ -2,7 +2,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children?: React.ReactNode;
-  color?: "primary" | "transparent";
+  color?: "primary" | "transparent" | "transparent-black";
   action: () => void;
 }
 

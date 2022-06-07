@@ -5,12 +5,21 @@
   cursor: pointer;
   width: fit-content;
   display: flex;
-  font-size: typography.$header-s-size;
-  align-items: center;
 }
 
 .transparent {
   background-color: transparent;
   border: none;
   color: colors.$color-background-01;
+  font-size: typography.$header-s-size;
+  align-items: center;
+}
+
+.transparent-black {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: typography.$text-body-s;
+  padding: 0px;
+  margin-top: 10px;
 }
