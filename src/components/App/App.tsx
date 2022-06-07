@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "components/Home";
 import Search from "components/Search";
 import Header from "components/Header";
+import Footer from "components/Footer";
 import Login from "components/Login";
 import ProtectedRoute from "components/ProtectedRoute";
 import { UserProvider } from "config/userContext";
@@ -22,6 +23,7 @@ const App = () => {
             <Route path="/search/:query" element={<Search />}></Route>
           </Route>
         </Routes>
+        <Footer />
       </Router>
     </UserProvider>
   );
