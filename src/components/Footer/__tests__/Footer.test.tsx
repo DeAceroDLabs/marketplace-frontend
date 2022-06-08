@@ -19,4 +19,24 @@ describe("Footer", () => {
     expect(view).toMatchSnapshot();
   });
 
+  it("renders contact on Footer without problem", () => {
+    const view = render(
+      <MemoryRouter initialEntries={["/search/mock"]}>
+        <Footer />
+      </MemoryRouter>
+    );
+    const contact = screen.getByText("Contacto");
+    expect(contact).toBeInTheDocument();
+  });
+
+  it("renders about on Footer without problem", () => {
+    render(
+      <MemoryRouter initialEntries={["/"]}>
+        <Footer />
+      </MemoryRouter>
+    );
+    const about = screen.getByText("Acerca de");
+    expect(about).toBeInTheDocument();
+  });
+
 });
