@@ -29,15 +29,26 @@ Object {
             >
                
               <form>
-                <input
-                  placeholder="username"
-                  type="text"
-                  value=""
-                />
-                <input
-                  placeholder="password"
-                  type="text"
-                />
+                <div>
+                  <label>
+                    Username
+                  </label>
+                  <input
+                    mock="[object Object]"
+                    placeholder="Username"
+                    type="text"
+                    value=""
+                  />
+                  <label>
+                    Password
+                  </label>
+                  <input
+                    mock="[object Object]"
+                    placeholder="Password"
+                    type="text"
+                    value=""
+                  />
+                </div>
                 <button
                   type="submit"
                 >
@@ -81,15 +92,26 @@ Object {
           >
              
             <form>
-              <input
-                placeholder="username"
-                type="text"
-                value=""
-              />
-              <input
-                placeholder="password"
-                type="text"
-              />
+              <div>
+                <label>
+                  Username
+                </label>
+                <input
+                  mock="[object Object]"
+                  placeholder="Username"
+                  type="text"
+                  value=""
+                />
+                <label>
+                  Password
+                </label>
+                <input
+                  mock="[object Object]"
+                  placeholder="Password"
+                  type="text"
+                  value=""
+                />
+              </div>
               <button
                 type="submit"
               >

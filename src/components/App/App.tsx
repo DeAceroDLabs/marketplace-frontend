@@ -11,10 +11,10 @@ import ProtectedRoute from "components/ProtectedRoute";
 
 const App = () => {
   const [username, setUser] = useState("");
-  const value = useMemo(() => ({ username, setUser }), [username]);
+  const userValue = useMemo(() => ({ username, setUser }), [username]);
 
   return (
-    <UserProvider value={value}>
+    <UserProvider value={userValue}>
       <Router>
         <Header />
         <Routes>
