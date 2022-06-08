@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { MemoryRouter, useNavigate } from "react-router-dom";
 import Button from "../Button";
 import PersonIcon from "@mui/icons-material/Person";
