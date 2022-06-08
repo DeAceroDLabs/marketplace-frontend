@@ -23,3 +23,16 @@
   padding: 0px;
   margin-top: 10px;
 }
+
+.suscribe {
+  width: 100%;
+  height: 42px;
+  background-color: colors.$color-background-01;
+  border: none;
+  border-radius: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: colors.$accent;
+  font-size: typography.$body-m-size;
+}

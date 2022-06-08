@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
@@ -21,7 +21,11 @@ const Footer: React.FC = () => {
         </div>
         <div className={styles.email}>
           <input placeholder="Escribe tu correo electónico" type="text" />
-          <button>Suscribete</button>
+          <div className={styles["button-container"]}>
+            <Button color="suscribe" action={() => navigate("/")}>
+              Suscribete
+            </Button>
+          </div>
         </div>
       </div>
       <div className={styles["info-white-container"]}>

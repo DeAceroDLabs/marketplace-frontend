@@ -2,7 +2,7 @@ import styles from "./Button.module.scss";
 
 interface ButtonProps {
   children?: React.ReactNode;
-  color?: "primary" | "transparent" | "transparent-black";
+  color?: "primary" | "transparent" | "transparent-black" | "suscribe";
   action: () => void;
 }
 
