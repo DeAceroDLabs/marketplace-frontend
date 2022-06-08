@@ -38,13 +38,8 @@
         border-radius: 8px;
       }
 
-      button {
+      .button-container {
         width: 50%;
-        background-color: colors.$color-background-01;
-        border: none;
-        border-radius: 80px;
-        color: colors.$accent;
-        font-size: typography.$body-m-size;
       }
 
     }
