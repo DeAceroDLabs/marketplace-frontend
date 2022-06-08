@@ -4,9 +4,165 @@ exports[`Footer renders Footer without problem 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
-    <div />
+    <div>
+      <div
+        class="footer"
+      >
+        <div
+          class="subscribing"
+        >
+          <div
+            class="text"
+          >
+            Sé el primero en enterarte de ofertas y novedades. Compártenos tu correo y te mantendremos al tanto de todo.
+          </div>
+          <div
+            class="email"
+          >
+            <input
+              placeholder="Escribe tu correo electónico"
+              type="text"
+            />
+            <div
+              class="button-container"
+            >
+              <button
+                class="button suscribe"
+              >
+                Suscribete
+              </button>
+            </div>
+          </div>
+        </div>
+        <div
+          class="info-white-container"
+        >
+          <div
+            class="info-text"
+          >
+            <div
+              class="acerca-de"
+            >
+              <b>
+                Acerca de
+              </b>
+              <button
+                class="button transparent-black"
+              >
+                Conócenos
+              </button>
+              <button
+                class="button transparent-black"
+              >
+                Ayuda
+              </button>
+            </div>
+            <div
+              class="contacto"
+            >
+              <b>
+                Contacto
+              </b>
+              <button
+                class="button transparent-black"
+              >
+                Contactar soporte
+              </button>
+              <button
+                class="button transparent-black"
+              >
+                Preguntas frecuentes
+              </button>
+              <button
+                class="button transparent-black"
+              >
+                Politicas y condiciones
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>,
-  "container": <div />,
+  "container": <div>
+    <div
+      class="footer"
+    >
+      <div
+        class="subscribing"
+      >
+        <div
+          class="text"
+        >
+          Sé el primero en enterarte de ofertas y novedades. Compártenos tu correo y te mantendremos al tanto de todo.
+        </div>
+        <div
+          class="email"
+        >
+          <input
+            placeholder="Escribe tu correo electónico"
+            type="text"
+          />
+          <div
+            class="button-container"
+          >
+            <button
+              class="button suscribe"
+            >
+              Suscribete
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="info-white-container"
+      >
+        <div
+          class="info-text"
+        >
+          <div
+            class="acerca-de"
+          >
+            <b>
+              Acerca de
+            </b>
+            <button
+              class="button transparent-black"
+            >
+              Conócenos
+            </button>
+            <button
+              class="button transparent-black"
+            >
+              Ayuda
+            </button>
+          </div>
+          <div
+            class="contacto"
+          >
+            <b>
+              Contacto
+            </b>
+            <button
+              class="button transparent-black"
+            >
+              Contactar soporte
+            </button>
+            <button
+              class="button transparent-black"
+            >
+              Preguntas frecuentes
+            </button>
+            <button
+              class="button transparent-black"
+            >
+              Politicas y condiciones
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
   "findAllByDisplayValue": [Function],
