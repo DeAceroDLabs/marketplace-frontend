@@ -10,6 +10,14 @@ jest.mock("react-router-dom", () => ({
   useNavigate: () => mockedUsedNavigate,
 }));
 
+jest.mock("react-hook-form", () => ({
+  ...jest.requireActual("react-hook-form"),
+  useFormContext: () => ({
+    register: () => jest.fn(),
+    handleSubmit: () => jest.fn(),
+  }),
+}));
+
 describe("Login", () => {
   it("loads login without exploding", () => {
     const view = render(
@@ -27,12 +35,20 @@ describe("Login", () => {
       </BrowserRouter>
     );
 
-    const input = screen.getByPlaceholderText("username");
-    fireEvent.change(input, {
+    const username = screen.getByPlaceholderText("Username");
+    fireEvent.change(username, {
       target: { value: "mock_username" },
     });
     await waitFor(() => {
-      expect((input as HTMLInputElement).value).toBe("mock_username");
+      expect((username as HTMLInputElement).value).toBe("mock_username");
+    });
+
+    const password = screen.getByPlaceholderText("Password");
+    fireEvent.change(password, {
+      target: { value: "mock_password" },
+    });
+    await waitFor(() => {
+      expect((password as HTMLInputElement).value).toBe("mock_password");
     });
 
     const loginButton = screen.getByRole("button");
