@@ -5,7 +5,6 @@ import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import Suscribing from "./Suscribing";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +20,6 @@ const Footer: React.FC = () => {
 
   return (
     <div className={styles.footer}>
-      <Suscribing />
       <div className={styles["info-white-container"]}>
         <div className={styles["info-text"]}>
           <div className={styles["acerca-de"]}>
