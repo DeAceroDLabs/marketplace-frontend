@@ -79,6 +79,24 @@ Object {
                 Politicas y condiciones
               </button>
             </div>
+            <div
+              class="popup"
+              id="myPopup"
+            >
+              <b>
+                Soporte
+              </b>
+              <div
+                class="popup-text"
+              >
+                <p>
+                  Envianos tus dudas a: 
+                </p>
+                <p>
+                  ejemplo@correo.com 
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -158,6 +176,24 @@ Object {
             >
               Politicas y condiciones
             </button>
+          </div>
+          <div
+            class="popup"
+            id="myPopup"
+          >
+            <b>
+              Soporte
+            </b>
+            <div
+              class="popup-text"
+            >
+              <p>
+                Envianos tus dudas a: 
+              </p>
+              <p>
+                ejemplo@correo.com 
+              </p>
+            </div>
           </div>
         </div>
       </div>

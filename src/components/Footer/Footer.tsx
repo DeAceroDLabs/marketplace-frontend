@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
@@ -7,6 +7,10 @@ import styles from "./Footer.module.scss";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
+  const [isActive, setActive] = useState(false);
+  const toggleClass = () => {
+    setActive(!isActive);
+  };
 
   if (!username) {
     return null;
@@ -44,10 +48,7 @@ const Footer: React.FC = () => {
           </div>
           <div className={styles.contacto}>
             <b>Contacto</b>
-            <Button
-              color="transparent-black"
-              action={() => navigate("/soporte")}
-            >
+            <Button color="transparent-black" action={() => toggleClass()}>
               Contactar soporte
             </Button>
             <Button
@@ -62,6 +63,13 @@ const Footer: React.FC = () => {
             >
               Politicas y condiciones
             </Button>
+          </div>
+          <div className={ isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]} id="myPopup">
+            <b>Soporte</b>
+            <div className={styles["popup-text"]}>
+              <p>Envianos tus dudas a: </p>
+              <p>ejemplo@correo.com </p>
+            </div>
           </div>
         </div>
       </div>
