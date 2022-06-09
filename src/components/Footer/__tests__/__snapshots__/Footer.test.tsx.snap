@@ -91,9 +91,9 @@ Object {
                   <div
                     class="copy-email"
                   >
-                    <a>
+                    <p>
                       ejemplo@correo.com
-                    </a>
+                    </p>
                   </div>
                 </button>
               </div>
@@ -190,9 +190,9 @@ Object {
                 <div
                   class="copy-email"
                 >
-                  <a>
+                  <p>
                     ejemplo@correo.com
-                  </a>
+                  </p>
                 </div>
               </button>
             </div>
