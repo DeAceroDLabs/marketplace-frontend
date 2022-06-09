@@ -1,27 +1,20 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { FieldValues } from "react-hook-form";
 import UserContext from "config/userContext";
+import { loginForm } from "forms/Login";
 import Section from "components/common/Section";
 import View from "components/common/View";
-import Field from "components/Form/Field";
-import { Form } from "forms/form.types";
-import { loginForm } from "forms/Login";
-import {
-  FieldValues,
-  FormProvider,
-  SubmitHandler,
-  useForm,
-} from "react-hook-form";
+import Form from "components/Form";
+import BgSection from "components/common/BgSection";
+import styles from "./Login.module.scss";
 
 const Login: React.FunctionComponent = () => {
   const navigate = useNavigate();
-  const form = useForm();
   const { username, setUser } = useContext(UserContext);
-  const [elements, setElements] = useState({} as Form);
-  const { fields } = elements ?? {};
 
-  const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    const username = data["login_username"];
+  const onSubmit = (data: FieldValues) => {
+    const username = data["username"];
     setUser(username);
     navigate(`../`);
   };
@@ -32,24 +25,25 @@ const Login: React.FunctionComponent = () => {
     }
   }, [username, navigate]);
 
-  useEffect(() => {
-    setElements(loginForm);
-  }, []);
-
-  const formFields = fields
-    ? fields.map((field) => <Field {...field} key={field.name}></Field>)
-    : null;
+  const loginTitle = (
+    <div className={styles.title}>Ingresa a la Plataforma</div>
+  );
 
   return (
     <View>
-      <Section title="Login">
-        <FormProvider {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-            <div>{formFields}</div>
-            <button type="submit">Log In</button>
-          </form>
-        </FormProvider>
+      <Section title={loginTitle}>
+        <p className={styles.text}>
+          Ingresa tus datos para acceder a la plataforma
+        </p>
+        <div className={styles["form-container"]}>
+          <Form
+            inputForm={loginForm}
+            onSubmit={onSubmit}
+            submitTitle={"Ingresar"}
+          />
+        </div>
       </Section>
+      <BgSection color="primary" orientation="vertical" position="right" />
     </View>
   );
 };

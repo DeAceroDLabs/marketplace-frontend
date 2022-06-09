@@ -35,7 +35,7 @@ describe("Login", () => {
       </BrowserRouter>
     );
 
-    const username = screen.getByPlaceholderText("Username");
+    const username = screen.getByPlaceholderText("Usuario");
     fireEvent.change(username, {
       target: { value: "mock_username" },
     });
@@ -43,7 +43,7 @@ describe("Login", () => {
       expect((username as HTMLInputElement).value).toBe("mock_username");
     });
 
-    const password = screen.getByPlaceholderText("Password");
+    const password = screen.getByPlaceholderText("Contraseña");
     fireEvent.change(password, {
       target: { value: "mock_password" },
     });
