@@ -73,7 +73,7 @@ const Footer: React.FC = () => {
               >
                 <CopyToClipboard text={"ejemplo@correo.com"}>
                   <div className={styles["copy-email"]}>
-                    <a>ejemplo@correo.com</a>
+                    <p>ejemplo@correo.com</p>
                   </div>
                 </CopyToClipboard>
               </Button>
