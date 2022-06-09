@@ -1,6 +1,8 @@
+import Button from "components/common/Button";
 import RenderForm from "components/RenderForm";
 import { Form as FormType } from "forms/form.types";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import styles from "./Form.module.scss";
 
 interface FormProps {
   inputForm: FormType;
@@ -12,10 +14,17 @@ const Form: React.FC<FormProps> = ({ inputForm, onSubmit, submitTitle }) => {
   const form = useForm();
   return (
     <FormProvider {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)}>
-        <RenderForm inputForm={inputForm} />
-        <button type="submit">{submitTitle}</button>
-      </form>
+      <div>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className={styles["form-container"]}
+        >
+          <RenderForm inputForm={inputForm} />
+          <Button color="primary" action={() => onSubmit}>
+            {submitTitle}
+          </Button>
+        </form>
+      </div>
     </FormProvider>
   );
 };

@@ -1,5 +1,6 @@
 import { Field as FieldProps } from "forms/form.types";
 import TextField from "../TextField";
+import styles from "./Field.module.scss";
 
 const Field: React.FC<FieldProps> = ({
   name,
@@ -18,12 +19,16 @@ const Field: React.FC<FieldProps> = ({
     placeholder,
   };
 
-  switch (type) {
-    case "text" || "password":
-      return <TextField {...props} />;
-    default:
-      return null;
-  }
+  return (
+    <div className={styles["field-container"]}>
+      {
+        {
+          text: <TextField {...props} />,
+          password: <TextField {...props} />,
+        }[type]
+      }
+    </div>
+  );
 };
 
 export default Field;

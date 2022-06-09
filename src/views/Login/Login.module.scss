@@ -1,0 +1,15 @@
+@use "styles/_typography";
+@use "styles/_colors";
+.title {
+    font-size: typography.$header-l-size;
+}
+
+.text {
+    font-size: typography.$body-m-size;
+    color: colors.$color-text-disabled;
+}
+
+.form-container {
+    width: 80%;
+    margin-top: 70px;
+}

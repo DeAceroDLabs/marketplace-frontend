@@ -21,42 +21,86 @@ Object {
               class="margin-title"
             >
                
-              Login
+              <div
+                class="title"
+              >
+                Ingresa a la Plataforma
+              </div>
                
             </div>
             <div
               class="body"
             >
                
-              <form>
+              <p
+                class="text"
+              >
+                Ingresa tus datos para acceder a la plataforma
+              </p>
+              <div
+                class="form-container"
+              >
                 <div>
-                  <label>
-                    Username
-                  </label>
-                  <input
-                    mock="[object Object]"
-                    placeholder="Username"
-                    type="text"
-                    value=""
-                  />
-                  <label>
-                    Password
-                  </label>
-                  <input
-                    mock="[object Object]"
-                    placeholder="Password"
-                    type="text"
-                    value=""
-                  />
+                  <form
+                    class="form-container"
+                  >
+                    <div
+                      class="form-container"
+                    >
+                      <div
+                        class="field-container"
+                      >
+                        <div
+                          class="container"
+                        >
+                          <label>
+                            Usuario
+                          </label>
+                          <input
+                            class="input"
+                            mock="[object Object]"
+                            placeholder="Usuario"
+                            type="text"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                      <div
+                        class="field-container"
+                      >
+                        <div
+                          class="container"
+                        >
+                          <label>
+                            Contraseña
+                          </label>
+                          <input
+                            class="input"
+                            mock="[object Object]"
+                            placeholder="Contraseña"
+                            type="password"
+                            value=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      class="button primary"
+                    >
+                      Ingresar
+                    </button>
+                  </form>
                 </div>
-                <button
-                  type="submit"
-                >
-                  Log In
-                </button>
-              </form>
+              </div>
                
             </div>
+          </div>
+          <div
+            class="container vertical"
+          >
+            <div
+              class="content primary right"
+            />
           </div>
         </div>
       </div>
@@ -84,42 +128,86 @@ Object {
             class="margin-title"
           >
              
-            Login
+            <div
+              class="title"
+            >
+              Ingresa a la Plataforma
+            </div>
              
           </div>
           <div
             class="body"
           >
              
-            <form>
+            <p
+              class="text"
+            >
+              Ingresa tus datos para acceder a la plataforma
+            </p>
+            <div
+              class="form-container"
+            >
               <div>
-                <label>
-                  Username
-                </label>
-                <input
-                  mock="[object Object]"
-                  placeholder="Username"
-                  type="text"
-                  value=""
-                />
-                <label>
-                  Password
-                </label>
-                <input
-                  mock="[object Object]"
-                  placeholder="Password"
-                  type="text"
-                  value=""
-                />
+                <form
+                  class="form-container"
+                >
+                  <div
+                    class="form-container"
+                  >
+                    <div
+                      class="field-container"
+                    >
+                      <div
+                        class="container"
+                      >
+                        <label>
+                          Usuario
+                        </label>
+                        <input
+                          class="input"
+                          mock="[object Object]"
+                          placeholder="Usuario"
+                          type="text"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                    <div
+                      class="field-container"
+                    >
+                      <div
+                        class="container"
+                      >
+                        <label>
+                          Contraseña
+                        </label>
+                        <input
+                          class="input"
+                          mock="[object Object]"
+                          placeholder="Contraseña"
+                          type="password"
+                          value=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="button primary"
+                  >
+                    Ingresar
+                  </button>
+                </form>
               </div>
-              <button
-                type="submit"
-              >
-                Log In
-              </button>
-            </form>
+            </div>
              
           </div>
+        </div>
+        <div
+          class="container vertical"
+        >
+          <div
+            class="content primary right"
+          />
         </div>
       </div>
     </div>

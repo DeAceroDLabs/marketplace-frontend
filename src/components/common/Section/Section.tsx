@@ -1,7 +1,7 @@
 import styles from "./Section.module.scss";
 
 interface SectionProps {
-  title?: string;
+  title?: string | React.ReactNode;
   children: React.ReactNode;
   variant: "margin-title" | "no-margin-title";
 }

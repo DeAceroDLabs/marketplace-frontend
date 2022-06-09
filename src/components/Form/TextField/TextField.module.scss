@@ -1,0 +1,13 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
+.input {
+    height: 40px;
+    border: solid 1px #666666;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 9px 16px;
+}
