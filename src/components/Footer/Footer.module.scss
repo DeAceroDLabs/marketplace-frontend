@@ -47,18 +47,60 @@
   }
 
   .info-white-container {
-    background-color: colors.$color-background-01;
+    background-color: colors.$color-background-02;
     height: 189px;
     width: 100%;
     padding: 20px;
-
   }
 
   .info-text {
     display: flex;
     justify-content: space-around;
-    width: 40%;
+    width: 70%;
     margin-top: 15px;
+  }
+
+  .popup {
+    visibility: hidden;
+    width: 374px;
+    height: 211px;
+    background-color: colors.$color-background-01;
+    border-radius: 4px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    top: -47px;
+
+    .popup-text {
+      margin-left: 20px;
+
+    }
+  }
+
+  .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
 }
