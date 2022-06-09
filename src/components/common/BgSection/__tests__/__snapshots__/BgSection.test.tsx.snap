@@ -5,7 +5,7 @@ exports[`renders BgSection with no issue 1`] = `
   className="container horizontal"
 >
   <div
-    className="content"
+    className="content transparent left"
   />
 </div>
 `;
