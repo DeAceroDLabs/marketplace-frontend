@@ -1,0 +1,39 @@
+@use "styles/colors";
+@use 'styles/typography';
+
+.subscribing {
+  height: 100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 00px 20px 20px;
+
+  .text {
+    padding: 20px;
+    align-items: center;
+    color: colors.$color-background-01;
+  }
+
+  .email {
+    width: 55%;
+    display: flex;
+    justify-content: space-evenly;
+
+    input {
+      width: 40%;
+      max-width: 289px;
+      background-color: colors.$color-background-01;
+      border: none;
+      height: 42px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .button-container {
+      width: 50%;
+    }
+
+  }
+
+}

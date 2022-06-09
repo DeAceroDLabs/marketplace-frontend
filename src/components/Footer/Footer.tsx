@@ -5,6 +5,7 @@ import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Suscribing from "./Suscribing";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -20,20 +21,7 @@ const Footer: React.FC = () => {
 
   return (
     <div className={styles.footer}>
-      <div className={styles.subscribing}>
-        <div className={styles.text}>
-          Sé el primero en enterarte de ofertas y novedades. Compártenos tu
-          correo y te mantendremos al tanto de todo.
-        </div>
-        <div className={styles.email}>
-          <input placeholder="Escribe tu correo electónico" type="text" />
-          <div className={styles["button-container"]}>
-            <Button color="suscribe" action={() => navigate("/")}>
-              Suscribete
-            </Button>
-          </div>
-        </div>
-      </div>
+      <Suscribing />
       <div className={styles["info-white-container"]}>
         <div className={styles["info-text"]}>
           <div className={styles["acerca-de"]}>
