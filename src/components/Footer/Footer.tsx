@@ -3,6 +3,8 @@ import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
+import CloseIcon from "@mui/icons-material/Close";
+import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -64,11 +66,30 @@ const Footer: React.FC = () => {
               Politicas y condiciones
             </Button>
           </div>
-          <div className={ isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]} id="myPopup">
+          <div
+            className={
+              isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]
+            }
+            id="myPopup"
+          >
             <b>Soporte</b>
+            <div className={styles.close}>
+              <Button color="transparent-black" action={() => toggleClass()}>
+                <CloseIcon />
+              </Button>
+            </div>
             <div className={styles["popup-text"]}>
               <p>Envianos tus dudas a: </p>
-              <p>ejemplo@correo.com </p>
+              <CopyToClipboard text={"ejemplo@correo.com"}>
+                <Button
+                  color="transparent"
+                  action={() => window.alert("Correo copiado")}
+                >
+                  <div className={styles["copy-email"]}>
+                    <a>ejemplo@correo.com</a>
+                  </div>
+                </Button>
+              </CopyToClipboard>
             </div>
           </div>
         </div>
