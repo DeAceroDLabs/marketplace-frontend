@@ -8,47 +8,12 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-
-  .subscribing {
-    height: 100px;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 20px;
-
-    .text {
-      padding: 20px;
-      align-items: center;
-      color: colors.$color-background-01;
-    }
-
-    .email {
-      width: 55%;
-      display: flex;
-      justify-content: space-evenly;
-
-      input {
-        width: 40%;
-        max-width: 289px;
-        background-color: colors.$color-background-01;
-        border: none;
-        height: 42px;
-        padding: 10px;
-        border-radius: 8px;
-      }
-
-      .button-container {
-        width: 50%;
-      }
-
-    }
-
-  }
+  justify-content: center;
+  align-items: center;
 
   .info-white-container {
     background-color: colors.$color-background-02;
-    height: 189px;
+    height: 170px;
     width: 100%;
     padding: 20px;
   }
@@ -71,7 +36,8 @@
     left: 40%;
     bottom: 10px;
     box-shadow: 0px 8px 8px rgba(54, 54, 54, 0.85);
-    .close{
+
+    .close {
       position: relative;
       top: -40px;
       left: 96%;
@@ -79,7 +45,8 @@
 
     .popup-text {
       margin-left: 20px;
-      .copy-email{
+
+      .copy-email {
         color: colors.$accent;
         font-size: typography.$body-m-size;
       }
