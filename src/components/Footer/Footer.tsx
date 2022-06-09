@@ -80,16 +80,17 @@ const Footer: React.FC = () => {
             </div>
             <div className={styles["popup-text"]}>
               <p>Envianos tus dudas a: </p>
-              <CopyToClipboard text={"ejemplo@correo.com"}>
-                <Button
-                  color="transparent"
-                  action={() => window.alert("Correo copiado")}
-                >
+
+              <Button
+                color="transparent"
+                action={() => window.alert("Correo copiado")}
+              >
+                <CopyToClipboard text={"ejemplo@correo.com"}>
                   <div className={styles["copy-email"]}>
                     <a>ejemplo@correo.com</a>
                   </div>
-                </Button>
-              </CopyToClipboard>
+                </CopyToClipboard>
+              </Button>
             </div>
           </div>
         </div>
