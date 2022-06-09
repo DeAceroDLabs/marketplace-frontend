@@ -3,30 +3,19 @@ import { MemoryRouter } from "react-router-dom";
 import Footer from "../Footer";
 import { UserProvider } from "config/userContext";
 
-const mockedUsedNavigate = jest.fn();
 const mockUSer = {
   username: "user",
   setUser: jest.fn(),
 };
 
+const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
   ...(jest.requireActual("react-router-dom") as any),
   useNavigate: () => mockedUsedNavigate,
 }));
 
 describe("Footer", () => {
-  it("renders Footer without problem", async () => {
-    const view = render(
-      <UserProvider value={mockUSer}>
-        <MemoryRouter>
-          <Footer />
-        </MemoryRouter>
-      </UserProvider>
-    );
-    expect(view).toMatchSnapshot();
-  });
-
-  it("renders contact on Footer without problem", async () => {
+  const renderView = () =>
     render(
       <UserProvider value={mockUSer}>
         <MemoryRouter>
@@ -34,23 +23,43 @@ describe("Footer", () => {
         </MemoryRouter>
       </UserProvider>
     );
-    await waitFor (() => {
-      const contact = screen.getByText(/Contacto/);
-      expect(contact).toBeInTheDocument();
+  it("renders Footer without problem", async () => {
+    expect(renderView()).toMatchSnapshot();
+  });
+
+  it("getToKnowUs button useNavigate", async () => {
+    renderView();
+    const getToKnowUsButton = screen.getAllByRole("button")[0];
+    fireEvent.click(getToKnowUsButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
     });
   });
 
-  it("renders about on Footer without problem", async () => {
-    render(
-      <UserProvider value={mockUSer}>
-        <MemoryRouter>
-          <Footer />
-        </MemoryRouter>
-      </UserProvider>
-    );
-    await waitFor (() => {
-      const about = screen.getByText("Acerca de");
-      expect(about).toBeInTheDocument();
+  it("help button useNavigate", async () => {
+    renderView();
+    const helpButton = screen.getAllByRole("button")[1];
+    fireEvent.click(helpButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
+    });
+  });
+
+  it("questions button useNavigate", async () => {
+    renderView();
+    const questionButton = screen.getAllByRole("button")[3];
+    fireEvent.click(questionButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toHaveBeenCalled();
+    });
+  });
+
+  it("politics button useNavigate", async () => {
+    renderView();
+    const politicsButton = screen.getAllByRole("button")[4];
+    fireEvent.click(politicsButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
     });
   });
 });
