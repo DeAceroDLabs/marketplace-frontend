@@ -18,4 +18,17 @@ describe("Suscribing", () => {
     );
     expect(view).toMatchSnapshot();
   });
+
+  it("useNavigate", async () => {
+    render(
+      <MemoryRouter>
+        <Suscribing />
+      </MemoryRouter>
+    );
+    const SuscribeButton = screen.getByRole("button");
+    fireEvent.click(SuscribeButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
+    });
+  });
 });
