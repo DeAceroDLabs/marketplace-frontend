@@ -80,7 +80,7 @@ Object {
             <div>
               Hola, 
               <b>
-                user
+                mock_user
               </b>
             </div>
           </button>
@@ -183,7 +183,7 @@ Object {
           <div>
             Hola, 
             <b>
-              user
+              mock_user
             </b>
           </div>
         </button>
@@ -315,7 +315,7 @@ Object {
             <div>
               Hola, 
               <b>
-                user
+                mock_user
               </b>
             </div>
           </button>
@@ -390,7 +390,7 @@ Object {
           <div>
             Hola, 
             <b>
-              user
+              mock_user
             </b>
           </div>
         </button>

@@ -16,38 +16,38 @@ const mockUSer = {
 };
 
 describe("Header", () => {
-  const renderView = () =>
-    render(
+  const mockUSer = {
+    username: "mock_user",
+    setUser: jest.fn(),
+  };
+  const setup = (route: string[]) => {
+    return render(
       <UserProvider value={mockUSer}>
-        <MemoryRouter>
+        <MemoryRouter initialEntries={route}>
           <Header />
         </MemoryRouter>
       </UserProvider>
     );
+  };
 
   it("renders Header without problem", () => {
-    expect(renderView()).toMatchSnapshot();
+    const view = setup(["/"]);
+    expect(view).toMatchSnapshot();
   });
 
   it("renders Header with color being on a different page", () => {
-    const view = render(
-      <UserProvider value={mockUSer}>
-        <MemoryRouter initialEntries={["/search/mock"]}>
-          <Header />
-        </MemoryRouter>
-      </UserProvider>
-    );
+    const view = setup(["/search/mock"]);
     expect(view).toMatchSnapshot();
   });
 
   it("does not display search bar on home screen", () => {
-    renderView();
+    setup(["/"]);
     const searchBar = screen.queryByPlaceholderText("¿Qué estás buscando?");
     expect(searchBar).not.toBeInTheDocument();
   });
 
   it("home button useNavigate", async () => {
-    renderView();
+    setup(["/"]);
     const homeButton = screen.getAllByRole("button")[0];
     fireEvent.click(homeButton);
     await waitFor(() => {
@@ -56,7 +56,7 @@ describe("Header", () => {
   });
 
   it("login button useNavigate", async () => {
-    renderView();
+    setup(["/"]);
     const loginButton = screen.getAllByRole("button")[1];
     fireEvent.click(loginButton);
     await waitFor(() => {
