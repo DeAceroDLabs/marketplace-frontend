@@ -24,10 +24,7 @@ const Footer: React.FC = () => {
         <div className={styles["info-text"]}>
           <div className={styles["acerca-de"]}>
             <b>Acerca de</b>
-            <Button
-              color="transparent-black"
-              action={() => navigate("/conocenos")}
-            >
+            <Button color="transparent-black" action={() => navigate("/conocenos")}>
               Conócenos
             </Button>
             <Button color="transparent-black" action={() => navigate("/ayuda")}>
@@ -39,25 +36,14 @@ const Footer: React.FC = () => {
             <Button color="transparent-black" action={() => toggleClass()}>
               Contactar soporte
             </Button>
-            <Button
-              color="transparent-black"
-              action={() => navigate("/preguntas")}
-            >
+            <Button color="transparent-black" action={() => navigate("/preguntas")}>
               Preguntas frecuentes
             </Button>
-            <Button
-              color="transparent-black"
-              action={() => navigate("/politicas")}
-            >
+            <Button color="transparent-black" action={() => navigate("/politicas")}>
               Politicas y condiciones
             </Button>
           </div>
-          <div
-            className={
-              isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]
-            }
-            id="myPopup"
-          >
+          <div className={ isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]}>
             <b>Soporte</b>
             <div className={styles.close}>
               <Button color="transparent-black" action={() => toggleClass()}>
@@ -66,11 +52,7 @@ const Footer: React.FC = () => {
             </div>
             <div className={styles["popup-text"]}>
               <p>Envianos tus dudas a: </p>
-
-              <Button
-                color="transparent"
-                action={() => window.alert("Correo copiado")}
-              >
+              <Button color="transparent" action={() => window.alert("Correo copiado")}>
                 <CopyToClipboard text={"ejemplo@correo.com"}>
                   <div className={styles["copy-email"]}>
                     <p>ejemplo@correo.com</p>
