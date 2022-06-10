@@ -5,7 +5,7 @@ exports[`renders Section with no issue 1`] = `
   className="section"
 >
   <div
-    className="title"
+    className="undefined"
   >
      
      
