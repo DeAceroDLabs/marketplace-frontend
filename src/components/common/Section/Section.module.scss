@@ -5,7 +5,12 @@
   width: 90%;
 }
 
-.title {
+.no-margin-title {
+  font-size: typography.$header-m-size;
+  font-weight: typography.$header-m-weight;
+}
+
+.margin-title {
   font-size: typography.$header-m-size;
   font-weight: typography.$header-m-weight;
   margin-bottom: 32px;

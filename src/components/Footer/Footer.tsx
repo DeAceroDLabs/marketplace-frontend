@@ -5,6 +5,7 @@ import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import Popup from "components/common/Popup";
 import { CopyToClipboard } from "react-copy-to-clipboard";
+import Section from "components/common/Section";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -22,17 +23,15 @@ const Footer: React.FC = () => {
     <div className={styles.footer}>
       <div className={styles["info-white-container"]}>
         <div className={styles["info-text"]}>
-          <div className={styles["acerca-de"]}>
-            <b>Acerca de</b>
+          <Section title="Acerca de" variant="no-margin-title">
             <Button color="transparent-black" action={() => navigate("/conocenos")}>
               Conócenos
             </Button>
             <Button color="transparent-black" action={() => navigate("/ayuda")}>
               Ayuda
             </Button>
-          </div>
-          <div className={styles.contacto}>
-            <b>Contacto</b>
+          </Section>
+          <Section title="Contacto" variant="no-margin-title">
             <Button color="transparent-black" action={() => toggleClass()}>
               Contactar soporte
             </Button>
@@ -42,7 +41,7 @@ const Footer: React.FC = () => {
             <Button color="transparent-black" action={() => navigate("/politicas")}>
               Politicas y condiciones
             </Button>
-          </div>
+          </Section>
           {isActive && (
             <Popup title="Soporte" action={() => toggleClass()}>
               <div className={styles["popup-text"]}>

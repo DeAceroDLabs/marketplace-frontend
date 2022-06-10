@@ -78,7 +78,7 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <View header={homeHeader}>
-      <Section title="Catálogo de Productos">
+      <Section title="Catálogo de Productos" variant="margin-title">
         <Tabs
           options={categories}
           variant="secondary"

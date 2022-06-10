@@ -22,7 +22,7 @@ const Login: React.FunctionComponent = () => {
 
   return (
     <View>
-      <Section title="Login">
+      <Section title="Login" variant="margin-title">
         <form onSubmit={submitUser}>
           <input
             value={user}
