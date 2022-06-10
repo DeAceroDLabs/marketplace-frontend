@@ -55,7 +55,6 @@ Object {
             </div>
             <div
               class="popup"
-              id="myPopup"
             >
               <b>
                 Soporte
@@ -154,7 +153,6 @@ Object {
           </div>
           <div
             class="popup"
-            id="myPopup"
           >
             <b>
               Soporte
