@@ -24,7 +24,7 @@ describe("Search", () => {
 
   it("renders when loading and then results", async () => {
     mockedAxios.post.mockResolvedValue({
-      data: [productsResponse],
+      data: productsResponse,
     });
     renderView();
     await waitFor(() => {
@@ -51,7 +51,7 @@ describe("Search", () => {
 
   it("renders the product cards if found products", async () => {
     mockedAxios.post.mockResolvedValue({
-      data: [productsResponse],
+      data: productsResponse,
     });
     renderView();
     await waitFor(() => {
@@ -62,7 +62,7 @@ describe("Search", () => {
 
   it("renders loading cards and then products", async () => {
     mockedAxios.post.mockResolvedValue({
-      data: [productsResponse],
+      data: productsResponse,
     });
     renderView();
     await waitFor(() => {

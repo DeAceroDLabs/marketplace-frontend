@@ -50,6 +50,7 @@ const Search: React.FunctionComponent = () => {
         />
       );
     });
+
     return (
       <View>
         <div className={styles.info}>

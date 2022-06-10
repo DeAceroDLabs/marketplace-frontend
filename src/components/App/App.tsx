@@ -6,7 +6,6 @@ import Search from "views/Search";
 import Login from "views/Login";
 import Header from "components/Header";
 import Footer from "components/Footer";
-import Login from "components/Login";
 import ProtectedRoute from "components/ProtectedRoute";
 
 const App = () => {
