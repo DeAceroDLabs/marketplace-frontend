@@ -3,7 +3,7 @@ import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
-import CloseIcon from "@mui/icons-material/Close";
+import Popup from "components/common/Popup";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
 const Footer: React.FC = () => {
@@ -43,24 +43,20 @@ const Footer: React.FC = () => {
               Politicas y condiciones
             </Button>
           </div>
-          <div className={ isActive ? `${styles["popup"]} ${styles.show}` : styles["popup"]}>
-            <b>Soporte</b>
-            <div className={styles.close}>
-              <Button color="transparent-black" action={() => toggleClass()}>
-                <CloseIcon />
-              </Button>
-            </div>
-            <div className={styles["popup-text"]}>
-              <p>Envianos tus dudas a: </p>
-              <Button color="transparent" action={() => window.alert("Correo copiado")}>
-                <CopyToClipboard text={"ejemplo@correo.com"}>
-                  <div className={styles["copy-email"]}>
-                    <p>ejemplo@correo.com</p>
-                  </div>
-                </CopyToClipboard>
-              </Button>
-            </div>
-          </div>
+          {isActive && (
+            <Popup title="Soporte" action={() => toggleClass()}>
+              <div className={styles["popup-text"]}>
+                <p>Envianos tus dudas a: </p>
+                <Button color="transparent" action={() => window.alert("Correo copiado")}>
+                  <CopyToClipboard text={"ejemplo@correo.com"}>
+                    <div className={styles["copy-email"]}>
+                      <p>ejemplo@correo.com</p>
+                    </div>
+                  </CopyToClipboard>
+                </Button>
+              </div>
+            </Popup>
+          )}
         </div>
       </div>
     </div>

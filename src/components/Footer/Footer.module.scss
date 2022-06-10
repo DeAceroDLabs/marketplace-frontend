@@ -25,59 +25,14 @@
     margin-top: 15px;
   }
 
-  .popup {
-    visibility: hidden;
-    width: 374px;
-    height: 211px;
-    background-color: colors.$color-background-01;
-    border-radius: 4px;
-    padding: 20px;
-    position: fixed;
-    left: 40%;
-    bottom: 10px;
-    box-shadow: 0px 8px 8px rgba(54, 54, 54, 0.85);
+  .popup-text {
+    margin-left: 20px;
 
-    .close {
-      position: relative;
-      top: -40px;
-      left: 96%;
+    .copy-email {
+      color: colors.$accent;
+      font-size: typography.$body-m-size;
     }
 
-    .popup-text {
-      margin-left: 20px;
-
-      .copy-email {
-        color: colors.$accent;
-        font-size: typography.$body-m-size;
-      }
-
-    }
-  }
-
-  .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
-  }
-
-  @-webkit-keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
   }
 
 }
