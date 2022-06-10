@@ -14,7 +14,7 @@ const Suscribing: React.FC = () => {
       <div className={styles.email}>
         <input placeholder="Escribe tu correo electónico" type="text" />
         <div className={styles["button-container"]}>
-          <Button color="suscribe" action={() => navigate("/")}>
+          <Button color="white" action={() => navigate("/")}>
             Suscribete
           </Button>
         </div>
