@@ -3,12 +3,13 @@ import styles from "./Section.module.scss";
 interface SectionProps {
   title?: string;
   children: React.ReactNode;
+  variant: "margin-title" | "no-margin-title";
 }
 
-const Section: React.FC<SectionProps> = ({ title, children }) => {
+const Section: React.FC<SectionProps> = ({ title, children, variant }) => {
   return (
     <div className={styles.section}>
-      <div className={styles.title}> {title} </div>
+      <div className={styles[variant]}> {title} </div>
       <div className={styles.body}> {children} </div>
     </div>
   );
