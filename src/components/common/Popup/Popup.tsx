@@ -19,10 +19,10 @@ const Popup: React.FC<PopupProps> = ({
     <div className={styles[color]} onClick={action}>
       <b>{title}</b>
       <div className={styles.close}>
-              <Button color="transparent-black" action={action}>
-                <CloseIcon />
-              </Button>
-            </div>
+        <Button color="transparent-black" action={action}>
+          <CloseIcon />
+        </Button>
+      </div>
       {children}
     </div>
   );
