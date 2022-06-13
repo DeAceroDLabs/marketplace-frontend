@@ -7,7 +7,7 @@ exports[`renders Card with no issue 1`] = `
     role="group"
   >
     <img
-      alt="card"
+      alt="Mock Title"
       className="cardImage"
       src="./mock/image/route"
     />
