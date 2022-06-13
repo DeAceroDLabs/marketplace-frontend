@@ -55,7 +55,7 @@ describe("Search", () => {
     });
     renderView();
     await waitFor(() => {
-      const altImg = screen.getByAltText(/card/i);
+      const altImg = screen.getByAltText(/category 1 product 1/i);
       expect(altImg).toBeInTheDocument();
     });
   });
@@ -71,7 +71,7 @@ describe("Search", () => {
       );
     });
     await waitFor(() => {
-      const altImg = screen.getByAltText(/card/i);
+      const altImg = screen.getByAltText(/category 1 product 1/i);
       expect(altImg).toBeInTheDocument();
     });
   });
