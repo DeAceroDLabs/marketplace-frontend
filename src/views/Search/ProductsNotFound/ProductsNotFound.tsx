@@ -6,7 +6,7 @@ const Search: React.FunctionComponent = () => {
   return (
     <NotFound
       title="No encontramos un producto que coincida con tu búsqueda"
-      imgSrc="/not-found.jpg"
+      imgSrc="/product-not-found.jpg"
     >
       <div>
         Navega por las&nbsp;
