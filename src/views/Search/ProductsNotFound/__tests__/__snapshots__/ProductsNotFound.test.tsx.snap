@@ -8,7 +8,7 @@ exports[`renders ProductsNotFound with no issue 1`] = `
     <img
       alt="Not found img"
       className="image"
-      src="/not-found.jpg"
+      src="/product-not-found.jpg"
     />
     <div
       className="containerInfo"
