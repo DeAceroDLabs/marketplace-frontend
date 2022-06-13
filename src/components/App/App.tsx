@@ -4,6 +4,7 @@ import { UserProvider } from "config/userContext";
 import Home from "views/Home";
 import Search from "views/Search";
 import Login from "views/Login";
+import PageNotFound from "views/PageNotFound";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import ProtectedRoute from "components/ProtectedRoute";
@@ -21,6 +22,7 @@ const App = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/search/:query" element={<Search />}></Route>
+            <Route path='*' element={<PageNotFound />}></Route>
           </Route>
         </Routes>
         <Footer />
