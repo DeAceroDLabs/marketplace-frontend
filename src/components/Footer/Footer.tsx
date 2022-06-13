@@ -1,10 +1,9 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import Popup from "components/common/Popup";
-import { CopyToClipboard } from "react-copy-to-clipboard";
 import Section from "components/common/Section";
 
 const Footer: React.FC = () => {
@@ -45,14 +44,16 @@ const Footer: React.FC = () => {
           {isActive && (
             <Popup title="Soporte" action={() => toggleClass()}>
               <div className={styles["popup-text"]}>
-                <p>Envianos tus dudas a: </p>
-                <Button color="transparent" action={() => window.alert("Correo copiado")}>
-                  <CopyToClipboard text={"ejemplo@correo.com"}>
-                    <div className={styles["copy-email"]}>
-                      <p>ejemplo@correo.com</p>
-                    </div>
-                  </CopyToClipboard>
-                </Button>
+                <p>Envianos tus dudas a: </p>          
+                  <Link className={styles["copy-email"]}
+                    to='#'
+                    onClick={(e) => {
+                    window.location.href = "ejemplo@correo.com";
+                    e.preventDefault();
+                    }}
+                  >
+                  {"ejemplo@correo.com"}
+                  </Link>
               </div>
             </Popup>
           )}
