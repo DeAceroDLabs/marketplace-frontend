@@ -1,7 +1,7 @@
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import { Form as FormType } from "forms/form.types";
 import Button from "components/common/Button";
 import RenderForm from "components/RenderForm";
-import { Form as FormType } from "forms/form.types";
-import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import styles from "./Form.module.scss";
 
 interface FormProps {
@@ -12,6 +12,7 @@ interface FormProps {
 
 const Form: React.FC<FormProps> = ({ inputForm, onSubmit, submitTitle }) => {
   const form = useForm();
+
   return (
     <FormProvider {...form}>
       <div>
