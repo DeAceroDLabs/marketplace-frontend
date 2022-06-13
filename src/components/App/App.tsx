@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { UserProvider } from "config/userContext";
 import Home from "views/Home";
 import Search from "views/Search";
@@ -22,7 +22,8 @@ const App = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/search/:query" element={<Search />}></Route>
-            <Route path='*' element={<PageNotFound />}></Route>
+            <Route path="/404" element={<PageNotFound />}></Route>
+            <Route path="*" element={ <Navigate to="/404" /> } />
           </Route>
         </Routes>
         <Footer />
