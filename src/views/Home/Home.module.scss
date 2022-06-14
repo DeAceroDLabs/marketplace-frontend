@@ -1,35 +1,38 @@
 @use 'styles/colors';
 @use 'styles/typography';
-
 .header-title {
-  color: colors.$neutral-inverse;
-  font-size: typography.$header-m-size;
-  font-weight: typography.$header-m-weight;
-  z-index: 1;
+    color: colors.$neutral-inverse;
+    font-size: typography.$header-m-size;
+    font-weight: typography.$header-m-weight;
+    z-index: 1;
 }
 
 .header-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .header-content::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 19.38%, rgba(0, 0, 0, 0.3) 52.15%, rgba(0, 0, 0, 0.05) 88.61%);
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 19.38%, rgba(0, 0, 0, 0.3) 52.15%, rgba(0, 0, 0, 0.05) 88.61%);
+}
+
+.products-container {
+    width: fit-content;
+    margin: auto;
 }
 
 .see-more-container {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px 5%;
-
-  .see-more {
-    color: colors.$accent;
-  }
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 5%;
+    .see-more {
+        color: colors.$accent;
+    }
 }

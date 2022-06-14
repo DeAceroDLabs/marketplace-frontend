@@ -9,6 +9,7 @@ import { useParams } from "react-router-dom";
 import Card from "components/common/Card";
 import LoadingCard from "components/common/LoadingCard";
 import GridContainer from "components/common/GridContainer";
+import Section from "components/common/Section";
 
 const Search: React.FunctionComponent = () => {
   const [loading, setLoading] = useState(false);
@@ -30,10 +31,14 @@ const Search: React.FunctionComponent = () => {
     productsCards = <LoadingCard cards={12} variant="medium" />;
     return (
       <View>
-        <div className={styles.info}>
-          <div className={styles.query}>Cargando productos...</div>
-        </div>
-        <GridContainer>{productsCards}</GridContainer>
+        <Section>
+          <div className={styles.container}>
+            <div className={styles.info}>
+              <div className={styles.query}>Cargando productos...</div>
+            </div>
+            <GridContainer>{productsCards}</GridContainer>
+          </div>
+        </Section>
       </View>
     );
   }
@@ -53,13 +58,17 @@ const Search: React.FunctionComponent = () => {
 
     return (
       <View>
-        <div className={styles.info}>
-          <div className={styles.query}>“{query}”</div>
-          <div className={styles["results-number"]}>
-            {products.length} resultados
+        <Section>
+          <div className={styles.container}>
+            <div className={styles.info}>
+              <div className={styles.query}>“{query}”</div>
+              <div className={styles["results-number"]}>
+                {products.length} resultados
+              </div>
+            </div>
+            <GridContainer>{productsCards}</GridContainer>
           </div>
-        </div>
-        <GridContainer>{productsCards}</GridContainer>
+        </Section>
       </View>
     );
   }

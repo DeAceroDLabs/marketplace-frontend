@@ -5,7 +5,11 @@ interface GridContainerProps {
 }
 
 const GridContainer: React.FC<GridContainerProps> = ({ children }) => {
-  return <div className={styles.container}>{children}</div>;
+  return (
+    <div>
+      <div className={styles.container}>{children}</div>
+    </div>
+  );
 };
 
 export default GridContainer;
