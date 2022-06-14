@@ -1,29 +1,22 @@
 @use "styles/colors";
 @use "styles/typography";
-
+.container {
+    margin: auto;
+    width: fit-content;
+}
 
 .info {
-    margin: 1.5%;
     display: flex;
     align-items: flex-end;
-    padding: 2px 26px 2px 16px;
-    width: fit-content;
-
     .query {
-        color: colors.$color-text-02;
         font-size: typography.$header-s-size;
         font-weight: typography.$header-s-weight;
         margin-right: 5px;
     }
-
-    .results-number{
+    .results-number {
         font-size: typography.$text-body-s;
         color: colors.$color-text-disabled;
         position: relative;
         top: -2px;
-
     }
-
 }
-
-

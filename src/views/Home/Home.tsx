@@ -78,13 +78,15 @@ const Home: React.FunctionComponent = () => {
 
   return (
     <View header={homeHeader}>
-      <Section title="Catálogo de Productos" variant="margin-title">
+      <Section title="Catálogo de Productos">
         <Tabs
           options={categories}
           variant="secondary"
           onSelectTab={setCategoryActive}
         />
-        <GridContainer>{productsCards}</GridContainer>
+        <div className={styles["products-container"]}>
+          <GridContainer>{productsCards}</GridContainer>
+        </div>
 
         {products.length > 6 && (
           <div className={styles["see-more-container"]}>
