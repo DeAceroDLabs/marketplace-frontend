@@ -16,7 +16,6 @@
     "@types/react": "^18.0.8",
     "@types/react-dom": "^18.0.0",
     "axios": "^0.27.2",
-    "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
@@ -41,7 +40,8 @@
     "husky-install": "husky install",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "prepare": "husky install"
   },
   "eslintConfig": {
     "extends": [
@@ -59,11 +59,6 @@
       }
     }
   },
-  "husky": {
-    "hooks": {
-      "pre-push": "lint-staged && test:coverage"
-    }
-  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -78,6 +73,7 @@
   },
   "devDependencies": {
     "@types/react-test-renderer": "^18.0.0",
+    "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "react-test-renderer": "^18.1.0",
     "tsc-files": "^1.1.3"
