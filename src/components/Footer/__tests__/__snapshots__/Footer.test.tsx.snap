@@ -15,7 +15,7 @@ Object {
             class="info-text"
           >
             <div
-              class="section"
+              class="section-no-margin-title"
             >
               <div
                 class="no-margin-title"
@@ -42,7 +42,7 @@ Object {
               </div>
             </div>
             <div
-              class="section"
+              class="section-no-margin-title"
             >
               <div
                 class="no-margin-title"
@@ -89,7 +89,7 @@ Object {
           class="info-text"
         >
           <div
-            class="section"
+            class="section-no-margin-title"
           >
             <div
               class="no-margin-title"
@@ -116,7 +116,7 @@ Object {
             </div>
           </div>
           <div
-            class="section"
+            class="section-no-margin-title"
           >
             <div
               class="no-margin-title"
