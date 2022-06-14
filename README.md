@@ -15,7 +15,14 @@ Make sure to have the latest stable version of node and react. You can find them
 
 1. Make sure to create a new branch from dev.
 2. Name your branch using the notation `feature/{JIRA_TICKET}` in case of a story or feature ticket, and use the notation `fix/{JIRA_TICKET}`in case of bug or issue ticket.
-3. Create a Pull Request to `dev` and wait for the team to review it before merge it.
+3. For commits,
+
+- Use the notation `{feat/fix/chore}: [{JIRA_TICKET}] {COMMIT_MESSAGE}` on the first commit of your branch.
+- The project uses Husky hooks and have a `pre-commit` hook configured.
+  - This will run the `lint-staged` and `test:coverage` commands before doing the commit.
+  - If both commands are executed without error, the commit will be done and you will be able to continue.
+
+4. Create a Pull Request to `dev` and wait for the team to review it before merge it.
 
 - Make sure to include a link to the Jira ticket that is related to the branch.
 - The title of the PR should be clear on the purpose of the feature or fix.
@@ -23,8 +30,7 @@ Make sure to have the latest stable version of node and react. You can find them
 - Please add the necessary steps to test the functionality of the feature/fix.
 - If possible add evidence on the behaviour before the fix was added and how it turned out. This can be via screenshots or screen recordings from before and after.
 
-4. For commits, use the notation `{feat/fix/chore}: [{JIRA_TICKET}] {COMMIT_MESSAGE}` on the first commit of your branch. The following commits can have a simple message for each, but make sure to be clear on what has been done.
-5. Once your PR is approved
+5. Once your PR is approved you can go directly and click on `rebase and merge`.
 6. Ask for advice if anyhting isn't clear to you or if you want to make the code better.
 7. Have fun :)
 
