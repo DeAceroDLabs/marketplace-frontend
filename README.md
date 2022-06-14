@@ -19,10 +19,10 @@ Make sure to have the latest stable version of node and react. You can find them
 
 - Use the notation `{feat/fix/chore}: [{JIRA_TICKET}] {COMMIT_MESSAGE}` on the first commit of your branch.
 - The project uses Husky hooks and have a `pre-commit` hook configured.
-  - This will run the `lint-staged` and `test:coverage` commands before doing the commit.
-  - If both commands are executed without error, the commit will be done and you will be able to continue.
+  - This will run the `lint-staged` command which will format your staged files using prettier.
 
-4. Create a Pull Request to `dev` and wait for the team to review it before merge it.
+4. Before pushing a branch, another husky hook will be triggered. This will check that all tests are covered and don't throw any error.
+5. Create a Pull Request to `dev` and wait for the team to review it before merge it.
 
 - Make sure to include a link to the Jira ticket that is related to the branch.
 - The title of the PR should be clear on the purpose of the feature or fix.
@@ -30,9 +30,9 @@ Make sure to have the latest stable version of node and react. You can find them
 - Please add the necessary steps to test the functionality of the feature/fix.
 - If possible add evidence on the behaviour before the fix was added and how it turned out. This can be via screenshots or screen recordings from before and after.
 
-5. Once your PR is approved you can go directly and click on `rebase and merge`.
-6. Ask for advice if anyhting isn't clear to you or if you want to make the code better.
-7. Have fun :)
+6. Once your PR is approved you can go directly and click on `rebase and merge`.
+7. Ask for advice if anyhting isn't clear to you or if you want to make the code better.
+8. Have fun :)
 
 ## Available Scripts
 
