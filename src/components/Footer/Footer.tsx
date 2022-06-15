@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
   const [isActive, setActive] = useState(false);
-  const toggleClass = () => {
+  const togglePopup = () => {
     setActive(!isActive);
   };
 
@@ -31,7 +31,7 @@ const Footer: React.FC = () => {
             </Button>
           </Section>
           <Section title="Contacto" variant="no-margin-title">
-            <Button color="transparent-black" action={() => toggleClass()}>
+            <Button color="transparent-black" action={() => togglePopup()}>
               Contactar soporte
             </Button>
             <Button color="transparent-black" action={() => navigate("/preguntas")}>
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
             </Button>
           </Section>
           {isActive && (
-            <Popup title="Soporte" action={() => toggleClass()}>
+            <Popup title="Soporte" color="white" size="small" action={() => togglePopup()}>
               <div className={styles["popup-text"]}>
                 <p>Envianos tus dudas a: </p>          
                   <Link className={styles["copy-email"]}
