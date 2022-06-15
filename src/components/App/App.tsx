@@ -1,9 +1,15 @@
 import { useMemo, useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { UserProvider } from "config/userContext";
 import Home from "views/Home";
 import Search from "views/Search";
 import Login from "views/Login";
+import Signup from "views/Signup";
 import PageNotFound from "views/PageNotFound";
 import Header from "components/Header";
 import Footer from "components/Footer";
@@ -19,11 +25,12 @@ const App = () => {
         <Header />
         <Routes>
           <Route path="/login" element={<Login />}></Route>
+          <Route path="/signup" element={<Signup />}></Route>
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/search/:query" element={<Search />}></Route>
             <Route path="/404" element={<PageNotFound />}></Route>
-            <Route path="*" element={ <Navigate to="/404" /> } />
+            <Route path="*" element={<Navigate to="/404" />} />
           </Route>
         </Routes>
         <Footer />
