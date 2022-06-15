@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
@@ -9,10 +9,18 @@ import Section from "components/common/Section";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
-  const [isActive, setActive] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const togglePopup = () => {
-    setActive(!isActive);
+    setOpen(!isOpen);
   };
+
+  const popup = useRef<any>();
+  const closePopup = (e: any)=>{
+    if(popup.current && isOpen && !popup.current.contains(e.target)){
+      setOpen(false);
+    }
+  }
+  document.addEventListener('mousedown',closePopup);
 
   if (!username) {
     return null;
@@ -41,8 +49,8 @@ const Footer: React.FC = () => {
               Politicas y condiciones
             </Button>
           </Section>
-          {isActive && (
-            <div className={styles.popup}>
+          {isOpen && (
+            <div className={styles.popup} ref={popup}>
               <Popup title="Soporte" color="white" action={() => togglePopup()}>
                 <div className={styles["popup-text"]}>
                   <p>Envianos tus dudas a: </p>          
