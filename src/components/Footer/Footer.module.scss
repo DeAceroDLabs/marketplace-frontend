@@ -25,8 +25,15 @@
     margin-top: 15px;
     margin-left: 3%;
   }
+  .popup{
+    left: 40%;
+    bottom: 20px;
+  }
 
   .popup-text {
+    width: 374px;
+    height: 110px;
+    background-color: red;
     margin-left: 20px;
 
     .copy-email {

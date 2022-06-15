@@ -42,20 +42,22 @@ const Footer: React.FC = () => {
             </Button>
           </Section>
           {isActive && (
-            <Popup title="Soporte" color="white" size="small" action={() => togglePopup()}>
-              <div className={styles["popup-text"]}>
-                <p>Envianos tus dudas a: </p>          
-                  <Link className={styles["copy-email"]}
-                    to='#'
-                    onClick={(e) => {
-                    window.location.href = "ejemplo@correo.com";
-                    e.preventDefault();
-                    }}
-                  >
-                  {"ejemplo@correo.com"}
-                  </Link>
-              </div>
-            </Popup>
+            <div className={styles.popup}>
+              <Popup title="Soporte" color="white" action={() => togglePopup()}>
+                <div className={styles["popup-text"]}>
+                  <p>Envianos tus dudas a: </p>          
+                    <Link className={styles["copy-email"]}
+                      to='#'
+                      onClick={(e) => {
+                      window.location.href = "ejemplo@correo.com";
+                      e.preventDefault();
+                      }}
+                    >
+                    {"ejemplo@correo.com"}
+                    </Link>
+                </div>
+              </Popup>
+            </div>
           )}
         </div>
       </div>
