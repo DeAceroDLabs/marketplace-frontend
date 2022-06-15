@@ -6,7 +6,6 @@ interface PopupProps {
   children?: React.ReactNode;
   color: "white";
   title?: string;
-  size: "small" | "medium" | "large";
   action: () => void;
 }
 
@@ -14,11 +13,10 @@ const Popup: React.FC<PopupProps> = ({
   children,
   color = "white",
   title,
-  size,
   action,
 }) => {
   return (
-    <div className={`${styles[color]} ${styles[size]}`}>
+    <div className={styles[color]}>
       {title && <b>{title}</b>}
       <div className={styles.close}>
         <Button color="transparent-black" action={action}>
