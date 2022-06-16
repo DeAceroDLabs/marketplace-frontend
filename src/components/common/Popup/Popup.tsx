@@ -4,19 +4,17 @@ import Button from "components/common/Button";
 
 interface PopupProps {
   children?: React.ReactNode;
-  color: "white";
   title?: string;
   action: () => void;
 }
 
 const Popup: React.FC<PopupProps> = ({
   children,
-  color = "white",
   title,
   action,
 }) => {
   return (
-    <div className={styles[color]}>
+    <div className={styles.white}>
       {title && <b>{title}</b>}
       <div className={styles.close}>
         <Button color="transparent-black" action={action}>

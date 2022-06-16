@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
           </Section>
           {isOpen && (
             <div className={styles.popup} ref={popup}>
-              <Popup title="Soporte" color="white" action={() => togglePopup()}>
+              <Popup title="Soporte" action={() => togglePopup()}>
                 <div className={styles["popup-text"]}>
                   <p>Envianos tus dudas a: </p>          
                     <Link className={styles["copy-email"]}
