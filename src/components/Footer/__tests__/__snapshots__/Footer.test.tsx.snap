@@ -28,16 +28,20 @@ Object {
                 class="body"
               >
                  
-                <button
-                  class="button transparent-black"
+                <div
+                  class="buttons"
                 >
-                  Conócenos
-                </button>
-                <button
-                  class="button transparent-black"
-                >
-                  Ayuda
-                </button>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Conócenos
+                  </button>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Ayuda
+                  </button>
+                </div>
                  
               </div>
             </div>
@@ -55,21 +59,25 @@ Object {
                 class="body"
               >
                  
-                <button
-                  class="button transparent-black"
+                <div
+                  class="buttons"
                 >
-                  Contactar soporte
-                </button>
-                <button
-                  class="button transparent-black"
-                >
-                  Preguntas frecuentes
-                </button>
-                <button
-                  class="button transparent-black"
-                >
-                  Politicas y condiciones
-                </button>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Contactar soporte
+                  </button>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Preguntas frecuentes
+                  </button>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Politicas y condiciones
+                  </button>
+                </div>
                  
               </div>
             </div>
@@ -102,16 +110,20 @@ Object {
               class="body"
             >
                
-              <button
-                class="button transparent-black"
+              <div
+                class="buttons"
               >
-                Conócenos
-              </button>
-              <button
-                class="button transparent-black"
-              >
-                Ayuda
-              </button>
+                <button
+                  class="button transparent-black"
+                >
+                  Conócenos
+                </button>
+                <button
+                  class="button transparent-black"
+                >
+                  Ayuda
+                </button>
+              </div>
                
             </div>
           </div>
@@ -129,21 +141,25 @@ Object {
               class="body"
             >
                
-              <button
-                class="button transparent-black"
+              <div
+                class="buttons"
               >
-                Contactar soporte
-              </button>
-              <button
-                class="button transparent-black"
-              >
-                Preguntas frecuentes
-              </button>
-              <button
-                class="button transparent-black"
-              >
-                Politicas y condiciones
-              </button>
+                <button
+                  class="button transparent-black"
+                >
+                  Contactar soporte
+                </button>
+                <button
+                  class="button transparent-black"
+                >
+                  Preguntas frecuentes
+                </button>
+                <button
+                  class="button transparent-black"
+                >
+                  Politicas y condiciones
+                </button>
+              </div>
                
             </div>
           </div>

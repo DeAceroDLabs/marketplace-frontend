@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="white"
+        class="popup-style"
       >
         <b>
           title
@@ -35,7 +35,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="white"
+      class="popup-style"
     >
       <b>
         title
