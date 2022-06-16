@@ -47,9 +47,9 @@ const Search: React.FunctionComponent = () => {
     productsCards = products.map((product) => {
       return (
         <Card
-          key={product.ClaProducto}
-          title={product.NomProducto}
-          imgSrc={product.CategoriaUrlImagen}
+          key={product.productId}
+          title={product.productName}
+          imgSrc={product.categoryImageUrl}
           size="medium"
           loading={false}
         />

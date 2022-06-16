@@ -5,20 +5,20 @@ export const API = {
 };
 
 export type Category = {
-  IdCategoria: number;
-  NomCategoria: string;
-  UrlImagen: string;
+  categoryId: number;
+  categoryName: string;
+  imageUrl: string;
 };
 
 export type Article = {
-  ClaArticulo: string;
+  articleId: string;
 };
 
 export type Product = {
-  ClaProducto: number;
-  NomProducto: string;
-  NomCategoria: string;
-  IdCategoria: number;
-  Articulos: Article[];
-  CategoriaUrlImagen: string;
+  productId: number;
+  productName: string;
+  categoryName: string;
+  categoryId: number;
+  articles: Article[];
+  categoryImageUrl: string;
 };

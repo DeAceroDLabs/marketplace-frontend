@@ -27,8 +27,8 @@ const Home: React.FunctionComponent = () => {
       const categories = data.map(
         (category) =>
           ({
-            id: category.IdCategoria,
-            title: category.NomCategoria,
+            id: category.categoryId,
+            title: category.categoryName,
           } as TabItem)
       );
       setCategories(categories);
@@ -55,9 +55,9 @@ const Home: React.FunctionComponent = () => {
     productsCards = products.slice(0, 6).map((product) => {
       return (
         <Card
-          key={product.ClaProducto}
-          title={product.NomProducto}
-          imgSrc={product.CategoriaUrlImagen}
+          key={product.productId}
+          title={product.productName}
+          imgSrc={product.categoryImageUrl}
           size="small"
           loading={false}
         />
