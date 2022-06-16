@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Search Bar renders Popup with no issue 1`] = `
+exports[`Search Bar renders Tooltip with no issue 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="popup-style"
+        class="tooltip-style"
       >
         <b>
           title
@@ -35,7 +35,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="popup-style"
+      class="tooltip-style"
     >
       <b>
         title
