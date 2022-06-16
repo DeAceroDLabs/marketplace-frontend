@@ -14,7 +14,7 @@ const Popup: React.FC<PopupProps> = ({
   action,
 }) => {
   return (
-    <div className={styles.white}>
+    <div className={styles["popup-style"]}>
       {title && <b>{title}</b>}
       <div className={styles.close}>
         <Button color="transparent-black" action={action}>

@@ -31,23 +31,27 @@ const Footer: React.FC = () => {
       <div className={styles["info-white-container"]}>
         <div className={styles["info-text"]}>
           <Section title="Acerca de" variant="no-margin-title">
-            <Button color="transparent-black" action={() => navigate("/conocenos")}>
-              Conócenos
-            </Button>
-            <Button color="transparent-black" action={() => navigate("/ayuda")}>
-              Ayuda
-            </Button>
+            <div className={styles.buttons}>
+              <Button color="transparent-black" action={() => navigate("/conocenos")}>
+                Conócenos
+              </Button>
+              <Button color="transparent-black" action={() => navigate("/ayuda")}>
+                Ayuda
+              </Button>
+            </div>
           </Section>
           <Section title="Contacto" variant="no-margin-title">
-            <Button color="transparent-black" action={() => togglePopup()}>
-              Contactar soporte
-            </Button>
-            <Button color="transparent-black" action={() => navigate("/preguntas")}>
-              Preguntas frecuentes
-            </Button>
-            <Button color="transparent-black" action={() => navigate("/politicas")}>
-              Politicas y condiciones
-            </Button>
+            <div className={styles.buttons}>
+              <Button color="transparent-black" action={() => togglePopup()}>
+                Contactar soporte
+              </Button>
+              <Button color="transparent-black" action={() => navigate("/preguntas")}>
+                Preguntas frecuentes
+              </Button>
+              <Button color="transparent-black" action={() => navigate("/politicas")}>
+                Politicas y condiciones
+              </Button>
+            </div>
           </Section>
           {isOpen && (
             <div className={styles.popup} ref={popup}>
