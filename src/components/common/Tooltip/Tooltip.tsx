@@ -1,20 +1,20 @@
-import styles from "./Popup.module.scss";
+import styles from "./Tooltip.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "components/common/Button";
 
-interface PopupProps {
+interface TooltipProps {
   children?: React.ReactNode;
   title?: string;
   action: () => void;
 }
 
-const Popup: React.FC<PopupProps> = ({
+const Tooltip: React.FC<TooltipProps> = ({
   children,
   title,
   action,
 }) => {
   return (
-    <div className={styles["popup-style"]}>
+    <div className={styles["tooltip-style"]}>
       {title && <b>{title}</b>}
       <div className={styles.close}>
         <Button color="transparent-black" action={action}>
@@ -26,4 +26,4 @@ const Popup: React.FC<PopupProps> = ({
   );
 };
 
-export default Popup;
+export default Tooltip;

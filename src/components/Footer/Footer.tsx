@@ -3,24 +3,24 @@ import { useContext, useState, useRef } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
-import Popup from "components/common/Popup";
+import Tooltip from "components/common/Tooltip";
 import Section from "components/common/Section";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
   const [isOpen, setOpen] = useState(false);
-  const togglePopup = () => {
+  const toggleTooltip = () => {
     setOpen(!isOpen);
   };
 
-  const popup = useRef<any>();
-  const closePopup = (e: any)=>{
-    if(popup.current && isOpen && !popup.current.contains(e.target)){
+  const tooltip = useRef<any>();
+  const closeTooltip = (e: any)=>{
+    if(tooltip.current && isOpen && !tooltip.current.contains(e.target)){
       setOpen(false);
     }
   }
-  document.addEventListener('mousedown',closePopup);
+  document.addEventListener('mousedown',closeTooltip);
 
   if (!username) {
     return null;
@@ -42,7 +42,7 @@ const Footer: React.FC = () => {
           </Section>
           <Section title="Contacto" variant="no-margin-title">
             <div className={styles.buttons}>
-              <Button color="transparent-black" action={() => togglePopup()}>
+              <Button color="transparent-black" action={() => toggleTooltip()}>
                 Contactar soporte
               </Button>
               <Button color="transparent-black" action={() => navigate("/preguntas")}>
@@ -54,9 +54,9 @@ const Footer: React.FC = () => {
             </div>
           </Section>
           {isOpen && (
-            <div className={styles.popup} ref={popup}>
-              <Popup title="Soporte" action={() => togglePopup()}>
-                <div className={styles["popup-text"]}>
+            <div className={styles.tooltip} ref={tooltip}>
+              <Tooltip title="Soporte" action={() => toggleTooltip()}>
+                <div className={styles["tooltip-text"]}>
                   <p>Envianos tus dudas a: </p>          
                     <Link className={styles["copy-email"]}
                       to='#'
@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                     {"ejemplo@correo.com"}
                     </Link>
                 </div>
-              </Popup>
+              </Tooltip>
             </div>
           )}
         </div>
