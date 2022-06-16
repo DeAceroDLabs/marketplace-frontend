@@ -1,105 +1,105 @@
 import { API, Category, Product } from "./config/api.types";
 import "@testing-library/jest-dom";
 
-const getProductsByCategory = (categoryId: number) => {
+const getProductsByCategory = (categoryId: number): Product[] => {
   return [
     {
-      ClaProducto: 0,
-      NomProducto: `category ${categoryId} product 1`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 0,
+      productName: `category ${categoryId} product 1`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 1",
+          articleId: "mock article 1",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 1,
-      NomProducto: `category ${categoryId} product 2`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 1,
+      productName: `category ${categoryId} product 2`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 2",
+          articleId: "mock article 2",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 2,
-      NomProducto: `category ${categoryId} product 3`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 2,
+      productName: `category ${categoryId} product 3`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 3",
+          articleId: "mock article 3",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 3,
-      NomProducto: `category ${categoryId} product 4`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 3,
+      productName: `category ${categoryId} product 4`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 4",
+          articleId: "mock article 4",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 4,
-      NomProducto: `category ${categoryId} product 5`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 4,
+      productName: `category ${categoryId} product 5`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 5",
+          articleId: "mock article 5",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 5,
-      NomProducto: `category ${categoryId} product 6`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 5,
+      productName: `category ${categoryId} product 6`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 6",
+          articleId: "mock article 6",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
     {
-      ClaProducto: 6,
-      NomProducto: `category ${categoryId} product 7`,
-      NomCategoria: "mock category 1",
-      IdCategoria: categoryId,
-      Articulos: [
+      productId: 6,
+      productName: `category ${categoryId} product 7`,
+      categoryName: "mock category 1",
+      categoryId: categoryId,
+      articles: [
         {
-          ClaArticulo: "mock article 7",
+          articleId: "mock article 7",
         },
       ],
-      CategoriaUrlImagen: "https://picsum.photos/200/300",
+      categoryImageUrl: "https://picsum.photos/200/300",
     },
   ];
 };
 
 const categoriesResponse: Category[] = [
   {
-    IdCategoria: 1,
-    UrlImagen: "https://picsum.photos/200/300",
-    NomCategoria: "mock category 1",
+    categoryId: 1,
+    imageUrl: "https://picsum.photos/200/300",
+    categoryName: "mock category 1",
   },
   {
-    IdCategoria: 2,
-    UrlImagen: "https://picsum.photos/200/300",
-    NomCategoria: "mock category 2",
+    categoryId: 2,
+    imageUrl: "https://picsum.photos/200/300",
+    categoryName: "mock category 2",
   },
 ];
 
