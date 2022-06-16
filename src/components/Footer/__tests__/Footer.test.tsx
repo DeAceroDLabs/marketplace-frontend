@@ -8,8 +8,6 @@ const mockUSer = {
   setUser: jest.fn(),
 };
 
-const toggleClass = jest.fn();
-
 const mockedUsedNavigate = jest.fn();
 jest.mock("react-router-dom", () => ({
   ...(jest.requireActual("react-router-dom") as any),
@@ -47,12 +45,20 @@ describe("Footer", () => {
     });
   });
 
-  it("contact button useNavigate", async () => {
+  it("contact button useNavigate and close it", async () => {
     renderView();
     const questionButton = screen.getAllByRole("button")[2];
     fireEvent.click(questionButton);
+    const tooltip = screen.queryByText('Soporte');
     await waitFor(() => {
-      expect(screen.queryByText('Soporte')).toBeInTheDocument()
+      expect(tooltip).toBeInTheDocument()
+    });
+    const outside = screen.getAllByRole("button")[5];
+
+    fireEvent.click(outside);
+
+    await waitFor(() => {
+      expect(screen.queryByText('Soporte')).not.toBeInTheDocument();
     });
   });
 
