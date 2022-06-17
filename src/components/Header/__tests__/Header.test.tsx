@@ -10,10 +10,6 @@ jest.mock("react-router-dom", () => ({
   ...(jest.requireActual("react-router-dom") as any),
   useNavigate: () => mockedUsedNavigate,
 }));
-const mockUSer = {
-  username: "user",
-  setUser: jest.fn(),
-};
 
 describe("Header", () => {
   const mockUSer = {
@@ -63,4 +59,40 @@ describe("Header", () => {
       expect(mockedUsedNavigate).toHaveBeenCalled();
     });
   });
+
+  it("cart button opens tooltip and close it with close icon", async () => {
+    setup(["/"]);
+    const cartButton = screen.getAllByRole("button")[2];
+    fireEvent.click(cartButton);
+    const tooltip = screen.queryByText('¡No tienes artículos en tu carrito!');
+    await waitFor(() => {
+      expect(tooltip).toBeInTheDocument()
+    });
+    const closeButton = screen.getAllByRole("button")[3];
+
+    fireEvent.click(closeButton);
+
+    await waitFor(() => {
+      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+    });
+  });
+
+  it("cart button opens tooltip and close it with addproductsbutton", async () => {
+    setup(["/"]);
+    const cartButton = screen.getAllByRole("button")[2];
+    fireEvent.click(cartButton);
+    const tooltip = screen.queryByText('¡No tienes artículos en tu carrito!');
+    await waitFor(() => {
+      expect(tooltip).toBeInTheDocument()
+    });
+    const addProductsButton = screen.getAllByRole("button")[4];
+
+    fireEvent.click(addProductsButton);
+
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toHaveBeenCalled();
+      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+    });
+  });
+
 });
