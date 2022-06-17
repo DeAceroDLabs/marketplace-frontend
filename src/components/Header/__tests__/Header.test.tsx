@@ -95,4 +95,15 @@ describe("Header", () => {
     });
   });
 
+  it("click on home and close tooltip ", async () => {
+    setup(["/"]);
+    const homeButton = screen.getAllByRole("button")[0];
+
+    fireEvent.click(homeButton);
+
+    await waitFor(() => {
+      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+    });
+  });
+
 });
