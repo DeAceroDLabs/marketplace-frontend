@@ -16,7 +16,7 @@ const BgSection: React.FC<BgSectionProps> = ({
   orientation = "horizontal",
 }) => {
   return (
-    <div className={`${styles.container} ${styles[orientation]}`}>
+    <div className={`${styles[orientation]}`}>
       {bgImage && <img src={bgImage} className={`${styles.bgImage}`} alt="" />}
       <div className={`${styles.content} ${styles[color]} ${styles[position]}`}>
         {children}

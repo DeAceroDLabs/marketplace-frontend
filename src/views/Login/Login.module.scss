@@ -1,12 +1,6 @@
-@use "styles/_typography";
-@use "styles/_colors";
-.title {
-    font-size: typography.$header-l-size;
-}
-
-.text {
-    font-size: typography.$body-m-size;
-    color: colors.$color-text-disabled;
+.login-container {
+    display: flex;
+    flex-direction: row;
 }
 
 .form-container {

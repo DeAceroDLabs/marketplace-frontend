@@ -24,6 +24,8 @@ const Field: React.FC<FieldProps> = ({
       {
         {
           text: <TextField {...props} />,
+          tel: <TextField {...props} />,
+          email: <TextField {...props} />,
           password: <TextField {...props} />,
         }[type]
       }

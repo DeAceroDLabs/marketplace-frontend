@@ -7,7 +7,7 @@ Array [
   >
     <div>
       <div
-        className="container horizontal"
+        className="horizontal"
       >
         <img
           alt=""
