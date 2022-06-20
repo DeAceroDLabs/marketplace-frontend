@@ -25,25 +25,20 @@ const Login: React.FunctionComponent = () => {
     }
   }, [username, navigate]);
 
-  const loginTitle = (
-    <div className={styles.title}>Ingresa a la Plataforma</div>
-  );
-
   return (
     <View>
-      <Section title={loginTitle}>
-        <p className={styles.text}>
-          Ingresa tus datos para acceder a la plataforma
-        </p>
-        <div className={styles["form-container"]}>
-          <Form
-            inputForm={loginForm}
-            onSubmit={onSubmit}
-            submitTitle={"Ingresar"}
-          />
-        </div>
-      </Section>
-      <BgSection color="primary" orientation="vertical" position="right" />
+      <div className={styles["login-container"]}>
+        <Section>
+          <div className={styles["form-container"]}>
+            <Form
+              inputForm={loginForm}
+              onSubmit={onSubmit}
+              submitTitle={"Ingresar"}
+            />
+          </div>
+        </Section>
+        <BgSection color="primary" orientation="vertical" position="right" />
+      </div>
     </View>
   );
 };

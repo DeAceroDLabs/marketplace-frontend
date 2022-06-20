@@ -15,32 +15,24 @@ Object {
       >
         <div>
           <div
-            class="section-margin-title"
+            class="login-container"
           >
             <div
-              class="margin-title"
+              class="section-margin-title"
             >
-               
               <div
-                class="title"
+                class="margin-title"
               >
-                Ingresa a la Plataforma
+                 
+                 
               </div>
-               
-            </div>
-            <div
-              class="body"
-            >
-               
-              <p
-                class="text"
-              >
-                Ingresa tus datos para acceder a la plataforma
-              </p>
               <div
-                class="form-container"
+                class="body"
               >
-                <div>
+                 
+                <div
+                  class="form-container"
+                >
                   <form
                     class="form-container"
                   >
@@ -91,16 +83,16 @@ Object {
                     </button>
                   </form>
                 </div>
+                 
               </div>
-               
             </div>
-          </div>
-          <div
-            class="container vertical"
-          >
             <div
-              class="content primary right"
-            />
+              class="vertical"
+            >
+              <div
+                class="content primary right"
+              />
+            </div>
           </div>
         </div>
       </div>
@@ -122,32 +114,24 @@ Object {
     >
       <div>
         <div
-          class="section-margin-title"
+          class="login-container"
         >
           <div
-            class="margin-title"
+            class="section-margin-title"
           >
-             
             <div
-              class="title"
+              class="margin-title"
             >
-              Ingresa a la Plataforma
+               
+               
             </div>
-             
-          </div>
-          <div
-            class="body"
-          >
-             
-            <p
-              class="text"
-            >
-              Ingresa tus datos para acceder a la plataforma
-            </p>
             <div
-              class="form-container"
+              class="body"
             >
-              <div>
+               
+              <div
+                class="form-container"
+              >
                 <form
                   class="form-container"
                 >
@@ -198,16 +182,16 @@ Object {
                   </button>
                 </form>
               </div>
+               
             </div>
-             
           </div>
-        </div>
-        <div
-          class="container vertical"
-        >
           <div
-            class="content primary right"
-          />
+            class="vertical"
+          >
+            <div
+              class="content primary right"
+            />
+          </div>
         </div>
       </div>
     </div>

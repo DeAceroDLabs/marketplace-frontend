@@ -10,6 +10,7 @@ export type Field = {
   type: string;
   value: string;
   name: string;
+  disable?: boolean;
 };
 
 export interface OptionsField extends Field {
@@ -17,6 +18,7 @@ export interface OptionsField extends Field {
 }
 
 export type Form = {
-  form_label: string;
+  formTitle: string;
+  formDescription?: string;
   fields: Field[];
 };

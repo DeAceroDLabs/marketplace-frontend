@@ -1,7 +1,8 @@
 import { Form } from "./form.types";
 
 export const loginForm: Form = {
-  form_label: "Login Form",
+  formTitle: "Ingresa a la plataforma",
+  formDescription: "Ingresa tus datos para acceder a la plataforma",
   fields: [
     {
       name: "username",

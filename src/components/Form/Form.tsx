@@ -15,17 +15,15 @@ const Form: React.FC<FormProps> = ({ inputForm, onSubmit, submitTitle }) => {
 
   return (
     <FormProvider {...form}>
-      <div>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className={styles["form-container"]}
-        >
-          <RenderForm inputForm={inputForm} />
-          <Button color="primary" action={() => onSubmit}>
-            {submitTitle}
-          </Button>
-        </form>
-      </div>
+      <form
+        onSubmit={form.handleSubmit(onSubmit)}
+        className={styles["form-container"]}
+      >
+        <RenderForm inputForm={inputForm} />
+        <Button color="primary" action={() => onSubmit}>
+          {submitTitle}
+        </Button>
+      </form>
     </FormProvider>
   );
 };
