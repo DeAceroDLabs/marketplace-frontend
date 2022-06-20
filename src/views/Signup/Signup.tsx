@@ -4,11 +4,14 @@ import { taxSignupForm } from "forms/Signup/Signup.tax";
 import BgSection from "components/common/BgSection";
 import Section from "components/common/Section";
 import View from "components/common/View";
-import styles from "./Signup.module.scss";
+import { FieldValues } from "react-hook-form";
 import MultipleForm from "components/Form/MultipleForms/MultipleForm";
+import styles from "./Signup.module.scss";
 
 const Signup = () => {
-  const onSubmit = () => {};
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+  };
 
   return (
     <View>
