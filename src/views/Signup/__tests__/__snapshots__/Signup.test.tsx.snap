@@ -15,15 +15,14 @@ Object {
       >
         <div>
           <div
-            class="signup-container"
+            class="container"
           >
             <div
-              class="section-margin-title"
+              class="container"
             >
               <div
-                class="margin-title"
+                class="title margin-title"
               >
-                 
                  
               </div>
               <div
@@ -40,12 +39,11 @@ Object {
                       class="form-container"
                     >
                       <div
-                        class="section-margin-title"
+                        class="container"
                       >
                         <div
-                          class="margin-title"
+                          class="title margin-title"
                         >
-                           
                           Información General
                            
                         </div>
@@ -194,15 +192,14 @@ Object {
     >
       <div>
         <div
-          class="signup-container"
+          class="container"
         >
           <div
-            class="section-margin-title"
+            class="container"
           >
             <div
-              class="margin-title"
+              class="title margin-title"
             >
-               
                
             </div>
             <div
@@ -219,12 +216,11 @@ Object {
                     class="form-container"
                   >
                     <div
-                      class="section-margin-title"
+                      class="container"
                     >
                       <div
-                        class="margin-title"
+                        class="title margin-title"
                       >
-                         
                         Información General
                          
                       </div>

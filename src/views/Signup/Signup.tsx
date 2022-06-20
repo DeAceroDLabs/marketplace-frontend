@@ -15,7 +15,7 @@ const Signup = () => {
 
   return (
     <View>
-      <div className={styles["signup-container"]}>
+      <div className={styles.container}>
         <Section>
           <div className={styles["form-container"]}>
             <MultipleForm

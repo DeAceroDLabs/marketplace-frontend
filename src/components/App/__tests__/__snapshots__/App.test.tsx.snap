@@ -66,12 +66,11 @@ Array [
   >
     <div>
       <div
-        className="section-margin-title"
+        className="container"
       >
         <div
-          className="margin-title"
+          className="title margin-title"
         >
-           
           Catálogo de Productos
            
         </div>

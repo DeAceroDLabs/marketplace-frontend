@@ -2,12 +2,11 @@
 
 exports[`renders Section with no issue 1`] = `
 <div
-  className="section-margin-title"
+  className="container"
 >
   <div
-    className="margin-title"
+    className="title margin-title"
   >
-     
      
   </div>
   <div

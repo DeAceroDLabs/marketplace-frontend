@@ -3,6 +3,7 @@ import { Form as FormType } from "forms/form.types";
 import Button from "components/common/Button";
 import RenderForm from "components/RenderForm";
 import styles from "./Form.module.scss";
+import Section from "components/common/Section";
 
 interface FormProps {
   inputForm: FormType;
@@ -15,15 +16,24 @@ const Form: React.FC<FormProps> = ({ inputForm, onSubmit, submitTitle }) => {
 
   return (
     <FormProvider {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className={styles["form-container"]}
-      >
-        <RenderForm inputForm={inputForm} />
-        <Button color="primary" action={() => onSubmit}>
-          {submitTitle}
-        </Button>
-      </form>
+      <div className={styles.container}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className={styles["form-container"]}
+        >
+          <Section title={inputForm.formTitle}>
+            {inputForm.formDescription && (
+              <p className={styles["form-description"]}>
+                {inputForm.formDescription}
+              </p>
+            )}
+            <RenderForm inputForm={inputForm} />
+          </Section>
+          <Button color="primary" action={() => onSubmit}>
+            {submitTitle}
+          </Button>
+        </form>
+      </div>
     </FormProvider>
   );
 };

@@ -15,12 +15,11 @@ Object {
             class="info-text"
           >
             <div
-              class="section-no-margin-title"
+              class="container"
             >
               <div
-                class="no-margin-title"
+                class="title no-margin-title"
               >
-                 
                 Acerca de
                  
               </div>
@@ -46,12 +45,11 @@ Object {
               </div>
             </div>
             <div
-              class="section-no-margin-title"
+              class="container"
             >
               <div
-                class="no-margin-title"
+                class="title no-margin-title"
               >
-                 
                 Contacto
                  
               </div>
@@ -97,12 +95,11 @@ Object {
           class="info-text"
         >
           <div
-            class="section-no-margin-title"
+            class="container"
           >
             <div
-              class="no-margin-title"
+              class="title no-margin-title"
             >
-               
               Acerca de
                
             </div>
@@ -128,12 +125,11 @@ Object {
             </div>
           </div>
           <div
-            class="section-no-margin-title"
+            class="container"
           >
             <div
-              class="no-margin-title"
+              class="title no-margin-title"
             >
-               
               Contacto
                
             </div>
