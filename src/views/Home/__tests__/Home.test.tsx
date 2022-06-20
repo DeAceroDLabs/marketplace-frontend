@@ -3,6 +3,12 @@ import { BrowserRouter } from "react-router-dom";
 import mockFetch from "setupTests";
 import Home from "../Home";
 
+const mockedUsedNavigate = jest.fn();
+jest.mock("react-router-dom", () => ({
+  ...(jest.requireActual("react-router-dom") as any),
+  useNavigate: () => mockedUsedNavigate,
+}));
+
 describe("Home", () => {
   beforeEach(() => {
     jest.spyOn(window, "fetch").mockImplementation(mockFetch);
@@ -47,6 +53,15 @@ describe("Home", () => {
     await loadInitialState();
     await waitFor(() => {
       expect(screen.getByText("Ver más")).toBeInTheDocument();
+    });
+  });
+
+  it("click to see more", async () => {
+    await loadInitialState();
+    const seemoreButton = screen.getAllByRole("button")[3];
+    fireEvent.click(seemoreButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
     });
   });
 });
