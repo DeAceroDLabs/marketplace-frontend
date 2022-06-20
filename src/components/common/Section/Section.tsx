@@ -11,10 +11,9 @@ const Section: React.FC<SectionProps> = ({
   children,
   variant = "margin-title",
 }) => {
-  const section = `section-${variant}`
   return (
-    <div className= {styles[section]}>
-      <div className={styles[variant]}> {title} </div>
+    <div className={styles.container}>
+      <div className={`${styles.title} ${styles[variant]}`}>{title} </div>
       <div className={styles.body}> {children} </div>
     </div>
   );

@@ -27,7 +27,7 @@ const Login: React.FunctionComponent = () => {
 
   return (
     <View>
-      <div className={styles["login-container"]}>
+      <div className={styles.container}>
         <Section>
           <div className={styles["form-container"]}>
             <Form
