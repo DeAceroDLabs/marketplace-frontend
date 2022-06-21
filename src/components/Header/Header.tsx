@@ -25,7 +25,7 @@ const Header: React.FC = () => {
   const tooltip = useRef<any>();
   const cartButton = useRef<any>();
   const closeTooltip = (e: any) => {
-    if (tooltip.current && isOpen && !tooltip.current.contains(e.target)) {
+    if (tooltip.current && cartButton.current  && isOpen && !tooltip.current.contains(e.target) && !cartButton.current.contains(e.target)) {
       setOpen(false);
     }
   };

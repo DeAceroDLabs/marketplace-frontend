@@ -15,8 +15,9 @@ const Footer: React.FC = () => {
   };
 
   const tooltip = useRef<any>();
+  const contactButton = useRef<any>();
   const closeTooltip = (e: any) => {
-    if (tooltip.current && isOpen && !tooltip.current.contains(e.target)) {
+    if (tooltip.current && contactButton.current  && isOpen && !tooltip.current.contains(e.target) && !contactButton.current.contains(e.target)) {
       setOpen(false);
     }
   };
@@ -48,9 +49,14 @@ const Footer: React.FC = () => {
           </Section>
           <Section title="Contacto" variant="no-margin-title">
             <div className={styles.buttons}>
-              <Button color="transparent-black" action={() => toggleTooltip()}>
-                Contactar soporte
-              </Button>
+              <div ref={contactButton}>
+                <Button
+                  color="transparent-black"
+                  action={() => toggleTooltip()}
+                >
+                  Contactar soporte
+                </Button>
+              </div>
               <Button
                 color="transparent-black"
                 action={() => navigate("/preguntas")}

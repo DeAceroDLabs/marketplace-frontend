@@ -62,11 +62,13 @@ Object {
                 <div
                   class="buttons"
                 >
-                  <button
-                    class="button transparent-black"
-                  >
-                    Contactar soporte
-                  </button>
+                  <div>
+                    <button
+                      class="button transparent-black"
+                    >
+                      Contactar soporte
+                    </button>
+                  </div>
                   <button
                     class="button transparent-black"
                   >
@@ -144,11 +146,13 @@ Object {
               <div
                 class="buttons"
               >
-                <button
-                  class="button transparent-black"
-                >
-                  Contactar soporte
-                </button>
+                <div>
+                  <button
+                    class="button transparent-black"
+                  >
+                    Contactar soporte
+                  </button>
+                </div>
                 <button
                   class="button transparent-black"
                 >
