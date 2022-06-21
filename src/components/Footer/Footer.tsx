@@ -15,12 +15,12 @@ const Footer: React.FC = () => {
   };
 
   const tooltip = useRef<any>();
-  const closeTooltip = (e: any)=>{
-    if(tooltip.current && isOpen && !tooltip.current.contains(e.target)){
+  const closeTooltip = (e: any) => {
+    if (tooltip.current && isOpen && !tooltip.current.contains(e.target)) {
       setOpen(false);
     }
-  }
-  document.addEventListener('mousedown',closeTooltip);
+  };
+  document.addEventListener("mousedown", closeTooltip);
 
   if (!username) {
     return null;
@@ -32,10 +32,16 @@ const Footer: React.FC = () => {
         <div className={styles["info-text"]}>
           <Section title="Acerca de" variant="no-margin-title">
             <div className={styles.buttons}>
-              <Button color="transparent-black" action={() => navigate("/conocenos")}>
+              <Button
+                color="transparent-black"
+                action={() => navigate("/conocenos")}
+              >
                 Conócenos
               </Button>
-              <Button color="transparent-black" action={() => navigate("/ayuda")}>
+              <Button
+                color="transparent-black"
+                action={() => navigate("/ayuda")}
+              >
                 Ayuda
               </Button>
             </div>
@@ -45,10 +51,16 @@ const Footer: React.FC = () => {
               <Button color="transparent-black" action={() => toggleTooltip()}>
                 Contactar soporte
               </Button>
-              <Button color="transparent-black" action={() => navigate("/preguntas")}>
+              <Button
+                color="transparent-black"
+                action={() => navigate("/preguntas")}
+              >
                 Preguntas frecuentes
               </Button>
-              <Button color="transparent-black" action={() => navigate("/politicas")}>
+              <Button
+                color="transparent-black"
+                action={() => navigate("/politicas")}
+              >
                 Politicas y condiciones
               </Button>
             </div>
@@ -56,23 +68,24 @@ const Footer: React.FC = () => {
         </div>
       </div>
       {isOpen && (
-            <div className={styles.tooltip} ref={tooltip}>
-              <Tooltip title="Soporte" action={() => toggleTooltip()}>
-                <div className={styles["tooltip-text"]}>
-                  <p>Envianos tus dudas a: </p>          
-                    <Link className={styles["copy-email"]}
-                      to='#'
-                      onClick={(e) => {
-                      window.location.href = "ejemplo@correo.com";
-                      e.preventDefault();
-                      }}
-                    >
-                    {"ejemplo@correo.com"}
-                    </Link>
-                </div>
-              </Tooltip>
+        <div className={styles.tooltip} ref={tooltip}>
+          <Tooltip title="Soporte" action={() => toggleTooltip()}>
+            <div className={styles["tooltip-text"]}>
+              <p>Envianos tus dudas a: </p>
+              <Link
+                className={styles["copy-email"]}
+                to="#"
+                onClick={(e) => {
+                  window.location.href = "ejemplo@correo.com";
+                  e.preventDefault();
+                }}
+              >
+                {"ejemplo@correo.com"}
+              </Link>
             </div>
-          )}
+          </Tooltip>
+        </div>
+      )}
     </div>
   );
 };
