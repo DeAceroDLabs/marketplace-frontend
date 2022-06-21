@@ -3,6 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import Header from "../Header";
 import { screen } from "@testing-library/react";
 import { UserProvider } from "config/userContext";
+import { act } from "react-dom/test-utils";
 
 const mockedUsedNavigate = jest.fn();
 
@@ -64,16 +65,18 @@ describe("Header", () => {
     setup(["/"]);
     const cartButton = screen.getAllByRole("button")[2];
     fireEvent.click(cartButton);
-    const tooltip = screen.queryByText('¡No tienes artículos en tu carrito!');
+    const tooltip = screen.queryByText("¡No tienes artículos en tu carrito!");
     await waitFor(() => {
-      expect(tooltip).toBeInTheDocument()
+      expect(tooltip).toBeInTheDocument();
     });
     const closeButton = screen.getAllByRole("button")[3];
 
     fireEvent.click(closeButton);
 
     await waitFor(() => {
-      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText("¡No tienes artículos en tu carrito!")
+      ).not.toBeInTheDocument();
     });
   });
 
@@ -81,9 +84,9 @@ describe("Header", () => {
     setup(["/"]);
     const cartButton = screen.getAllByRole("button")[2];
     fireEvent.click(cartButton);
-    const tooltip = screen.queryByText('¡No tienes artículos en tu carrito!');
+    const tooltip = screen.queryByText("¡No tienes artículos en tu carrito!");
     await waitFor(() => {
-      expect(tooltip).toBeInTheDocument()
+      expect(tooltip).toBeInTheDocument();
     });
     const addProductsButton = screen.getAllByRole("button")[4];
 
@@ -91,7 +94,9 @@ describe("Header", () => {
 
     await waitFor(() => {
       expect(mockedUsedNavigate).toHaveBeenCalled();
-      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText("¡No tienes artículos en tu carrito!")
+      ).not.toBeInTheDocument();
     });
   });
 
@@ -102,8 +107,29 @@ describe("Header", () => {
     fireEvent.click(homeButton);
 
     await waitFor(() => {
-      expect(screen.queryByText('¡No tienes artículos en tu carrito!')).not.toBeInTheDocument();
+      expect(
+        screen.queryByText("¡No tienes artículos en tu carrito!")
+      ).not.toBeInTheDocument();
     });
   });
 
+  it("click on outside and close tooltip ", async () => {
+    const map: any = {};
+    document.addEventListener = jest.fn((event, callback) => {
+      map[event] = callback;
+    });
+    setup(["/"]);
+    const cartButton = screen.getAllByRole("button")[2];
+    fireEvent.click(cartButton);
+    expect(
+      screen.queryByText("¡No tienes artículos en tu carrito!")
+    ).toBeInTheDocument();
+    act(() => {
+      map.mousedown({ target: document.createElement("a") });
+    });
+    expect(
+      screen.queryByText("¡No tienes artículos en tu carrito!")
+    ).not.toBeInTheDocument();
+    expect(document.addEventListener).toBeCalledTimes(3);
+  });
 });
