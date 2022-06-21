@@ -1,10 +1,11 @@
+import React, { useEffect, useState } from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Form } from "forms/form.types";
 import Section from "components/common/Section";
 import RenderForm from "components/RenderForm";
-import styles from "./MultipleForm.module.scss";
-import React, { useEffect, useState } from "react";
 import Button from "components/common/Button";
+import styles from "./MultipleForm.module.scss";
 
 interface MultipleFormsInterface {
   inputForms: Form[];
@@ -17,10 +18,9 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   onSubmit,
   submitTitle,
 }) => {
-  const form = useForm();
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const form = useForm();
   const forms = inputForms.map((form) => {
     return (
       <Section title={form.formTitle} key={form.formTitle}>
@@ -38,7 +38,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   }, [currentIndex]);
 
   const moveNext = () => {
-    console.log(currentIndex);
     setCurrentIndex(currentIndex + 1);
     setcurrentForm(forms[currentIndex]);
   };
@@ -48,30 +47,42 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
+  const BackButton = currentIndex > 0 && (
+    <div className={`${styles["button-container"]} ${styles["back-button"]}`}>
+      <Button color="primary" action={moveBack}>
+        <ArrowBackIosNewIcon fontSize="small" className={styles["back-icon"]} />
+      </Button>
+    </div>
+  );
+
+  const ContinueButton = currentIndex < forms.length - 1 && (
+    <div className={styles["button-container"]}>
+      <Button color="primary" action={moveNext}>
+        {"siguiente"}
+      </Button>
+    </div>
+  );
+
+  const SubmitButton = currentIndex === forms.length - 1 && (
+    <div className={styles["button-container"]}>
+      <Button color="primary" action={() => onSubmit}>
+        {"siguiente"}
+      </Button>
+    </div>
+  );
+
   return (
     <FormProvider {...form}>
       <div className={styles.container}>
-        {currentIndex > 0 && (
-          <Button color="primary" action={moveBack}>
-            {"<"}
-          </Button>
-        )}
+        {BackButton}
         <form
           onSubmit={form.handleSubmit(onSubmit)}
           className={styles["form-container"]}
         >
           {currentForm}
-          {currentIndex === forms.length - 1 && (
-            <Button color="primary" action={() => onSubmit}>
-              {"siguiente"}
-            </Button>
-          )}
+          {SubmitButton}
         </form>
-        {currentIndex < forms.length - 1 && (
-          <Button color="primary" action={moveNext}>
-            {"siguiente"}
-          </Button>
-        )}
+        {ContinueButton}
       </div>
     </FormProvider>
   );

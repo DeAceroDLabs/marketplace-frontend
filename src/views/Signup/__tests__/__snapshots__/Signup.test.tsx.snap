@@ -154,11 +154,15 @@ Object {
                         </div>
                       </div>
                     </form>
-                    <button
-                      class="button primary"
+                    <div
+                      class="button-container"
                     >
-                      siguiente
-                    </button>
+                      <button
+                        class="button primary"
+                      >
+                        siguiente
+                      </button>
+                    </div>
                   </div>
                 </div>
                  
@@ -331,11 +335,15 @@ Object {
                       </div>
                     </div>
                   </form>
-                  <button
-                    class="button primary"
+                  <div
+                    class="button-container"
                   >
-                    siguiente
-                  </button>
+                    <button
+                      class="button primary"
+                    >
+                      siguiente
+                    </button>
+                  </div>
                 </div>
               </div>
                
