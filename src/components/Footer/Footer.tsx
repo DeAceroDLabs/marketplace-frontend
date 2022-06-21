@@ -53,7 +53,9 @@ const Footer: React.FC = () => {
               </Button>
             </div>
           </Section>
-          {isOpen && (
+        </div>
+      </div>
+      {isOpen && (
             <div className={styles.tooltip} ref={tooltip}>
               <Tooltip title="Soporte" action={() => toggleTooltip()}>
                 <div className={styles["tooltip-text"]}>
@@ -71,8 +73,6 @@ const Footer: React.FC = () => {
               </Tooltip>
             </div>
           )}
-        </div>
-      </div>
     </div>
   );
 };
