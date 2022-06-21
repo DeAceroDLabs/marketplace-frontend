@@ -44,5 +44,13 @@ export const taxSignupForm: Form = {
       type: "text",
       value: "",
     },
+    {
+      name: "additionalEmail",
+      label: "Email adicional a la cuenta CC",
+      required: true,
+      placeholder: "ejemplo@deacero.com",
+      type: "email",
+      value: "",
+    },
   ],
 };
