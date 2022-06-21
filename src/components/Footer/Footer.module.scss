@@ -29,9 +29,9 @@
     }
   }
   .tooltip{
-    position: fixed;
+    position: absolute;
     left: 40%;
-    bottom: 34px;
+    bottom: auto;
   }
 
   .tooltip-text {
