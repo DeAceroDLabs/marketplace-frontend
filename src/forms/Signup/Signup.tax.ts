@@ -26,7 +26,7 @@ export const taxSignupForm: Form = {
       placeholder: "ejemplo@deacero.com",
       type: "text",
       value: "Sueldos y Salarios e Ingresos Asimilados a salarios",
-      disable: true,
+      disabled: true,
     },
     {
       name: "state",
