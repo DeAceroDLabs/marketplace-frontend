@@ -10,6 +10,7 @@ const TextField: React.FC<Field> = ({
   label,
   required,
   type,
+  disabled,
 }) => {
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
@@ -23,6 +24,7 @@ const TextField: React.FC<Field> = ({
         defaultValue={currentValue}
         type={type}
         placeholder={placeholder}
+        disabled={disabled}
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);

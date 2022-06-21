@@ -9,6 +9,7 @@ const Field: React.FC<FieldProps> = ({
   type,
   required,
   placeholder,
+  disabled,
 }) => {
   const props = {
     name,
@@ -17,6 +18,7 @@ const Field: React.FC<FieldProps> = ({
     type,
     required,
     placeholder,
+    disabled,
   };
 
   return (
