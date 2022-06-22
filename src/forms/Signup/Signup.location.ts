@@ -1,3 +1,4 @@
+import { MEXICO_STATES } from "./../../utils/mexico";
 import { Form } from "./../form.types";
 export const locationSignupForm: Form = {
   formTitle: "Ubicación",
@@ -29,14 +30,6 @@ export const locationSignupForm: Form = {
       value: "",
     },
     {
-      name: "email",
-      label: "Correo electrónico",
-      required: true,
-      placeholder: "ejemplo@deacero.com",
-      type: "email",
-      value: "",
-    },
-    {
       name: "town",
       label: "Municipio",
       required: true,
@@ -51,6 +44,7 @@ export const locationSignupForm: Form = {
       placeholder: "Estado",
       type: "dropdown",
       value: "",
+      options: MEXICO_STATES,
     },
   ],
 };

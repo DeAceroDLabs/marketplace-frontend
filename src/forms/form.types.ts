@@ -1,9 +1,9 @@
-type Option = {
+export type Option = {
   label: string;
-  value?: string | number;
+  value: string;
 };
 
-export type Field = {
+export interface Field {
   label: string;
   required: boolean;
   placeholder: string;
@@ -11,14 +11,16 @@ export type Field = {
   value: string;
   name: string;
   disabled?: boolean;
-};
-
-export interface OptionsField extends Field {
-  options: Option[];
 }
 
-export type Form = {
+export interface OptionsField extends Field {
+  options?: Option[];
+}
+
+export interface Form {
   formTitle: string;
   formDescription?: string;
-  fields: Field[];
-};
+  fields: Field[] | OptionsField[];
+}
+
+export type FieldProps = OptionsField;
