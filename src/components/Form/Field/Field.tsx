@@ -1,4 +1,5 @@
-import { Field as FieldProps } from "forms/form.types";
+import { FieldProps } from "forms/form.types";
+import Dropdown from "../Dropdown";
 import TextField from "../TextField";
 import styles from "./Field.module.scss";
 
@@ -10,6 +11,7 @@ const Field: React.FC<FieldProps> = ({
   required,
   placeholder,
   disabled,
+  options,
 }) => {
   const props = {
     name,
@@ -19,6 +21,7 @@ const Field: React.FC<FieldProps> = ({
     required,
     placeholder,
     disabled,
+    options,
   };
 
   return (
@@ -30,6 +33,7 @@ const Field: React.FC<FieldProps> = ({
           tel: <TextField {...props} />,
           email: <TextField {...props} />,
           password: <TextField {...props} />,
+          dropdown: <Dropdown {...props} />,
         }[type]
       }
     </div>

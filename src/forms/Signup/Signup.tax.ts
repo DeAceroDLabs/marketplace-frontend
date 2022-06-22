@@ -1,3 +1,4 @@
+import { MEXICO_STATES } from "./../../utils/mexico";
 import { Form } from "./../form.types";
 export const taxSignupForm: Form = {
   formTitle: "Información Fiscal",
@@ -35,6 +36,7 @@ export const taxSignupForm: Form = {
       placeholder: "",
       type: "dropdown",
       value: "",
+      options: MEXICO_STATES,
     },
     {
       name: "rfc",
