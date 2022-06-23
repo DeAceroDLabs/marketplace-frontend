@@ -24,26 +24,22 @@
     width: 40%;
     margin-top: 15px;
     margin-left: 3%;
-    .buttons Button{
+
+    .buttons Button {
       margin-top: 9px;
     }
   }
-  .tooltip{
-    position: absolute;
-    left: 40%;
-    bottom: auto;
-  }
 
-  .tooltip-text {
-    width: 300px;
-    height: 110px;
-    margin-left: 20px;
+}
 
-    .copy-email {
-      color: colors.$accent;
-      font-size: typography.$body-m-size;
-    }
+.tooltip-text {
+  width: 300px;
+  height: 110px;
+  margin-left: 20px;
 
+  .copy-email {
+    color: colors.$accent;
+    font-size: typography.$body-m-size;
   }
 
 }

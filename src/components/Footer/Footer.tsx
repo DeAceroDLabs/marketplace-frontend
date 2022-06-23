@@ -17,7 +17,11 @@ const Footer: React.FC = () => {
   const tooltip = useRef<any>();
   const contactButton = useRef<any>();
   const closeTooltip = (e: any) => {
-    if (tooltip.current && contactButton.current  && isOpen && !tooltip.current.contains(e.target) && !contactButton.current.contains(e.target)) {
+    if (
+      isOpen &&
+      !tooltip.current.contains(e.target) &&
+      !contactButton.current.contains(e.target)
+    ) {
       setOpen(false);
     }
   };
@@ -26,6 +30,21 @@ const Footer: React.FC = () => {
   if (!username) {
     return null;
   }
+  const tooltipContent = (
+    <div className={styles["tooltip-text"]}>
+      <p>Envianos tus dudas a: </p>
+      <Link
+        className={styles["copy-email"]}
+        to="#"
+        onClick={(e) => {
+          window.location.href = "ejemplo@correo.com";
+          e.preventDefault();
+        }}
+      >
+        {"ejemplo@correo.com"}
+      </Link>
+    </div>
+  );
 
   return (
     <div className={styles.footer}>
@@ -74,23 +93,14 @@ const Footer: React.FC = () => {
         </div>
       </div>
       {isOpen && (
-        <div className={styles.tooltip} ref={tooltip}>
-          <Tooltip title="Soporte" action={() => toggleTooltip()}>
-            <div className={styles["tooltip-text"]}>
-              <p>Envianos tus dudas a: </p>
-              <Link
-                className={styles["copy-email"]}
-                to="#"
-                onClick={(e) => {
-                  window.location.href = "ejemplo@correo.com";
-                  e.preventDefault();
-                }}
-              >
-                {"ejemplo@correo.com"}
-              </Link>
-            </div>
-          </Tooltip>
-        </div>
+        <Tooltip
+          title="Soporte"
+          action={() => toggleTooltip()}
+          location="down"
+          refLocation={tooltip}
+        >
+          {tooltipContent}
+        </Tooltip>
       )}
     </div>
   );

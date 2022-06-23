@@ -37,32 +37,26 @@
   position: absolute;
 }
 
-.tooltip {
-  position:absolute;
-  top: 87px;
-  right: 4%;
+.tooltip-children {
+  width: 250px;
+  height: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
 
-  .tooltip-children {
-    width: 250px;
-    height: 300px;
+  .tooltip-text {
+    font-size: typography.$body-m-size;
+  }
+
+  .tooltip-img {
+    margin: 10px;
+    width: 200px;
+  }
+
+  .tooltip-button {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-direction: column;
-
-    .tooltip-text {
-      font-size: typography.$body-m-size;
-    }
-
-    .tooltip-img {
-      margin: 10px;
-      width: 200px;
-    }
-
-    .tooltip-button {
-      display: flex;
-      justify-content: center;
-      margin-top: 20px;
-    }
+    justify-content: center;
+    margin-top: 20px;
   }
 }
