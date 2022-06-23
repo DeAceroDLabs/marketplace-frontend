@@ -12,20 +12,18 @@ const Dropdown: React.FC<OptionsField> = ({
   options,
 }) => {
   const methods = useFormContext();
-  const defaultValue = options ? options[0].value : value;
+  const defaultValue = options && options.length ? options[0].value : value;
   const [currentValue, setCurrentValue] = useState(defaultValue);
 
-  const renderOptions = options?.map((option) => {
-    return (
-      <option key={option.value} value={option.value}>
-        {option.label}
-      </option>
-    );
-  });
-
-  if (!renderOptions?.length) {
-    return null;
-  }
+  const renderOptions =
+    options?.length &&
+    options.map((option) => {
+      return (
+        <option key={option.value} value={option.value}>
+          {option.label}
+        </option>
+      );
+    });
 
   return (
     <div className={styles.container}>
