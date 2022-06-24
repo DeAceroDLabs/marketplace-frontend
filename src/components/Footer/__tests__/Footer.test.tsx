@@ -50,16 +50,16 @@ describe("Footer", () => {
     renderView();
     const contactButton = screen.getAllByRole("button")[2];
     fireEvent.click(contactButton);
-    const tooltip = screen.queryByText('Soporte');
+    const tooltip = screen.queryByText("Soporte");
     await waitFor(() => {
-      expect(tooltip).toBeInTheDocument()
+      expect(tooltip).toBeInTheDocument();
     });
     const outside = screen.getAllByRole("button")[5];
 
     fireEvent.click(outside);
 
     await waitFor(() => {
-      expect(screen.queryByText('Soporte')).not.toBeInTheDocument();
+      expect(screen.queryByText("Soporte")).not.toBeInTheDocument();
     });
   });
 
@@ -82,18 +82,14 @@ describe("Footer", () => {
   });
 
   it("click outside and close tooltip ", async () => {
-    const map: any = {};
-    document.addEventListener = jest.fn((event, callback) => {
-      map[event] = callback;
-    });
     renderView();
     const contactButton = screen.getAllByRole("button")[2];
     fireEvent.click(contactButton);
-    expect(screen.queryByText('Soporte')).toBeInTheDocument();
-    act(() => {
-      map.mousedown({ target: document.createElement('a') });
+    expect(screen.queryByText("Soporte")).toBeInTheDocument();
+    const politicsButton = screen.getAllByRole("button")[4];
+    fireEvent.click(politicsButton);
+    await waitFor(() => {
+      expect(screen.queryByText("Soporte")).not.toBeInTheDocument();
     });
-    expect(screen.queryByText('Soporte')).not.toBeInTheDocument();
-    expect(document.addEventListener).toBeCalledTimes(3);
   });
 });

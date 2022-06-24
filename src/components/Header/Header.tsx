@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useContext, useState, useRef } from "react";
+import { useContext } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
@@ -17,24 +17,6 @@ const Header: React.FC = () => {
   const pathIsHome = activePath === "/";
   const backgroundColor = pathIsHome ? "clean" : "color";
 
-  const [isOpen, setOpen] = useState(false);
-  const toggleTooltip = () => {
-    setOpen(!isOpen);
-  };
-
-  const tooltip = useRef<any>();
-  const cartButton = useRef<any>();
-  const closeTooltip = (e: any) => {
-    if (
-      isOpen &&
-      !tooltip.current.contains(e.target) &&
-      !cartButton.current.contains(e.target)
-    ) {
-      setOpen(false);
-    }
-  };
-  document.addEventListener("mousedown", closeTooltip);
-
   const tooltipContent = (
     <div className={styles["tooltip-children"]}>
       <div className={styles["tooltip-text"]}>
@@ -45,17 +27,13 @@ const Header: React.FC = () => {
         src="/empty-cart.jpg"
         alt="empty-cart"
       />
-      <div className={styles["tooltip-button"]}>
-        <Button
-          color="primary"
-          action={() => {
-            navigate("cart");
-            toggleTooltip();
-          }}
-        >
-          <div>Agrega productos al carrito</div>
-        </Button>
-      </div>
+    </div>
+  );
+  const trigger = (
+    <div className={styles["shopping-cart-icon"]}>
+      <Button action={() => void 0}>
+        <ShoppingCartIcon sx={{ fontSize: 33 }} />
+      </Button>
     </div>
   );
 
@@ -82,23 +60,19 @@ const Header: React.FC = () => {
           </div>
         </Button>
       </div>
-      <div className={styles["shopping-cart-icon"]} ref={cartButton}>
-        <Button action={() => toggleTooltip()}>
-          <ShoppingCartIcon sx={{ fontSize: 33 }} />
-        </Button>
-      </div>
-      {isOpen && (
-        <div ref={tooltip}>
-          <Tooltip
-            title="Mi carrito"
-            action={() => toggleTooltip()}
-            location="up"
-            refLocation={tooltip}
-          >
-            {tooltipContent}
-          </Tooltip>
-        </div>
-      )}
+      <Tooltip
+        title="Mi carrito"
+        offset={[-15, 14]}
+        position="bottom left"
+        triggerTooltip={trigger}
+        button={true}
+        buttonChildren={<div>Agrega productos al carrito</div>}
+        buttonAction={() => {
+          navigate("cart");
+        }}
+      >
+        {tooltipContent}
+      </Tooltip>
     </div>
   );
 };
