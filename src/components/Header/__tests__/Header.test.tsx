@@ -114,22 +114,20 @@ describe("Header", () => {
   });
 
   it("click on outside and close tooltip ", async () => {
-    const map: any = {};
-    document.addEventListener = jest.fn((event, callback) => {
-      map[event] = callback;
-    });
     setup(["/"]);
     const cartButton = screen.getAllByRole("button")[2];
     fireEvent.click(cartButton);
     expect(
       screen.queryByText("¡No tienes artículos en tu carrito!")
     ).toBeInTheDocument();
-    act(() => {
-      map.mousedown({ target: document.createElement("a") });
+    const homeButton = screen.getAllByRole("button")[0];
+
+    fireEvent.click(homeButton);
+
+    await waitFor(() => {
+      expect(
+        screen.queryByText("¡No tienes artículos en tu carrito!")
+      ).not.toBeInTheDocument();
     });
-    expect(
-      screen.queryByText("¡No tienes artículos en tu carrito!")
-    ).not.toBeInTheDocument();
-    expect(document.addEventListener).toBeCalledTimes(3);
   });
 });

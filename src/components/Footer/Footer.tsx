@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext, useState, useRef } from "react";
+import { useContext } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
@@ -9,23 +9,6 @@ import Section from "components/common/Section";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
-  const [isOpen, setOpen] = useState(false);
-  const toggleTooltip = () => {
-    setOpen(!isOpen);
-  };
-
-  const tooltip = useRef<any>();
-  const contactButton = useRef<any>();
-  const closeTooltip = (e: any) => {
-    if (
-      isOpen &&
-      !tooltip.current.contains(e.target) &&
-      !contactButton.current.contains(e.target)
-    ) {
-      setOpen(false);
-    }
-  };
-  document.addEventListener("mousedown", closeTooltip);
 
   if (!username) {
     return null;
@@ -43,6 +26,14 @@ const Footer: React.FC = () => {
       >
         {"ejemplo@correo.com"}
       </Link>
+    </div>
+  );
+
+  const triggerTooltip = (
+    <div>
+      <Button color="transparent-black" action={() => void 0}>
+        Contactar soporte
+      </Button>
     </div>
   );
 
@@ -68,14 +59,14 @@ const Footer: React.FC = () => {
           </Section>
           <Section title="Contacto" variant="no-margin-title">
             <div className={styles.buttons}>
-              <div ref={contactButton}>
-                <Button
-                  color="transparent-black"
-                  action={() => toggleTooltip()}
-                >
-                  Contactar soporte
-                </Button>
-              </div>
+              <Tooltip
+                title="Soporte"
+                offset={[0, 0]}
+                position="right center"
+                triggerTooltip={triggerTooltip}
+              >
+                {tooltipContent}
+              </Tooltip>
               <Button
                 color="transparent-black"
                 action={() => navigate("/preguntas")}
@@ -92,16 +83,6 @@ const Footer: React.FC = () => {
           </Section>
         </div>
       </div>
-      {isOpen && (
-        <Tooltip
-          title="Soporte"
-          action={() => toggleTooltip()}
-          location="down"
-          refLocation={tooltip}
-        >
-          {tooltipContent}
-        </Tooltip>
-      )}
     </div>
   );
 };
