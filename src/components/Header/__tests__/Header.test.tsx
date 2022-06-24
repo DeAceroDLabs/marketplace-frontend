@@ -3,7 +3,6 @@ import { MemoryRouter } from "react-router-dom";
 import Header from "../Header";
 import { screen } from "@testing-library/react";
 import { UserProvider } from "config/userContext";
-import { act } from "react-dom/test-utils";
 
 const mockedUsedNavigate = jest.fn();
 
