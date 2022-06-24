@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
             <div className={styles.buttons}>
               <Tooltip
                 title="Soporte"
-                offset={[0, 0]}
+                offset={[4, 0]}
                 position="right center"
                 triggerTooltip={triggerTooltip}
               >
