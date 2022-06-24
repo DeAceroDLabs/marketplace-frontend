@@ -2,7 +2,6 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Footer from "../Footer";
 import { UserProvider } from "config/userContext";
-import { act } from "react-dom/test-utils";
 
 const mockUSer = {
   username: "user",
