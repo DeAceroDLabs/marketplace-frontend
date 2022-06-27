@@ -9,12 +9,12 @@
     display: flex;
     align-items: flex-end;
     .query {
-        font-size: typography.$header-s-size;
-        font-weight: typography.$header-s-weight;
+        font-size: typography.$header-s;
+        font-weight: typography.$bold;
         margin-right: 5px;
     }
     .results-number {
-        font-size: typography.$text-body-s;
+        font-size: typography.$body-s;
         color: colors.$color-text-disabled;
         position: relative;
         top: -2px;

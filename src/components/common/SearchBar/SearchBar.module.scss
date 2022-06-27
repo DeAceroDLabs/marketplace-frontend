@@ -1,31 +1,27 @@
 @use 'styles/colors';
 @use 'styles/typography';
-
 .search-container {
-  z-index: 1;
-  width: 70%;
-  max-width: 1080px;
-
-  .search-bar {
-    margin: auto;
-    background-color: colors.$color-background-01;
-    border-radius: 80px;
-    display: flex;
-    align-items: center;
-    padding: 10px 25px;
-    width: 100%;
-
-    input {
-      flex: 1;
-      border: none;
-      outline: none;
-      padding-right: 20px;
-      font-size: typography.$header-s-size;
-      overflow: auto;
+    z-index: 1;
+    width: 70%;
+    max-width: 1080px;
+    .search-bar {
+        margin: auto;
+        background-color: colors.$color-background-01;
+        border-radius: 80px;
+        display: flex;
+        align-items: center;
+        padding: 10px 25px;
+        width: 100%;
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding-right: 20px;
+            font-size: typography.$header-s;
+            overflow: auto;
+        }
+        .search {
+            color: black;
+        }
     }
-
-    .search {
-      color: black;
-    }
-  }
 }
