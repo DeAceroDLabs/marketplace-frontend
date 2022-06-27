@@ -9,7 +9,7 @@ import BgSection from "components/common/BgSection";
 import Section from "components/common/Section";
 import View from "components/common/View";
 import MultipleForm from "components/Form/MultipleForms";
-import Steps from "components/Form/Steps";
+import Stepper from "components/Form/Stepper";
 import styles from "./Signup.module.scss";
 
 const Signup = () => {
@@ -35,7 +35,7 @@ const Signup = () => {
             </div>
           </Section>
           <BgSection color="primary" orientation="vertical" position="right">
-            <Steps />
+            <Stepper steps={forms.map((form) => form.formTitle)} />
           </BgSection>
         </div>
       </View>
