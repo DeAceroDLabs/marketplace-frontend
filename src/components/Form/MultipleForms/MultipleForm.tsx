@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Form } from "forms/form.types";
@@ -6,6 +6,7 @@ import Section from "components/common/Section";
 import RenderForm from "components/RenderForm";
 import Button from "components/common/Button";
 import styles from "./MultipleForm.module.scss";
+import MultiFormContext from "config/multiFormContext";
 
 interface MultipleFormsInterface {
   inputForms: Form[];
@@ -18,7 +19,9 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 }) => {
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { setActiveForm } = useContext(MultiFormContext);
   const form = useForm();
+
   const forms = inputForms.map((form) => {
     return (
       <Section title={form.formTitle} key={form.formTitle}>
@@ -32,6 +35,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   useEffect(() => {
     setcurrentForm(forms[currentIndex]);
+    setActiveForm(inputForms[currentIndex]);
     // eslint-disable-next-line
   }, [currentIndex]);
 
