@@ -174,7 +174,57 @@ Object {
               <div
                 class="content primary right"
               >
-                Información General
+                <div
+                  class="stepper"
+                >
+                  <div
+                    class="stepper-selector"
+                  >
+                    <div
+                      class="line"
+                    />
+                    <div
+                      class="step"
+                    >
+                      <div
+                        class="step-checkbox"
+                      >
+                        <div
+                          class="selected"
+                        />
+                      </div>
+                      <div
+                        class="step-title"
+                      >
+                        Información General
+                      </div>
+                    </div>
+                    <div
+                      class="step"
+                    >
+                      <div
+                        class="step-checkbox"
+                      />
+                      <div
+                        class="step-title"
+                      >
+                        Ubicación
+                      </div>
+                    </div>
+                    <div
+                      class="step"
+                    >
+                      <div
+                        class="step-checkbox"
+                      />
+                      <div
+                        class="step-title"
+                      >
+                        Información Fiscal
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -357,7 +407,57 @@ Object {
             <div
               class="content primary right"
             >
-              Información General
+              <div
+                class="stepper"
+              >
+                <div
+                  class="stepper-selector"
+                >
+                  <div
+                    class="line"
+                  />
+                  <div
+                    class="step"
+                  >
+                    <div
+                      class="step-checkbox"
+                    >
+                      <div
+                        class="selected"
+                      />
+                    </div>
+                    <div
+                      class="step-title"
+                    >
+                      Información General
+                    </div>
+                  </div>
+                  <div
+                    class="step"
+                  >
+                    <div
+                      class="step-checkbox"
+                    />
+                    <div
+                      class="step-title"
+                    >
+                      Ubicación
+                    </div>
+                  </div>
+                  <div
+                    class="step"
+                  >
+                    <div
+                      class="step-checkbox"
+                    />
+                    <div
+                      class="step-title"
+                    >
+                      Información Fiscal
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -1,0 +1,22 @@
+.stepper {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.stepper-selector {
+    height: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.line {
+    width: 2px;
+    background-color: #fff;
+    height: 78%;
+    margin-left: 7px;
+    margin-top: 8px;
+    position: absolute;
+}

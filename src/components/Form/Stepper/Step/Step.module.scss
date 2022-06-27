@@ -1,0 +1,26 @@
+.step {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    .step-checkbox {
+        height: 16px;
+        width: 16px;
+        border-radius: 8px;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        .selected {
+            height: 8px;
+            width: 8px;
+            border-radius: 4px;
+            background-color: orange;
+            margin: auto;
+            z-index: 2;
+        }
+    }
+    .step-title {
+        margin-left: 16px;
+        font-size: 16px;
+        color: #fff;
+    }
+}
