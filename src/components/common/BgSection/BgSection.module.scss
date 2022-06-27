@@ -36,3 +36,9 @@
 .primary {
     background-color: colors.$accent;
 }
+
+@media only screen and (max-width: 1300px) {
+    .vertical {
+        display: none;
+    }
+}
