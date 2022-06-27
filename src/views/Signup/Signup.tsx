@@ -35,7 +35,10 @@ const Signup = () => {
             </div>
           </Section>
           <BgSection color="primary" orientation="vertical" position="right">
-            <Stepper steps={forms.map((form) => form.formTitle)} />
+            <Stepper
+              title="Es muy fácil y rápido"
+              steps={forms.map((form) => form.formTitle)}
+            />
           </BgSection>
         </div>
       </View>
