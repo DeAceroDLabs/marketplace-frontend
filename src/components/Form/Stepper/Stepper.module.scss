@@ -1,3 +1,5 @@
+@use "styles/colors";
+@use "styles/typography";
 .stepper-wrapper {
     height: 100%;
     display: flex;
@@ -15,9 +17,9 @@
 }
 
 .title {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 600;
+    color: colors.$color-background-01;
+    font-size: typography.$header-s;
+    font-weight: typography.$semi-bold;
 }
 
 .stepper-selector {
@@ -29,7 +31,7 @@
 
 .line {
     width: 2px;
-    background-color: #fff;
+    background-color: colors.$color-background-01;
     height: 62%;
     margin-left: 7px;
     margin-top: 8px;

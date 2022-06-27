@@ -1,6 +1,5 @@
 @use 'styles/colors';
 @use 'styles/typography';
-
 .container {
     margin: 5%;
     height: 544px;
@@ -8,23 +7,19 @@
     justify-content: center;
     align-items: center;
     box-shadow: 0px 5px 20px rgba(181, 181, 181, 0.25);
-
     .image {
         width: 330px;
     }
-
     .containerInfo {
         width: 40%;
         margin: 3%;
-
         .title {
-            font-weight: typography.$header-s-weight;
-            font-size: typography.$header-m-size;
+            font-weight: typography.$bold;
+            font-size: typography.$header-m;
             margin-bottom: 15px;
         }
-
         .info {
-            font-size: typography.$body-m-size;
+            font-size: typography.$body-m;
         }
     }
 }

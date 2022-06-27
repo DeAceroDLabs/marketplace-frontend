@@ -1,9 +1,9 @@
 @use 'styles/colors';
 @use 'styles/typography';
 .header-title {
-    color: colors.$neutral-inverse;
-    font-size: typography.$header-m-size;
-    font-weight: typography.$header-m-weight;
+    color: colors.$color-background-01;
+    font-size: typography.$header-m;
+    font-weight: typography.$bold;
     z-index: 1;
 }
 
