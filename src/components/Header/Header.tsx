@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       />
     </div>
   );
-  const trigger = (
+  const shoppingCartButton = (
     <div className={styles["shopping-cart-icon"]}>
       <Button action={() => void 0}>
         <ShoppingCartIcon sx={{ fontSize: 33 }} />
@@ -64,7 +64,7 @@ const Header: React.FC = () => {
         title="Mi carrito"
         offset={[-15, 14]}
         position="bottom left"
-        triggerTooltip={trigger}
+        triggerTooltip={shoppingCartButton}
         button={true}
         buttonChildren={<div>Agrega productos al carrito</div>}
         buttonAction={() => {
