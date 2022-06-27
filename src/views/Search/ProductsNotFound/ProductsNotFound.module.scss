@@ -1,18 +1,8 @@
 @use 'styles/colors';
 @use 'styles/typography';
 
-a:link {
-  color: colors.$accent;
-  background-color: transparent;
-}
-
-a:visited {
-  color: colors.$accent;
-  background-color: transparent;
-}
-
-
-a:active {
-  color: colors.$accent;
-  background-color: transparent;
+.categories{
+  display: inline-block;
+  -webkit-text-decoration-line: underline; /* Safari */
+  text-decoration-line: underline; 
 }

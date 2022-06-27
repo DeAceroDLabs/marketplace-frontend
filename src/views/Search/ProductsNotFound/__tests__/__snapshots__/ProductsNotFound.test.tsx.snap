@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders ProductsNotFound with no issue 1`] = `
+exports[`Header renders ProductsNotFound with no issue 1`] = `
 <div>
   <div
     className="container"
@@ -22,14 +22,18 @@ exports[`renders ProductsNotFound with no issue 1`] = `
         className="info"
       >
         <div>
-          Navega por las 
-          <a
-            className="a"
-            href="/"
+          Navega por las
+          <div
+            className="categories"
           >
-            categorías
-          </a>
-           para encontrar un producto similar
+            <button
+              className="button white"
+              onClick={[Function]}
+            >
+              categorías
+            </button>
+          </div>
+          para encontrar un producto similar
         </div>
       </div>
     </div>
