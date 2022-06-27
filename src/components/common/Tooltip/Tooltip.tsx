@@ -53,7 +53,7 @@ const Tooltip: React.FC<TooltipProps> = ({
       offset={offset}
       position={position}
     >
-      {title && <b>{title}</b>}
+      {title && <div className={styles.title}>{title}</div>}
       <div className={styles.close}>
         <Button color="transparent-black" action={() => handleClose()}>
           <CloseIcon />
