@@ -24,6 +24,7 @@ const Footer: React.FC = () => {
   }
   const tooltipContent = (
     <div className={styles["tooltip-text"]}>
+      <div className={styles.title}>Soporte</div>
       <p>Envianos tus dudas a: </p>
       <Link
         className={styles["copy-email"]}
@@ -69,7 +70,6 @@ const Footer: React.FC = () => {
           <Section title="Contacto" variant="no-margin-title">
             <div className={styles.buttons}>
               <Tooltip
-                title="Soporte"
                 offset={[4, 0]}
                 position="right center"
                 triggerTooltip={contactSupport}

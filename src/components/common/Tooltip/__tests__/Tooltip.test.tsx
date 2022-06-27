@@ -5,7 +5,12 @@ import Tooltip from "../Tooltip";
 describe("Search Bar", () => {
   const view = render(
     <BrowserRouter>
-      <Tooltip title="title" action={() => console.log("action")}></Tooltip>
+      <Tooltip offset={[-15, 14]}
+        position="bottom left"
+        triggerTooltip={<div></div>}
+        isOpen={true}
+        handleClose={() => void(0)}
+        handleOpen={() => void(0)}></Tooltip>
     </BrowserRouter>
   );
 

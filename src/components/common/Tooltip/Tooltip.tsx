@@ -1,13 +1,10 @@
 import styles from "./Tooltip.module.scss";
 import CloseIcon from "@mui/icons-material/Close";
 import Button from "components/common/Button";
-import { useState } from "react";
 import { Popup } from "semantic-ui-react";
-import { AnyTxtRecord } from "dns";
 
 interface TooltipProps {
   children?: React.ReactNode;
-  title?: string;
   offset: [number, (number | undefined)?] | undefined;
   position:
     | "top left"
@@ -27,7 +24,6 @@ interface TooltipProps {
 
 const Tooltip: React.FC<TooltipProps> = ({
   children,
-  title,
   offset,
   position,
   triggerTooltip,
@@ -46,7 +42,6 @@ const Tooltip: React.FC<TooltipProps> = ({
       offset={offset}
       position={position}
     >
-      {title && <div className={styles.title}>{title}</div>}
       <div className={styles.close}>
         <Button color="transparent-black" action={() => handleClose()}>
           <CloseIcon />
