@@ -29,7 +29,7 @@ const Footer: React.FC = () => {
     </div>
   );
 
-  const triggerTooltip = (
+  const contactSupport = (
     <div>
       <Button color="transparent-black" action={() => void 0}>
         Contactar soporte
@@ -63,7 +63,7 @@ const Footer: React.FC = () => {
                 title="Soporte"
                 offset={[4, 0]}
                 position="right center"
-                triggerTooltip={triggerTooltip}
+                triggerTooltip={contactSupport}
               >
                 {tooltipContent}
               </Tooltip>
