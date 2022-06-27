@@ -29,6 +29,7 @@ const Header: React.FC = () => {
   const tooltipContent = (
     <div className={styles["tooltip-children"]}>
       <div className={styles["tooltip-text"]}>
+      <div className={styles.title}>Mi carrito</div>
         <p>¡No tienes artículos en tu carrito! </p>
       </div>
       <img
@@ -82,7 +83,6 @@ const Header: React.FC = () => {
         </Button>
       </div>
       <Tooltip
-        title="Mi carrito"
         offset={[-15, 14]}
         position="bottom left"
         triggerTooltip={shoppingCartButton}
