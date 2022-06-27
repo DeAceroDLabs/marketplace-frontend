@@ -9,14 +9,12 @@ import styles from "./MultipleForm.module.scss";
 
 interface MultipleFormsInterface {
   inputForms: Form[];
-  submitTitle: string;
   onSubmit: (data: FieldValues) => void;
 }
 
 const MultipleForms: React.FC<MultipleFormsInterface> = ({
   inputForms,
   onSubmit,
-  submitTitle,
 }) => {
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
