@@ -44,6 +44,7 @@
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
+  margin: 20px 0px;
 
   .tooltip-text {
     font-size: typography.$body-m-size;
@@ -52,6 +53,12 @@
   .tooltip-img {
     margin: 10px;
     width: 200px;
+  }
+
+  .tooltip-button {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
   }
 
 }
