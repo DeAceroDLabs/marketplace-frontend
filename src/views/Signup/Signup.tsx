@@ -25,7 +25,6 @@ const Signup = () => {
                 taxSignupForm,
               ]}
               onSubmit={onSubmit}
-              submitTitle={"Ingresar"}
             />
           </div>
         </Section>
