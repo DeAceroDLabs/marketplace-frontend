@@ -36,7 +36,7 @@ const Header: React.FC = () => {
         src="/empty-cart.jpg"
         alt="empty-cart"
       />
-      <div className={styles["tooltip-button"]}>
+      <div className={styles["tooltip-navigate-button"]}>
           <Button
             color="primary"
             action={() => {
