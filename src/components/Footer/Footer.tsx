@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
@@ -9,6 +9,15 @@ import Section from "components/common/Section";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
+  
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   if (!username) {
     return null;
@@ -64,6 +73,9 @@ const Footer: React.FC = () => {
                 offset={[4, 0]}
                 position="right center"
                 triggerTooltip={contactSupport}
+                isOpen={isOpen}
+                handleClose={handleClose}
+                handleOpen={handleOpen}
               >
                 {tooltipContent}
               </Tooltip>

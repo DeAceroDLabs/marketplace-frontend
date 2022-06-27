@@ -1,5 +1,5 @@
 import { useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import HomeIcon from "@mui/icons-material/Home";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import PersonIcon from "@mui/icons-material/Person";
@@ -17,6 +17,15 @@ const Header: React.FC = () => {
   const pathIsHome = activePath === "/";
   const backgroundColor = pathIsHome ? "clean" : "color";
 
+  const [isOpen, setOpen] = useState(false);
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const tooltipContent = (
     <div className={styles["tooltip-children"]}>
       <div className={styles["tooltip-text"]}>
@@ -27,6 +36,17 @@ const Header: React.FC = () => {
         src="/empty-cart.jpg"
         alt="empty-cart"
       />
+      <div className={styles["tooltip-button"]}>
+          <Button
+            color="primary"
+            action={() => {
+              navigate("cart");
+              handleClose();
+            }}
+          >
+            <div>Agrega productos al carrito</div>
+          </Button>
+        </div>
     </div>
   );
   const shoppingCartButton = (
@@ -35,6 +55,7 @@ const Header: React.FC = () => {
         <ShoppingCartIcon sx={{ fontSize: 33 }} />
       </Button>
     </div>
+    
   );
 
   if (!username) {
@@ -65,11 +86,9 @@ const Header: React.FC = () => {
         offset={[-15, 14]}
         position="bottom left"
         triggerTooltip={shoppingCartButton}
-        button={true}
-        buttonChildren={<div>Agrega productos al carrito</div>}
-        buttonAction={() => {
-          navigate("cart");
-        }}
+        isOpen={isOpen}
+        handleClose={handleClose}
+        handleOpen={handleOpen}
       >
         {tooltipContent}
       </Tooltip>

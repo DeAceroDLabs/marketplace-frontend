@@ -3,13 +3,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import Button from "components/common/Button";
 import { useState } from "react";
 import { Popup } from "semantic-ui-react";
+import { AnyTxtRecord } from "dns";
 
 interface TooltipProps {
   children?: React.ReactNode;
   title?: string;
-  button?: boolean;
-  buttonChildren?: React.ReactNode;
-  buttonAction?: () => void;
   offset: [number, (number | undefined)?] | undefined;
   position:
     | "top left"
@@ -22,26 +20,21 @@ interface TooltipProps {
     | "bottom center"
     | undefined;
   triggerTooltip: React.ReactNode;
+  isOpen: any;
+  handleOpen: () => void;
+  handleClose: () => void;
 }
 
 const Tooltip: React.FC<TooltipProps> = ({
   children,
   title,
-  button,
   offset,
   position,
   triggerTooltip,
-  buttonChildren,
-  buttonAction = void 0,
+  isOpen, 
+  handleOpen, 
+  handleClose,
 }) => {
-  const [isOpen, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
   return (
     <Popup
       trigger={triggerTooltip}
@@ -60,19 +53,6 @@ const Tooltip: React.FC<TooltipProps> = ({
         </Button>
       </div>
       {children}
-      {button && (
-        <div className={styles["tooltip-button"]}>
-          <Button
-            color="primary"
-            action={() => {
-              buttonAction?.();
-              handleClose();
-            }}
-          >
-            {buttonChildren}
-          </Button>
-        </div>
-      )}
     </Popup>
   );
 };
