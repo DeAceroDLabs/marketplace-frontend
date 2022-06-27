@@ -23,19 +23,21 @@ const Footer: React.FC = () => {
     return null;
   }
   const tooltipContent = (
-    <div className={styles["tooltip-text"]}>
+    <div>
       <div className={styles.title}>Soporte</div>
-      <p>Envianos tus dudas a: </p>
-      <Link
-        className={styles["copy-email"]}
-        to="#"
-        onClick={(e) => {
-          window.location.href = "ejemplo@correo.com";
-          e.preventDefault();
-        }}
-      >
-        {"ejemplo@correo.com"}
-      </Link>
+      <div className={styles["tooltip-text"]}>
+        <p>Envianos tus dudas a: </p>
+        <Link
+          className={styles["copy-email"]}
+          to="#"
+          onClick={(e) => {
+            window.location.href = "ejemplo@correo.com";
+            e.preventDefault();
+          }}
+        >
+          {"ejemplo@correo.com"}
+        </Link>
+      </div>
     </div>
   );
 

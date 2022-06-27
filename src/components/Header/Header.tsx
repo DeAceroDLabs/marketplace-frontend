@@ -27,26 +27,28 @@ const Header: React.FC = () => {
   };
 
   const tooltipContent = (
-    <div className={styles["tooltip-children"]}>
-      <div className={styles["tooltip-text"]}>
-        <div className={styles.title}>Mi carrito</div>
-        <p>¡No tienes artículos en tu carrito! </p>
-      </div>
-      <img
-        className={styles["tooltip-img"]}
-        src="/empty-cart.jpg"
-        alt="empty-cart"
-      />
-      <div className={styles["tooltip-navigate-button"]}>
-        <Button
-          color="primary"
-          action={() => {
-            navigate("cart");
-            handleClose();
-          }}
-        >
-          <div>Agrega productos al carrito</div>
-        </Button>
+    <div>
+      <div className={styles.title}>Mi carrito</div>
+      <div className={styles["tooltip-children"]}>
+        <div className={styles["tooltip-text"]}>
+          <p>¡No tienes artículos en tu carrito! </p>
+        </div>
+        <img
+          className={styles["tooltip-img"]}
+          src="/empty-cart.jpg"
+          alt="empty-cart"
+        />
+        <div className={styles["tooltip-navigate-button"]}>
+          <Button
+            color="primary"
+            action={() => {
+              navigate("cart");
+              handleClose();
+            }}
+          >
+            <div>Agrega productos al carrito</div>
+          </Button>
+        </div>
       </div>
     </div>
   );
