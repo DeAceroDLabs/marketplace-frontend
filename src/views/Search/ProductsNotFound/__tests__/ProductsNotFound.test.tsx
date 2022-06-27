@@ -1,4 +1,5 @@
 import renderer from "react-test-renderer";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import ProductsNotFound from "../ProductsNotFound";
 import { MemoryRouter } from "react-router-dom";
 import { UserProvider } from "config/userContext";
@@ -15,13 +16,26 @@ describe("Header", () => {
     username: "mock_user",
     setUser: jest.fn(),
   };
-  it("renders ProductsNotFound with no issue", () => {
+  const renderView = () =>
+  render(
     <UserProvider value={mockUSer}>
       <MemoryRouter>
-        <ProductsNotFound />
+      <ProductsNotFound />
       </MemoryRouter>
-    </UserProvider>;
+    </UserProvider>
+  );
+  it("renders ProductsNotFound with no issue", () => {
+    renderView();
     const view = renderer.create(<ProductsNotFound />);
     expect(view).toMatchSnapshot();
+  });
+
+  it("categories button useNavigate", async () => {
+    renderView();
+    const categoriesButton = screen.getAllByRole("button")[0];
+    fireEvent.click(categoriesButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).toBeCalled();
+    });
   });
 });
