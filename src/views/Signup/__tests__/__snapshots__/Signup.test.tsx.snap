@@ -173,7 +173,9 @@ Object {
             >
               <div
                 class="content primary right"
-              />
+              >
+                Información General
+              </div>
             </div>
           </div>
         </div>
@@ -354,7 +356,9 @@ Object {
           >
             <div
               class="content primary right"
-            />
+            >
+              Información General
+            </div>
           </div>
         </div>
       </div>
