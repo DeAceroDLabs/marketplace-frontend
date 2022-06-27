@@ -27,8 +27,8 @@ const Tooltip: React.FC<TooltipProps> = ({
   offset,
   position,
   triggerTooltip,
-  isOpen, 
-  handleOpen, 
+  isOpen,
+  handleOpen,
   handleClose,
 }) => {
   return (

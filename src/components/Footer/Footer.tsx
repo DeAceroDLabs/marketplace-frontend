@@ -9,7 +9,7 @@ import Section from "components/common/Section";
 const Footer: React.FC = () => {
   const navigate = useNavigate();
   const { username } = useContext(UserContext);
-  
+
   const [isOpen, setOpen] = useState(false);
   const handleOpen = () => {
     setOpen(true);
