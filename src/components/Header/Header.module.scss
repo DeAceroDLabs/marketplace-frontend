@@ -1,69 +1,62 @@
 @use "styles/colors";
 @use 'styles/typography';
-
 .header {
-  height: 109px;
-  width: 100%;
-  top: 0;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: space-between;
-
-  .shopping-cart-icon {
-    margin-right: 2%;
-    color: colors.$color-background-01;
-  }
-
-  .login-container {
-    margin-left: 2%;
-    margin-right: 1%;
-    width: fit-content;
-  }
+    height: 109px;
+    width: 100%;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    .shopping-cart-icon {
+        margin-right: 2%;
+        color: colors.$color-background-01;
+    }
+    .login-container {
+        margin-left: 2%;
+        margin-right: 1%;
+        width: fit-content;
+    }
 }
 
 .logo-container {
-  margin-right: auto;
-  margin-left: 2%;
+    margin-right: auto;
+    margin-left: 2%;
 }
 
 .color {
-  background-color: colors.$color-background-03;
+    background-color: colors.$color-background-03;
 }
 
 .clean {
-  background-color: transparent;
-  position: absolute;
+    background-color: transparent;
+    position: absolute;
 }
 
 .tooltip-children {
-  width: 250px;
-  height: 230px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-  margin: 20px 0px;
-
-  .tooltip-text {
-    font-size: typography.$body-m-size;
-  }
-
-  .tooltip-img {
-    margin: 10px;
-    width: 200px;
-  }
-
-  .tooltip-navigate-button {
+    width: 250px;
+    height: 230px;
     display: flex;
-    justify-content: center;
-    margin: 10px 0px;
-  }
-
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px 0px;
+    .tooltip-text {
+        font-size: typography.$body-m;
+    }
+    .tooltip-img {
+        margin: 10px;
+        width: 200px;
+    }
+    .tooltip-navigate-button {
+        display: flex;
+        justify-content: center;
+        margin: 10px 0px;
+    }
 }
 
-.title{
-  font-weight: typography.$header-l-weight;
-  font-size: typography.$header-s-size;
+.title {
+    font-weight: typography.$bold;
+    font-size: typography.$header-s;
 }
