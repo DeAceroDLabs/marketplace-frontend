@@ -14,17 +14,19 @@ import { TabItem } from "components/common/common.types";
 import SearchBar from "components/common/SearchBar";
 import Button from "components/common/Button";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
   const [products, setProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
-  const [loading, setLoading] = useState(false);
+  const [loadingCards, setLoadingCards] = useState(false);
+  const [loadingCategories, setLoadingCategories] = useState(false);
   let productsCards;
   const navigate = useNavigate();
 
   useEffect(() => {
+    setLoadingCategories(true);
     fetchCategories().then((data) => {
       const categories = data.map(
         (category) =>
@@ -34,16 +36,17 @@ const Home: React.FunctionComponent = () => {
           } as TabItem)
       );
       setCategories(categories);
+      setLoadingCategories(false);
     });
   }, []);
 
   useEffect(() => {
-    setLoading(true);
+    setLoadingCards(true);
     activeCategory?.id &&
       fetchProducts(activeCategory.id).then((data) => {
         const products = data;
         setProducts(products);
-        setLoading(false);
+        setLoadingCards(false);
       });
   }, [activeCategory, categories]);
 
@@ -51,7 +54,7 @@ const Home: React.FunctionComponent = () => {
     setActiveCategory(category);
   };
 
-  if (loading) {
+  if (loadingCards) {
     productsCards = <LoadingCard cards={6} variant="small" />;
   } else {
     productsCards = products.slice(0, 6).map((product) => {
@@ -78,31 +81,35 @@ const Home: React.FunctionComponent = () => {
     </BgSection>
   );
 
+  const backArrow =
+    loadingCategories === false ? (
+      <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}>
+        <Button color="primary" action={() => void 0} active={false}>
+          <ArrowBackIosNewIcon fontSize="small" className={styles["icon"]} />
+        </Button>{" "}
+      </div>
+    ) : null;
+
+  const fowardArrow =
+    loadingCategories === false ? (
+      <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}>
+        <Button color="primary" action={() => void 0} active={false}>
+          <ArrowForwardIosIcon fontSize="small" className={styles["icon"]} />
+        </Button>
+      </div>
+    ) : null;
+
   return (
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
         <div className={styles["arrow-categories-container"]}>
-          <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}>
-          <Button color="primary" action={() => void 0} active={false}>
-            <ArrowBackIosNewIcon
-              fontSize="small"
-              className={styles["icon"]}
-            />
-          </Button>
-          </div>
+          {backArrow}
           <Tabs
             options={categories}
             variant="secondary"
             onSelectTab={setCategoryActive}
           />
-          <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}>
-          <Button color="primary" action={() => void 0} active={false}>
-            <ArrowForwardIosIcon
-              fontSize="small"
-              className={styles["icon"]}
-            />
-          </Button>
-          </div>
+          {fowardArrow}
         </div>
         <div className={styles["products-container"]}>
           <GridContainer>{productsCards}</GridContainer>
