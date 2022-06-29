@@ -1,11 +1,14 @@
 @use "styles/colors";
 @use "styles/typography";
 .button {
-    cursor: pointer;
     width: fit-content;
     display: flex;
     border: none;
     border-radius: 80px;
+}
+
+.activeClass{
+    cursor: pointer;
 }
 
 .transparent {
