@@ -21,12 +21,10 @@ const Home: React.FunctionComponent = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [activeCategory, setActiveCategory] = useState({} as TabItem);
   const [loadingCards, setLoadingCards] = useState(false);
-  const [loadingCategories, setLoadingCategories] = useState(false);
   let productsCards;
   const navigate = useNavigate();
 
   useEffect(() => {
-    setLoadingCategories(true);
     fetchCategories().then((data) => {
       const categories = data.map(
         (category) =>
@@ -36,7 +34,6 @@ const Home: React.FunctionComponent = () => {
           } as TabItem)
       );
       setCategories(categories);
-      setLoadingCategories(false);
     });
   }, []);
 
@@ -81,23 +78,25 @@ const Home: React.FunctionComponent = () => {
     </BgSection>
   );
 
-  const backArrow =
-    loadingCategories === false ? (
-      <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}>
-        <Button color="primary" action={() => void 0} active={false}>
-          <ArrowBackIosNewIcon fontSize="small" className={styles["icon"]} />
-        </Button>{" "}
-      </div>
-    ) : null;
+  const backArrow = categories.length ? (
+    <div
+      className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}
+    >
+      <Button color="primary" action={() => void 0} active={false}>
+        <ArrowBackIosNewIcon fontSize="small" className={styles["icon"]} />
+      </Button>
+    </div>
+  ) : null;
 
-  const fowardArrow =
-    loadingCategories === false ? (
-      <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}>
-        <Button color="primary" action={() => void 0} active={false}>
-          <ArrowForwardIosIcon fontSize="small" className={styles["icon"]} />
-        </Button>
-      </div>
-    ) : null;
+  const fowardArrow = categories.length ? (
+    <div
+      className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}
+    >
+      <Button color="primary" action={() => void 0} active={false}>
+        <ArrowForwardIosIcon fontSize="small" className={styles["icon"]} />
+      </Button>
+    </div>
+  ) : null;
 
   return (
     <View header={homeHeader}>
