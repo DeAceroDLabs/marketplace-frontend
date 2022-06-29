@@ -4,7 +4,6 @@ import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import Tooltip from "components/common/Tooltip";
-import Section from "components/common/Section";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
