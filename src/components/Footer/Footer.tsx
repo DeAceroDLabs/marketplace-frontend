@@ -1,9 +1,10 @@
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import UserContext from "config/userContext";
 import Button from "components/common/Button";
 import styles from "./Footer.module.scss";
 import Tooltip from "components/common/Tooltip";
+import MailTo from "components/common/MailTo";
 
 const Footer: React.FC = () => {
   const navigate = useNavigate();
@@ -26,16 +27,9 @@ const Footer: React.FC = () => {
       <div className={styles.title}>Soporte</div>
       <div className={styles["tooltip-text"]}>
         <p>Envianos tus dudas a: </p>
-        <Link
-          className={styles["copy-email"]}
-          to="#"
-          onClick={(e) => {
-            window.location.href = "ejemplo@correo.com";
-            e.preventDefault();
-          }}
-        >
-          {"ejemplo@correo.com"}
-        </Link>
+        <MailTo email="ejemplo@correo.com">
+        {"ejemplo@correo.com"}
+        </MailTo>
       </div>
     </div>
   );
