@@ -18,7 +18,7 @@ Object {
           class="close"
         >
           <button
-            class="button transparent-black"
+            class="button transparent-black activeClass"
           >
             <svg
               aria-hidden="true"

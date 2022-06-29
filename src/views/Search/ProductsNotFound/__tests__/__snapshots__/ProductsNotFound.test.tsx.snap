@@ -27,7 +27,7 @@ exports[`Header renders ProductsNotFound with no issue 1`] = `
             className="categories"
           >
             <button
-              className="button white"
+              className="button white activeClass"
               onClick={[Function]}
             >
               categorías

@@ -26,12 +26,12 @@ Object {
                 class="buttons"
               >
                 <button
-                  class="button transparent-black"
+                  class="button transparent-black activeClass"
                 >
                   Conócenos
                 </button>
                 <button
-                  class="button transparent-black"
+                  class="button transparent-black activeClass"
                 >
                   Ayuda
                 </button>
@@ -50,18 +50,18 @@ Object {
               >
                 <div>
                   <button
-                    class="button transparent-black"
+                    class="button transparent-black activeClass"
                   >
                     Contactar soporte
                   </button>
                 </div>
                 <button
-                  class="button transparent-black"
+                  class="button transparent-black activeClass"
                 >
                   Preguntas frecuentes
                 </button>
                 <button
-                  class="button transparent-black"
+                  class="button transparent-black activeClass"
                 >
                   Politicas y condiciones
                 </button>
@@ -94,12 +94,12 @@ Object {
               class="buttons"
             >
               <button
-                class="button transparent-black"
+                class="button transparent-black activeClass"
               >
                 Conócenos
               </button>
               <button
-                class="button transparent-black"
+                class="button transparent-black activeClass"
               >
                 Ayuda
               </button>
@@ -118,18 +118,18 @@ Object {
             >
               <div>
                 <button
-                  class="button transparent-black"
+                  class="button transparent-black activeClass"
                 >
                   Contactar soporte
                 </button>
               </div>
               <button
-                class="button transparent-black"
+                class="button transparent-black activeClass"
               >
                 Preguntas frecuentes
               </button>
               <button
-                class="button transparent-black"
+                class="button transparent-black activeClass"
               >
                 Politicas y condiciones
               </button>

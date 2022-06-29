@@ -32,7 +32,7 @@ Object {
                   No hemos podido encontrar la página que buscas pero puedes seguir navegando en marketplace.
                 </div>
                 <button
-                  class="button primary-large"
+                  class="button primary-large activeClass"
                 >
                   Ir a home
                 </button>
@@ -71,7 +71,7 @@ Object {
                 No hemos podido encontrar la página que buscas pero puedes seguir navegando en marketplace.
               </div>
               <button
-                class="button primary-large"
+                class="button primary-large activeClass"
               >
                 Ir a home
               </button>
