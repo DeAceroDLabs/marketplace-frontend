@@ -78,7 +78,7 @@ const Home: React.FunctionComponent = () => {
     </BgSection>
   );
 
-  const backArrow = categories.length ? (
+  const backArrow = categories.length > 0 && (
     <div
       className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}
     >
@@ -86,9 +86,9 @@ const Home: React.FunctionComponent = () => {
         <ArrowBackIosNewIcon fontSize="small" className={styles["icon"]} />
       </Button>
     </div>
-  ) : null;
+  );
 
-  const fowardArrow = categories.length ? (
+  const fowardArrow = categories.length > 0 && (
     <div
       className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}
     >
@@ -96,7 +96,7 @@ const Home: React.FunctionComponent = () => {
         <ArrowForwardIosIcon fontSize="small" className={styles["icon"]} />
       </Button>
     </div>
-  ) : null;
+  );
 
   return (
     <View header={homeHeader}>
