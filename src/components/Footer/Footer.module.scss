@@ -1,42 +1,54 @@
 @use "styles/colors";
 @use 'styles/typography';
+
 .footer {
-    margin-top: 20px;
-    background-color: colors.$color-background-03;
-    height: 250px;
+  margin-top: 20px;
+  background-color: colors.$color-background-03;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .info-white-container {
+    background-color: colors.$color-background-02;
+    height: 170px;
     width: 100%;
+    padding: 20px;
+  }
+
+  .info-text {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    .info-white-container {
-        background-color: colors.$color-background-02;
-        height: 170px;
-        width: 100%;
-        padding: 20px;
+    justify-content: space-evenly;
+    width: 40%;
+    margin-top: 15px;
+    margin-left: 3%;
+
+    .info-text-container {
+      margin-right: 100px;
     }
-    .info-text {
-        display: flex;
-        justify-content: space-around;
-        width: 40%;
-        margin-top: 15px;
-        margin-left: 3%;
-        .buttons Button {
-            margin-top: 9px;
-        }
+
+    .buttons Button {
+      margin-top: 9px;
     }
-    .tooltip {
-        position: fixed;
-        left: 40%;
-        bottom: 34px;
-    }
-    .tooltip-text {
-        width: 300px;
-        height: 110px;
-        margin-left: 20px;
-        .copy-email {
-            color: colors.$accent;
-            font-size: typography.$body-m;
-        }
-    }
+  }
+
+}
+
+.tooltip-text {
+  width: 300px;
+  height: 110px;
+  margin-left: 20px;
+
+  .copy-email {
+    color: colors.$accent;
+    font-size: typography.$body-m;
+  }
+
+}
+
+.title {
+  font-weight: typography.$bold;
+  font-size: typography.$header-s;
 }
