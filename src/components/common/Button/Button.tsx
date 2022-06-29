@@ -13,8 +13,7 @@ const Button: React.FC<ButtonProps> = ({
   action,
   active = true,
 }) => {
-  let buttonClass;
-  active! ? buttonClass = "activeClass" : buttonClass = "falseClass";
+  const buttonClass = active ? "activeClass" : ""
 
   return (
     <button className={`${styles.button} ${styles[color]} ${styles[buttonClass]}`} onClick={action}>
