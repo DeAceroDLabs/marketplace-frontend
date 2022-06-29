@@ -82,49 +82,8 @@ Array [
             className="arrow-categories-container"
           >
             <div
-              className="button-container arrow-button back"
-            >
-              <button
-                className="button primary falseClass"
-                onClick={[Function]}
-              >
-                <svg
-                  aria-hidden={true}
-                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall icon css-ptiqhd-MuiSvgIcon-root"
-                  data-testid="ArrowBackIosNewIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M17.77 3.77 16 2 6 12l10 10 1.77-1.77L9.54 12z"
-                  />
-                </svg>
-              </button>
-               
-            </div>
-            <div
               className="tabs"
             />
-            <div
-              className="button-container arrow-button next"
-            >
-              <button
-                className="button primary falseClass"
-                onClick={[Function]}
-              >
-                <svg
-                  aria-hidden={true}
-                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeSmall icon css-ptiqhd-MuiSvgIcon-root"
-                  data-testid="ArrowForwardIosIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M6.23 20.23 8 22l10-10L8 2 6.23 3.77 14.46 12z"
-                  />
-                </svg>
-              </button>
-            </div>
           </div>
           <div
             className="products-container"
