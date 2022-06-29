@@ -17,7 +17,7 @@ Object {
             value=""
           />
           <button
-            class="button transparent"
+            class="button transparent activeClass"
           >
             <svg
               aria-hidden="true"
@@ -48,7 +48,7 @@ Object {
           value=""
         />
         <button
-          class="button transparent"
+          class="button transparent activeClass"
         >
           <svg
             aria-hidden="true"

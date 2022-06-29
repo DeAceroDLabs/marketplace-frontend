@@ -100,7 +100,7 @@ Object {
                         </div>
                       </div>
                       <button
-                        class="button primary"
+                        class="button primary activeClass"
                       >
                         Ingresar
                       </button>
@@ -223,7 +223,7 @@ Object {
                       </div>
                     </div>
                     <button
-                      class="button primary"
+                      class="button primary activeClass"
                     >
                       Ingresar
                     </button>

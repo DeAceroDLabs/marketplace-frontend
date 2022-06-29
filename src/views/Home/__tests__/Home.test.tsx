@@ -58,7 +58,7 @@ describe("Home", () => {
 
   it("click to see more", async () => {
     await loadInitialState();
-    const seemoreButton = screen.getAllByRole("button")[3];
+    const seemoreButton = screen.getAllByRole("button")[5];
     fireEvent.click(seemoreButton);
     await waitFor(() => {
       expect(mockedUsedNavigate).toBeCalled();
