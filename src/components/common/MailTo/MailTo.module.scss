@@ -1,0 +1,16 @@
+@use "styles/colors";
+@use "styles/typography";
+
+.mail{
+    color: colors.$accent;
+    background-color: transparent;
+}
+
+.mail:visited {
+    color: colors.$accent;
+    background-color: transparent;
+}
+
+.mail:active {
+    color: colors.$accent;
+}
