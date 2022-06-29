@@ -1,5 +1,6 @@
 @use "styles/colors";
 @use "styles/typography";
+
 .button {
     width: fit-content;
     display: flex;
@@ -7,7 +8,7 @@
     border-radius: 80px;
 }
 
-.activeClass{
+.activeClass {
     cursor: pointer;
 }
 

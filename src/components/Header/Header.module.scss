@@ -1,5 +1,6 @@
 @use "styles/colors";
 @use 'styles/typography';
+
 .header {
     height: 109px;
     width: 100%;
@@ -9,20 +10,35 @@
     align-items: center;
     text-align: center;
     justify-content: space-between;
-    .shopping-cart-icon {
-        margin-right: 2%;
-        color: colors.$color-background-01;
-    }
-    .login-container {
-        margin-left: 2%;
-        margin-right: 1%;
-        width: fit-content;
+
+    .login-shopping-cart-container {
+        display: flex;
+        width: 220px;
+
+        .shopping-cart-icon {
+            display: flex;
+            color: colors.$color-background-01;
+        }
+
+        .login-container {
+            margin-left: 2%;
+            margin-right: 1%;
+            width: fit-content;
+        }
     }
 }
 
-.logo-container {
-    margin-right: auto;
-    margin-left: 2%;
+.clean {
+    .logo-container {
+        margin-right: auto;
+        margin-left: 2%;
+    }
+}
+
+.color {
+    .logo-container {
+        margin-left: 4%;
+    }
 }
 
 .color {
@@ -42,13 +58,16 @@
     align-items: center;
     flex-direction: column;
     margin: 20px 0px;
+
     .tooltip-text {
         font-size: typography.$body-m;
     }
+
     .tooltip-img {
         margin: 10px;
         width: 200px;
     }
+
     .tooltip-navigate-button {
         display: flex;
         justify-content: center;
