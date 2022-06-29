@@ -72,27 +72,29 @@ const Header: React.FC = () => {
         </Button>
       </div>
       {!pathIsHome && <SearchBar />}
-      <div className={styles["login-container"]}>
-        <Button action={() => navigate("login")}>
-          <div id="user-icon" className={styles["person-icon"]}>
-            <PersonIcon sx={{ fontSize: 38 }} />
-          </div>
-          <div>
-            Hola,&nbsp;
-            <b>{username}</b>
-          </div>
-        </Button>
+      <div className={styles["login-shopping-cart-container"]}>
+        <div className={styles["login-container"]}>
+          <Button action={() => navigate("login")}>
+            <div id="user-icon" className={styles["person-icon"]}>
+              <PersonIcon sx={{ fontSize: 38 }} />
+            </div>
+            <div>
+              Hola,&nbsp;
+              <b>{username}</b>
+            </div>
+          </Button>
+        </div>
+        <Tooltip
+          offset={[-15, 14]}
+          position="bottom left"
+          triggerTooltip={shoppingCartButton}
+          isOpen={isOpen}
+          handleClose={handleClose}
+          handleOpen={handleOpen}
+        >
+          {tooltipContent}
+        </Tooltip>
       </div>
-      <Tooltip
-        offset={[-15, 14]}
-        position="bottom left"
-        triggerTooltip={shoppingCartButton}
-        isOpen={isOpen}
-        handleClose={handleClose}
-        handleOpen={handleOpen}
-      >
-        {tooltipContent}
-      </Tooltip>
     </div>
   );
 };
