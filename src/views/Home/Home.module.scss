@@ -36,3 +36,32 @@
         color: colors.$accent;
     }
 }
+
+.arrow-categories-container{
+    display: flex;
+    flex-direction: row;
+    .button-container {
+        margin-bottom: 40px;
+        Button {
+            position: absolute;
+            font-size: typography.$body-m;
+        }
+    }
+    
+    .arrow-button {
+        Button {
+            padding: 13px;
+            margin-right: 5px;
+        }
+        .icon {
+            font-size: typography.$body-m;
+        }
+
+    }
+    .next{
+        margin-left: 20px;
+    }
+    .back{
+        margin-right: 40px;
+    }
+}

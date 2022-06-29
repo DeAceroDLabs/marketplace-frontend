@@ -13,6 +13,8 @@ import styles from "./Home.module.scss";
 import { TabItem } from "components/common/common.types";
 import SearchBar from "components/common/SearchBar";
 import Button from "components/common/Button";
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const Home: React.FunctionComponent = () => {
   const [categories, setCategories] = useState<TabItem[]>([]);
@@ -79,15 +81,32 @@ const Home: React.FunctionComponent = () => {
   return (
     <View header={homeHeader}>
       <Section title="Catálogo de Productos">
-        <Tabs
-          options={categories}
-          variant="secondary"
-          onSelectTab={setCategoryActive}
-        />
+        <div className={styles["arrow-categories-container"]}>
+          <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.back}`}>
+          <Button color="primary" action={() => void 0} active={false}>
+            <ArrowBackIosNewIcon
+              fontSize="small"
+              className={styles["icon"]}
+            />
+          </Button>
+          </div>
+          <Tabs
+            options={categories}
+            variant="secondary"
+            onSelectTab={setCategoryActive}
+          />
+          <div className={`${styles["button-container"]} ${styles["arrow-button"]} ${styles.next}`}>
+          <Button color="primary" action={() => void 0} active={false}>
+            <ArrowForwardIosIcon
+              fontSize="small"
+              className={styles["icon"]}
+            />
+          </Button>
+          </div>
+        </div>
         <div className={styles["products-container"]}>
           <GridContainer>{productsCards}</GridContainer>
         </div>
-
         {products.length > 6 && (
           <div className={styles["see-more-container"]}>
             <Button
