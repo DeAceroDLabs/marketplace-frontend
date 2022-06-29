@@ -53,7 +53,8 @@ const Footer: React.FC = () => {
     <div className={styles.footer}>
       <div className={styles["info-white-container"]}>
         <div className={styles["info-text"]}>
-          <Section title="Acerca de" variant="no-margin-title">
+          <div className={styles["info-text-container"]}>
+            <div className={styles.title}>Acerca de</div>
             <div className={styles.buttons}>
               <Button
                 color="transparent-black"
@@ -68,11 +69,12 @@ const Footer: React.FC = () => {
                 Ayuda
               </Button>
             </div>
-          </Section>
-          <Section title="Contacto" variant="no-margin-title">
+          </div>
+          <div className={styles["info-text-container"]}>
+            <div className={styles.title}>Contacto</div>
             <div className={styles.buttons}>
               <Tooltip
-                offset={[4, 0]}
+                offset={[4, 30]}
                 position="right center"
                 triggerTooltip={contactSupport}
                 isOpen={isOpen}
@@ -94,7 +96,7 @@ const Footer: React.FC = () => {
                 Politicas y condiciones
               </Button>
             </div>
-          </Section>
+          </div>
         </div>
       </div>
     </div>

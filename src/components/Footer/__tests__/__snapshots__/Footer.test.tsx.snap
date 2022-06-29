@@ -15,100 +15,13 @@ Object {
             class="info-text"
           >
             <div
-              class="container"
+              class="info-text-container"
             >
               <div
-                class="title no-margin-title"
+                class="title"
               >
                 Acerca de
-                 
               </div>
-              <div
-                class="body"
-              >
-                 
-                <div
-                  class="buttons"
-                >
-                  <button
-                    class="button transparent-black"
-                  >
-                    Conócenos
-                  </button>
-                  <button
-                    class="button transparent-black"
-                  >
-                    Ayuda
-                  </button>
-                </div>
-                 
-              </div>
-            </div>
-            <div
-              class="container"
-            >
-              <div
-                class="title no-margin-title"
-              >
-                Contacto
-                 
-              </div>
-              <div
-                class="body"
-              >
-                 
-                <div
-                  class="buttons"
-                >
-                  <div>
-                    <button
-                      class="button transparent-black"
-                    >
-                      Contactar soporte
-                    </button>
-                  </div>
-                  <button
-                    class="button transparent-black"
-                  >
-                    Preguntas frecuentes
-                  </button>
-                  <button
-                    class="button transparent-black"
-                  >
-                    Politicas y condiciones
-                  </button>
-                </div>
-                 
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="footer"
-    >
-      <div
-        class="info-white-container"
-      >
-        <div
-          class="info-text"
-        >
-          <div
-            class="container"
-          >
-            <div
-              class="title no-margin-title"
-            >
-              Acerca de
-               
-            </div>
-            <div
-              class="body"
-            >
-               
               <div
                 class="buttons"
               >
@@ -123,22 +36,15 @@ Object {
                   Ayuda
                 </button>
               </div>
-               
-            </div>
-          </div>
-          <div
-            class="container"
-          >
-            <div
-              class="title no-margin-title"
-            >
-              Contacto
-               
             </div>
             <div
-              class="body"
+              class="info-text-container"
             >
-               
+              <div
+                class="title"
+              >
+                Contacto
+              </div>
               <div
                 class="buttons"
               >
@@ -160,7 +66,73 @@ Object {
                   Politicas y condiciones
                 </button>
               </div>
-               
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="footer"
+    >
+      <div
+        class="info-white-container"
+      >
+        <div
+          class="info-text"
+        >
+          <div
+            class="info-text-container"
+          >
+            <div
+              class="title"
+            >
+              Acerca de
+            </div>
+            <div
+              class="buttons"
+            >
+              <button
+                class="button transparent-black"
+              >
+                Conócenos
+              </button>
+              <button
+                class="button transparent-black"
+              >
+                Ayuda
+              </button>
+            </div>
+          </div>
+          <div
+            class="info-text-container"
+          >
+            <div
+              class="title"
+            >
+              Contacto
+            </div>
+            <div
+              class="buttons"
+            >
+              <div>
+                <button
+                  class="button transparent-black"
+                >
+                  Contactar soporte
+                </button>
+              </div>
+              <button
+                class="button transparent-black"
+              >
+                Preguntas frecuentes
+              </button>
+              <button
+                class="button transparent-black"
+              >
+                Politicas y condiciones
+              </button>
             </div>
           </div>
         </div>
