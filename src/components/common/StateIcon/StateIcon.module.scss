@@ -1,0 +1,38 @@
+@use "styles/colors";
+.outer-circle {
+    display: flex;
+    align-items: center;
+    width: 128px;
+    height: 128px;
+    border-radius: 64px;
+}
+
+.inner-circle {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    width: 104px;
+    height: 104px;
+    border-radius: 52px;
+    svg {
+        color: colors.$color-background-01;
+        font-size: 50px;
+        margin: auto;
+    }
+}
+
+.success {
+    background-color: colors.$color-success-disable;
+}
+
+.success-active {
+    background-color: colors.$color-success-active;
+}
+
+.error {
+    background-color: colors.$color-error-disable;
+}
+
+.error-active {
+    background-color: colors.$color-error-active;
+}
