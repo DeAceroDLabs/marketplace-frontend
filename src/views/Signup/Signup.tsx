@@ -12,11 +12,15 @@ import View from "components/common/View";
 import MultipleForm from "components/Form/MultipleForms";
 import Stepper from "components/Form/Stepper";
 import styles from "./Signup.module.scss";
+import Popup from "components/common/Popup";
+import StateIcon from "components/common/StateIcon";
+import Button from "components/common/Button";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
   const navigate = useNavigate();
   const [activeForm, setActiveForm] = useState(forms[0] as Form);
+  const [openPopup, setopenPopup] = useState(false);
   const signupForms = useMemo(
     () => ({ forms, activeForm, setActiveForm }),
     // eslint-disable-next-line
@@ -25,8 +29,24 @@ const Signup = () => {
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
-    navigate(`../login`);
+    setopenPopup(true);
   };
+
+  const popupContent = (
+    <div className={styles.popup}>
+      <StateIcon state="success" />
+      <div className={styles["popup-text"]}>
+        <strong>Felicidades</strong>
+        <p>
+          Has completado tu registro. En breve recibirás un correo de nuestra
+          parte para que confirmes tu cuenta
+        </p>
+      </div>
+      <Button color="primary" action={() => navigate("../login")}>
+        Ir a Login
+      </Button>
+    </div>
+  );
 
   return (
     <MultiFormProvider value={signupForms}>
@@ -45,6 +65,7 @@ const Signup = () => {
           </BgSection>
         </div>
       </View>
+      <Popup open={openPopup} onClose={() => {}} content={popupContent} />
     </MultiFormProvider>
   );
 };
