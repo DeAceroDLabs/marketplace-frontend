@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
 import { MultiFormProvider } from "config/multiFormContext";
 import { generalSignupForm } from "forms/Signup/Signup.general";
@@ -14,6 +15,7 @@ import styles from "./Signup.module.scss";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
+  const navigate = useNavigate();
   const [activeForm, setActiveForm] = useState(forms[0] as Form);
   const signupForms = useMemo(
     () => ({ forms, activeForm, setActiveForm }),
@@ -23,6 +25,7 @@ const Signup = () => {
 
   const onSubmit = (data: FieldValues) => {
     console.log(data);
+    navigate(`../login`);
   };
 
   return (

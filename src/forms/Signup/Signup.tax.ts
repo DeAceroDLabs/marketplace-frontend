@@ -13,7 +13,7 @@ export const taxSignupForm: Form = {
       value: "",
     },
     {
-      name: "zipCode",
+      name: "taxZipCode",
       label: "Código Postal",
       required: true,
       placeholder: "000000",
@@ -21,7 +21,7 @@ export const taxSignupForm: Form = {
       value: "",
     },
     {
-      name: "regime",
+      name: "taxRegime",
       label: "Regimen Tributario",
       required: true,
       placeholder: "ejemplo@deacero.com",
@@ -30,7 +30,7 @@ export const taxSignupForm: Form = {
       disabled: true,
     },
     {
-      name: "state",
+      name: "taxState",
       label: "Estado",
       required: true,
       placeholder: "",
@@ -39,7 +39,7 @@ export const taxSignupForm: Form = {
       options: MEXICO_STATES,
     },
     {
-      name: "rfc",
+      name: "taxRfc",
       label: "RFC",
       required: true,
       placeholder: "AAAA000000BBB0C0",
@@ -47,7 +47,7 @@ export const taxSignupForm: Form = {
       value: "",
     },
     {
-      name: "additionalEmail",
+      name: "taxAdditionalEmail",
       label: "Email adicional a la cuenta CC",
       required: true,
       placeholder: "ejemplo@deacero.com",
