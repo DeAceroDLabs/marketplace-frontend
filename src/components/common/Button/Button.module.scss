@@ -1,6 +1,5 @@
 @use "styles/colors";
 @use "styles/typography";
-
 .button {
     width: fit-content;
     display: flex;
@@ -41,6 +40,7 @@
     background-color: colors.$accent;
     color: colors.$color-background-01;
     padding: 11px 24px;
+    font-size: typography.$body-m;
 }
 
 .primary-large {
