@@ -10,7 +10,6 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "Nombre de empresa o identidad legal",
       type: "text",
-      value: "",
     },
     {
       name: "taxZipCode",
@@ -18,7 +17,6 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "000000",
       type: "number",
-      value: "",
     },
     {
       name: "taxRegime",
@@ -35,7 +33,7 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "",
       type: "dropdown",
-      value: "",
+
       options: MEXICO_STATES,
     },
     {
@@ -44,7 +42,13 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "AAAA000000BBB0C0",
       type: "text",
-      value: "",
+    },
+    {
+      name: "taxDocument",
+      label: "Constancia Fiscal",
+      required: true,
+      placeholder: "Sube tu constancia fiscal aquí",
+      type: "file",
     },
     {
       name: "taxAdditionalEmail",
@@ -52,7 +56,6 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "ejemplo@deacero.com",
       type: "email",
-      value: "",
     },
   ],
 };
