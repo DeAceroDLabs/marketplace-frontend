@@ -1,0 +1,43 @@
+@use "styles/colors";
+@use "styles/typography";
+.container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 18px;
+}
+
+.input-container {
+    height: 40px;
+    border: solid 1px #666666;
+    border-radius: 4px;
+    margin-top: 8px;
+    padding: 9px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.file-picker-container {
+    color: #666666;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input {
+    display: none;
+}
+
+.file {
+    color: colors.$accent;
+    font-size: 13px;
+}
+
+.file-picker {
+    color: colors.$accent;
+    float: right;
+    font-weight: typography.$bold;
+    cursor: pointer;
+}

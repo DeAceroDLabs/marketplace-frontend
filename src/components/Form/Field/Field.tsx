@@ -1,5 +1,6 @@
 import { FieldProps } from "forms/form.types";
 import Dropdown from "../Dropdown";
+import FileInput from "../FileInput";
 import TextField from "../TextField";
 import styles from "./Field.module.scss";
 
@@ -34,6 +35,7 @@ const Field: React.FC<FieldProps> = ({
           email: <TextField {...props} />,
           password: <TextField {...props} />,
           dropdown: <Dropdown {...props} />,
+          file: <FileInput {...props} />,
         }[type]
       }
     </div>

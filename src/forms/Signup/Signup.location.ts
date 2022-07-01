@@ -11,7 +11,6 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "Calle",
       type: "text",
-      value: "",
     },
     {
       name: "suburb",
@@ -19,7 +18,6 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "Colonia",
       type: "text",
-      value: "",
     },
     {
       name: "zipCode",
@@ -27,7 +25,6 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "12345",
       type: "number",
-      value: "",
     },
     {
       name: "town",
@@ -35,7 +32,6 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "Municipio",
       type: "text",
-      value: "",
     },
     {
       name: "state",
@@ -43,7 +39,7 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "Estado",
       type: "dropdown",
-      value: "",
+
       options: MEXICO_STATES,
     },
   ],

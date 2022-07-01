@@ -8,7 +8,7 @@ export interface Field {
   required: boolean;
   placeholder: string;
   type: string;
-  value: string;
+  value?: string;
   name: string;
   disabled?: boolean;
 }

@@ -28,7 +28,7 @@ const Signup = () => {
   );
 
   const onSubmit = (data: FieldValues) => {
-    console.log(data);
+    console.log(data["taxDocument"]);
     setopenPopup(true);
   };
 
