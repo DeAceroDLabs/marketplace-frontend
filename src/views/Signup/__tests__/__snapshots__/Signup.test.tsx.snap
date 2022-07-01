@@ -69,7 +69,7 @@ Object {
                                   Nombre
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="name"
                                   placeholder="Nombre"
                                   type="text"
@@ -87,7 +87,7 @@ Object {
                                   Teléfono
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="phone"
                                   placeholder="+52 (000)-1111-222"
                                   type="tel"
@@ -105,7 +105,7 @@ Object {
                                   Correo electrónico
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="email"
                                   placeholder="ejemplo@deacero.com"
                                   type="email"
@@ -123,7 +123,7 @@ Object {
                                   Contraseña
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="password"
                                   placeholder="Contraseña"
                                   type="password"
@@ -141,7 +141,7 @@ Object {
                                   Confirmar contraseña
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="password-confirm"
                                   placeholder="Contraseña"
                                   type="password"
@@ -311,7 +311,7 @@ Object {
                                 Nombre
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="name"
                                 placeholder="Nombre"
                                 type="text"
@@ -329,7 +329,7 @@ Object {
                                 Teléfono
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="phone"
                                 placeholder="+52 (000)-1111-222"
                                 type="tel"
@@ -347,7 +347,7 @@ Object {
                                 Correo electrónico
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="email"
                                 placeholder="ejemplo@deacero.com"
                                 type="email"
@@ -365,7 +365,7 @@ Object {
                                 Contraseña
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="password"
                                 placeholder="Contraseña"
                                 type="password"
@@ -383,7 +383,7 @@ Object {
                                 Confirmar contraseña
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="password-confirm"
                                 placeholder="Contraseña"
                                 type="password"
