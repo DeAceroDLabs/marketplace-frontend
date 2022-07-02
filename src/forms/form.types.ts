@@ -15,6 +15,7 @@ export interface Field {
 
 export interface OptionsField extends Field {
   options?: Option[];
+  validateDomain?: boolean;
 }
 
 export interface Form {
