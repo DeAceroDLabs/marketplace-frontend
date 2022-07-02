@@ -2,6 +2,7 @@ import { FieldProps } from "forms/form.types";
 import Dropdown from "../Dropdown";
 import FileInput from "../FileInput";
 import TextField from "../TextField";
+import EmailField from "../EmailField";
 import styles from "./Field.module.scss";
 
 const Field: React.FC<FieldProps> = ({
@@ -13,6 +14,7 @@ const Field: React.FC<FieldProps> = ({
   placeholder,
   disabled,
   options,
+  validateDomain,
 }) => {
   const props = {
     name,
@@ -23,6 +25,7 @@ const Field: React.FC<FieldProps> = ({
     placeholder,
     disabled,
     options,
+    validateDomain,
   };
 
   return (
@@ -32,7 +35,7 @@ const Field: React.FC<FieldProps> = ({
           text: <TextField {...props} />,
           number: <TextField {...props} />,
           tel: <TextField {...props} />,
-          email: <TextField {...props} />,
+          email: <EmailField {...props} />,
           password: <TextField {...props} />,
           dropdown: <Dropdown {...props} />,
           file: <FileInput {...props} />,
