@@ -7,6 +7,7 @@ jest.mock("react-hook-form", () => ({
   useFormContext: () => ({
     register: () => jest.fn(),
     handleSubmit: () => jest.fn(),
+    errors: () => jest.fn(),
   }),
 }));
 

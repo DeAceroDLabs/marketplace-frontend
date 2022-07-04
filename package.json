@@ -74,6 +74,7 @@
   },
   "devDependencies": {
     "@types/react-test-renderer": "^18.0.0",
+    "@types/validator": "^13.7.3",
     "husky": "^8.0.1",
     "prettier": "^2.6.2",
     "react-test-renderer": "^18.1.0",
