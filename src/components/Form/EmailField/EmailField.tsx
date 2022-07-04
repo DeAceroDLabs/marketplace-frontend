@@ -23,7 +23,7 @@ const EmailField: React.FC<OptionsField> = ({
   };
   const validateDeAceroEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
-    const isDeAceroEmail = email.split("@")[1] === "deacero.com";
+    const isDeAceroEmail = email.split("@")[1] === validateDomain;;
     isDeAceroEmail ? setError("") : setError("Favor de ingresar un correo de DEACERO");
   };
   
