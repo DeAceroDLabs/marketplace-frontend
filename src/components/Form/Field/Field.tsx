@@ -15,6 +15,7 @@ const Field: React.FC<FieldProps> = ({
   disabled,
   options,
   validateDomain,
+  message,
 }) => {
   const props = {
     name,
@@ -26,6 +27,7 @@ const Field: React.FC<FieldProps> = ({
     disabled,
     options,
     validateDomain,
+    message,
   };
 
   return (

@@ -27,6 +27,7 @@ export const generalSignupForm: Form = {
       type: "email",
       value: "",
       validateDomain: "deacero.com",
+      message: "Favor de ingresar un correo de DEACERO",
     },
     {
       name: "password",
