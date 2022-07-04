@@ -20,7 +20,7 @@ const EmailField: React.FC<OptionsField> = ({
   const [currentValue, setCurrentValue] = useState(value);
   const validateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
-    validator.isEmail(email) ? setError("") : setError("Favor de ingresar un correo valido");
+    validator.isEmail(email) ? setError("") : setError(errorMessage);
   };
   const validateDomainEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
