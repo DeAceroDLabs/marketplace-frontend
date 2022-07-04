@@ -7,13 +7,13 @@ const FileInput: React.FC<OptionsField> = ({
   name,
   label,
   required,
-  disabled,
   placeholder,
 }) => {
   const methods = useFormContext();
 
   return (
     <div className={styles.container}>
+      <label>{label}</label>
       <div className={styles["input-container"]}>
         <div className={styles["file-picker-container"]}>
           {!methods.watch(name) || methods.watch(name).length === 0 ? (

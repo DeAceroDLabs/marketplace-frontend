@@ -11,10 +11,10 @@ import Section from "components/common/Section";
 import View from "components/common/View";
 import MultipleForm from "components/Form/MultipleForms";
 import Stepper from "components/Form/Stepper";
-import styles from "./Signup.module.scss";
 import Popup from "components/common/Popup";
 import StateIcon from "components/common/StateIcon";
 import Button from "components/common/Button";
+import styles from "./Signup.module.scss";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
@@ -28,7 +28,6 @@ const Signup = () => {
   );
 
   const onSubmit = (data: FieldValues) => {
-    console.log(data["taxDocument"]);
     setopenPopup(true);
   };
 
