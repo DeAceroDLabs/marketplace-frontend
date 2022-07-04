@@ -56,6 +56,7 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "ejemplo@deacero.com",
       type: "email",
+      errorMessage: "Por favor ingresa una dirección de correo personal/adicional"
     },
   ],
 };
