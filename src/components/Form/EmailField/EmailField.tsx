@@ -13,7 +13,7 @@ const EmailField: React.FC<OptionsField> = ({
   type,
   disabled,
   validateDomain,
-  message = "",
+  errorMessage = "",
 }) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
@@ -22,10 +22,10 @@ const EmailField: React.FC<OptionsField> = ({
     const email = e.target.value;
     validator.isEmail(email) ? setError("") : setError("Favor de ingresar un correo valido");
   };
-  const validateDeAceroEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const validateDomainEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
     const isDeAceroEmail = email.split("@")[1] === validateDomain;;
-    isDeAceroEmail ? setError("") : setError(message);
+    isDeAceroEmail ? setError("") : setError(errorMessage);
   };
   
   const errorStyle = error === "" ? "" : "input-error";
@@ -44,7 +44,7 @@ const EmailField: React.FC<OptionsField> = ({
           const value = e.target.value;
           setCurrentValue(value);
           validateEmail(e);
-          validateDomain && validateDeAceroEmail(e);
+          validateDomain && validateDomainEmail(e);
         }}
       />
       {methods.formState.errors[name] && methods.formState.errors[name].type === "required" && (
