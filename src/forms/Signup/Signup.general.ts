@@ -26,7 +26,7 @@ export const generalSignupForm: Form = {
       placeholder: "ejemplo@deacero.com",
       type: "email",
       value: "",
-      validateDomain: true,
+      validateDomain: "deacero.com",
     },
     {
       name: "password",
