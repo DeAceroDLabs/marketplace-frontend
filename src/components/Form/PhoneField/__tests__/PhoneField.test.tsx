@@ -23,7 +23,7 @@ describe("PhoneField", () => {
         type={"dropdown"}
         value={"mock value"}
         name={"mock name"}
-        errorMessage={"mock message"}
+        errorMessage={"mock error message"}
         validateDomain={"mock validateDomain"}
       />
     );
@@ -44,4 +44,16 @@ describe("PhoneField", () => {
         expect((input as HTMLInputElement).value).toBe("8180199403");
     });
   });
+
+  it("simulates change on input", async () => {
+    const view = setup([]);
+    const input = screen.getByPlaceholderText("+52 (000)-1111-222");
+    fireEvent.change(input, {
+      target: { value: "12345678" },
+    });
+    await waitFor(() => {
+      expect(screen.getByText("mock error message")).toBeInTheDocument();
+    });
+  });
+  
 });
