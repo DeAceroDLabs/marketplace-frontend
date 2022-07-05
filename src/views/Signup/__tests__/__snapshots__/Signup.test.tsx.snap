@@ -87,7 +87,7 @@ Object {
                                   Teléfono
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="phone"
                                   placeholder="+52 (000)-1111-222"
                                   type="tel"
@@ -329,7 +329,7 @@ Object {
                                 Teléfono
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 name="phone"
                                 placeholder="+52 (000)-1111-222"
                                 type="tel"

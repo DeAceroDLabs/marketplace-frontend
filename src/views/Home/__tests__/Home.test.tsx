@@ -56,6 +56,24 @@ describe("Home", () => {
     });
   });
 
+  it("click to back arrow", async () => {
+    await loadInitialState();
+    const backButton = screen.getAllByRole("button")[3];
+    fireEvent.click(backButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).not.toBeCalled();
+    });
+  });
+
+  it("click to next arrow", async () => {
+    await loadInitialState();
+    const nextButton = screen.getAllByRole("button")[4];
+    fireEvent.click(nextButton);
+    await waitFor(() => {
+      expect(mockedUsedNavigate).not.toBeCalled();
+    });
+  });
+
   it("click to see more", async () => {
     await loadInitialState();
     const seemoreButton = screen.getAllByRole("button")[5];

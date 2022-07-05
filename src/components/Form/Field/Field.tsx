@@ -4,6 +4,7 @@ import FileInput from "../FileInput";
 import TextField from "../TextField";
 import EmailField from "../EmailField";
 import styles from "./Field.module.scss";
+import PhoneField from "../PhoneField";
 
 const Field: React.FC<FieldProps> = ({
   name,
@@ -36,7 +37,7 @@ const Field: React.FC<FieldProps> = ({
         {
           text: <TextField {...props} />,
           number: <TextField {...props} />,
-          tel: <TextField {...props} />,
+          tel: <PhoneField {...props} />,
           email: <EmailField {...props} />,
           password: <TextField {...props} />,
           dropdown: <Dropdown {...props} />,

@@ -1,6 +1,6 @@
 import { render } from "@testing-library/react";
 import { Option } from "forms/form.types";
-import EmailField from "../EmailField";
+import PhoneField from "../PhoneField";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
 jest.mock("react-hook-form", () => ({
@@ -13,13 +13,13 @@ jest.mock("react-hook-form", () => ({
   }),
 }));
 
-describe("EmailField", () => {
+describe("PhoneField", () => {
   const setup = (options: Option[]) => {
     return render(
-      <EmailField
-        label={"Mock EmailField"}
+      <PhoneField
+        label={"Mock PhoneField"}
         required={false}
-        placeholder={"ejemplo@deacero.com"}
+        placeholder={"+52 (000)-1111-222"}
         type={"dropdown"}
         value={"mock value"}
         name={"mock name"}
@@ -29,19 +29,19 @@ describe("EmailField", () => {
     );
   };
 
-  it("renders EmailField with no options without problem", () => {
+  it("renders PhoneField with no options without problem", () => {
     const view = setup([]);
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input", async () => {
     const view = setup([]);
-    const input = screen.getByPlaceholderText("ejemplo@deacero.com");
+    const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
-      target: { value: "ejemplo2@notdeacero.com" },
+      target: { value: "8180199403" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("ejemplo2@notdeacero.com");
+        expect((input as HTMLInputElement).value).toBe("8180199403");
     });
   });
 });
