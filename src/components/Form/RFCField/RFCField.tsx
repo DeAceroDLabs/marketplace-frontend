@@ -30,7 +30,7 @@ const RFCField: React.FC<OptionsField> = ({
       <label>{label}</label>
       <input
         {...methods.register(name, { value, required })}
-        className={`${styles.input} ${styles[errorStyle]}`}
+        className={`${styles.input} ${styles["input-rfc"]} ${styles[errorStyle]}`}
         defaultValue={currentValue}
         type={type}
         placeholder={placeholder}
