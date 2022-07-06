@@ -2,7 +2,7 @@ import { OptionsField } from "forms/form.types";
 import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./RFCField.module.scss";
-const validateRfc = require("validate-rfc");
+import validateRfc from "validate-rfc/src/index";
 
 const RFCField: React.FC<OptionsField> = ({
   name,
