@@ -2,9 +2,9 @@ import { FieldProps } from "forms/form.types";
 import Dropdown from "../Dropdown";
 import FileInput from "../FileInput";
 import TextField from "../TextField";
+import PhoneField from "../PhoneField";
 import EmailField from "../EmailField";
 import styles from "./Field.module.scss";
-import PhoneField from "../PhoneField";
 
 const Field: React.FC<FieldProps> = ({
   name,

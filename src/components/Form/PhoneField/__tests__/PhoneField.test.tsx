@@ -24,7 +24,6 @@ describe("PhoneField", () => {
         value={"mock value"}
         name={"mock name"}
         errorMessage={"mock error message"}
-        validateDomain={"mock validateDomain"}
       />
     );
   };
@@ -34,18 +33,7 @@ describe("PhoneField", () => {
     expect(view).toMatchSnapshot();
   });
 
-  it("simulates change on input", async () => {
-    const view = setup([]);
-    const input = screen.getByPlaceholderText("+52 (000)-1111-222");
-    fireEvent.change(input, {
-      target: { value: "8180199403" },
-    });
-    await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("8180199403");
-    });
-  });
-
-  it("simulates change on input", async () => {
+  it("simulates change on input with error", async () => {
     const view = setup([]);
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
