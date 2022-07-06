@@ -15,7 +15,7 @@ Object {
           class="input "
           mock="[object Object]"
           placeholder="+52 (000)-1111-222"
-          type="dropdown"
+          type="number"
           value="mock value"
         />
       </div>
@@ -32,7 +32,7 @@ Object {
         class="input "
         mock="[object Object]"
         placeholder="+52 (000)-1111-222"
-        type="dropdown"
+        type="number"
         value="mock value"
       />
     </div>
