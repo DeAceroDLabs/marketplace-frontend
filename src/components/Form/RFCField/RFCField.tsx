@@ -20,7 +20,6 @@ const RFCField: React.FC<OptionsField> = ({
   const validateRFC = (e: React.ChangeEvent<HTMLInputElement>) => {
     const rfc = e.target.value;
     validateRfc(rfc).isValid ? setError("") : setError(errorMessage);
-    console.log(validateRfc(rfc).isValid);
   };
 
   const errorStyle = error === "" ? "" : "input-error";
