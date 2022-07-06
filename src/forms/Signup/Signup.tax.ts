@@ -41,7 +41,8 @@ export const taxSignupForm: Form = {
       label: "RFC",
       required: true,
       placeholder: "AAAA000000BBB0C0",
-      type: "text",
+      type: "rfc",
+      errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres"
     },
     {
       name: "taxDocument",

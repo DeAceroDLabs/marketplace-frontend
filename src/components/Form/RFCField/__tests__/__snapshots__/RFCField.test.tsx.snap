@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmailField renders EmailField with no options without problem 1`] = `
+exports[`RFCField renders RFCField with no options without problem 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -9,13 +9,13 @@ Object {
         class="container"
       >
         <label>
-          Mock EmailField
+          Mock RFCField
         </label>
         <input
           class="input "
           mock="[object Object]"
-          placeholder="ejemplo@deacero.com"
-          type="email"
+          placeholder="AAAA000000BBB0C0"
+          type="rfc"
           value="mock value"
         />
       </div>
@@ -26,13 +26,13 @@ Object {
       class="container"
     >
       <label>
-        Mock EmailField
+        Mock RFCField
       </label>
       <input
         class="input "
         mock="[object Object]"
-        placeholder="ejemplo@deacero.com"
-        type="email"
+        placeholder="AAAA000000BBB0C0"
+        type="rfc"
         value="mock value"
       />
     </div>
