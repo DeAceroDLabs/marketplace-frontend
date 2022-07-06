@@ -126,7 +126,7 @@ Object {
                                     Contraseña
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input input-rfc "
                                     name="password"
                                     placeholder="Contraseña"
                                     type="password"
@@ -144,7 +144,7 @@ Object {
                                     Confirmar contraseña
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input input-rfc "
                                     name="password-confirm"
                                     placeholder="Contraseña"
                                     type="password"
@@ -979,7 +979,7 @@ Object {
                                   Contraseña
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input input-rfc "
                                   name="password"
                                   placeholder="Contraseña"
                                   type="password"
@@ -997,7 +997,7 @@ Object {
                                   Confirmar contraseña
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input input-rfc "
                                   name="password-confirm"
                                   placeholder="Contraseña"
                                   type="password"

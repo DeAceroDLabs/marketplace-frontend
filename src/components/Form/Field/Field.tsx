@@ -5,6 +5,7 @@ import TextField from "../TextField";
 import EmailField from "../EmailField";
 import PhoneField from "../PhoneField";
 import RFCField from "../RFCField";
+import PasswordField from "../PasswordField";
 import styles from "./Field.module.scss";
 
 const Field: React.FC<FieldProps> = ({
@@ -41,7 +42,7 @@ const Field: React.FC<FieldProps> = ({
           number: <TextField {...props} />,
           tel: <PhoneField {...props} />,
           email: <EmailField {...props} />,
-          password: <TextField {...props} />,
+          password: <PasswordField {...props} />,
           dropdown: <Dropdown {...props} />,
           file: <FileInput {...props} />,
         }[type]
