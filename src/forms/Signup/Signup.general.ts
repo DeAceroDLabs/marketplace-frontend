@@ -37,6 +37,7 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
+      errorMessage: "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial",
     },
     {
       name: "password-confirm",
