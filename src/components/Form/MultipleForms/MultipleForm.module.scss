@@ -5,11 +5,16 @@
     justify-content: center;
 }
 
+.hidden {
+    position: absolute;
+    visibility: hidden;
+    height: 0;
+}
+
 .form-container {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-direction: column;
     margin-left: 20px;
     height: 85vh;
     overflow: auto;
@@ -17,15 +22,22 @@
     scrollbar-width: none;
 }
 
-.form-container::-webkit-scrollbar {
-    display: none;
-}
-
 .button-container {
     margin-bottom: 40px;
+    margin-left: 20px;
     Button {
         position: absolute;
         font-size: typography.$body-m;
+    }
+}
+
+.submit-container {
+    margin-top: 10px;
+    Button {
+        position: relative;
+        font-size: typography.$body-m;
+        float: right;
+        margin-right: 7%;
     }
 }
 

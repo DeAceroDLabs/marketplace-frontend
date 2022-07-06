@@ -17,36 +17,37 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   inputForms,
   onSubmit,
 }) => {
-  const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
   const form = useForm();
 
   const forms = inputForms.map((form) => {
     return (
-      <Section title={form.formTitle} key={form.formTitle}>
-        {form.formDescription && (
-          <p className={styles["form-description"]}>{form.formDescription}</p>
-        )}
-        <RenderForm inputForm={form} />
-      </Section>
+      <div
+        key={form.formTitle}
+        className={inputForms[currentIndex] !== form ? `${styles.hidden}` : ""}
+      >
+        <Section title={form.formTitle}>
+          {form.formDescription && (
+            <p className={styles["form-description"]}>{form.formDescription}</p>
+          )}
+          <RenderForm inputForm={form} />
+        </Section>
+      </div>
     );
   });
 
   useEffect(() => {
-    setcurrentForm(forms[currentIndex]);
     setActiveForm(inputForms[currentIndex]);
     // eslint-disable-next-line
   }, [currentIndex]);
 
   const moveNext = () => {
     setCurrentIndex(currentIndex + 1);
-    setcurrentForm(forms[currentIndex]);
   };
 
   const moveBack = () => {
     setCurrentIndex(currentIndex - 1);
-    setcurrentForm(forms[currentIndex]);
   };
 
   const BackButton = currentIndex > 0 && (
@@ -66,9 +67,9 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   );
 
   const SubmitButton = currentIndex === forms.length - 1 && (
-    <div className={styles["button-container"]}>
+    <div className={styles["submit-container"]}>
       <Button color="primary" action={() => onSubmit}>
-        {"siguiente"}
+        {"Finalizar"}
       </Button>
     </div>
   );
@@ -81,7 +82,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
           onSubmit={form.handleSubmit(onSubmit)}
           className={styles["form-container"]}
         >
-          {currentForm}
+          {forms}
           {SubmitButton}
         </form>
         {ContinueButton}
