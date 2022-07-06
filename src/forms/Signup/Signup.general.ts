@@ -18,6 +18,7 @@ export const generalSignupForm: Form = {
       placeholder: "+52 (000)-1111-222",
       type: "tel",
       value: "",
+      errorMessage: "Por favor ingresa tu teléfono a 10 dígitos",
     },
     {
       name: "email",
