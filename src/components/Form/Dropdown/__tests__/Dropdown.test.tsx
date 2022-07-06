@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { Option } from "forms/form.types";
 import Dropdown from "../Dropdown";
 
@@ -44,5 +44,26 @@ describe("Dropdown", () => {
     ];
     const view = setup(mockOptions);
     expect(view).toMatchSnapshot();
+  });
+
+  it("changes option value", async () => {
+    const mockOptions = [
+      {
+        label: "Mock Option 1",
+        value: "Mock Option 1",
+      },
+      {
+        label: "Mock Option 2",
+        value: "Mock Option 2",
+      },
+    ];
+    setup(mockOptions);
+    const dropdown = screen.getByDisplayValue("Mock Option 1");
+    fireEvent.change(dropdown, {
+      target: { value: "Mock Option 2" },
+    });
+    await waitFor(() => {
+      expect((dropdown as HTMLInputElement).value).toBe("Mock Option 2");
+    });
   });
 });
