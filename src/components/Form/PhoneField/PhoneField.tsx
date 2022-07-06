@@ -17,9 +17,8 @@ const PhoneField: React.FC<OptionsField> = ({
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
-  const validatePhone = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const phone = e.target.value;
-    validator.isMobilePhone(phone, 'es-MX') ? setError("") : setError(errorMessage);
+  const validatePhone = (phoneValue: string ) => {
+    validator.isMobilePhone(phoneValue, 'es-MX') ? setError("") : setError(errorMessage);
   };
   
   const errorStyle = error === "" ? "" : "input-error";
@@ -35,9 +34,10 @@ const PhoneField: React.FC<OptionsField> = ({
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => {
-          const value = e.target.value;
-          setCurrentValue(value);
-          validatePhone(e);
+          let phoneValue = e.target.value;
+          phoneValue = (phoneValue.slice(0, 3) !== '+52' && phoneValue.length === 10 ) ? `+52${phoneValue}` : phoneValue;   
+          setCurrentValue(phoneValue);
+          validatePhone(phoneValue);
         }}
       />
       {methods.formState.errors[name] && methods.formState.errors[name].type === "required" && (

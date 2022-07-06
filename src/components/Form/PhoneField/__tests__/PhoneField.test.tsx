@@ -55,5 +55,16 @@ describe("PhoneField", () => {
       expect(screen.getByText("mock error message")).toBeInTheDocument();
     });
   });
+
+  it("simulates change on input no error", async () => {
+    const view = setup([]);
+    const input = screen.getByPlaceholderText("+52 (000)-1111-222");
+    fireEvent.change(input, {
+      target: { value: "1234567890" },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
+  });
   
 });
