@@ -23,8 +23,7 @@ const PasswordField: React.FC<OptionsField> = (
   const [currentValue, setCurrentValue] = useState(value);
   const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const password = e.target.value;
-    let updatePassword = generalSignupForm.fields[3].value;
-    updatePassword = password;
+    generalSignupForm.fields[3].value = password;
 
     validator.isStrongPassword(password, {
       minLength: 8,
@@ -42,6 +41,8 @@ const PasswordField: React.FC<OptionsField> = (
     const passwordValue = generalSignupForm.fields[3].value;
     let confirmPasswordValue = generalSignupForm.fields[4].value;
     confirmPasswordValue = confirmPassword;
+    console.log(passwordValue);
+    console.log(confirmPasswordValue);
 
     confirmPasswordValue === passwordValue
       ? setError("")
@@ -60,6 +61,14 @@ const PasswordField: React.FC<OptionsField> = (
         type={type}
         placeholder={placeholder}
         disabled={disabled}
+        onPaste={(e) => {
+          e.preventDefault();
+          return false;
+        }}
+        onCopy={(e) => {
+          e.preventDefault();
+          return false;
+        }}
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
