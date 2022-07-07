@@ -69,7 +69,7 @@ Object {
                                   Usuario
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   mock="[object Object]"
                                   placeholder="Usuario"
                                   type="text"
@@ -87,7 +87,7 @@ Object {
                                   Contraseña
                                 </label>
                                 <input
-                                  class="input input-rfc "
+                                  class="input "
                                   mock="[object Object]"
                                   placeholder="Contraseña"
                                   type="password"
@@ -192,7 +192,7 @@ Object {
                                 Usuario
                               </label>
                               <input
-                                class="input"
+                                class="input "
                                 mock="[object Object]"
                                 placeholder="Usuario"
                                 type="text"
@@ -210,7 +210,7 @@ Object {
                                 Contraseña
                               </label>
                               <input
-                                class="input input-rfc "
+                                class="input "
                                 mock="[object Object]"
                                 placeholder="Contraseña"
                                 type="password"

@@ -45,7 +45,7 @@ Object {
                         mock Label
                       </label>
                       <input
-                        class="input"
+                        class="input "
                         name="mockName"
                         placeholder="mock"
                         type="text"
@@ -92,7 +92,7 @@ Object {
                         mock Label
                       </label>
                       <input
-                        class="input"
+                        class="input "
                         name="mockName"
                         placeholder="mock"
                         type="text"
@@ -159,7 +159,7 @@ Object {
                       mock Label
                     </label>
                     <input
-                      class="input"
+                      class="input "
                       name="mockName"
                       placeholder="mock"
                       type="text"
@@ -206,7 +206,7 @@ Object {
                       mock Label
                     </label>
                     <input
-                      class="input"
+                      class="input "
                       name="mockName"
                       placeholder="mock"
                       type="text"

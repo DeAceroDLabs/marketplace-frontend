@@ -14,13 +14,15 @@ const TextField: React.FC<Field> = ({
 }) => {
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
+  const errorStyle =  (methods.formState.errors[name] && methods.formState.errors[name].type === "required") && currentValue === value  ? "input-error" : "";
+  const requiredMessage = (methods.formState.errors[name] && methods.formState.errors[name].type === "required") && currentValue === value ? <span className={styles["error-text"]}>Este campo es requerido</span> : null;
 
   return (
     <div className={styles.container}>
       <label>{label}</label>
       <input
         {...methods.register(name, { value, required })}
-        className={styles.input}
+        className={`${styles.input} ${styles[errorStyle]}`}
         defaultValue={currentValue}
         type={type}
         placeholder={placeholder}
@@ -30,9 +32,7 @@ const TextField: React.FC<Field> = ({
           setCurrentValue(value);
         }}
       />
-      {methods.formState.errors[name] && methods.formState.errors[name].type === "required" && (
-        <span className={styles["error-text"]}>Este campo es requerido</span>
-      )}
+      {requiredMessage}
     </div>
   );
 };
