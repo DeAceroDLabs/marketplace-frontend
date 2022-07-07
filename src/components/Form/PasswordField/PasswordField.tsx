@@ -3,22 +3,29 @@ import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./PasswordField.module.scss";
 import validator from "validator";
+import { generalSignupForm } from "forms/Signup/Signup.general";
 
-const PasswordField: React.FC<OptionsField> = ({
-  name,
-  value,
-  placeholder,
-  label,
-  required,
-  type,
-  disabled,
-  errorMessage = "",
-}) => {
+const PasswordField: React.FC<OptionsField> = (
+  {
+    name,
+    value,
+    placeholder,
+    label,
+    required,
+    type,
+    disabled,
+    errorMessage = "",
+  },
+  state
+) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
   const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const password = e.target.value;
+    let updatePassword = generalSignupForm.fields[3].value;
+    updatePassword = password;
+
     validator.isStrongPassword(password, {
       minLength: 8,
       minLowercase: 1,
@@ -26,6 +33,17 @@ const PasswordField: React.FC<OptionsField> = ({
       minNumbers: 1,
       minSymbols: 1,
     })
+      ? setError("")
+      : setError(errorMessage);
+  };
+
+  const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const confirmPassword = e.target.value;
+    const passwordValue = generalSignupForm.fields[3].value;
+    let confirmPasswordValue = generalSignupForm.fields[4].value;
+    confirmPasswordValue = confirmPassword;
+
+    confirmPasswordValue === passwordValue
       ? setError("")
       : setError(errorMessage);
   };
@@ -38,14 +56,15 @@ const PasswordField: React.FC<OptionsField> = ({
       <input
         {...methods.register(name, { value, required })}
         className={`${styles.input} ${styles["input-rfc"]} ${styles[errorStyle]}`}
-        defaultValue={currentValue}
+        value={currentValue}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          validatePassword(e);
+          name === "password" && validatePassword(e);
+          name === "password-confirm" && confirmPassword(e);
         }}
       />
       {methods.formState.errors[name] &&

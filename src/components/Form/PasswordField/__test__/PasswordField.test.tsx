@@ -22,8 +22,8 @@ describe("PasswordField", () => {
         placeholder={"password"}
         type={"email"}
         value={"mock value"}
-        name={"mock name"}
-        errorMessage={"mock message"}
+        name={"password"}
+        errorMessage={"mock error message"}
       />
     );
   };
@@ -43,4 +43,16 @@ describe("PasswordField", () => {
         expect((input as HTMLInputElement).value).toBe("password");
     });
   });
+
+  it("simulates change on input with error", async () => {
+    const view = setup([]);
+    const input = screen.getByPlaceholderText("password");
+    fireEvent.change(input, {
+      target: { value: "password" },
+    });
+    await waitFor(() => {
+        expect(screen.getByText("mock error message")).toBeInTheDocument();
+      });
+  });
+  
 });
