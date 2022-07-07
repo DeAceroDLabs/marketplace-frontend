@@ -14,13 +14,12 @@ const PasswordField: React.FC<OptionsField> = ({
   type,
   disabled,
   errorMessage = "",
-  needsValidationFrom,
+  needsValidationFrom = "",
 }) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
 
-  generalSignupForm.fields.filter((field) => field.name === name)[0].value = currentValue;
 
   const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const password = e.target.value;
@@ -38,12 +37,8 @@ const PasswordField: React.FC<OptionsField> = ({
 
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const confirmPassword = e.target.value;
-    const passwordValue = generalSignupForm.fields.filter(
-      (field) => field.name === needsValidationFrom
-    )[0].value;
-    let confirmPasswordValue = generalSignupForm.fields.filter(
-      (field) => field.name === name
-    )[0].value;
+    const passwordValue = methods.getValues()[needsValidationFrom];
+    let confirmPasswordValue = methods.getValues()[name];
     confirmPasswordValue = confirmPassword;
     confirmPasswordValue === passwordValue
       ? setError("")
