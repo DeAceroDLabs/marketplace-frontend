@@ -1,3 +1,6 @@
+@use "styles/colors";
+@use "styles/typography";
+
 .container {
     display: flex;
     flex-direction: column;
@@ -10,4 +13,14 @@
     border-radius: 4px;
     margin-top: 8px;
     padding: 9px 16px;
+}
+
+.input-error {
+    border: solid 1px colors.$error;
+}
+
+.error-text {
+    margin-top: 10px;
+    color: colors.$error;
+    font-size: typography.$body-s;
 }

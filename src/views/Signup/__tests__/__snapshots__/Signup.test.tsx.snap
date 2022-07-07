@@ -72,7 +72,7 @@ Object {
                                     Nombre
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="name"
                                     placeholder="Nombre"
                                     type="text"
@@ -126,7 +126,7 @@ Object {
                                     Contraseña
                                   </label>
                                   <input
-                                    class="input input-rfc "
+                                    class="input "
                                     name="password"
                                     placeholder="Contraseña"
                                     type="password"
@@ -144,7 +144,7 @@ Object {
                                     Confirmar contraseña
                                   </label>
                                   <input
-                                    class="input input-rfc "
+                                    class="input "
                                     name="password-confirm"
                                     placeholder="Contraseña"
                                     type="password"
@@ -191,7 +191,7 @@ Object {
                                     Calle
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="street"
                                     placeholder="Calle"
                                     type="text"
@@ -209,7 +209,7 @@ Object {
                                     Colonia
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="suburb"
                                     placeholder="Colonia"
                                     type="text"
@@ -227,7 +227,7 @@ Object {
                                     Código Postal
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="zipCode"
                                     placeholder="12345"
                                     type="number"
@@ -245,7 +245,7 @@ Object {
                                     Municipio
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="town"
                                     placeholder="Municipio"
                                     type="text"
@@ -469,7 +469,7 @@ Object {
                                     Compañía / Nombre Legal
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="taxIdentity"
                                     placeholder="Nombre de empresa o identidad legal"
                                     type="text"
@@ -487,7 +487,7 @@ Object {
                                     Código Postal
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     name="taxZipCode"
                                     placeholder="000000"
                                     type="number"
@@ -505,7 +505,7 @@ Object {
                                     Regimen Tributario
                                   </label>
                                   <input
-                                    class="input"
+                                    class="input "
                                     disabled=""
                                     name="taxRegime"
                                     placeholder="ejemplo@deacero.com"
@@ -925,7 +925,7 @@ Object {
                                   Nombre
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="name"
                                   placeholder="Nombre"
                                   type="text"
@@ -979,7 +979,7 @@ Object {
                                   Contraseña
                                 </label>
                                 <input
-                                  class="input input-rfc "
+                                  class="input "
                                   name="password"
                                   placeholder="Contraseña"
                                   type="password"
@@ -997,7 +997,7 @@ Object {
                                   Confirmar contraseña
                                 </label>
                                 <input
-                                  class="input input-rfc "
+                                  class="input "
                                   name="password-confirm"
                                   placeholder="Contraseña"
                                   type="password"
@@ -1044,7 +1044,7 @@ Object {
                                   Calle
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="street"
                                   placeholder="Calle"
                                   type="text"
@@ -1062,7 +1062,7 @@ Object {
                                   Colonia
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="suburb"
                                   placeholder="Colonia"
                                   type="text"
@@ -1080,7 +1080,7 @@ Object {
                                   Código Postal
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="zipCode"
                                   placeholder="12345"
                                   type="number"
@@ -1098,7 +1098,7 @@ Object {
                                   Municipio
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="town"
                                   placeholder="Municipio"
                                   type="text"
@@ -1322,7 +1322,7 @@ Object {
                                   Compañía / Nombre Legal
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="taxIdentity"
                                   placeholder="Nombre de empresa o identidad legal"
                                   type="text"
@@ -1340,7 +1340,7 @@ Object {
                                   Código Postal
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   name="taxZipCode"
                                   placeholder="000000"
                                   type="number"
@@ -1358,7 +1358,7 @@ Object {
                                   Regimen Tributario
                                 </label>
                                 <input
-                                  class="input"
+                                  class="input "
                                   disabled=""
                                   name="taxRegime"
                                   placeholder="ejemplo@deacero.com"
