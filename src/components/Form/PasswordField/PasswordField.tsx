@@ -5,26 +5,27 @@ import styles from "./PasswordField.module.scss";
 import validator from "validator";
 import { generalSignupForm } from "forms/Signup/Signup.general";
 
-const PasswordField: React.FC<OptionsField> = (
-  {
-    name,
-    value,
-    placeholder,
-    label,
-    required,
-    type,
-    disabled,
-    errorMessage = "",
-    needsValidateFrom,
-  }
-) => {
+const PasswordField: React.FC<OptionsField> = ({
+  name,
+  value,
+  placeholder,
+  label,
+  required,
+  type,
+  disabled,
+  errorMessage = "",
+  needsValidateFrom,
+  providesValidateFrom,
+}) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
 
   const updatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const password = e.target.value;
-    generalSignupForm.fields[3].value = password;
+    generalSignupForm.fields.filter(
+      (field) => field.name === providesValidateFrom
+    )[0].value = password;
   };
 
   const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -43,11 +44,15 @@ const PasswordField: React.FC<OptionsField> = (
 
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const confirmPassword = e.target.value;
-    const passwordValue = generalSignupForm.fields.filter((field) => field.name === needsValidateFrom)[0].value;
+    const passwordValue = generalSignupForm.fields.filter(
+      (field) => field.name === needsValidateFrom
+    )[0].value;
     console.log(passwordValue);
-    let confirmPasswordValue = generalSignupForm.fields[4].value;
+    let confirmPasswordValue = generalSignupForm.fields.filter(
+      (field) => field.name === "password-confirm"
+    )[0].value;
     confirmPasswordValue = confirmPassword;
-    confirmPasswordValue === passwordValue && error !== errorMessage
+    confirmPasswordValue === passwordValue
       ? setError("")
       : setError(errorMessage);
   };
@@ -75,8 +80,8 @@ const PasswordField: React.FC<OptionsField> = (
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
+          providesValidateFrom && updatePassword(e);
           validatePassword(e);
-          name === "password" && updatePassword(e);
           needsValidateFrom && confirmPassword(e);
         }}
       />

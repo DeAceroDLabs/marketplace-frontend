@@ -38,6 +38,7 @@ export const generalSignupForm: Form = {
       type: "password",
       value: "",
       errorMessage: "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial",
+      providesValidateFrom: "password",
     },
     {
       name: "password-confirm",
@@ -47,7 +48,7 @@ export const generalSignupForm: Form = {
       type: "password",
       value: "",
       errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente",
-      needsValidateFrom: "password"
+      needsValidateFrom: "password",
     },
   ],
 };
