@@ -41,9 +41,8 @@ const PasswordField: React.FC<OptionsField> = ({
     const passwordValue = generalSignupForm.fields.filter(
       (field) => field.name === needsValidateFrom
     )[0].value;
-    console.log(passwordValue);
     let confirmPasswordValue = generalSignupForm.fields.filter(
-      (field) => field.name === "password-confirm"
+      (field) => field.name === name
     )[0].value;
     confirmPasswordValue = confirmPassword;
     confirmPasswordValue === passwordValue
