@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmailField renders EmailField with no options without problem 1`] = `
+exports[`EmailField renders EmailField with domain without problem 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
