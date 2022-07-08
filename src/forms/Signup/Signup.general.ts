@@ -47,7 +47,6 @@ export const generalSignupForm: Form = {
       type: "password",
       value: "",
       errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente",
-      needsValidateFrom: "password"
     },
   ],
 };

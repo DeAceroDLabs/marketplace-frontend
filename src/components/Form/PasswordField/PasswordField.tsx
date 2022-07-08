@@ -15,20 +15,14 @@ const PasswordField: React.FC<OptionsField> = (
     type,
     disabled,
     errorMessage = "",
-    needsValidateFrom,
   }
 ) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
-
-  const updatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const password = e.target.value;
-    generalSignupForm.fields[3].value = password;
-  };
-
   const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const password = e.target.value;
+    generalSignupForm.fields[3].value = password;
 
     validator.isStrongPassword(password, {
       minLength: 8,
@@ -43,11 +37,11 @@ const PasswordField: React.FC<OptionsField> = (
 
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const confirmPassword = e.target.value;
-    const passwordValue = generalSignupForm.fields.filter((field) => field.name === needsValidateFrom)[0].value;
-    console.log(passwordValue);
+    const passwordValue = generalSignupForm.fields[3].value;
     let confirmPasswordValue = generalSignupForm.fields[4].value;
     confirmPasswordValue = confirmPassword;
-    confirmPasswordValue === passwordValue && error !== errorMessage
+
+    confirmPasswordValue === passwordValue
       ? setError("")
       : setError(errorMessage);
   };
@@ -75,9 +69,8 @@ const PasswordField: React.FC<OptionsField> = (
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          validatePassword(e);
-          name === "password" && updatePassword(e);
-          needsValidateFrom && confirmPassword(e);
+          name === "password" && validatePassword(e);
+          name === "password-confirm" && confirmPassword(e);
         }}
       />
       {methods.formState.errors[name] &&
