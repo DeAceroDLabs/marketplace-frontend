@@ -11,9 +11,13 @@ const FileInput: React.FC<OptionsField> = ({
 }) => {
   const methods = useFormContext();
 
-  const errorStyle =  (methods.formState.errors[name] && methods.formState.errors[name].type === "required") ? "input-error" : "";
-  const requiredMessage = (methods.formState.errors[name] && methods.formState.errors[name].type === "required") ? <span className={styles["error-text"]}>Este campo es requerido</span> : null;
+  const emptyFieldWhenRequired =
+    methods.formState.errors[name] &&
+    methods.formState.errors[name].type === "required";
 
+  const errorStyle = emptyFieldWhenRequired ? "input-error" : "";
+
+  const requiredMessage = emptyFieldWhenRequired && ( <span className={styles["error-text"]}>Este campo es requerido</span>);
 
   return (
     <div className={styles.container}>

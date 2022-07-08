@@ -23,22 +23,19 @@ const PhoneField: React.FC<OptionsField> = ({
       : setError(errorMessage);
   };
 
-  const errorStyle =
-    error !== "" ||
-    (methods.formState.errors[name] &&
-      methods.formState.errors[name].type === "required" &&
-      currentValue === value)
-      ? "input-error"
-      : "";
+  const noError = error !== "";
+  const emptyFieldWhenRequired =
+    methods.formState.errors[name] &&
+    methods.formState.errors[name].type === "required";
+  const valueNotChanged = currentValue === value;
 
-  const requiredMessage =
-    (methods.formState.errors[name] &&
-    methods.formState.errors[name].type === "required" &&
-    currentValue === value) ? (
-      <span className={styles["error-text"]}>Este campo es requerido</span>
-    ) : null;
+  const errorStyle = noError || (emptyFieldWhenRequired && valueNotChanged) ? "input-error" : "";
 
-  error !== "" && (methods.formState.errors[name] = error);
+  const requiredMessage = emptyFieldWhenRequired && valueNotChanged && (
+    <span className={styles["error-text"]}>Este campo es requerido</span>
+  );
+
+  noError && (methods.formState.errors[name] = error);
 
   return (
     <div className={styles.container}>

@@ -14,8 +14,17 @@ const TextField: React.FC<Field> = ({
 }) => {
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
-  const errorStyle =  (methods.formState.errors[name] && methods.formState.errors[name].type === "required") && currentValue === value  ? "input-error" : "";
-  const requiredMessage = (methods.formState.errors[name] && methods.formState.errors[name].type === "required") && currentValue === value ? <span className={styles["error-text"]}>Este campo es requerido</span> : null;
+
+  const emptyFieldWhenRequired =
+    methods.formState.errors[name] &&
+    methods.formState.errors[name].type === "required";
+  const valueNotChanged = currentValue === value;
+
+  const errorStyle = emptyFieldWhenRequired && valueNotChanged ? "input-error" : "";
+
+  const requiredMessage = emptyFieldWhenRequired && valueNotChanged && (
+    <span className={styles["error-text"]}>Este campo es requerido</span>
+  );
 
   return (
     <div className={styles.container}>
