@@ -41,6 +41,8 @@ const PasswordField: React.FC<OptionsField> = (
     const passwordValue = generalSignupForm.fields[3].value;
     let confirmPasswordValue = generalSignupForm.fields[4].value;
     confirmPasswordValue = confirmPassword;
+    console.log(passwordValue);
+    console.log(confirmPasswordValue);
 
     confirmPasswordValue === passwordValue
       ? setError("")
