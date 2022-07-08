@@ -30,6 +30,17 @@
     display: none;
 }
 
+.input-error {
+    border: solid 1px colors.$error;
+}
+
+
+.error-text {
+    margin-top: 10px;
+    color: colors.$error;
+    font-size: typography.$body-s;
+}
+
 .file {
     color: colors.$accent;
     font-size: 13px;

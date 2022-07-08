@@ -11,10 +11,14 @@ const FileInput: React.FC<OptionsField> = ({
 }) => {
   const methods = useFormContext();
 
+  const errorStyle =  (methods.formState.errors[name] && methods.formState.errors[name].type === "required") ? "input-error" : "";
+  const requiredMessage = (methods.formState.errors[name] && methods.formState.errors[name].type === "required") ? <span className={styles["error-text"]}>Este campo es requerido</span> : null;
+
+
   return (
     <div className={styles.container}>
       <label>{label}</label>
-      <div className={styles["input-container"]}>
+      <div className={`${styles["input-container"]} ${styles[errorStyle]}`}>
         <div className={styles["file-picker-container"]}>
           {!methods.watch(name) || methods.watch(name).length === 0 ? (
             placeholder
@@ -32,6 +36,7 @@ const FileInput: React.FC<OptionsField> = ({
           </label>
         </div>
       </div>
+       {requiredMessage}
     </div>
   );
 };
