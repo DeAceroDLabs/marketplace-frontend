@@ -14,7 +14,7 @@ jest.mock("react-hook-form", () => ({
 }));
 
 describe("RFCField", () => {
-  const setup = (options: Option[]) => {
+  const setup = () => {
     return render(
       <RFCField
         label={"Mock RFCField"}
@@ -29,12 +29,12 @@ describe("RFCField", () => {
   };
 
   it("renders RFCField with no options without problem", () => {
-    const view = setup([]);
+    const view = setup();
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "AAAA000000BBB0C1" },
@@ -45,7 +45,7 @@ describe("RFCField", () => {
   });
 
   it("simulates change on input without error", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "DEA7103086X2" },
@@ -55,7 +55,7 @@ describe("RFCField", () => {
     });
   });
 
-  const setupWithoutErrorMessage = (options: Option[]) => {
+  const setupWithoutErrorMessage = () => {
     return render(
       <RFCField
         label={"Mock RFCField"}
@@ -69,7 +69,7 @@ describe("RFCField", () => {
   };
 
   it("simulates change on input with not error", async () => {
-    const view = setupWithoutErrorMessage([]);
+    const view = setupWithoutErrorMessage();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "123" },

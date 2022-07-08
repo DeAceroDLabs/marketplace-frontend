@@ -29,10 +29,11 @@ const RFCField: React.FC<OptionsField> = ({
       currentValue === value)
       ? "input-error"
       : "";
+
   const requiredMessage =
-    methods.formState.errors[name] &&
+    (methods.formState.errors[name] &&
     methods.formState.errors[name].type === "required" &&
-    currentValue === value ? (
+    currentValue === value) ? (
       <span className={styles["error-text"]}>Este campo es requerido</span>
     ) : null;
 

@@ -14,7 +14,7 @@ jest.mock("react-hook-form", () => ({
 }));
 
 describe("PhoneField", () => {
-  const setup = (options: Option[]) => {
+  const setup = () => {
     return render(
       <PhoneField
         label={"Mock PhoneField"}
@@ -29,12 +29,12 @@ describe("PhoneField", () => {
   };
 
   it("renders PhoneField with no options without problem", () => {
-    const view = setup([]);
+    const view = setup();
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input with error", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
       target: { value: "12345678" },
@@ -45,7 +45,7 @@ describe("PhoneField", () => {
   });
 
   it("simulates change on input no error", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
       target: { value: "1234567890" },
