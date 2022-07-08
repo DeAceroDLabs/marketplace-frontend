@@ -40,7 +40,7 @@ describe("RFCField", () => {
       target: { value: "AAAA000000BBB0C1" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
+      expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
     });
   });
 
@@ -75,8 +75,7 @@ describe("RFCField", () => {
       target: { value: "123" },
     });
     await waitFor(() => {
-        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
-      });
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
   });
-
 });

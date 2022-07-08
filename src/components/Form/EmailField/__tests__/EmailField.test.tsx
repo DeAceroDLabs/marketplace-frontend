@@ -41,8 +41,8 @@ describe("EmailField", () => {
       target: { value: "ejemplo2@notdeacero.com" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("ejemplo2@notdeacero.com");
-        expect(screen.getByText("mock error message")).toBeInTheDocument();
+      expect((input as HTMLInputElement).value).toBe("ejemplo2@notdeacero.com");
+      expect(screen.getByText("mock error message")).toBeInTheDocument();
     });
   });
 
@@ -53,8 +53,8 @@ describe("EmailField", () => {
       target: { value: "ejemplo2@deacero.com" },
     });
     await waitFor(() => {
-        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
-      });
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
   });
 
   const setupWithoutValidationDomain = (options: Option[]) => {
@@ -78,8 +78,8 @@ describe("EmailField", () => {
       target: { value: "ejemplo2notdeacerocom" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("ejemplo2notdeacerocom");
-        expect(screen.getByText("mock error message")).toBeInTheDocument();
+      expect((input as HTMLInputElement).value).toBe("ejemplo2notdeacerocom");
+      expect(screen.getByText("mock error message")).toBeInTheDocument();
     });
   });
 
@@ -103,8 +103,7 @@ describe("EmailField", () => {
       target: { value: "ejemplo2deacero.com" },
     });
     await waitFor(() => {
-        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
-      });
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
   });
-
 });

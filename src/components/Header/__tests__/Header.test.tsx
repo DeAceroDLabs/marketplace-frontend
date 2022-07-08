@@ -4,7 +4,6 @@ import Header from "../Header";
 import { screen } from "@testing-library/react";
 import { UserProvider } from "config/userContext";
 
-
 const mockedUsedNavigate = jest.fn();
 
 jest.mock("react-router-dom", () => ({
