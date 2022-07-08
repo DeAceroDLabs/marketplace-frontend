@@ -23,7 +23,7 @@ describe("RFCField", () => {
         type={"rfc"}
         value={"mock value"}
         name={"mock name"}
-        errorMessage={"mock message"}
+        errorMessage={"mock error message"}
       />
     );
   };
@@ -43,4 +43,40 @@ describe("RFCField", () => {
         expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
     });
   });
+
+  it("simulates change on input without error", async () => {
+    const view = setup([]);
+    const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+    fireEvent.change(input, {
+      target: { value: "DEA7103086X2" },
+    });
+    await waitFor(() => {
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
+  });
+
+  const setupWithoutErrorMessage = (options: Option[]) => {
+    return render(
+      <RFCField
+        label={"Mock RFCField"}
+        required={false}
+        placeholder={"AAAA000000BBB0C0"}
+        type={"rfc"}
+        value={"mock value"}
+        name={"mock name"}
+      />
+    );
+  };
+
+  it("simulates change on input with not error", async () => {
+    const view = setupWithoutErrorMessage([]);
+    const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+    fireEvent.change(input, {
+      target: { value: "123" },
+    });
+    await waitFor(() => {
+        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+      });
+  });
+
 });

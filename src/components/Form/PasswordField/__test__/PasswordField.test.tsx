@@ -54,5 +54,31 @@ describe("PasswordField", () => {
         expect(screen.getByText("mock error message")).toBeInTheDocument();
       });
   });
+
+  const setupWithValidation = (options: Option[]) => {
+    return render(
+      <PasswordField
+        label={"Mock PasswordField"}
+        required={false}
+        placeholder={"password"}
+        type={"email"}
+        value={"mock value"}
+        name={"password"}
+        errorMessage={"mock error message"}
+        needsValidationFrom= {"password"}
+      />
+    );
+  };
+
+  it("simulates change on input", async () => {
+    const view = setupWithValidation([]);
+    const input = screen.getByPlaceholderText("password");
+    fireEvent.change(input, {
+      target: { value: "password" },
+    });
+    await waitFor(() => {
+        expect((input as HTMLInputElement).value).toBe("password");
+    });
+  });
   
 });
