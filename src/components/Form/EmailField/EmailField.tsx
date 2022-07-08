@@ -31,9 +31,7 @@ const EmailField: React.FC<OptionsField> = ({
   const errorStyle = ((error !== "") || (methods.formState.errors[name] && methods.formState.errors[name].type === "required" && currentValue === value) )? "input-error" : "";
   const requiredMessage = (methods.formState.errors[name] && methods.formState.errors[name].type === "required") && currentValue === value ? <span className={styles["error-text"]}>Este campo es requerido</span> : null;
 
-  if(error !== ""){
-    methods.formState.errors[name] = error;
-  }
+  error !== "" && (methods.formState.errors[name] = error);
   
   return (
     <div className={styles.container}>

@@ -37,10 +37,8 @@ const PhoneField: React.FC<OptionsField> = ({
       <span className={styles["error-text"]}>Este campo es requerido</span>
     ) : null;
 
-  if (error !== "") {
-    methods.formState.errors[name] = error;
-  }
-
+  error !== "" && (methods.formState.errors[name] = error);
+  
   return (
     <div className={styles.container}>
       <label>{label}</label>
