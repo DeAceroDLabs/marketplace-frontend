@@ -54,5 +54,29 @@ describe("PhoneField", () => {
       expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
     });
   });
+
+  const setupWithoutErrorMessage = (options: Option[]) => {
+    return render(
+      <PhoneField
+        label={"Mock PhoneField"}
+        required={false}
+        placeholder={"+52 (000)-1111-222"}
+        type={"number"}
+        value={"mock value"}
+        name={"mock name"}
+      />
+    );
+  };
+
+  it("simulates change on input with not error", async () => {
+    const view = setupWithoutErrorMessage([]);
+    const input = screen.getByPlaceholderText("+52 (000)-1111-222");
+    fireEvent.change(input, {
+      target: { value: "123" },
+    });
+    await waitFor(() => {
+        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+      });
+  });
   
 });
