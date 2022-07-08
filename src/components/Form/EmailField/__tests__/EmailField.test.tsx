@@ -14,7 +14,7 @@ jest.mock("react-hook-form", () => ({
 }));
 
 describe("EmailField", () => {
-  const setupWithValidationDomain = (options: Option[]) => {
+  const setupWithValidationDomain = () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
@@ -30,12 +30,12 @@ describe("EmailField", () => {
   };
 
   it("renders EmailField with domain without problem", () => {
-    const view = setupWithValidationDomain([]);
+    const view = setupWithValidationDomain();
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input with error because it is not the domain", async () => {
-    const view = setupWithValidationDomain([]);
+    const view = setupWithValidationDomain();
     const input = screen.getByPlaceholderText("ejemplo@deacero.com");
     fireEvent.change(input, {
       target: { value: "ejemplo2@notdeacero.com" },
@@ -47,7 +47,7 @@ describe("EmailField", () => {
   });
 
   it("simulates change on input with not error", async () => {
-    const view = setupWithValidationDomain([]);
+    const view = setupWithValidationDomain();
     const input = screen.getByPlaceholderText("ejemplo@deacero.com");
     fireEvent.change(input, {
       target: { value: "ejemplo2@deacero.com" },
@@ -57,7 +57,7 @@ describe("EmailField", () => {
     });
   });
 
-  const setupWithoutValidationDomain = (options: Option[]) => {
+  const setupWithoutValidationDomain = () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
@@ -72,7 +72,7 @@ describe("EmailField", () => {
   };
 
   it("simulates change on input with error because it is not valid email", async () => {
-    const view = setupWithoutValidationDomain([]);
+    const view = setupWithoutValidationDomain();
     const input = screen.getByPlaceholderText("ejemplo@deacero.com");
     fireEvent.change(input, {
       target: { value: "ejemplo2notdeacerocom" },
@@ -83,7 +83,7 @@ describe("EmailField", () => {
     });
   });
 
-  const setupWithoutErrorMessage = (options: Option[]) => {
+  const setupWithoutErrorMessage = () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
@@ -97,7 +97,7 @@ describe("EmailField", () => {
   };
 
   it("simulates change on input with not error", async () => {
-    const view = setupWithoutErrorMessage([]);
+    const view = setupWithoutErrorMessage();
     const input = screen.getByPlaceholderText("ejemplo@deacero.com");
     fireEvent.change(input, {
       target: { value: "ejemplo2deacero.com" },

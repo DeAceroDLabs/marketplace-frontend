@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { Option } from "forms/form.types";
 import PasswordField from "../PasswordField";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
@@ -10,11 +9,12 @@ jest.mock("react-hook-form", () => ({
     handleSubmit: () => jest.fn(),
     errors: () => jest.fn(),
     formState: { errors: {} },
+    getValues: () => jest.fn(),
   }),
 }));
 
 describe("PasswordField", () => {
-  const setup = (options: Option[]) => {
+  const setup = () => {
     return render(
       <PasswordField
         label={"Mock PasswordField"}
@@ -29,12 +29,12 @@ describe("PasswordField", () => {
   };
 
   it("renders PasswordField with no options without problem", () => {
-    const view = setup([]);
+    const view = setup();
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("password");
     fireEvent.change(input, {
       target: { value: "password" },
@@ -45,7 +45,7 @@ describe("PasswordField", () => {
   });
 
   it("simulates change on input with error", async () => {
-    const view = setup([]);
+    const view = setup();
     const input = screen.getByPlaceholderText("password");
     fireEvent.change(input, {
       target: { value: "password" },
@@ -55,7 +55,7 @@ describe("PasswordField", () => {
     });
   });
 
-  const setupWithValidation = (options: Option[]) => {
+  const setupWithValidation = () => {
     return render(
       <PasswordField
         label={"Mock PasswordField"}
@@ -70,8 +70,8 @@ describe("PasswordField", () => {
     );
   };
 
-  it("simulates change on input", async () => {
-    const view = setupWithValidation([]);
+  it("simulates change on input with validation", async () => {
+    const view = setupWithValidation();
     const input = screen.getByPlaceholderText("password");
     fireEvent.change(input, {
       target: { value: "password" },
