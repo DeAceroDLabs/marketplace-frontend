@@ -18,6 +18,7 @@ export interface OptionsField extends Field {
   validateDomain?: string;
   errorMessage?: string;
   needsValidateFrom?: string;
+  providesValidateFrom?: string;
 }
 
 export interface Form {
