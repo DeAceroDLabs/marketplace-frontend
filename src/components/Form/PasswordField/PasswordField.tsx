@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./PasswordField.module.scss";
 import validator from "validator";
+import { generalSignupForm } from "forms/Signup/Signup.general";
 
 const PasswordField: React.FC<OptionsField> = ({
   name,
