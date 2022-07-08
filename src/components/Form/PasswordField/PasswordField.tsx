@@ -15,7 +15,8 @@ const PasswordField: React.FC<OptionsField> = (
     type,
     disabled,
     errorMessage = "",
-  }
+  },
+  state
 ) => {
   const [error, setError] = useState("");
   const methods = useFormContext();
