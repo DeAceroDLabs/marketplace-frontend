@@ -46,7 +46,6 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
-      errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente",
     },
   ],
 };
