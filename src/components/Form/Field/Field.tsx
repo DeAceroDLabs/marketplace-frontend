@@ -19,7 +19,7 @@ const Field: React.FC<FieldProps> = ({
   options,
   validateDomain,
   errorMessage,
-  needsValidationFrom,
+  needsValidateFrom,
 }) => {
   const props = {
     name,
@@ -32,7 +32,7 @@ const Field: React.FC<FieldProps> = ({
     options,
     validateDomain,
     errorMessage,
-    needsValidationFrom,
+    needsValidateFrom,
   };
 
   return (
