@@ -40,7 +40,7 @@ describe("PasswordField", () => {
       target: { value: "password" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("password");
+      expect((input as HTMLInputElement).value).toBe("password");
     });
   });
 
@@ -51,8 +51,8 @@ describe("PasswordField", () => {
       target: { value: "password" },
     });
     await waitFor(() => {
-        expect(screen.getByText("mock error message")).toBeInTheDocument();
-      });
+      expect(screen.getByText("mock error message")).toBeInTheDocument();
+    });
   });
 
   const setupWithValidation = (options: Option[]) => {
@@ -65,7 +65,7 @@ describe("PasswordField", () => {
         value={"mock value"}
         name={"password"}
         errorMessage={"mock error message"}
-        needsValidationFrom= {"password"}
+        needsValidationFrom={"password"}
       />
     );
   };
@@ -77,8 +77,7 @@ describe("PasswordField", () => {
       target: { value: "password" },
     });
     await waitFor(() => {
-        expect((input as HTMLInputElement).value).toBe("password");
+      expect((input as HTMLInputElement).value).toBe("password");
     });
   });
-  
 });

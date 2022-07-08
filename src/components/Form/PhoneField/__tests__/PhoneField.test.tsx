@@ -75,8 +75,7 @@ describe("PhoneField", () => {
       target: { value: "123" },
     });
     await waitFor(() => {
-        expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
-      });
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
   });
-  
 });
