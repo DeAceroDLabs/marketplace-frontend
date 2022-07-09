@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { Option } from "forms/form.types";
 import PhoneField from "../PhoneField";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
@@ -18,7 +17,7 @@ describe("PhoneField", () => {
     return render(
       <PhoneField
         label={"Mock PhoneField"}
-        required={false}
+        required={true}
         placeholder={"+52 (000)-1111-222"}
         type={"number"}
         value={"mock value"}
@@ -28,13 +27,13 @@ describe("PhoneField", () => {
     );
   };
 
-  it("renders PhoneField with no options without problem", () => {
+  it("renders PhoneField without problem", () => {
     const view = setup();
     expect(view).toMatchSnapshot();
   });
 
   it("simulates change on input with error", async () => {
-    const view = setup();
+    setup();
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
       target: { value: "12345678" },
@@ -45,7 +44,7 @@ describe("PhoneField", () => {
   });
 
   it("simulates change on input no error", async () => {
-    const view = setup();
+    setup();
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
       target: { value: "1234567890" },
@@ -55,11 +54,11 @@ describe("PhoneField", () => {
     });
   });
 
-  const setupWithoutErrorMessage = (options: Option[]) => {
+  const setupWithoutErrorMessage = () => {
     return render(
       <PhoneField
         label={"Mock PhoneField"}
-        required={false}
+        required={true}
         placeholder={"+52 (000)-1111-222"}
         type={"number"}
         value={"mock value"}
@@ -69,7 +68,7 @@ describe("PhoneField", () => {
   };
 
   it("simulates change on input with not error", async () => {
-    const view = setupWithoutErrorMessage([]);
+    setupWithoutErrorMessage();
     const input = screen.getByPlaceholderText("+52 (000)-1111-222");
     fireEvent.change(input, {
       target: { value: "123" },

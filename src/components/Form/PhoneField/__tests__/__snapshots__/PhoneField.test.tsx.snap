@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`PhoneField renders PhoneField with no options without problem 1`] = `
+exports[`PhoneField renders PhoneField without problem 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

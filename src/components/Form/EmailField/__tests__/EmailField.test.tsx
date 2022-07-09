@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { Option } from "forms/form.types";
 import EmailField from "../EmailField";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
@@ -18,7 +17,7 @@ describe("EmailField", () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
-        required={false}
+        required={true}
         placeholder={"ejemplo@deacero.com"}
         type={"email"}
         value={"mock value"}
@@ -61,7 +60,7 @@ describe("EmailField", () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
-        required={false}
+        required={true}
         placeholder={"ejemplo@deacero.com"}
         type={"email"}
         value={"mock value"}
@@ -87,7 +86,7 @@ describe("EmailField", () => {
     return render(
       <EmailField
         label={"Mock EmailField"}
-        required={false}
+        required={true}
         placeholder={"ejemplo@deacero.com"}
         type={"email"}
         value={"mock value"}

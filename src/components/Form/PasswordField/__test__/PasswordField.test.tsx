@@ -18,9 +18,9 @@ describe("PasswordField", () => {
     return render(
       <PasswordField
         label={"Mock PasswordField"}
-        required={false}
+        required={true}
         placeholder={"password"}
-        type={"email"}
+        type={"password"}
         value={"mock value"}
         name={"password"}
         errorMessage={"mock error message"}
@@ -28,56 +28,93 @@ describe("PasswordField", () => {
     );
   };
 
-  it("renders PasswordField with no options without problem", () => {
+  it("renders PasswordField without problem", () => {
     const view = setup();
     expect(view).toMatchSnapshot();
   });
 
-  it("simulates change on input", async () => {
-    const view = setup();
+  it("simulates change on input with error", async () => {
+    setup();
     const input = screen.getByPlaceholderText("password");
     fireEvent.change(input, {
       target: { value: "password" },
     });
     await waitFor(() => {
       expect((input as HTMLInputElement).value).toBe("password");
+      expect(screen.getByText("mock error message")).toBeInTheDocument();
     });
   });
 
-  it("simulates change on input with error", async () => {
-    const view = setup();
+  it("simulates change on input without error", async () => {
+    setup();
     const input = screen.getByPlaceholderText("password");
     fireEvent.change(input, {
-      target: { value: "password" },
+      target: { value: "Password123@" },
     });
     await waitFor(() => {
-      expect(screen.getByText("mock error message")).toBeInTheDocument();
+      expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
+    });
+  });
+
+  it("simulates paste with prevent", async () => {
+    setup();
+    const input = screen.getByPlaceholderText("password");
+    const isPrevented = fireEvent.paste(input, { target: { value: "4321" } });
+    await waitFor(() => {
+      expect(isPrevented).toBe(false);
+    });
+  });
+
+  it("simulates copy with prevent", async () => {
+    setup();
+    const input = screen.getByPlaceholderText("password");
+    const isPrevented = fireEvent.copy(input, { target: { value: "4321" } });
+    await waitFor(() => {
+      expect(isPrevented).toBe(false);
     });
   });
 
   const setupWithValidation = () => {
     return render(
-      <PasswordField
-        label={"Mock PasswordField"}
-        required={false}
-        placeholder={"password"}
-        type={"email"}
-        value={"mock value"}
-        name={"password"}
-        errorMessage={"mock error message"}
-        needsValidationFrom={"password"}
-      />
+      <div>
+        <PasswordField
+          label={"Mock PasswordField"}
+          required={true}
+          placeholder={"password"}
+          type={"password"}
+          value={"mock value"}
+          name={"password"}
+          errorMessage={"mock error message"}
+        />
+        <PasswordField
+          label={"Mock Confirm PasswordField"}
+          required={true}
+          placeholder={"confirmPassword"}
+          type={"password"}
+          value={"mock value"}
+          name={"confirmpassword"}
+          errorMessage={"mock confirmation error message"}
+          needsValidationFrom={"password"}
+        />
+      </div>
     );
   };
 
-  it("simulates change on input with validation", async () => {
-    const view = setupWithValidation();
-    const input = screen.getByPlaceholderText("password");
-    fireEvent.change(input, {
-      target: { value: "password" },
+  it("simulates change on input with validation and error", async () => {
+    setupWithValidation();
+    const inputPassword = screen.getByPlaceholderText("password");
+    fireEvent.change(inputPassword, {
+      target: { value: "Password123@" },
     });
+    const inputConfirmPassword = screen.getByPlaceholderText("confirmPassword");
+    fireEvent.change(inputConfirmPassword, {
+      target: { value: "otherPassword" },
+    });
+    
     await waitFor(() => {
-      expect((input as HTMLInputElement).value).toBe("password");
+      expect((inputConfirmPassword as HTMLInputElement).value).toBe("otherPassword");
+      expect(screen.getByText("mock confirmation error message")).toBeInTheDocument();
     });
   });
+
 });
