@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { Option } from "forms/form.types";
 import RFCField from "../RFCField";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
@@ -18,7 +17,7 @@ describe("RFCField", () => {
     return render(
       <RFCField
         label={"Mock RFCField"}
-        required={false}
+        required={true}
         placeholder={"AAAA000000BBB0C0"}
         type={"rfc"}
         value={"mock value"}
@@ -28,24 +27,25 @@ describe("RFCField", () => {
     );
   };
 
-  it("renders RFCField with no options without problem", () => {
+  it("renders RFCField without problem", () => {
     const view = setup();
     expect(view).toMatchSnapshot();
   });
 
-  it("simulates change on input", async () => {
-    const view = setup();
+  it("simulates change on input with error", async () => {
+    setup();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "AAAA000000BBB0C1" },
     });
     await waitFor(() => {
       expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
+      expect(screen.queryByText("mock error message")).toBeInTheDocument();
     });
   });
 
   it("simulates change on input without error", async () => {
-    const view = setup();
+    setup();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "DEA7103086X2" },
@@ -59,7 +59,7 @@ describe("RFCField", () => {
     return render(
       <RFCField
         label={"Mock RFCField"}
-        required={false}
+        required={true}
         placeholder={"AAAA000000BBB0C0"}
         type={"rfc"}
         value={"mock value"}
@@ -69,7 +69,7 @@ describe("RFCField", () => {
   };
 
   it("simulates change on input with not error", async () => {
-    const view = setupWithoutErrorMessage();
+    setupWithoutErrorMessage();
     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
     fireEvent.change(input, {
       target: { value: "123" },
@@ -78,4 +78,5 @@ describe("RFCField", () => {
       expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
     });
   });
+
 });

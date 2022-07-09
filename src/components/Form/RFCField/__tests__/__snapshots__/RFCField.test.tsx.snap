@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RFCField renders RFCField with no options without problem 1`] = `
+exports[`RFCField renders RFCField without problem 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

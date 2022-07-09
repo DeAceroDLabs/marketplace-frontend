@@ -1,5 +1,4 @@
 import { render } from "@testing-library/react";
-import { Option } from "forms/form.types";
 import FileInput from "../FileInput";
 import { fireEvent, screen, waitFor } from "@testing-library/react";
 
@@ -40,7 +39,7 @@ describe("FileInput", () => {
   });
 
   it("simulates upload file", async () => {
-    const view = setup();
+    setup();
     const input = screen.getByLabelText("Cargar Archivo");
     fireEvent.change(input, {
       target: { files: [file] },
