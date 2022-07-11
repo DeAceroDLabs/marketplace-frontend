@@ -41,6 +41,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   useEffect(() => {
     setcurrentForm(forms[currentIndex]);
     setActiveForm(inputForms[currentIndex]);
+    // eslint-disable-next-line
   }, [currentIndex]);
 
   const moveNext = () => {
