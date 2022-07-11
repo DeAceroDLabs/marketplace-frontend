@@ -21,6 +21,7 @@ const Field: React.FC<FieldProps> = ({
   validateDomain,
   errorMessage,
   needsValidationFrom,
+  size = "full-width",
 }) => {
   const props = {
     name,
@@ -37,7 +38,7 @@ const Field: React.FC<FieldProps> = ({
   };
 
   return (
-    <div className={styles["field-container"]}>
+    <div className={`${styles["field-container"]} ${styles[size]}`}>
       {
         {
           text: <TextField {...props} />,

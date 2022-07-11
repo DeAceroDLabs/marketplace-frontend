@@ -63,7 +63,7 @@ Object {
                               class="form-container"
                             >
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -81,7 +81,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -99,7 +99,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -117,7 +117,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -135,7 +135,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -182,43 +182,7 @@ Object {
                               class="form-container"
                             >
                               <div
-                                class="field-container"
-                              >
-                                <div
-                                  class="container"
-                                >
-                                  <label>
-                                    Calle
-                                  </label>
-                                  <input
-                                    class="input "
-                                    name="street"
-                                    placeholder="Calle"
-                                    type="text"
-                                    value=""
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="field-container"
-                              >
-                                <div
-                                  class="container"
-                                >
-                                  <label>
-                                    Colonia
-                                  </label>
-                                  <input
-                                    class="input "
-                                    name="suburb"
-                                    placeholder="Colonia"
-                                    type="text"
-                                    value=""
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -236,25 +200,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
-                              >
-                                <div
-                                  class="container"
-                                >
-                                  <label>
-                                    Municipio
-                                  </label>
-                                  <input
-                                    class="input "
-                                    name="town"
-                                    placeholder="Municipio"
-                                    type="text"
-                                    value=""
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -430,6 +376,78 @@ Object {
                                   </select>
                                 </div>
                               </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Municipio
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="town"
+                                    placeholder="Municipio"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Colonia
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="suburb"
+                                    placeholder="Colonia"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container medium"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Calle
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="street"
+                                    placeholder="Calle"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container small"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Número Exterior
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="externalNumber"
+                                    placeholder="25-A"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
                             </div>
                              
                           </div>
@@ -460,7 +478,7 @@ Object {
                               class="form-container"
                             >
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -478,7 +496,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -496,7 +514,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -514,7 +532,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -533,7 +551,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -565,7 +583,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -583,7 +601,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -760,7 +778,7 @@ Object {
                                 </div>
                               </div>
                               <div
-                                class="field-container"
+                                class="field-container full-width"
                               >
                                 <div
                                   class="container"
@@ -934,7 +952,7 @@ Object {
                             class="form-container"
                           >
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -952,7 +970,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -970,7 +988,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -988,7 +1006,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1006,7 +1024,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1053,43 +1071,7 @@ Object {
                             class="form-container"
                           >
                             <div
-                              class="field-container"
-                            >
-                              <div
-                                class="container"
-                              >
-                                <label>
-                                  Calle
-                                </label>
-                                <input
-                                  class="input "
-                                  name="street"
-                                  placeholder="Calle"
-                                  type="text"
-                                  value=""
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="field-container"
-                            >
-                              <div
-                                class="container"
-                              >
-                                <label>
-                                  Colonia
-                                </label>
-                                <input
-                                  class="input "
-                                  name="suburb"
-                                  placeholder="Colonia"
-                                  type="text"
-                                  value=""
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1107,25 +1089,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
-                            >
-                              <div
-                                class="container"
-                              >
-                                <label>
-                                  Municipio
-                                </label>
-                                <input
-                                  class="input "
-                                  name="town"
-                                  placeholder="Municipio"
-                                  type="text"
-                                  value=""
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1301,6 +1265,78 @@ Object {
                                 </select>
                               </div>
                             </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Municipio
+                                </label>
+                                <input
+                                  class="input "
+                                  name="town"
+                                  placeholder="Municipio"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Colonia
+                                </label>
+                                <input
+                                  class="input "
+                                  name="suburb"
+                                  placeholder="Colonia"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container medium"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Calle
+                                </label>
+                                <input
+                                  class="input "
+                                  name="street"
+                                  placeholder="Calle"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container small"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Número Exterior
+                                </label>
+                                <input
+                                  class="input "
+                                  name="externalNumber"
+                                  placeholder="25-A"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
                           </div>
                            
                         </div>
@@ -1331,7 +1367,7 @@ Object {
                             class="form-container"
                           >
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1349,7 +1385,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1367,7 +1403,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1385,7 +1421,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1404,7 +1440,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1436,7 +1472,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1454,7 +1490,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"
@@ -1631,7 +1667,7 @@ Object {
                               </div>
                             </div>
                             <div
-                              class="field-container"
+                              class="field-container full-width"
                             >
                               <div
                                 class="container"

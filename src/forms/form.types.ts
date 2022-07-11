@@ -11,6 +11,7 @@ export interface Field {
   value?: string;
   name: string;
   disabled?: boolean;
+  size?: "small" | "medium" | "full-width";
 }
 
 export interface OptionsField extends Field {

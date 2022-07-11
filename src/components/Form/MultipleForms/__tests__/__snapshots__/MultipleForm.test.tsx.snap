@@ -36,7 +36,7 @@ Object {
                   class="form-container"
                 >
                   <div
-                    class="field-container"
+                    class="field-container full-width"
                   >
                     <div
                       class="container"
@@ -83,7 +83,7 @@ Object {
                   class="form-container"
                 >
                   <div
-                    class="field-container"
+                    class="field-container full-width"
                   >
                     <div
                       class="container"
@@ -150,7 +150,7 @@ Object {
                 class="form-container"
               >
                 <div
-                  class="field-container"
+                  class="field-container full-width"
                 >
                   <div
                     class="container"
@@ -197,7 +197,7 @@ Object {
                 class="form-container"
               >
                 <div
-                  class="field-container"
+                  class="field-container full-width"
                 >
                   <div
                     class="container"
