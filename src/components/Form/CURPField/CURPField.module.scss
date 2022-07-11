@@ -1,6 +1,5 @@
 @use "styles/colors";
 @use "styles/typography";
-
 .container {
     display: flex;
     flex-direction: column;
@@ -18,7 +17,10 @@
 .input:focus {
     outline: none;
 }
-.input-rfc { text-transform: uppercase; }
+
+.input-curp {
+    text-transform: uppercase;
+}
 
 .error-text {
     margin-top: 10px;

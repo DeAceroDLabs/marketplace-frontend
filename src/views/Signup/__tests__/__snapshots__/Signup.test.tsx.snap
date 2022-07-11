@@ -505,7 +505,7 @@ Object {
                                     CURP
                                   </label>
                                   <input
-                                    class="input input-rfc "
+                                    class="input input-curp "
                                     name="taxCurp"
                                     placeholder="ABCD990022ABCDEF00"
                                     type="curp"
@@ -1376,7 +1376,7 @@ Object {
                                   CURP
                                 </label>
                                 <input
-                                  class="input input-rfc "
+                                  class="input input-curp "
                                   name="taxCurp"
                                   placeholder="ABCD990022ABCDEF00"
                                   type="curp"
