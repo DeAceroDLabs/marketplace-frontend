@@ -12,11 +12,20 @@ export const taxSignupForm: Form = {
       type: "text",
     },
     {
-      name: "taxZipCode",
-      label: "Código Postal",
+      name: "taxRfc",
+      label: "RFC",
       required: true,
-      placeholder: "000000",
-      type: "number",
+      placeholder: "AAAA000000BBB0C0",
+      type: "rfc",
+      errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres",
+    },
+    {
+      name: "taxCurp",
+      label: "CURP",
+      required: true,
+      placeholder: "ABCD990022ABCDEF00",
+      type: "curp",
+      errorMessage: "Por favor ingresa una CURP válida",
     },
     {
       name: "taxRegime",
@@ -28,23 +37,6 @@ export const taxSignupForm: Form = {
       disabled: true,
     },
     {
-      name: "taxState",
-      label: "Estado",
-      required: true,
-      placeholder: "",
-      type: "dropdown",
-
-      options: MEXICO_STATES,
-    },
-    {
-      name: "taxRfc",
-      label: "RFC",
-      required: true,
-      placeholder: "AAAA000000BBB0C0",
-      type: "rfc",
-      errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres"
-    },
-    {
       name: "taxDocument",
       label: "Constancia Fiscal",
       required: true,
@@ -52,12 +44,28 @@ export const taxSignupForm: Form = {
       type: "file",
     },
     {
+      name: "taxZipCode",
+      label: "Código Postal",
+      required: true,
+      placeholder: "000000",
+      type: "number",
+    },
+    {
+      name: "taxState",
+      label: "Estado",
+      required: true,
+      placeholder: "",
+      type: "dropdown",
+      options: MEXICO_STATES,
+    },
+    {
       name: "taxAdditionalEmail",
       label: "Email adicional a la cuenta CC",
       required: true,
       placeholder: "ejemplo@deacero.com",
       type: "email",
-      errorMessage: "Por favor ingresa una dirección de correo personal/adicional"
+      errorMessage:
+        "Por favor ingresa una dirección de correo personal/adicional",
     },
   ],
 };

@@ -5,6 +5,7 @@ import TextField from "../TextField";
 import EmailField from "../EmailField";
 import PhoneField from "../PhoneField";
 import RFCField from "../RFCField";
+import CURPField from "../CURPField";
 import PasswordField from "../PasswordField";
 import styles from "./Field.module.scss";
 
@@ -40,8 +41,9 @@ const Field: React.FC<FieldProps> = ({
       {
         {
           text: <TextField {...props} />,
-          rfc: <RFCField {...props} />,
           number: <TextField {...props} />,
+          rfc: <RFCField {...props} />,
+          curp: <CURPField {...props} />,
           tel: <PhoneField {...props} />,
           email: <EmailField {...props} />,
           password: <PasswordField {...props} />,

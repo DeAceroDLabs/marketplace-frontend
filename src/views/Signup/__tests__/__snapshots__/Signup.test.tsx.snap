@@ -484,13 +484,31 @@ Object {
                                   class="container"
                                 >
                                   <label>
-                                    Código Postal
+                                    RFC
                                   </label>
                                   <input
-                                    class="input "
-                                    name="taxZipCode"
-                                    placeholder="000000"
-                                    type="number"
+                                    class="input input-rfc "
+                                    name="taxRfc"
+                                    placeholder="AAAA000000BBB0C0"
+                                    type="rfc"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    CURP
+                                  </label>
+                                  <input
+                                    class="input input-rfc "
+                                    name="taxCurp"
+                                    placeholder="ABCD990022ABCDEF00"
+                                    type="curp"
                                     value=""
                                   />
                                 </div>
@@ -511,6 +529,56 @@ Object {
                                     placeholder="ejemplo@deacero.com"
                                     type="text"
                                     value="Sueldos y Salarios e Ingresos Asimilados a salarios"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Constancia Fiscal
+                                  </label>
+                                  <div
+                                    class="input-container "
+                                  >
+                                    <div
+                                      class="file-picker-container"
+                                    >
+                                      Sube tu constancia fiscal aquí
+                                      <input
+                                        class="input"
+                                        id="filePicker"
+                                        name="taxDocument"
+                                        type="file"
+                                      />
+                                      <label
+                                        class="file-picker"
+                                        for="filePicker"
+                                      >
+                                        Cargar Archivo
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Código Postal
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="taxZipCode"
+                                    placeholder="000000"
+                                    type="number"
+                                    value=""
                                   />
                                 </div>
                               </div>
@@ -689,56 +757,6 @@ Object {
                                       Zacatecas
                                     </option>
                                   </select>
-                                </div>
-                              </div>
-                              <div
-                                class="field-container"
-                              >
-                                <div
-                                  class="container"
-                                >
-                                  <label>
-                                    RFC
-                                  </label>
-                                  <input
-                                    class="input input-rfc "
-                                    name="taxRfc"
-                                    placeholder="AAAA000000BBB0C0"
-                                    type="rfc"
-                                    value=""
-                                  />
-                                </div>
-                              </div>
-                              <div
-                                class="field-container"
-                              >
-                                <div
-                                  class="container"
-                                >
-                                  <label>
-                                    Constancia Fiscal
-                                  </label>
-                                  <div
-                                    class="input-container "
-                                  >
-                                    <div
-                                      class="file-picker-container"
-                                    >
-                                      Sube tu constancia fiscal aquí
-                                      <input
-                                        class="input"
-                                        id="filePicker"
-                                        name="taxDocument"
-                                        type="file"
-                                      />
-                                      <label
-                                        class="file-picker"
-                                        for="filePicker"
-                                      >
-                                        Cargar Archivo
-                                      </label>
-                                    </div>
-                                  </div>
                                 </div>
                               </div>
                               <div
@@ -1337,13 +1355,31 @@ Object {
                                 class="container"
                               >
                                 <label>
-                                  Código Postal
+                                  RFC
                                 </label>
                                 <input
-                                  class="input "
-                                  name="taxZipCode"
-                                  placeholder="000000"
-                                  type="number"
+                                  class="input input-rfc "
+                                  name="taxRfc"
+                                  placeholder="AAAA000000BBB0C0"
+                                  type="rfc"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  CURP
+                                </label>
+                                <input
+                                  class="input input-rfc "
+                                  name="taxCurp"
+                                  placeholder="ABCD990022ABCDEF00"
+                                  type="curp"
                                   value=""
                                 />
                               </div>
@@ -1364,6 +1400,56 @@ Object {
                                   placeholder="ejemplo@deacero.com"
                                   type="text"
                                   value="Sueldos y Salarios e Ingresos Asimilados a salarios"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Constancia Fiscal
+                                </label>
+                                <div
+                                  class="input-container "
+                                >
+                                  <div
+                                    class="file-picker-container"
+                                  >
+                                    Sube tu constancia fiscal aquí
+                                    <input
+                                      class="input"
+                                      id="filePicker"
+                                      name="taxDocument"
+                                      type="file"
+                                    />
+                                    <label
+                                      class="file-picker"
+                                      for="filePicker"
+                                    >
+                                      Cargar Archivo
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field-container"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Código Postal
+                                </label>
+                                <input
+                                  class="input "
+                                  name="taxZipCode"
+                                  placeholder="000000"
+                                  type="number"
+                                  value=""
                                 />
                               </div>
                             </div>
@@ -1542,56 +1628,6 @@ Object {
                                     Zacatecas
                                   </option>
                                 </select>
-                              </div>
-                            </div>
-                            <div
-                              class="field-container"
-                            >
-                              <div
-                                class="container"
-                              >
-                                <label>
-                                  RFC
-                                </label>
-                                <input
-                                  class="input input-rfc "
-                                  name="taxRfc"
-                                  placeholder="AAAA000000BBB0C0"
-                                  type="rfc"
-                                  value=""
-                                />
-                              </div>
-                            </div>
-                            <div
-                              class="field-container"
-                            >
-                              <div
-                                class="container"
-                              >
-                                <label>
-                                  Constancia Fiscal
-                                </label>
-                                <div
-                                  class="input-container "
-                                >
-                                  <div
-                                    class="file-picker-container"
-                                  >
-                                    Sube tu constancia fiscal aquí
-                                    <input
-                                      class="input"
-                                      id="filePicker"
-                                      name="taxDocument"
-                                      type="file"
-                                    />
-                                    <label
-                                      class="file-picker"
-                                      for="filePicker"
-                                    >
-                                      Cargar Archivo
-                                    </label>
-                                  </div>
-                                </div>
                               </div>
                             </div>
                             <div
