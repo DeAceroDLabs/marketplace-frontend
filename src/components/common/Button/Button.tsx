@@ -3,7 +3,7 @@ import styles from "./Button.module.scss";
 interface ButtonProps {
   children?: React.ReactNode;
   color?: "primary" | "primary-large" | "transparent" | "transparent-black" | "white";
-  action: () => void;
+  action: (data?: any) => void;
   active?: boolean;
 }
 

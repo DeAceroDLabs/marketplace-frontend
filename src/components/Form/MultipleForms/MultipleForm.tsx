@@ -17,6 +17,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   inputForms,
   onSubmit,
 }) => {
+  const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
   const form = useForm();
@@ -38,16 +39,22 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   });
 
   useEffect(() => {
+    setcurrentForm(forms[currentIndex]);
     setActiveForm(inputForms[currentIndex]);
-    // eslint-disable-next-line
   }, [currentIndex]);
 
   const moveNext = () => {
     setCurrentIndex(currentIndex + 1);
+    setcurrentForm(forms[currentIndex]);
+  };
+
+  const onSubmitOneForm = (data: FieldValues) => {
+    moveNext();
   };
 
   const moveBack = () => {
     setCurrentIndex(currentIndex - 1);
+    setcurrentForm(forms[currentIndex]);
   };
 
   const BackButton = currentIndex > 0 && (
@@ -58,15 +65,16 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
-  const ContinueButton = currentIndex < forms.length - 1 && (
-    <div className={styles["button-container"]}>
-      <Button color="primary" action={moveNext}>
+  const ContinueButton = (
+    <div className={styles["submit-container"]}>
+      <Button color="primary" action={() => onSubmit}>
         {"siguiente"}
       </Button>
     </div>
   );
 
-  const SubmitButton = currentIndex === forms.length - 1 && (
+  const lastForm = currentIndex === forms.length - 1;
+  const SubmitButton = (
     <div className={styles["submit-container"]}>
       <Button color="primary" action={() => onSubmit}>
         {"Finalizar"}
@@ -74,20 +82,24 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
+  const typeOfSubmit = lastForm ? onSubmit : onSubmitOneForm;
+
   return (
-    <FormProvider {...form}>
-      <div className={styles.container}>
-        {BackButton}
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className={styles["form-container"]}
-        >
-          {forms}
-          {SubmitButton}
-        </form>
-        {ContinueButton}
-      </div>
-    </FormProvider>
+    <div>
+      <FormProvider {...form}>
+        <div className={styles.container}>
+          <form
+            onSubmit={form.handleSubmit(typeOfSubmit)}
+            className={styles["form-container"]}
+          >
+            {currentForm}
+            {BackButton}
+            {lastForm && SubmitButton}
+            {!lastForm && ContinueButton}
+          </form>
+        </div>
+      </FormProvider>
+    </div>
   );
 };
 
