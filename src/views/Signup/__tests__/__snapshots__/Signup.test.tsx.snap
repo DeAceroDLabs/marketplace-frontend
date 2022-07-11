@@ -32,6 +32,255 @@ Object {
                 <div
                   class="form-container"
                 >
+                  <div>
+                    <div
+                      class="container"
+                    >
+                      <form
+                        class="form-container"
+                      >
+                        <div
+                          class=""
+                        >
+                          <div
+                            class="container"
+                          >
+                            <div
+                              class="title margin-title"
+                            >
+                              Información General
+                               
+                            </div>
+                            <div
+                              class="body"
+                            >
+                               
+                              <p
+                                class="form-description"
+                              >
+                                Comienza tu registro añadiendo tus datos generales
+                              </p>
+                              <div
+                                class="form-container"
+                              >
+                                <div
+                                  class="field-container"
+                                >
+                                  <div
+                                    class="container"
+                                  >
+                                    <label>
+                                      Nombre
+                                    </label>
+                                    <input
+                                      class="input "
+                                      name="name"
+                                      placeholder="Nombre"
+                                      type="text"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="field-container"
+                                >
+                                  <div
+                                    class="container"
+                                  >
+                                    <label>
+                                      Teléfono
+                                    </label>
+                                    <input
+                                      class="input "
+                                      name="phone"
+                                      placeholder="+52 (000)-1111-222"
+                                      type="tel"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="field-container"
+                                >
+                                  <div
+                                    class="container"
+                                  >
+                                    <label>
+                                      Correo electrónico
+                                    </label>
+                                    <input
+                                      class="input "
+                                      name="email"
+                                      placeholder="ejemplo@deacero.com"
+                                      type="email"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="field-container"
+                                >
+                                  <div
+                                    class="container"
+                                  >
+                                    <label>
+                                      Contraseña
+                                    </label>
+                                    <input
+                                      class="input "
+                                      name="password"
+                                      placeholder="Contraseña"
+                                      type="password"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
+                                <div
+                                  class="field-container"
+                                >
+                                  <div
+                                    class="container"
+                                  >
+                                    <label>
+                                      Confirmar contraseña
+                                    </label>
+                                    <input
+                                      class="input "
+                                      name="password-confirm"
+                                      placeholder="Contraseña"
+                                      type="password"
+                                      value=""
+                                    />
+                                  </div>
+                                </div>
+                              </div>
+                               
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="submit-container"
+                        >
+                          <button
+                            class="button primary activeClass"
+                          >
+                            siguiente
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+                 
+              </div>
+            </div>
+            <div
+              class="vertical"
+            >
+              <div
+                class="content primary right"
+              >
+                <div
+                  class="stepper-wrapper"
+                >
+                  <div
+                    class="stepper"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Es muy fácil y rápido
+                    </div>
+                    <div
+                      class="stepper-selector"
+                    >
+                      <div
+                        class="line"
+                      />
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        >
+                          <div
+                            class="selected"
+                          />
+                        </div>
+                        <div
+                          class="step-title"
+                        >
+                          Información General
+                        </div>
+                      </div>
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        />
+                        <div
+                          class="step-title"
+                        >
+                          Ubicación
+                        </div>
+                      </div>
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        />
+                        <div
+                          class="step-title"
+                        >
+                          Información Fiscal
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div />
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="header"
+    >
+      <div />
+    </div>
+    <div
+      class="body"
+    >
+      <div>
+        <div
+          class="container"
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="title margin-title"
+            >
+               
+            </div>
+            <div
+              class="body"
+            >
+               
+              <div
+                class="form-container"
+              >
+                <div>
                   <div
                     class="container"
                   >
@@ -158,10 +407,10 @@ Object {
                         </div>
                       </div>
                       <div
-                        class="hidden"
+                        class="submit-container"
                       >
-                        <div
-                          class="container"
+                        <button
+                          class="button primary activeClass"
                         >
                           <div
                             class="title margin-title"

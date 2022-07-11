@@ -73,9 +73,9 @@ describe("MultipleForm", () => {
     render(<MultipleForm {...props} />);
     const continueButton = screen.getByRole("button");
     fireEvent.click(continueButton);
-    const submit = screen.getByText("Finalizar");
-    fireEvent.click(submit);
     await waitFor(() => {
+      const submit = screen.getByText("Finalizar");
+      fireEvent.click(submit);
       expect(mockSubmit).toBeCalled();
     });
   });
