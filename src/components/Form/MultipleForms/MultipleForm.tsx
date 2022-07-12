@@ -20,6 +20,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
+  const [noFormErrors, setNoFormErrors] = useState(true);
   const form = useForm();
 
   const forms = inputForms.map((form) => {
@@ -44,13 +45,26 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     // eslint-disable-next-line
   }, [currentIndex]);
 
+  const errorsLength = Object.keys(form.formState.errors).length;
+
+  useEffect(() => {
+    const noError = Object.keys(form.formState.errors).length === 0;
+
+    noError && setNoFormErrors(true);
+    !noError && setNoFormErrors(false);
+    console.log(form.formState.errors);
+    console.log("noErrors",noError);
+  }, [errorsLength, form.formState.errors])
+
+  console.log("noFormErrors", noFormErrors)
   const moveNext = () => {
+
     setCurrentIndex(currentIndex + 1);
     setcurrentForm(forms[currentIndex]);
   };
 
   const onSubmitOneForm = (data: FieldValues) => {
-    moveNext();
+    noFormErrors && moveNext();
   };
 
   const moveBack = () => {
@@ -76,7 +90,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const SubmitButton = (
     <div className={styles["button-container-right"]}>
-      <Button color="primary" action={() => onSubmit}>
+      <Button color="primary" action={() => onSubmit }>
         {"Finalizar"}
       </Button>
     </div>
