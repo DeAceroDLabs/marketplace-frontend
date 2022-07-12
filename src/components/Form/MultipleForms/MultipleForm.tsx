@@ -58,7 +58,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
-  const BackButton = currentIndex > 0 && (
+  const BackButton = (
     <div className={`${styles["button-container-left"]} ${styles["back-button"]}`}>
       <Button color="primary" action={moveBack}>
         <ArrowBackIosNewIcon fontSize="small" className={styles["back-icon"]} />
@@ -74,7 +74,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
-  const lastForm = currentIndex === forms.length - 1;
   const SubmitButton = (
     <div className={styles["button-container-right"]}>
       <Button color="primary" action={() => onSubmit}>
@@ -82,6 +81,10 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
       </Button>
     </div>
   );
+
+  const lastForm = currentIndex === forms.length - 1;
+
+  const firstForm = currentIndex === 0;
 
   const typeOfSubmit = lastForm ? onSubmit : onSubmitOneForm;
 
@@ -94,7 +97,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
           >
             {currentForm}
             <div className={styles["buttons-container"]}>
-            {BackButton}
+            {!firstForm && BackButton}
             {lastForm && SubmitButton}
             {!lastForm && ContinueButton}
             </div>
