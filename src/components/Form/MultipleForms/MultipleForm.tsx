@@ -22,7 +22,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   const { setActiveForm } = useContext(MultiFormContext);
   const [noFormErrors, setNoFormErrors] = useState(true);
   const form = useForm();
-
+  
   const forms = inputForms.map((form) => {
     return (
       <div
@@ -47,11 +47,12 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const errorsLength = Object.keys(form.formState.errors).length;
 
+
   useEffect(() => {
     const noError = Object.keys(form.formState.errors).length === 0;
+    //aquí no esta haciendo bien el set 
+    setNoFormErrors(noError);
 
-    noError && setNoFormErrors(true);
-    !noError && setNoFormErrors(false);
     console.log(form.formState.errors);
     console.log("noErrors",noError);
   }, [errorsLength, form.formState.errors])
@@ -64,7 +65,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   };
 
   const onSubmitOneForm = (data: FieldValues) => {
-    noFormErrors && moveNext();
+    (noFormErrors && (Object.keys(form.formState.errors)[0] === undefined )) && moveNext();
   };
 
   const moveBack = () => {

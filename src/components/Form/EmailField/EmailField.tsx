@@ -43,7 +43,7 @@ const EmailField: React.FC<OptionsField> = ({
     <span className={styles["error-text"]}>Este campo es requerido</span>
   );
 
-  activeError && (methods.formState.errors[name] = error);
+  activeError && (methods.formState.errors[name] = {type: 'validation', message: error});
 
   return (
     <div className={styles.container}>
