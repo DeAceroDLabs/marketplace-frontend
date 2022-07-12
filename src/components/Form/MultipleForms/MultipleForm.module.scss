@@ -22,24 +22,28 @@
     scrollbar-width: none;
 }
 
-.button-container {
-    margin-bottom: 40px;
-    margin-left: 20px;
+.button-container-left {
     Button {
-        position: absolute;
+        position: relative;
         font-size: typography.$body-m;
+        float: left;
+        left: 40px;
     }
 }
 
-.submit-container {
-    margin-top: 10px;
+.button-container-right {
     Button {
         position: relative;
         font-size: typography.$body-m;
         float: right;
-        margin-right: 7%;
+        right: 64px;
     }
 }
+
+.buttons-container{
+    margin-top: 20px;
+}
+
 
 .back-button {
     Button {
