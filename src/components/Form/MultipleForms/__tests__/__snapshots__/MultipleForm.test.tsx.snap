@@ -5,76 +5,6 @@ Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div>
-        <div
-          class="container"
-        >
-          <form
-            class="form-container"
-          >
-            <div
-              class=""
-            >
-              <div
-                class="container"
-              >
-                <div
-                  class="title margin-title"
-                >
-                  Mock Form 1
-                   
-                </div>
-                <div
-                  class="body"
-                >
-                   
-                  <p
-                    class="form-description"
-                  >
-                    Mock description
-                  </p>
-                  <div
-                    class="form-container"
-                  >
-                    <div
-                      class="field-container"
-                    >
-                      <div
-                        class="container"
-                      >
-                        <label>
-                          mock Label
-                        </label>
-                        <input
-                          class="input "
-                          name="mockName"
-                          placeholder="mock"
-                          type="text"
-                          value="mock value"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                   
-                </div>
-              </div>
-            </div>
-            <div
-              class="submit-container"
-            >
-              <button
-                class="button primary activeClass"
-              >
-                siguiente
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div>
       <div
         class="container"
       >
@@ -129,7 +59,81 @@ Object {
             </div>
           </div>
           <div
-            class="submit-container"
+            class="buttons-container"
+          >
+            <div
+              class="button-container-right"
+            >
+              <button
+                class="button primary activeClass"
+              >
+                siguiente
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="container"
+    >
+      <form
+        class="form-container"
+      >
+        <div
+          class=""
+        >
+          <div
+            class="container"
+          >
+            <div
+              class="title margin-title"
+            >
+              Mock Form 1
+               
+            </div>
+            <div
+              class="body"
+            >
+               
+              <p
+                class="form-description"
+              >
+                Mock description
+              </p>
+              <div
+                class="form-container"
+              >
+                <div
+                  class="field-container"
+                >
+                  <div
+                    class="container"
+                  >
+                    <label>
+                      mock Label
+                    </label>
+                    <input
+                      class="input "
+                      name="mockName"
+                      placeholder="mock"
+                      type="text"
+                      value="mock value"
+                    />
+                  </div>
+                </div>
+              </div>
+               
+            </div>
+          </div>
+        </div>
+        <div
+          class="buttons-container"
+        >
+          <div
+            class="button-container-right"
           >
             <button
               class="button primary activeClass"
