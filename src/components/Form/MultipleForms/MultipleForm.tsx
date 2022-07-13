@@ -22,7 +22,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   const { setActiveForm } = useContext(MultiFormContext);
   const [noFormErrors, setNoFormErrors] = useState(true);
   const form = useForm();
-  
+
   const forms = inputForms.map((form) => {
     return (
       <div
@@ -46,9 +46,9 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   }, [currentIndex]);
 
   useEffect(() => {
-    const noError = Object.keys(form.formState.errors).length === 0; 
+    const noError = Object.keys(form.formState.errors).length === 0;
     setNoFormErrors(noError);
-  }, [form.formState.errors])
+  }, [form.formState.errors]);
 
   const moveNext = () => {
     setCurrentIndex(currentIndex + 1);
@@ -60,16 +60,21 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
-  const notFoundErrors = noFormErrors && Object.keys(form.formState.errors).length === 0;
+  const firstErrorFieldName = Object.keys(form.formState.errors)[0];
+  const notFoundErrors =
+    noFormErrors &&
+    (Object.keys(form.formState.errors).length === 0 ||
+      form.formState.errors[firstErrorFieldName] !== "...");
 
   const onSubmitOneFormNext = (data: FieldValues) => {
     notFoundErrors && moveNext();
   };
 
-  const doNotLetAdvance = (data: FieldValues) => {
+  const doNotLetAdvance = () => {
+    setcurrentForm(forms[currentIndex]);
+    setActiveForm(inputForms[currentIndex]);
   };
 
-  console.log("back, not found errors", notFoundErrors, noFormErrors, form.formState.errors )
   const BackButton = (
     <div className={`${styles["button-container-left"]} ${styles["back-button"]}`}>
       <Button color="primary" action={notFoundErrors ? moveBack : doNotLetAdvance}>
@@ -88,7 +93,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const SubmitButton = (
     <div className={styles["button-container-right"]}>
-      <Button color="primary" action={() => onSubmit }>
+      <Button color="primary" action={() => onSubmit}>
         {"Finalizar"}
       </Button>
     </div>
@@ -98,26 +103,26 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const firstForm = currentIndex === 0;
 
-  const sendLastForm = notFoundErrors ? onSubmit:  doNotLetAdvance;
+  const sendLastForm = notFoundErrors ? onSubmit : doNotLetAdvance;
 
   const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   return (
-      <FormProvider {...form}>
-        <div className={styles.container}>
-          <form
-            onSubmit={form.handleSubmit(typeOfSubmit)}
-            className={styles["form-container"]}
-          >
-            {currentForm}
-            <div className={styles["buttons-container"]}>
+    <FormProvider {...form}>
+      <div className={styles.container}>
+        <form
+          onSubmit={form.handleSubmit(typeOfSubmit)}
+          className={styles["form-container"]}
+        >
+          {currentForm}
+          <div className={styles["buttons-container"]}>
             {!firstForm && BackButton}
             {lastForm && SubmitButton}
             {!lastForm && ContinueButton}
-            </div>
-          </form>
-        </div>
-      </FormProvider>
+          </div>
+        </form>
+      </div>
+    </FormProvider>
   );
 };
 
