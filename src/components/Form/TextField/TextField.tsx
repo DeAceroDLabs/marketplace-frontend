@@ -23,9 +23,7 @@ const TextField: React.FC<OptionsField> = ({
 
   const validateText = (e: React.ChangeEvent<HTMLInputElement>) => {
     const text = e.target.value;
-    text !== ""
-      ? setStatus("writing")
-      : setStatus("not writing");
+    text !== "" ? setStatus("writing") : setStatus("not writing");
   };
 
   const emptyFieldWhenRequired =
@@ -34,7 +32,8 @@ const TextField: React.FC<OptionsField> = ({
 
   const valueNotChanged = currentValue === value;
 
-  const errorStyle = emptyFieldWhenRequired && valueNotChanged ? "input-error" : "";
+  const errorStyle =
+    emptyFieldWhenRequired && valueNotChanged ? "input-error" : "";
 
   const requiredMessage = emptyFieldWhenRequired && valueNotChanged && (
     <span className={styles["error-text"]}>Este campo es requerido</span>
@@ -53,7 +52,8 @@ const TextField: React.FC<OptionsField> = ({
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          methods.formState.errors[name]  && validateText(e);
+          methods.formState.errors[name] && validateText(e);
+          methods.setValue(name, value);
         }}
       />
       {requiredMessage}

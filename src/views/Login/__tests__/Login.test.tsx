@@ -17,6 +17,7 @@ jest.mock("react-hook-form", () => ({
     handleSubmit: () => jest.fn(),
     formState: { errors: {} },
     clearErrors: () => jest.fn(),
+    setValue: () => jest.fn(),
   }),
 }));
 
