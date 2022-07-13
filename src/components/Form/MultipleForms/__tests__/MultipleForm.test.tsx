@@ -4,8 +4,48 @@ import MultipleForm from "../MultipleForm";
 
 const mockSubmit = jest.fn();
 
+jest.mock("react-hook-form", () => ({
+  ...jest.requireActual("react-hook-form"),
+  useForm: () => ({
+    register: () => jest.fn(),
+    handleSubmit: () => jest.fn(),
+    setValue: () => jest.fn(),
+    formState: { errors: {} },
+  }),
+}));
+
+const mockUseForm = {
+  register: () => jest.fn(),
+  handleSubmit: () => jest.fn(),
+  setValue: () => jest.fn(),
+  formState: {
+    errors: {},
+    isDirty: false,
+    dirtyFields: {},
+    isSubmitted: false,
+    isSubmitSuccessful: false,
+    submitCount: 0,
+    touchedFields: {},
+    isSubmitting: false,
+    isValidating: false,
+    isValid: false,
+  },
+  watch: jest.fn(),
+  getValues: jest.fn(),
+  getFieldState: jest.fn(),
+  setError: jest.fn(),
+  clearErrors: jest.fn(),
+  trigger: jest.fn(),
+  reset: jest.fn(),
+  resetField: jest.fn(),
+  unregister: jest.fn(),
+  control: jest.fn(),
+  setFocus: jest.fn(),
+};
+
 describe("MultipleForm", () => {
   const props = {
+    form: mockUseForm,
     inputForms: [
       {
         formTitle: "Mock Form 1",

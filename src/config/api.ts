@@ -1,4 +1,4 @@
-import { API, Category, Product } from "./api.types";
+import { API, Category, Product, ZipCodeLocation } from "./api.types";
 import axios from "axios";
 
 const fetchData = (url: string) => {
@@ -24,6 +24,23 @@ const fetchProducts = (categoryId: number): Promise<Product[]> => {
   return fetchData(API.products(categoryId));
 };
 
+const getLocation = (zipCode: string): Promise<ZipCodeLocation> => {
+  return fetchData(API.location(zipCode)).then((data) => {
+    if (data["location"]) {
+      const neighborhoodsObject = data["location"]["neighborhood"];
+      const neighborhoods = Object.keys(neighborhoodsObject);
+      const neighborhoodsArray = neighborhoods.map((neighborhood) => {
+        return {
+          id: neighborhood,
+          name: neighborhoodsObject[neighborhood],
+        };
+      });
+      data["location"]["neighborhood"] = neighborhoodsArray;
+    }
+    return data;
+  });
+};
+
 const searchProducts = (query: string): Promise<any> => {
   const body = {
     q: query,
@@ -31,4 +48,4 @@ const searchProducts = (query: string): Promise<any> => {
   return postRequest(API.search, body);
 };
 
-export { fetchCategories, fetchProducts, searchProducts };
+export { fetchCategories, fetchProducts, searchProducts, getLocation };
