@@ -46,11 +46,8 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   }, [currentIndex]);
 
   useEffect(() => {
-    const noError = Object.keys(form.formState.errors).length === 0;
-    //aquí no esta haciendo bien el set 
+    const noError = Object.keys(form.formState.errors).length === 0; 
     setNoFormErrors(noError);
-    console.log("Show errors",form.formState.errors);
-    console.log("Is error length 0?",noError);
   }, [form.formState.errors])
 
   const moveNext = () => {
@@ -63,11 +60,13 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
+  const notFoundErrors = noFormErrors && Object.keys(form.formState.errors).length === 0;
+
   const onSubmitOneForm = (data: FieldValues) => {
-    (noFormErrors && (Object.keys(form.formState.errors).length === 0)) && moveNext();
+    notFoundErrors && moveNext();
   };
 
-  const doNotLetLoginIn = (data: FieldValues) => {
+  const doNotLetAdvance = (data: FieldValues) => {
     setcurrentForm(forms[currentIndex]);
   };
 
@@ -87,8 +86,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
-  const submitFinalAllowed = (noFormErrors && (Object.keys(form.formState.errors).length === 0));
-
   const SubmitButton = (
     <div className={styles["button-container-right"]}>
       <Button color="primary" action={() => onSubmit }>
@@ -101,7 +98,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const firstForm = currentIndex === 0;
 
-  const sendLastForm = submitFinalAllowed ? onSubmit:  doNotLetLoginIn;
+  const sendLastForm = notFoundErrors ? onSubmit:  doNotLetAdvance;
 
   const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneForm;
 
