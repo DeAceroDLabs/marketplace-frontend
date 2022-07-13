@@ -71,7 +71,6 @@ const PasswordField: React.FC<OptionsField> = ({
       <input
         {...methods.register(name, { value, required })}
         className={`${styles.input} ${styles[errorStyle]}`}
-        value={currentValue}
         type={type}
         placeholder={placeholder}
         disabled={disabled}
