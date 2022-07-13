@@ -1,5 +1,5 @@
 import { OptionsField } from "forms/form.types";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./PhoneField.module.scss";
 import validator from "validator";
@@ -22,6 +22,10 @@ const PhoneField: React.FC<OptionsField> = ({
       ? setError("")
       : setError(errorMessage);
   };
+
+  useEffect(() => {
+    methods.clearErrors();
+  }, [error]);
 
   const activeError = error !== "";
   const emptyFieldWhenRequired =

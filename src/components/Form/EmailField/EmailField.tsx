@@ -1,5 +1,5 @@
 import { OptionsField } from "forms/form.types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./EmailField.module.scss";
 import validator from "validator";
@@ -33,6 +33,10 @@ const EmailField: React.FC<OptionsField> = ({
     methods.formState.errors[name] &&
     methods.formState.errors[name].type === "required";
   const valueNotChanged = currentValue === value;
+
+  useEffect(() => {
+    methods.clearErrors();
+  }, [error]);
 
   const errorStyle =
     activeError || (emptyFieldWhenRequired && valueNotChanged)
