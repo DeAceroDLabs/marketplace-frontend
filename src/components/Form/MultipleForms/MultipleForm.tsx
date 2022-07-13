@@ -58,16 +58,16 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
-  console.log("If error length 0 then this true", noFormErrors);
+  const moveBack = () => {
+    setCurrentIndex(currentIndex - 1);
+    setcurrentForm(forms[currentIndex]);
+  };
+
   const onSubmitOneForm = (data: FieldValues) => {
-    console.log("length is 0?",Object.keys(form.formState.errors).length === 0);
-    console.log("submit",noFormErrors,Object.keys(form.formState.errors).length);
-    console.log("errores 2?", form.formState.errors);
     (noFormErrors && (Object.keys(form.formState.errors).length === 0)) && moveNext();
   };
 
-  const moveBack = () => {
-    setCurrentIndex(currentIndex - 1);
+  const doNotLetLoginIn = (data: FieldValues) => {
     setcurrentForm(forms[currentIndex]);
   };
 
@@ -87,6 +87,8 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
+  const submitFinalAllowed = (noFormErrors && (Object.keys(form.formState.errors).length === 0));
+
   const SubmitButton = (
     <div className={styles["button-container-right"]}>
       <Button color="primary" action={() => onSubmit }>
@@ -99,7 +101,9 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const firstForm = currentIndex === 0;
 
-  const typeOfSubmit = lastForm ? onSubmit : onSubmitOneForm;
+  const sendLastForm = submitFinalAllowed ? onSubmit:  doNotLetLoginIn;
+
+  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneForm;
 
   return (
       <FormProvider {...form}>

@@ -35,6 +35,7 @@ const PasswordField: React.FC<OptionsField> = ({
 
   useEffect(() => {
     methods.clearErrors();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
