@@ -15,6 +15,7 @@ import Popup from "components/common/Popup";
 import StateIcon from "components/common/StateIcon";
 import Button from "components/common/Button";
 import styles from "./Signup.module.scss";
+import { getLocation } from "config/api";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
@@ -33,8 +34,11 @@ const Signup = () => {
 
   useEffect(() => {
     if (zipCode && zipCode.length === 5) {
-      formState.setValue("state", "Jalisco");
-      formState.setValue("town", "Zapopan");
+      const location = getLocation(zipCode);
+      location.then((data) => {
+        formState.setValue("state", data.location.state);
+        formState.setValue("city", data.location.city);
+      });
     }
   }, [zipCode, formState]);
 

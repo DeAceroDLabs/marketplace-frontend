@@ -20,7 +20,7 @@ export const locationSignupForm: Form = {
       disabled: true,
     },
     {
-      name: "town",
+      name: "city",
       label: "Municipio",
       required: true,
       placeholder: "Municipio",
