@@ -24,8 +24,8 @@ const EmailField: React.FC<OptionsField> = ({
   };
   const validateDomainEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
     const email = e.target.value;
-    const isDeAceroEmail = email.split("@")[1] === validateDomain;
-    isDeAceroEmail ? setError("") : setError(errorMessage);
+    const isDomainEmail = email.split("@")[1] === validateDomain;
+    isDomainEmail ? setError("") : setError(errorMessage);
   };
 
   const activeError = error !== "";

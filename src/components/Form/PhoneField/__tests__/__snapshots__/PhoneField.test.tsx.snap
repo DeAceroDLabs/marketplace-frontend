@@ -16,7 +16,6 @@ Object {
           mock="[object Object]"
           placeholder="+52 (000)-1111-222"
           type="number"
-          value="mock value"
         />
       </div>
     </div>
@@ -33,7 +32,6 @@ Object {
         mock="[object Object]"
         placeholder="+52 (000)-1111-222"
         type="number"
-        value="mock value"
       />
     </div>
   </div>,
