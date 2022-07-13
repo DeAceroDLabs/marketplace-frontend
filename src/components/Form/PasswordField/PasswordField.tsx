@@ -1,5 +1,5 @@
 import { OptionsField } from "forms/form.types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./PasswordField.module.scss";
 import validator from "validator";
@@ -32,6 +32,10 @@ const PasswordField: React.FC<OptionsField> = ({
       ? setError("")
       : setError(errorMessage);
   };
+
+  useEffect(() => {
+    methods.clearErrors();
+  }, [error]);
 
   const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
     const confirmPassword = e.target.value;

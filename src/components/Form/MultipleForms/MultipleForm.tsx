@@ -60,7 +60,10 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   console.log("If error length 0 then this true", noFormErrors);
   const onSubmitOneForm = (data: FieldValues) => {
-    (noFormErrors && (Object.keys(form.formState.errors)[0] === undefined )) && moveNext();
+    console.log("length is 0?",Object.keys(form.formState.errors).length === 0);
+    console.log("submit",noFormErrors,Object.keys(form.formState.errors).length);
+    console.log("errores 2?", form.formState.errors);
+    (noFormErrors && (Object.keys(form.formState.errors).length === 0)) && moveNext();
   };
 
   const moveBack = () => {

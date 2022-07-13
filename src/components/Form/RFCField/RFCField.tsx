@@ -1,5 +1,5 @@
 import { OptionsField } from "forms/form.types";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./RFCField.module.scss";
 import validateRfc from "validate-rfc/src/index";
@@ -21,6 +21,9 @@ const RFCField: React.FC<OptionsField> = ({
     const rfc = e.target.value;
     validateRfc(rfc).isValid ? setError("") : setError(errorMessage);
   };
+  useEffect(() => {
+    methods.clearErrors();
+  }, [error]);
 
   const activeError = error !== "";
   const emptyFieldWhenRequired =
