@@ -73,7 +73,7 @@ Object {
                                   </label>
                                   <input
                                     class="input "
-                                    name="name"
+                                    mock="[object Object]"
                                     placeholder="Nombre"
                                     type="text"
                                     value=""
@@ -91,7 +91,7 @@ Object {
                                   </label>
                                   <input
                                     class="input "
-                                    name="phone"
+                                    mock="[object Object]"
                                     placeholder="+52 (000)-1111-222"
                                     type="tel"
                                   />
@@ -108,7 +108,7 @@ Object {
                                   </label>
                                   <input
                                     class="input "
-                                    name="email"
+                                    mock="[object Object]"
                                     placeholder="ejemplo@deacero.com"
                                     type="email"
                                     value=""
@@ -126,7 +126,7 @@ Object {
                                   </label>
                                   <input
                                     class="input "
-                                    name="password"
+                                    mock="[object Object]"
                                     placeholder="Contraseña"
                                     type="password"
                                   />
@@ -143,7 +143,253 @@ Object {
                                   </label>
                                   <input
                                     class="input "
-                                    name="password-confirm"
+                                    mock="[object Object]"
+                                    placeholder="Contraseña"
+                                    type="password"
+                                  />
+                                </div>
+                              </div>
+                            </div>
+                             
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="buttons-container"
+                      >
+                        <div
+                          class="button-container-right"
+                        >
+                          <button
+                            class="button primary activeClass"
+                          >
+                            siguiente
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                 
+              </div>
+            </div>
+            <div
+              class="vertical"
+            >
+              <div
+                class="content primary right"
+              >
+                <div
+                  class="stepper-wrapper"
+                >
+                  <div
+                    class="stepper"
+                  >
+                    <div
+                      class="title"
+                    >
+                      Es muy fácil y rápido
+                    </div>
+                    <div
+                      class="stepper-selector"
+                    >
+                      <div
+                        class="line"
+                      />
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        >
+                          <div
+                            class="selected"
+                          />
+                        </div>
+                        <div
+                          class="step-title"
+                        >
+                          Información General
+                        </div>
+                      </div>
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        />
+                        <div
+                          class="step-title"
+                        >
+                          Ubicación
+                        </div>
+                      </div>
+                      <div
+                        class="step"
+                      >
+                        <div
+                          class="step-checkbox"
+                        />
+                        <div
+                          class="step-title"
+                        >
+                          Información Fiscal
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="footer"
+      >
+        <div />
+      </div>
+    </div>
+    <div>
+      <div
+        class="header"
+      >
+        <div />
+      </div>
+      <div
+        class="body"
+      >
+        <div>
+          <div
+            class="container"
+          >
+            <div
+              class="container"
+            >
+              <div
+                class="title margin-title"
+              >
+                 
+              </div>
+              <div
+                class="body"
+              >
+                 
+                <div
+                  class="form-container"
+                >
+                  <div
+                    class="container"
+                  >
+                    <form
+                      class="form-container"
+                    >
+                      <div
+                        class=""
+                      >
+                        <div
+                          class="container"
+                        >
+                          <div
+                            class="title margin-title"
+                          >
+                            Información General
+                             
+                          </div>
+                          <div
+                            class="body"
+                          >
+                             
+                            <p
+                              class="form-description"
+                            >
+                              Comienza tu registro añadiendo tus datos generales
+                            </p>
+                            <div
+                              class="form-container"
+                            >
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Nombre
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="Nombre"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Teléfono
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="+52 (000)-1111-222"
+                                    type="tel"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Correo electrónico
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="ejemplo@deacero.com"
+                                    type="email"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Contraseña
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="Contraseña"
+                                    type="password"
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Confirmar contraseña
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
                                     placeholder="Contraseña"
                                     type="password"
                                   />
@@ -320,7 +566,7 @@ Object {
                                 </label>
                                 <input
                                   class="input "
-                                  name="name"
+                                  mock="[object Object]"
                                   placeholder="Nombre"
                                   type="text"
                                   value=""
@@ -338,7 +584,7 @@ Object {
                                 </label>
                                 <input
                                   class="input "
-                                  name="phone"
+                                  mock="[object Object]"
                                   placeholder="+52 (000)-1111-222"
                                   type="tel"
                                 />
@@ -355,7 +601,7 @@ Object {
                                 </label>
                                 <input
                                   class="input "
-                                  name="email"
+                                  mock="[object Object]"
                                   placeholder="ejemplo@deacero.com"
                                   type="email"
                                   value=""
@@ -373,7 +619,7 @@ Object {
                                 </label>
                                 <input
                                   class="input "
-                                  name="password"
+                                  mock="[object Object]"
                                   placeholder="Contraseña"
                                   type="password"
                                 />
@@ -390,7 +636,7 @@ Object {
                                 </label>
                                 <input
                                   class="input "
-                                  name="password-confirm"
+                                  mock="[object Object]"
                                   placeholder="Contraseña"
                                   type="password"
                                 />

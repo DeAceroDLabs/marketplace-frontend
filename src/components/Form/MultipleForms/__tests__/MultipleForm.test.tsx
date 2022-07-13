@@ -14,7 +14,7 @@ describe("MultipleForm", () => {
           {
             name: "mockName",
             label: "mock Label",
-            required: false,
+            required: true,
             placeholder: "mock",
             type: "text",
             value: "mock value",
@@ -28,7 +28,7 @@ describe("MultipleForm", () => {
           {
             name: "mockName",
             label: "mock Label",
-            required: false,
+            required: true,
             placeholder: "mock",
             type: "text",
             value: "mock value",
@@ -71,6 +71,13 @@ describe("MultipleForm", () => {
 
   it("simulates clicking on submit", async () => {
     render(<MultipleForm {...props} />);
+    const input = screen.getByPlaceholderText("mock");
+    fireEvent.change(input, {
+      target: { value: "Mock something" },
+    });
+    await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("Mock something");
+    });
     const continueButton = screen.getByRole("button");
     fireEvent.click(continueButton);
     await waitFor(() => {

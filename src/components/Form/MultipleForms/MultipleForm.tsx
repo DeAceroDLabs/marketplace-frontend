@@ -62,17 +62,17 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const notFoundErrors = noFormErrors && Object.keys(form.formState.errors).length === 0;
 
-  const onSubmitOneForm = (data: FieldValues) => {
+  const onSubmitOneFormNext = (data: FieldValues) => {
     notFoundErrors && moveNext();
   };
 
   const doNotLetAdvance = (data: FieldValues) => {
-    setcurrentForm(forms[currentIndex]);
   };
 
+  console.log("back, not found errors", notFoundErrors, noFormErrors, form.formState.errors )
   const BackButton = (
     <div className={`${styles["button-container-left"]} ${styles["back-button"]}`}>
-      <Button color="primary" action={moveBack}>
+      <Button color="primary" action={notFoundErrors ? moveBack : doNotLetAdvance}>
         <ArrowBackIosNewIcon fontSize="small" className={styles["back-icon"]} />
       </Button>
     </div>
@@ -100,7 +100,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const sendLastForm = notFoundErrors ? onSubmit:  doNotLetAdvance;
 
-  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneForm;
+  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   return (
       <FormProvider {...form}>

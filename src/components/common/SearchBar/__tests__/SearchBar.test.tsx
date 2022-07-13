@@ -54,6 +54,7 @@ describe("Search Bar", () => {
     fireEvent.keyDown(input, {
       key: "Enter",
       code: "Enter",
+      keyCode: 13,
       charCode: 13,
     });
     await waitFor(() => {
