@@ -33,6 +33,14 @@ describe("MultipleForm", () => {
             type: "text",
             value: "mock value",
           },
+          {
+            name: "taxRfc",
+            label: "RFC",
+            required: true,
+            placeholder: "AAAA000000BBB0C0",
+            type: "rfc",
+            errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres"
+          },
         ],
       },
     ] as Form[],
@@ -84,6 +92,30 @@ describe("MultipleForm", () => {
       const submit = screen.getByText("Finalizar");
       fireEvent.click(submit);
       expect(mockSubmit).toBeCalled();
+    });
+  });
+  
+  it("simulates clicking with error on submit", async () => {
+    render(<MultipleForm {...props} />);
+    const input = screen.getByPlaceholderText("mock");
+    fireEvent.change(input, {
+      target: { value: "Mock something" },
+    });
+    await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("Mock something");
+    });
+    const continueButton = screen.getByRole("button");
+    fireEvent.click(continueButton);
+    await waitFor(() => {
+      const submit = screen.getByText("Finalizar");
+      const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+      fireEvent.change(input, {
+        target: { value: "AAAA000000BBB0C1" },
+      });
+      expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
+      expect(screen.queryByText("Por favor ingresa tu RFC completo con 13 caracteres")).toBeInTheDocument();
+      fireEvent.click(submit);
+      expect(mockSubmit).not.toBeCalled();
     });
   });
 });
