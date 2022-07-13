@@ -45,25 +45,20 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     // eslint-disable-next-line
   }, [currentIndex]);
 
-  const errorsLength = Object.keys(form.formState.errors).length;
-
-
   useEffect(() => {
     const noError = Object.keys(form.formState.errors).length === 0;
     //aquí no esta haciendo bien el set 
     setNoFormErrors(noError);
+    console.log("Show errors",form.formState.errors);
+    console.log("Is error length 0?",noError);
+  }, [form.formState.errors])
 
-    console.log(form.formState.errors);
-    console.log("noErrors",noError);
-  }, [errorsLength, form.formState.errors])
-
-  console.log("noFormErrors", noFormErrors)
   const moveNext = () => {
-
     setCurrentIndex(currentIndex + 1);
     setcurrentForm(forms[currentIndex]);
   };
 
+  console.log("If error length 0 then this true", noFormErrors);
   const onSubmitOneForm = (data: FieldValues) => {
     (noFormErrors && (Object.keys(form.formState.errors)[0] === undefined )) && moveNext();
   };
