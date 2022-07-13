@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FieldValues, FormProvider, useForm } from "react-hook-form";
+import { FieldValues, FormProvider, UseFormReturn } from "react-hook-form";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Form } from "forms/form.types";
 import Section from "components/common/Section";
@@ -11,17 +11,18 @@ import MultiFormContext from "config/multiFormContext";
 interface MultipleFormsInterface {
   inputForms: Form[];
   onSubmit: (data: FieldValues) => void;
+  form: UseFormReturn<FieldValues, any>;
 }
 
 const MultipleForms: React.FC<MultipleFormsInterface> = ({
   inputForms,
   onSubmit,
+  form,
 }) => {
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
   const [noFormErrors, setNoFormErrors] = useState(true);
-  const form = useForm();
 
   const forms = inputForms.map((form) => {
     return (
@@ -85,8 +86,13 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   const BackButton = (
-    <div className={`${styles["button-container-left"]} ${styles["back-button"]}`}>
-      <Button color="primary" action={notFoundErrors ? moveBack : doNotLetAdvance}>
+    <div
+      className={`${styles["button-container-left"]} ${styles["back-button"]}`}
+    >
+      <Button
+        color="primary"
+        action={notFoundErrors ? moveBack : doNotLetAdvance}
+      >
         <ArrowBackIosNewIcon fontSize="small" className={styles["back-icon"]} />
       </Button>
     </div>

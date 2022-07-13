@@ -1,4 +1,3 @@
-import { MEXICO_STATES } from "./../../utils/mexico";
 import { Form } from "./../form.types";
 export const locationSignupForm: Form = {
   formTitle: "Ubicación",
@@ -17,8 +16,8 @@ export const locationSignupForm: Form = {
       label: "Estado",
       required: true,
       placeholder: "Estado",
-      type: "dropdown",
-      options: MEXICO_STATES,
+      type: "text",
+      disabled: true,
     },
     {
       name: "town",
@@ -26,6 +25,7 @@ export const locationSignupForm: Form = {
       required: true,
       placeholder: "Municipio",
       type: "text",
+      disabled: true,
     },
     {
       name: "suburb",
