@@ -13,9 +13,8 @@ const SearchBar: React.FunctionComponent = () => {
   };
 
   const onPressEnter = (e: any) => {
-    if (e.key === "Enter") {
-      navigateToSearch(query);
-    }
+    (e.key === "Enter") && navigateToSearch(query);
+
   };
 
   return (

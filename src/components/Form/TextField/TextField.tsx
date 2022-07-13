@@ -1,9 +1,9 @@
-import { Field } from "forms/form.types";
-import { useState } from "react";
+import { OptionsField } from "forms/form.types";
+import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./TextField.module.scss";
 
-const TextField: React.FC<Field> = ({
+const TextField: React.FC<OptionsField> = ({
   name,
   value,
   placeholder,
@@ -14,6 +14,20 @@ const TextField: React.FC<Field> = ({
 }) => {
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
+  const [status, setStatus] = useState("");
+
+  useEffect(() => {
+    methods.clearErrors(name);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [status]);
+
+  const validateText = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const text = e.target.value;
+    text !== ""
+      ? setStatus("writing")
+      : setStatus("not writing");
+  };
+
 
   const emptyFieldWhenRequired =
     methods.formState.errors[name] &&
@@ -39,6 +53,7 @@ const TextField: React.FC<Field> = ({
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
+          methods.formState.errors[name]  && validateText(e);
         }}
       />
       {requiredMessage}
