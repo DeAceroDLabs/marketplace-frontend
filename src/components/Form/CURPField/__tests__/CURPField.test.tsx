@@ -9,6 +9,7 @@ jest.mock("react-hook-form", () => ({
     handleSubmit: () => jest.fn(),
     errors: () => jest.fn(),
     formState: { errors: {} },
+    clearErrors: () => jest.fn(),
   }),
 }));
 
@@ -18,7 +19,7 @@ describe("CURPField", () => {
       <CURPField
         label={"Mock CURPField"}
         required={false}
-        placeholder={"AAAA000000BBB0C0"}
+        placeholder={"ABCD990022ABCDEF00"}
         type={"curp"}
         value={"mock value"}
         name={"mock name"}
@@ -32,24 +33,14 @@ describe("CURPField", () => {
     expect(view).toMatchSnapshot();
   });
 
-  it("simulates change on input", async () => {
-    setup();
-    const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
-    fireEvent.change(input, {
-      target: { value: "AAAA000000BBB0C1" },
-    });
-    await waitFor(() => {
-      expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
-    });
-  });
-
   it("simulates change on input without error", async () => {
     setup();
-    const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+    const input = screen.getByPlaceholderText("ABCD990022ABCDEF00");
     fireEvent.change(input, {
-      target: { value: "DEA7103086X2" },
+      target: { value: "FABM770222MMSJNR00" },
     });
     await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("FABM770222MMSJNR00");
       expect(screen.queryByText("mock error message")).not.toBeInTheDocument();
     });
   });
@@ -59,7 +50,7 @@ describe("CURPField", () => {
       <CURPField
         label={"Mock CURPField"}
         required={false}
-        placeholder={"AAAA000000BBB0C0"}
+        placeholder={"ABCD990022ABCDEF00"}
         type={"curp"}
         value={"mock value"}
         name={"mock name"}
@@ -69,7 +60,7 @@ describe("CURPField", () => {
 
   it("simulates change on input with not error", async () => {
     setupWithoutErrorMessage();
-    const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+    const input = screen.getByPlaceholderText("ABCD990022ABCDEF00");
     fireEvent.change(input, {
       target: { value: "123" },
     });
