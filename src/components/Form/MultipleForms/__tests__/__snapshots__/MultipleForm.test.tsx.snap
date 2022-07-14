@@ -107,7 +107,7 @@ Object {
                 class="form-container"
               >
                 <div
-                  class="field-container"
+                  class="field-container full-width"
                 >
                   <div
                     class="container"
@@ -138,171 +138,11 @@ Object {
             <button
               class="button primary activeClass"
             >
-              <div
-                class="title margin-title"
-              >
-                Mock Form 2
-                 
-              </div>
-              <div
-                class="body"
-              >
-                 
-                <p
-                  class="form-description"
-                >
-                  Mock description
-                </p>
-                <div
-                  class="form-container"
-                >
-                  <div
-                    class="field-container full-width"
-                  >
-                    <div
-                      class="container"
-                    >
-                      <label>
-                        mock Label
-                      </label>
-                      <input
-                        class="input "
-                        name="mockName"
-                        placeholder="mock"
-                        type="text"
-                        value="mock value"
-                      />
-                    </div>
-                  </div>
-                </div>
-                 
-              </div>
-            </div>
-          </div>
-        </form>
-        <div
-          class="button-container"
-        >
-          <button
-            class="button primary activeClass"
-          >
-            siguiente
-          </button>
-        </div>
-      </div>
-    </div>
-  </body>,
-  "container": <div>
-    <div
-      class="container"
-    >
-      <form
-        class="form-container"
-      >
-        <div
-          class=""
-        >
-          <div
-            class="container"
-          >
-            <div
-              class="title margin-title"
-            >
-              Mock Form 1
-               
-            </div>
-            <div
-              class="body"
-            >
-               
-              <p
-                class="form-description"
-              >
-                Mock description
-              </p>
-              <div
-                class="form-container"
-              >
-                <div
-                  class="field-container full-width"
-                >
-                  <div
-                    class="container"
-                  >
-                    <label>
-                      mock Label
-                    </label>
-                    <input
-                      class="input "
-                      name="mockName"
-                      placeholder="mock"
-                      type="text"
-                      value="mock value"
-                    />
-                  </div>
-                </div>
-              </div>
-               
-            </div>
-          </div>
-        </div>
-        <div
-          class="hidden"
-        >
-          <div
-            class="container"
-          >
-            <div
-              class="title margin-title"
-            >
-              Mock Form 2
-               
-            </div>
-            <div
-              class="body"
-            >
-               
-              <p
-                class="form-description"
-              >
-                Mock description
-              </p>
-              <div
-                class="form-container"
-              >
-                <div
-                  class="field-container full-width"
-                >
-                  <div
-                    class="container"
-                  >
-                    <label>
-                      mock Label
-                    </label>
-                    <input
-                      class="input "
-                      name="mockName"
-                      placeholder="mock"
-                      type="text"
-                      value="mock value"
-                    />
-                  </div>
-                </div>
-              </div>
-               
-            </div>
+              siguiente
+            </button>
           </div>
         </div>
       </form>
-      <div
-        class="button-container"
-      >
-        <button
-          class="button primary activeClass"
-        >
-          siguiente
-        </button>
-      </div>
     </div>
   </div>,
   "debug": [Function],
