@@ -60,7 +60,13 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     setcurrentForm(forms[currentIndex]);
   };
 
+  const doNotLetAdvance = () => {
+    setcurrentForm(forms[currentIndex]);
+    setActiveForm(inputForms[currentIndex]);
+  };
+
   const firstErrorFieldName = Object.keys(form.formState.errors)[0];
+  
   const notFoundErrors =
     noFormErrors &&
     (Object.keys(form.formState.errors).length === 0 ||
@@ -70,10 +76,13 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     notFoundErrors && moveNext();
   };
 
-  const doNotLetAdvance = () => {
-    setcurrentForm(forms[currentIndex]);
-    setActiveForm(inputForms[currentIndex]);
-  };
+  const lastForm = currentIndex === forms.length - 1;
+
+  const firstForm = currentIndex === 0;
+
+  const sendLastForm = notFoundErrors ? onSubmit : doNotLetAdvance;
+
+  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   const BackButton = (
     <div className={`${styles["button-container-left"]} ${styles["back-button"]}`}>
@@ -99,13 +108,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     </div>
   );
 
-  const lastForm = currentIndex === forms.length - 1;
-
-  const firstForm = currentIndex === 0;
-
-  const sendLastForm = notFoundErrors ? onSubmit : doNotLetAdvance;
-
-  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   return (
     <FormProvider {...form}>
