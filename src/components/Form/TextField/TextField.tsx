@@ -28,10 +28,10 @@ const TextField: React.FC<OptionsField> = ({
       : setStatus("not writing");
   };
 
-
   const emptyFieldWhenRequired =
     methods.formState.errors[name] &&
     methods.formState.errors[name].type === "required";
+
   const valueNotChanged = currentValue === value;
 
   const errorStyle = emptyFieldWhenRequired && valueNotChanged ? "input-error" : "";
