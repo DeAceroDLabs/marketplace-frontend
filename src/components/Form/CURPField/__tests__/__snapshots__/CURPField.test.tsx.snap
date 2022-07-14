@@ -14,7 +14,7 @@ Object {
         <input
           class="input input-curp "
           mock="[object Object]"
-          placeholder="AAAA000000BBB0C0"
+          placeholder="ABCD990022ABCDEF00"
           type="curp"
           value="mock value"
         />
@@ -31,7 +31,7 @@ Object {
       <input
         class="input input-curp "
         mock="[object Object]"
-        placeholder="AAAA000000BBB0C0"
+        placeholder="ABCD990022ABCDEF00"
         type="curp"
         value="mock value"
       />

@@ -18,7 +18,7 @@ export const generalSignupForm: Form = {
       placeholder: "+52 (000)-1111-222",
       type: "tel",
       value: "",
-      errorMessage: "Por favor ingresa tu teléfono a 10 dígitos",
+      errorMessage: "Por favor ingresa tu teléfono a 10 dígitos.",
     },
     {
       name: "email",
@@ -28,7 +28,7 @@ export const generalSignupForm: Form = {
       type: "email",
       value: "",
       validateDomain: "deacero.com",
-      errorMessage: "Por favor ingresa tu correo de DEACERO",
+      errorMessage: "Por favor ingresa tu correo de DEACERO.",
     },
     {
       name: "password",
@@ -37,7 +37,7 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
-      errorMessage: "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial",
+      errorMessage: "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial.",
     },
     {
       name: "password-confirm",
@@ -46,7 +46,7 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
-      errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente",
+      errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente.",
       needsValidationFrom: "password",
     },
   ],
