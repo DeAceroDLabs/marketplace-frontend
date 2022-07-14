@@ -39,7 +39,7 @@ describe("MultipleForm", () => {
             required: true,
             placeholder: "AAAA000000BBB0C0",
             type: "rfc",
-            errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres"
+            errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres."
           },
         ],
       },
@@ -113,7 +113,7 @@ describe("MultipleForm", () => {
         target: { value: "AAAA000000BBB0C1" },
       });
       expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
-      expect(screen.queryByText("Por favor ingresa tu RFC completo con 13 caracteres")).toBeInTheDocument();
+      expect(screen.queryByText("Por favor ingresa tu RFC completo con 13 caracteres.")).toBeInTheDocument();
       fireEvent.click(submit);
       expect(mockSubmit).not.toBeCalled();
     });

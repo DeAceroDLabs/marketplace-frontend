@@ -17,7 +17,7 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "AAAA000000BBB0C0",
       type: "rfc",
-      errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres",
+      errorMessage: "Por favor ingresa tu RFC completo con 13 caracteres.",
     },
     {
       name: "taxCurp",
@@ -25,7 +25,7 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "ABCD990022ABCDEF00",
       type: "curp",
-      errorMessage: "Por favor ingresa una CURP válida",
+      errorMessage: "Por favor ingresa tu CURP completo con homoclave a 18 caracteres.",
     },
     {
       name: "taxRegime",
@@ -64,8 +64,7 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "ejemplo@deacero.com",
       type: "email",
-      errorMessage:
-        "Por favor ingresa una dirección de correo personal/adicional",
+      errorMessage: "Por favor ingresa una dirección de correo personal/adicional.",
     },
   ],
 };
