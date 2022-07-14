@@ -66,7 +66,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   };
 
   const firstErrorFieldName = Object.keys(form.formState.errors)[0];
-  
+
   const notFoundErrors =
     noFormErrors &&
     (Object.keys(form.formState.errors).length === 0 ||
@@ -107,7 +107,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
       </Button>
     </div>
   );
-
 
   return (
     <FormProvider {...form}>

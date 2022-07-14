@@ -21,15 +21,18 @@ const RFCField: React.FC<OptionsField> = ({
     const rfc = e.target.value;
     validateRfc(rfc).isValid ? setError("") : setError(errorMessage);
   };
+  
   useEffect(() => {
     methods.clearErrors();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
   const activeError = error !== "";
+
   const emptyFieldWhenRequired =
     methods.formState.errors[name] &&
     methods.formState.errors[name].type === "required";
+
   const valueNotChanged = currentValue === value;
 
   const errorStyle =
