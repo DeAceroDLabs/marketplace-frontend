@@ -14,10 +14,6 @@
     padding: 9px 16px;
 }
 
-.input:focus {
-    outline: none;
-}
-
 .input-curp {
     text-transform: uppercase;
 }
@@ -30,6 +26,11 @@
 
 .input-error {
     border: solid 1px colors.$error;
+}
+
+.input-error:focus-within {
+    outline: none !important;
+    border: solid 2px colors.$error;
 }
 
 .input-error:focus {

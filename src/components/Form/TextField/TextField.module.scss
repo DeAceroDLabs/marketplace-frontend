@@ -19,6 +19,11 @@
     border: solid 1px colors.$error;
 }
 
+.input-error:focus-within {
+    outline: none !important;
+    border: solid 2px colors.$error;
+}
+
 .error-text {
     margin-top: 10px;
     color: colors.$error;

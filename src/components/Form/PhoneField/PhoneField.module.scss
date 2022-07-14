@@ -15,8 +15,9 @@
     padding: 9px 16px;
 }
 
-.input:focus {
-    outline: none;
+.input-error:focus-within {
+    outline: none !important;
+    border: solid 2px colors.$error;
 }
 
 .error-text {
