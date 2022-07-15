@@ -21,12 +21,12 @@ Object {
                 class="title margin-title"
               >
                 Mock Form 1
-                 
+
               </div>
               <div
                 class="body"
               >
-                 
+
                 <p
                   class="form-description"
                 >
@@ -46,7 +46,7 @@ Object {
                       </label>
                       <input
                         class="input "
-                        name="mockName"
+                        mock="[object Object]"
                         placeholder="mock"
                         type="text"
                         value="mock value"
@@ -54,7 +54,7 @@ Object {
                     </div>
                   </div>
                 </div>
-                 
+
               </div>
             </div>
           </div>
@@ -67,8 +67,42 @@ Object {
               <button
                 class="button primary activeClass"
               >
-                siguiente
-              </button>
+                Mock Form 2
+
+              </div>
+              <div
+                class="body"
+              >
+
+                <p
+                  class="form-description"
+                >
+                  Mock description
+                </p>
+                <div
+                  class="form-container"
+                >
+                  <div
+                    class="field-container full-width"
+                  >
+                    <div
+                      class="container"
+                    >
+                      <label>
+                        mock Label
+                      </label>
+                      <input
+                        class="input "
+                        mock="[object Object]"
+                        placeholder="mock"
+                        type="text"
+                        value="mock value"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </form>
@@ -92,12 +126,12 @@ Object {
               class="title margin-title"
             >
               Mock Form 1
-               
+
             </div>
             <div
               class="body"
             >
-               
+
               <p
                 class="form-description"
               >
@@ -117,7 +151,7 @@ Object {
                     </label>
                     <input
                       class="input "
-                      name="mockName"
+                      mock="[object Object]"
                       placeholder="mock"
                       type="text"
                       value="mock value"
@@ -125,7 +159,7 @@ Object {
                   </div>
                 </div>
               </div>
-               
+
             </div>
           </div>
         </div>
@@ -138,8 +172,42 @@ Object {
             <button
               class="button primary activeClass"
             >
-              siguiente
-            </button>
+              Mock Form 2
+
+            </div>
+            <div
+              class="body"
+            >
+
+              <p
+                class="form-description"
+              >
+                Mock description
+              </p>
+              <div
+                class="form-container"
+              >
+                <div
+                  class="field-container full-width"
+                >
+                  <div
+                    class="container"
+                  >
+                    <label>
+                      mock Label
+                    </label>
+                    <input
+                      class="input "
+                      mock="[object Object]"
+                      placeholder="mock"
+                      type="text"
+                      value="mock value"
+                    />
+                  </div>
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </form>
