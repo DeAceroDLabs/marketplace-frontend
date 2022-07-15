@@ -21,6 +21,8 @@ const Field: React.FC<FieldProps> = ({
   validateDomain,
   errorMessage,
   needsValidationFrom,
+  dynamicOptionsProp,
+  optionsContext,
   size = "full-width",
 }) => {
   const props = {
@@ -35,6 +37,8 @@ const Field: React.FC<FieldProps> = ({
     validateDomain,
     errorMessage,
     needsValidationFrom,
+    dynamicOptionsProp,
+    optionsContext,
   };
 
   return (

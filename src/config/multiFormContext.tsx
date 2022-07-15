@@ -7,7 +7,7 @@ const defaultForm = {
   setActiveForm: (form: Form) => {},
 };
 
-const MultiFormContext = React.createContext(defaultForm);
+export const MultiFormContext = React.createContext(defaultForm);
 
 export const MultiFormProvider = MultiFormContext.Provider;
 

@@ -1,4 +1,3 @@
-import { MEXICO_STATES } from "./../../utils/mexico";
 import { Form } from "./../form.types";
 export const taxSignupForm: Form = {
   formTitle: "Información Fiscal",
@@ -55,8 +54,8 @@ export const taxSignupForm: Form = {
       label: "Estado",
       required: true,
       placeholder: "",
-      type: "dropdown",
-      options: MEXICO_STATES,
+      type: "text",
+      disabled: true,
     },
     {
       name: "taxAdditionalEmail",

@@ -1,3 +1,4 @@
+import { DynamicDataContext } from "config/dynamicDataContext";
 import { Form } from "./../form.types";
 export const locationSignupForm: Form = {
   formTitle: "Ubicación",
@@ -32,7 +33,9 @@ export const locationSignupForm: Form = {
       label: "Colonia",
       required: true,
       placeholder: "Colonia",
-      type: "text",
+      type: "dropdown",
+      dynamicOptionsProp: "dynamicData",
+      optionsContext: DynamicDataContext,
     },
     {
       name: "street",
