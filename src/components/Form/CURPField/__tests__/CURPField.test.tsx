@@ -45,6 +45,18 @@ describe("CURPField", () => {
     });
   });
 
+  it("simulates change on input with error", async () => {
+    setup();
+    const input = screen.getByPlaceholderText("ABCD990022ABCDEF00");
+    fireEvent.change(input, {
+      target: { value: "123" },
+    });
+    await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("123");
+      expect(screen.queryByText("mock error message")).toBeInTheDocument();
+    });
+  });
+
   const setupWithoutErrorMessage = () => {
     return render(
       <CURPField
