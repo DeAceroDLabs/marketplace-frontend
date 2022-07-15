@@ -52,16 +52,19 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   }, [form.formState.errors]);
 
   const moveNext = () => {
+    console.log("moving forward");
     setCurrentIndex(currentIndex + 1);
     setcurrentForm(forms[currentIndex]);
   };
 
   const moveBack = () => {
+    console.log("moving back");
     setCurrentIndex(currentIndex - 1);
     setcurrentForm(forms[currentIndex]);
   };
 
   const doNotLetAdvance = () => {
+    console.log("the problem is over here");
     setcurrentForm(forms[currentIndex]);
     setActiveForm(inputForms[currentIndex]);
   };
@@ -74,6 +77,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
       form.formState.errors[firstErrorFieldName] !== "...");
 
   const onSubmitOneFormNext = (data: FieldValues) => {
+    console.log(notFoundErrors);
     notFoundErrors && moveNext();
   };
 

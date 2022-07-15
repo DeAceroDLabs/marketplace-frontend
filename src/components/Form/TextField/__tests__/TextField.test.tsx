@@ -12,9 +12,9 @@ jest.mock("react-hook-form", () => ({
     errors: () => jest.fn(),
     formState: { errors: {} },
     clearErrors: () => jest.fn(),
+    setValue: () => jest.fn(),
   }),
 }));
-
 
 describe("TextField", () => {
   const setup = () => {
@@ -45,5 +45,4 @@ describe("TextField", () => {
       expect((input as HTMLInputElement).value).toBe("Mock something");
     });
   });
-
 });
