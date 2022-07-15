@@ -1,5 +1,5 @@
-import { OptionsField } from "forms/form.types";
-import { useState } from "react";
+import { Option, OptionsField } from "forms/form.types";
+import { useContext, useState } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./Dropdown.module.scss";
 
@@ -10,14 +10,28 @@ const Dropdown: React.FC<OptionsField> = ({
   required,
   disabled,
   options,
+  dynamicOptionsProp,
+  optionsContext,
 }) => {
   const methods = useFormContext();
-  const defaultValue = options && options.length ? options[0].value : value;
+  const dynamicOptionsContext = useContext(
+    optionsContext || ({} as any)
+  ) as any;
+
+  const availableOptions = dynamicOptionsProp
+    ? dynamicOptionsContext[dynamicOptionsProp]
+    : options;
+
+  const defaultValue =
+    availableOptions && availableOptions.length
+      ? availableOptions[0].value
+      : value;
+
   const [currentValue, setCurrentValue] = useState(defaultValue);
 
   const renderOptions =
-    options?.length &&
-    options.map((option) => {
+    availableOptions?.length &&
+    availableOptions.map((option: Option) => {
       return (
         <option key={option.value} value={option.value}>
           {option.label}

@@ -38,6 +38,6 @@ export type Location = {
 };
 
 export type Neighborhood = {
-  id: string;
-  name: string;
+  value: string;
+  label: string;
 };

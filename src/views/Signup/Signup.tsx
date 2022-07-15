@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FieldValues, useForm } from "react-hook-form";
 import { MultiFormProvider } from "config/multiFormContext";
@@ -15,7 +15,9 @@ import Popup from "components/common/Popup";
 import StateIcon from "components/common/StateIcon";
 import Button from "components/common/Button";
 import styles from "./Signup.module.scss";
-import { getLocation } from "config/api";
+import SignupController from "./SignupController";
+import { Neighborhood } from "config/api.types";
+import { DynamicDataProvider } from "config/dynamicDataContext";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
@@ -23,24 +25,7 @@ const Signup = () => {
   const formState = useForm();
   const [activeForm, setActiveForm] = useState(forms[0] as Form);
   const [openPopup, setopenPopup] = useState(false);
-
-  const signupForms = useMemo(
-    () => ({ forms, activeForm, setActiveForm }),
-    // eslint-disable-next-line
-    [activeForm]
-  );
-
-  const zipCode = formState.watch("zipCode");
-
-  useEffect(() => {
-    if (zipCode && zipCode.length === 5) {
-      const location = getLocation(zipCode);
-      location.then((data) => {
-        formState.setValue("state", data.location.state);
-        formState.setValue("city", data.location.city);
-      });
-    }
-  }, [zipCode, formState]);
+  const [dynamicData, setDynamicData] = useState([] as Neighborhood[]);
 
   const onSubmit = (data: FieldValues) => {
     setopenPopup(true);
@@ -62,29 +47,51 @@ const Signup = () => {
     </div>
   );
 
+  const signupForms = useMemo(
+    () => ({
+      forms,
+      activeForm,
+      setActiveForm,
+    }),
+    // eslint-disable-next-line
+    [activeForm]
+  );
+
+  const formDynamicData = useMemo(
+    () => ({
+      dynamicData,
+      setDynamicData,
+    }),
+    // eslint-disable-next-line
+    [dynamicData]
+  );
+
   return (
-    <MultiFormProvider value={signupForms}>
-      <View>
-        <div className={styles.container}>
-          <Section>
-            <div className={styles["form-container"]}>
-              <MultipleForm
-                inputForms={forms}
-                onSubmit={onSubmit}
-                form={formState}
+    <DynamicDataProvider value={formDynamicData}>
+      <MultiFormProvider value={signupForms}>
+        <SignupController formState={formState} />
+        <View>
+          <div className={styles.container}>
+            <Section>
+              <div className={styles["form-container"]}>
+                <MultipleForm
+                  inputForms={forms}
+                  onSubmit={onSubmit}
+                  form={formState}
+                />
+              </div>
+            </Section>
+            <BgSection color="primary" orientation="vertical" position="right">
+              <Stepper
+                title="Es muy fácil y rápido"
+                steps={forms.map((form) => form.formTitle)}
               />
-            </div>
-          </Section>
-          <BgSection color="primary" orientation="vertical" position="right">
-            <Stepper
-              title="Es muy fácil y rápido"
-              steps={forms.map((form) => form.formTitle)}
-            />
-          </BgSection>
-        </div>
-      </View>
-      <Popup open={openPopup} onClose={() => {}} content={popupContent} />
-    </MultiFormProvider>
+            </BgSection>
+          </div>
+        </View>
+        <Popup open={openPopup} onClose={() => {}} content={popupContent} />
+      </MultiFormProvider>
+    </DynamicDataProvider>
   );
 };
 

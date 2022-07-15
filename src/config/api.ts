@@ -31,8 +31,8 @@ const getLocation = (zipCode: string): Promise<ZipCodeLocation> => {
       const neighborhoods = Object.keys(neighborhoodsObject);
       const neighborhoodsArray = neighborhoods.map((neighborhood) => {
         return {
-          id: neighborhood,
-          name: neighborhoodsObject[neighborhood],
+          value: neighborhood,
+          label: neighborhoodsObject[neighborhood],
         };
       });
       data["location"]["neighborhood"] = neighborhoodsArray;

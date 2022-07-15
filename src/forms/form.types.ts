@@ -1,3 +1,5 @@
+import { Context } from "react";
+
 export type Option = {
   label: string;
   value: string;
@@ -16,6 +18,8 @@ export interface Field {
 
 export interface OptionsField extends Field {
   options?: Option[];
+  dynamicOptionsProp?: string;
+  optionsContext?: Context<any>;
   validateDomain?: string;
   errorMessage?: string;
   needsValidationFrom?: string;
