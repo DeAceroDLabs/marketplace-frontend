@@ -23,12 +23,12 @@ Object {
               <div
                 class="title margin-title"
               >
-                 
+
               </div>
               <div
                 class="body"
               >
-                 
+
                 <div
                   class="form-container"
                 >
@@ -48,12 +48,12 @@ Object {
                             class="title margin-title"
                           >
                             Información General
-                             
+
                           </div>
                           <div
                             class="body"
                           >
-                             
+
                             <p
                               class="form-description"
                             >
@@ -150,7 +150,7 @@ Object {
                                 </div>
                               </div>
                             </div>
-                             
+
                           </div>
                         </div>
                       </div>
@@ -170,7 +170,7 @@ Object {
                     </form>
                   </div>
                 </div>
-                 
+
               </div>
             </div>
             <div
@@ -203,13 +203,129 @@ Object {
                           class="step-checkbox"
                         >
                           <div
-                            class="selected"
-                          />
-                        </div>
-                        <div
-                          class="step-title"
-                        >
-                          Información General
+                            class="body"
+                          >
+
+                            <p
+                              class="form-description"
+                            >
+                              Registra la ubicación en donde seran entregados tus productos
+                            </p>
+                            <div
+                              class="form-container"
+                            >
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Código Postal
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="zipCode"
+                                    placeholder="12345"
+                                    type="number"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Estado
+                                  </label>
+                                  <input
+                                    class="input "
+                                    disabled=""
+                                    name="state"
+                                    placeholder="Estado"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Municipio
+                                  </label>
+                                  <input
+                                    class="input "
+                                    disabled=""
+                                    name="city"
+                                    placeholder="Municipio"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Colonia
+                                  </label>
+                                  <select
+                                    class="input"
+                                    name="suburb"
+                                  >
+                                    0
+                                  </select>
+                                </div>
+                              </div>
+                              <div
+                                class="field-container medium"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Calle
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="street"
+                                    placeholder="Calle"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container small"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Número Exterior
+                                  </label>
+                                  <input
+                                    class="input "
+                                    name="externalNumber"
+                                    placeholder="25-A"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
                         </div>
                       </div>
                       <div
@@ -269,12 +385,12 @@ Object {
               <div
                 class="title margin-title"
               >
-                 
+
               </div>
               <div
                 class="body"
               >
-                 
+
                 <div
                   class="form-container"
                 >
@@ -294,12 +410,12 @@ Object {
                             class="title margin-title"
                           >
                             Información General
-                             
+
                           </div>
                           <div
                             class="body"
                           >
-                             
+
                             <p
                               class="form-description"
                             >
@@ -385,7 +501,26 @@ Object {
                                   class="container"
                                 >
                                   <label>
-                                    Confirmar contraseña
+                                    Estado
+                                  </label>
+                                  <input
+                                    class="input "
+                                    disabled=""
+                                    name="taxState"
+                                    placeholder=""
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container full-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Email adicional a la cuenta CC
                                   </label>
                                   <input
                                     class="input "
@@ -396,7 +531,7 @@ Object {
                                 </div>
                               </div>
                             </div>
-                             
+
                           </div>
                         </div>
                       </div>
@@ -416,7 +551,7 @@ Object {
                     </form>
                   </div>
                 </div>
-                 
+
               </div>
             </div>
             <div
@@ -516,12 +651,12 @@ Object {
             <div
               class="title margin-title"
             >
-               
+
             </div>
             <div
               class="body"
             >
-               
+
               <div
                 class="form-container"
               >
@@ -541,12 +676,12 @@ Object {
                           class="title margin-title"
                         >
                           Información General
-                           
+
                         </div>
                         <div
                           class="body"
                         >
-                           
+
                           <p
                             class="form-description"
                           >
@@ -639,11 +774,150 @@ Object {
                                   mock="[object Object]"
                                   placeholder="Contraseña"
                                   type="password"
+                                  value=""
                                 />
                               </div>
                             </div>
                           </div>
-                           
+
+                        </div>
+                      </div>
+                    </div>
+                    <div
+                      class="hidden"
+                    >
+                      <div
+                        class="container"
+                      >
+                        <div
+                          class="title margin-title"
+                        >
+                          Ubicación
+
+                        </div>
+                        <div
+                          class="body"
+                        >
+
+                          <p
+                            class="form-description"
+                          >
+                            Registra la ubicación en donde seran entregados tus productos
+                          </p>
+                          <div
+                            class="form-container"
+                          >
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Código Postal
+                                </label>
+                                <input
+                                  class="input "
+                                  name="zipCode"
+                                  placeholder="12345"
+                                  type="number"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Estado
+                                </label>
+                                <input
+                                  class="input "
+                                  disabled=""
+                                  name="state"
+                                  placeholder="Estado"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Municipio
+                                </label>
+                                <input
+                                  class="input "
+                                  disabled=""
+                                  name="city"
+                                  placeholder="Municipio"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Colonia
+                                </label>
+                                <select
+                                  class="input"
+                                  name="suburb"
+                                >
+                                  0
+                                </select>
+                              </div>
+                            </div>
+                            <div
+                              class="field-container medium"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Calle
+                                </label>
+                                <input
+                                  class="input "
+                                  name="street"
+                                  placeholder="Calle"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container small"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Número Exterior
+                                </label>
+                                <input
+                                  class="input "
+                                  name="externalNumber"
+                                  placeholder="25-A"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+
                         </div>
                       </div>
                     </div>
@@ -656,14 +930,184 @@ Object {
                         <button
                           class="button primary activeClass"
                         >
-                          siguiente
-                        </button>
+
+                          <p
+                            class="form-description"
+                          >
+                            Registra los datos fiscales para facturación
+                          </p>
+                          <div
+                            class="form-container"
+                          >
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Compañía / Nombre Legal
+                                </label>
+                                <input
+                                  class="input "
+                                  name="taxIdentity"
+                                  placeholder="Nombre de empresa o identidad legal"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  RFC
+                                </label>
+                                <input
+                                  class="input input-rfc "
+                                  name="taxRfc"
+                                  placeholder="AAAA000000BBB0C0"
+                                  type="rfc"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  CURP
+                                </label>
+                                <input
+                                  class="input input-curp "
+                                  name="taxCurp"
+                                  placeholder="ABCD990022ABCDEF00"
+                                  type="curp"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Regimen Tributario
+                                </label>
+                                <input
+                                  class="input "
+                                  disabled=""
+                                  name="taxRegime"
+                                  placeholder="ejemplo@deacero.com"
+                                  type="text"
+                                  value="Sueldos y Salarios e Ingresos Asimilados a salarios"
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Constancia Fiscal
+                                </label>
+                                <div
+                                  class="input-container "
+                                >
+                                  <div
+                                    class="file-picker-container"
+                                  >
+                                    Sube tu constancia fiscal aquí
+                                    <input
+                                      class="input"
+                                      id="filePicker"
+                                      name="taxDocument"
+                                      type="file"
+                                    />
+                                    <label
+                                      class="file-picker"
+                                      for="filePicker"
+                                    >
+                                      Cargar Archivo
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Código Postal
+                                </label>
+                                <input
+                                  class="input "
+                                  name="taxZipCode"
+                                  placeholder="000000"
+                                  type="number"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Estado
+                                </label>
+                                <input
+                                  class="input "
+                                  disabled=""
+                                  name="taxState"
+                                  placeholder=""
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container full-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Email adicional a la cuenta CC
+                                </label>
+                                <input
+                                  class="input "
+                                  name="taxAdditionalEmail"
+                                  placeholder="ejemplo@deacero.com"
+                                  type="email"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
                     </div>
                   </form>
                 </div>
               </div>
-               
+
             </div>
           </div>
           <div
