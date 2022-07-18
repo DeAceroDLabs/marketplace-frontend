@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, fireEvent } from "@testing-library/react";
 import { Form } from "forms/form.types";
 import MultipleForm from "../MultipleForm";
 
@@ -9,9 +9,10 @@ jest.mock("react-hook-form", () => ({
   useFormContext: () => ({
     register: () => jest.fn(),
     handleSubmit: () => mockSubmit,
-    clearErrors: () => mockSubmit,
-    setValue: () => jest.fn(),
     formState: { errors: {} },
+    clearErrors: () => jest.fn(),
+    setValue: () => jest.fn(),
+    trigger: () => jest.fn(),
   }),
 }));
 
@@ -72,65 +73,61 @@ describe("MultipleForm", () => {
     });
   });
 
-  // it("simulates moving to previous form", async () => {
-  //   render(<MultipleForm {...props} />);
-  //   const continueButton = screen.getByRole("button");
-  //   fireEvent.click(continueButton);
-  //   await waitFor(() => {
-  //     const backButton = screen.getByTestId("ArrowBackIosNewIcon");
-  //     expect(backButton).toBeInTheDocument();
-  //   });
-  //   const backButton = screen.getByTestId("ArrowBackIosNewIcon");
-  //   fireEvent.click(backButton);
-  //   await waitFor(() => {
-  //     const backButton = screen.getByText("siguiente");
-  //     expect(backButton).toBeInTheDocument();
-  //   });
-  // });
+  it("simulates moving to previous form", async () => {
+    render(<MultipleForm {...props} />);
+    const continueButton = screen.getByRole("button");
+    fireEvent.click(continueButton);
+    await waitFor(() => {
+      const backButton = screen.getByTestId("ArrowBackIosNewIcon");
+      expect(backButton).toBeInTheDocument();
+    });
+    const backButton = screen.getByTestId("ArrowBackIosNewIcon");
+    fireEvent.click(backButton);
+    await waitFor(() => {
+      const backButton = screen.getByText("siguiente");
+      expect(backButton).toBeInTheDocument();
+    });
+  });
 
-  // it("simulates clicking on submit", async () => {
-  //   render(<MultipleForm {...props} />);
-  //   const input = screen.getByPlaceholderText("mock");
-  //   fireEvent.change(input, {
-  //     target: { value: "Mock something" },
-  //   });
-  //   await waitFor(() => {
-  //     expect((input as HTMLInputElement).value).toBe("Mock something");
-  //   });
-  //   const continueButton = screen.getByRole("button");
-  //   fireEvent.click(continueButton);
-  //   await waitFor(() => {
-  //     const submit = screen.getByText("Finalizar");
-  //     fireEvent.click(submit);
-  //     expect(mockSubmit).toBeCalled();
-  //   });
-  // });
+  it("simulates clicking on submit", async () => {
+    render(<MultipleForm {...props} />);
+    const input = screen.getByPlaceholderText("mock");
+    fireEvent.change(input, {
+      target: { value: "Mock something" },
+    });
+    await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("Mock something");
+    });
+    const continueButton = screen.getByRole("button");
+    fireEvent.click(continueButton);
+    let submit = null as unknown as HTMLElement;
+    await waitFor(() => {
+      submit = screen.getByText("Finalizar");
+    });
+    fireEvent.click(submit);
+    expect(mockSubmit).toBeCalled();
+  });
 
-  // it("simulates clicking with error on submit", async () => {
-  //   render(<MultipleForm {...props} />);
-  //   const input = screen.getByPlaceholderText("mock");
-  //   fireEvent.change(input, {
-  //     target: { value: "Mock something" },
-  //   });
-  //   await waitFor(() => {
-  //     expect((input as HTMLInputElement).value).toBe("Mock something");
-  //   });
-  //   const continueButton = screen.getByRole("button");
-  //   fireEvent.click(continueButton);
-  //   await waitFor(() => {
-  //     const submit = screen.getByText("Finalizar");
-  //     const input = screen.getByPlaceholderText("AAAA000000BBB0C0");
-  //     fireEvent.change(input, {
-  //       target: { value: "AAAA000000BBB0C1" },
-  //     });
-  //     expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
-  //     expect(
-  //       screen.queryByText(
-  //         "Por favor ingresa tu RFC completo con 13 caracteres"
-  //       )
-  //     ).toBeInTheDocument();
-  //     fireEvent.click(submit);
-  //     expect(mockSubmit).not.toBeCalled();
-  //   });
-  // });
+  it("simulates clicking with error on submit", async () => {
+    render(<MultipleForm {...props} />);
+    let input = screen.getByPlaceholderText("mock");
+    fireEvent.change(input, {
+      target: { value: "Mock something" },
+    });
+    await waitFor(() => {
+      expect((input as HTMLInputElement).value).toBe("Mock something");
+    });
+    const continueButton = screen.getByRole("button");
+    fireEvent.click(continueButton);
+    await waitFor(() => {
+      input = screen.getByPlaceholderText("AAAA000000BBB0C0");
+    });
+    fireEvent.change(input, {
+      target: { value: "AAAA000000BBB0C1" },
+    });
+    expect((input as HTMLInputElement).value).toBe("AAAA000000BBB0C1");
+    expect(
+      screen.getByText("Por favor ingresa tu RFC completo con 13 caracteres")
+    ).toBeInTheDocument();
+  });
 });
