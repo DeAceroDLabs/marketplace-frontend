@@ -18,14 +18,24 @@ const EmailField: React.FC<OptionsField> = ({
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
-  const validateEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
-    validator.isEmail(email) ? setError("") : setError(errorMessage);
+
+  const validateEmail = (email: string) => {
+    if (validator.isEmail(email)) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
-  const validateDomainEmail = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const email = e.target.value;
+
+  const validateDomainEmail = (email: string) => {
     const isDomainEmail = email.split("@")[1] === validateDomain;
-    isDomainEmail ? setError("") : setError(errorMessage);
+    if (isDomainEmail) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
 
   const activeError = error !== "";
@@ -48,13 +58,24 @@ const EmailField: React.FC<OptionsField> = ({
     <span className={styles["error-text"]}>Este campo es requerido</span>
   );
 
-  activeError && (methods.formState.errors[name] = {type: 'validation', message: error});
+  activeError &&
+    (methods.formState.errors[name] = { type: "validation", message: error });
 
   return (
     <div className={styles.container}>
       <label>{label}</label>
       <input
-        {...methods.register(name, { value, required })}
+        {...methods.register(name, {
+          value,
+          required,
+          validate: (value) => {
+            let isValid = validateEmail(value);
+            if (validateDomain) {
+              isValid = validateDomainEmail(value);
+            }
+            return isValid;
+          },
+        })}
         className={`${styles.input} ${styles[errorStyle]}`}
         defaultValue={currentValue}
         type={type}
@@ -63,8 +84,8 @@ const EmailField: React.FC<OptionsField> = ({
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          validateEmail(e);
-          validateDomain && validateDomainEmail(e);
+          validateEmail(value);
+          validateDomain && validateDomainEmail(value);
         }}
       />
       {requiredMessage}
