@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Signup loads login without exploding 1`] = `
+exports[`Signup loads signup without exploding 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

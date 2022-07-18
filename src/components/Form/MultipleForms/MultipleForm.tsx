@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { FieldValues, FormProvider, UseFormReturn } from "react-hook-form";
+import { FieldValues, FormProvider, useFormContext } from "react-hook-form";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import { Form } from "forms/form.types";
 import Section from "components/common/Section";
@@ -11,14 +11,13 @@ import MultiFormContext from "config/multiFormContext";
 interface MultipleFormsInterface {
   inputForms: Form[];
   onSubmit: (data: FieldValues) => void;
-  form: UseFormReturn<FieldValues, any>;
 }
 
 const MultipleForms: React.FC<MultipleFormsInterface> = ({
   inputForms,
   onSubmit,
-  form,
 }) => {
+  const form = useFormContext();
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
