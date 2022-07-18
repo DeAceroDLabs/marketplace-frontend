@@ -1,13 +1,12 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { Form } from "forms/form.types";
-import { useForm } from "react-hook-form";
 import MultipleForm from "../MultipleForm";
 
 const mockSubmit = jest.fn();
 
 jest.mock("react-hook-form", () => ({
   ...jest.requireActual("react-hook-form"),
-  useForm: () => ({
+  useFormContext: () => ({
     register: () => jest.fn(),
     handleSubmit: () => mockSubmit,
     clearErrors: () => mockSubmit,
@@ -17,9 +16,7 @@ jest.mock("react-hook-form", () => ({
 }));
 
 describe("MultipleForm", () => {
-  const mockUseForm = useForm();
   const props = {
-    form: mockUseForm,
     inputForms: [
       {
         formTitle: "Mock Form 1",
@@ -65,16 +62,15 @@ describe("MultipleForm", () => {
     expect(view).toMatchSnapshot();
   });
 
-  // it("simulates moving to next form", async () => {
-  //   render(<MultipleForm {...props} />);
-  //   const continueButton = screen.getByRole("button");
-  //   console.log(continueButton);
-  //   fireEvent.click(continueButton);
-  //   await waitFor(() => {
-  //     const backButton = screen.getByTestId("ArrowBackIosNewIcon");
-  //     expect(backButton).toBeInTheDocument();
-  //   });
-  // });
+  it("simulates moving to next form", async () => {
+    render(<MultipleForm {...props} />);
+    const continueButton = screen.getByRole("button");
+    fireEvent.click(continueButton);
+    await waitFor(() => {
+      const backButton = screen.getByTestId("ArrowBackIosNewIcon");
+      expect(backButton).toBeInTheDocument();
+    });
+  });
 
   // it("simulates moving to previous form", async () => {
   //   render(<MultipleForm {...props} />);

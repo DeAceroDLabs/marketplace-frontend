@@ -10,20 +10,21 @@ jest.mock("react-hook-form", () => ({
     register: () => jest.fn(),
     handleSubmit: () => mockedSubmit,
     errors: () => jest.fn(),
+    watch: () => jest.fn(),
     formState: { errors: {} },
     clearErrors: () => jest.fn(),
   }),
 }));
 
 describe("Signup", () => {
-  const renderView =  () => render(
-    <BrowserRouter>
-      <Signup />
-    </BrowserRouter>
-  );
-  it("loads login without exploding", () => {
+  const renderView = () =>
+    render(
+      <BrowserRouter>
+        <Signup />
+      </BrowserRouter>
+    );
+  it("loads signup without exploding", () => {
     renderView();
     expect(renderView()).toMatchSnapshot();
   });
-
 });

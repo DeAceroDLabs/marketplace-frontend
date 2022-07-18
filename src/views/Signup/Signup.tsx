@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, FormProvider, useForm } from "react-hook-form";
 import { MultiFormProvider } from "config/multiFormContext";
 import { generalSignupForm } from "forms/Signup/Signup.general";
 import { locationSignupForm } from "forms/Signup/Signup.location";
@@ -69,16 +69,14 @@ const Signup = () => {
   return (
     <DynamicDataProvider value={formDynamicData}>
       <MultiFormProvider value={signupForms}>
-        <SignupController formState={formState} />
         <View>
           <div className={styles.container}>
             <Section>
               <div className={styles["form-container"]}>
-                <MultipleForm
-                  inputForms={forms}
-                  onSubmit={onSubmit}
-                  form={formState}
-                />
+                <FormProvider {...formState}>
+                  <SignupController />
+                  <MultipleForm inputForms={forms} onSubmit={onSubmit} />
+                </FormProvider>
               </div>
             </Section>
             <BgSection color="primary" orientation="vertical" position="right">

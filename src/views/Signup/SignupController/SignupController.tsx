@@ -1,12 +1,10 @@
 import { useContext, useEffect } from "react";
-import { FieldValues, UseFormReturn } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import { getLocation } from "config/api";
 import { DynamicDataContext } from "config/dynamicDataContext";
-interface SignupControllerProps {
-  formState: UseFormReturn<FieldValues, any>;
-}
 
-const SignupController: React.FC<SignupControllerProps> = ({ formState }) => {
+const SignupController: React.FC = () => {
+  const formState = useFormContext();
   const zipCode = formState.watch("zipCode");
   const taxZipCode = formState.watch("taxZipCode");
   const { setDynamicData } = useContext(DynamicDataContext);
