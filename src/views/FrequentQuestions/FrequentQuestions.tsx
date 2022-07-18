@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React from "react";
 import styles from "./FrequentQuestions.module.scss";
 import Section from "components/common/Section";
 import ToogleCategories from "components/common/ToogleCategories";
