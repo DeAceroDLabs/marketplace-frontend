@@ -10,6 +10,7 @@ const SignupController: React.FC = () => {
   const { setDynamicData } = useContext(DynamicDataContext);
 
   useEffect(() => {
+    console.log(zipCode);
     if (zipCode && zipCode.length === 5) {
       const location = getLocation(zipCode);
       location.then((data) => {

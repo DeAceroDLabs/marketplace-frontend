@@ -1,4 +1,4 @@
-import { API, Category, Product } from "./config/api.types";
+import { API, Category, Product, ZipCodeLocation } from "./config/api.types";
 import "@testing-library/jest-dom";
 
 const getProductsByCategory = (categoryId: number): Product[] => {
@@ -105,6 +105,16 @@ const categoriesResponse: Category[] = [
 
 export const productsResponse: Product[] = getProductsByCategory(1);
 const productsResponse2: Product[] = getProductsByCategory(2);
+const locationResponse: ZipCodeLocation = {
+  countryName: "mock Country",
+  location: {
+    cityId: "mock city",
+    city: "mock city",
+    stateId: "mock stateId",
+    state: "mock state",
+    neighborhood: [],
+  },
+};
 
 export default async function mockFetch(url: RequestInfo): Promise<Response> {
   switch (url) {
@@ -127,6 +137,13 @@ export default async function mockFetch(url: RequestInfo): Promise<Response> {
         ok: true,
         status: 200,
         json: async () => productsResponse2,
+      } as Response;
+    }
+    case API.location("12345"): {
+      return {
+        ok: true,
+        status: 200,
+        json: async () => locationResponse,
       } as Response;
     }
     default: {
