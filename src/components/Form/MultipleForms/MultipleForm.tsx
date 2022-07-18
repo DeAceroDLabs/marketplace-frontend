@@ -21,7 +21,6 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   const [currentForm, setcurrentForm] = useState(null as React.ReactNode);
   const [currentIndex, setCurrentIndex] = useState(0);
   const { setActiveForm } = useContext(MultiFormContext);
-  const [noFormErrors, setNoFormErrors] = useState(true);
 
   const forms = inputForms.map((form) => {
     return (
@@ -39,63 +38,38 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
     );
   });
 
+  const lastForm = currentIndex === forms.length - 1;
+  const firstForm = currentIndex === 0;
+  const sendLastForm = onSubmit;
+  const typeOfSubmit = lastForm ? sendLastForm : () => {};
+
   useEffect(() => {
     setcurrentForm(forms[currentIndex]);
     setActiveForm(inputForms[currentIndex]);
     // eslint-disable-next-line
   }, [currentIndex]);
 
-  useEffect(() => {
-    const noError = Object.keys(form.formState.errors).length === 0;
-    setNoFormErrors(noError);
-  }, [form.formState.errors]);
-
-  const moveNext = () => {
-    console.log("moving forward");
-    setCurrentIndex(currentIndex + 1);
-    setcurrentForm(forms[currentIndex]);
+  const moveNext = async () => {
+    console.log("moving next");
+    let tempCurrentIndex = currentIndex;
+    console.log(tempCurrentIndex);
+    const isValid = await form.trigger();
+    if (isValid) {
+      setCurrentIndex(tempCurrentIndex + 1);
+      setcurrentForm(forms[tempCurrentIndex]);
+    }
   };
 
   const moveBack = () => {
-    console.log("moving back");
     setCurrentIndex(currentIndex - 1);
     setcurrentForm(forms[currentIndex]);
   };
-
-  const doNotLetAdvance = () => {
-    console.log("the problem is over here");
-    setcurrentForm(forms[currentIndex]);
-    setActiveForm(inputForms[currentIndex]);
-  };
-
-  const firstErrorFieldName = Object.keys(form.formState.errors)[0];
-
-  const notFoundErrors =
-    noFormErrors &&
-    (Object.keys(form.formState.errors).length === 0 ||
-      form.formState.errors[firstErrorFieldName] !== "...");
-
-  const onSubmitOneFormNext = (data: FieldValues) => {
-    console.log(notFoundErrors);
-    notFoundErrors && moveNext();
-  };
-
-  const lastForm = currentIndex === forms.length - 1;
-
-  const firstForm = currentIndex === 0;
-
-  const sendLastForm = notFoundErrors ? onSubmit : doNotLetAdvance;
-
-  const typeOfSubmit = lastForm ? sendLastForm : onSubmitOneFormNext;
 
   const BackButton = (
     <div
       className={`${styles["button-container-left"]} ${styles["back-button"]}`}
     >
-      <Button
-        color="primary"
-        action={notFoundErrors ? moveBack : doNotLetAdvance}
-      >
+      <Button color="primary" action={moveBack}>
         <ArrowBackIosNewIcon fontSize="small" className={styles["back-icon"]} />
       </Button>
     </div>
@@ -103,7 +77,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
 
   const ContinueButton = (
     <div className={styles["button-container-right"]}>
-      <Button color="primary" action={() => onSubmit}>
+      <Button color="primary" action={moveNext}>
         {"siguiente"}
       </Button>
     </div>
