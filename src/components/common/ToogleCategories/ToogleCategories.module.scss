@@ -1,0 +1,29 @@
+@use 'styles/colors';
+@use 'styles/typography';
+
+.container{
+    margin: 37px 0px;
+}
+.line {
+    background-color: #000000;
+    border: 1px solid #000000;
+}
+
+.category-arrow-container {
+    font-weight: typography.$bold;
+    font-size: typography.$header-s;
+    display: flex;
+}
+
+.question-content-container {
+    margin-top: 25px;
+
+    .question {
+        font-size: typography.$body-m;
+    }
+
+    .content {
+        margin-top: 14px;
+        font-size: typography.$body-s;
+    }
+}
