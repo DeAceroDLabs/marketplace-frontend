@@ -19,18 +19,21 @@ const PasswordField: React.FC<OptionsField> = ({
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
 
-  const validatePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const password = e.target.value;
-
-    validator.isStrongPassword(password, {
-      minLength: 8,
-      minLowercase: 1,
-      minUppercase: 1,
-      minNumbers: 1,
-      minSymbols: 1,
-    })
-      ? setError("")
-      : setError(errorMessage);
+  const validatePassword = (password: string) => {
+    if (
+      validator.isStrongPassword(password, {
+        minLength: 8,
+        minLowercase: 1,
+        minUppercase: 1,
+        minNumbers: 1,
+        minSymbols: 1,
+      })
+    ) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
 
   useEffect(() => {
@@ -38,14 +41,16 @@ const PasswordField: React.FC<OptionsField> = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [error]);
 
-  const confirmPassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const confirmPassword = e.target.value;
+  const confirmPassword = (confirmPassword: string) => {
     const passwordValue = methods.getValues()[needsValidationFrom];
     let confirmPasswordValue = methods.getValues()[name];
     confirmPasswordValue = confirmPassword;
-    confirmPasswordValue === passwordValue
-      ? setError("")
-      : setError(errorMessage);
+    if (confirmPasswordValue === passwordValue) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
 
   const activeError = error !== "";
@@ -63,13 +68,24 @@ const PasswordField: React.FC<OptionsField> = ({
     <span className={styles["error-text"]}>Este campo es requerido</span>
   );
 
-  activeError && (methods.formState.errors[name] = {type: 'validation', message: error});
+  activeError &&
+    (methods.formState.errors[name] = { type: "validation", message: error });
 
   return (
     <div className={styles.container}>
       <label>{label}</label>
       <input
-        {...methods.register(name, { value, required })}
+        {...methods.register(name, {
+          value,
+          required,
+          validate: (value) => {
+            let isValid = validatePassword(value);
+            if (needsValidationFrom) {
+              isValid = confirmPassword(value);
+            }
+            return isValid;
+          },
+        })}
         className={`${styles.input} ${styles[errorStyle]}`}
         type={type}
         placeholder={placeholder}
@@ -85,8 +101,8 @@ const PasswordField: React.FC<OptionsField> = ({
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          validatePassword(e);
-          needsValidationFrom && confirmPassword(e);
+          validatePassword(value);
+          needsValidationFrom && confirmPassword(value);
         }}
       />
       {requiredMessage}

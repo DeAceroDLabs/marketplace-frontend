@@ -21,7 +21,7 @@ const RFCField: React.FC<OptionsField> = ({
     const rfc = e.target.value;
     validateRfc(rfc).isValid ? setError("") : setError(errorMessage);
   };
-  
+
   useEffect(() => {
     methods.clearErrors();
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -44,13 +44,18 @@ const RFCField: React.FC<OptionsField> = ({
     <span className={styles["error-text"]}>Este campo es requerido</span>
   );
 
-  activeError && (methods.formState.errors[name] = {type: 'validation', message: error});
+  activeError &&
+    (methods.formState.errors[name] = { type: "validation", message: error });
 
   return (
     <div className={styles.container}>
       <label>{label}</label>
       <input
-        {...methods.register(name, { value, required })}
+        {...methods.register(name, {
+          value,
+          required,
+          validate: (value) => validateRfc(value).isValid,
+        })}
         className={`${styles.input} ${styles["input-rfc"]} ${styles[errorStyle]}`}
         defaultValue={currentValue}
         type={type}
