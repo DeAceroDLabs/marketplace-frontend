@@ -11,6 +11,7 @@ import Search from "views/Search";
 import Login from "views/Login";
 import Signup from "views/Signup";
 import PageNotFound from "views/PageNotFound";
+import FrequentQuestions from "views/FrequentQuestions";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import ProtectedRoute from "components/ProtectedRoute";
@@ -29,6 +30,7 @@ const App = () => {
           <Route element={<ProtectedRoute />}>
             <Route path="/" element={<Home />}></Route>
             <Route path="/search/:query" element={<Search />}></Route>
+            <Route path="/ayuda" element={<FrequentQuestions />}></Route>
             <Route path="/404" element={<PageNotFound />}></Route>
             <Route path="*" element={<Navigate to="/404" />} />
           </Route>

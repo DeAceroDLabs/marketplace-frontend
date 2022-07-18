@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
               </Button>
               <Button
                 color="transparent-black"
-                action={() => navigate("/ayuda")}
+                action={() => navigate("/help")}
               >
                 Ayuda
               </Button>
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
               </Tooltip>
               <Button
                 color="transparent-black"
-                action={() => navigate("/preguntas")}
+                action={() => navigate("/ayuda")}
               >
                 Preguntas frecuentes
               </Button>
