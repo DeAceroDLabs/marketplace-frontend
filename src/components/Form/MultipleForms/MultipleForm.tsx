@@ -50,9 +50,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
   }, [currentIndex]);
 
   const moveNext = async () => {
-    console.log("moving next");
     let tempCurrentIndex = currentIndex;
-    console.log(tempCurrentIndex);
     const isValid = await form.trigger();
     if (isValid) {
       setCurrentIndex(tempCurrentIndex + 1);
