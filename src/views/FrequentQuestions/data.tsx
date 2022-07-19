@@ -2,6 +2,7 @@ const data = [
     {
       "title": "Categoría",
       "question": "Pregunta 1",
+      // eslint-disable-next-line
       "content": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., \
       li tom Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicosdirecte \
       al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform \
@@ -11,6 +12,7 @@ const data = [
     {
       "title": "Categoría",
       "question": "Pregunta 2",
+      // eslint-disable-next-line
       "content": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., \
       li tom Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicosdirecte \
       al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform \
@@ -19,6 +21,7 @@ const data = [
     {
       "title": "Categoría",
       "question": "Pregunta 3",
+      // eslint-disable-next-line
       "content": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., \
       li tom Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicosdirecte \
       al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform \
@@ -27,6 +30,7 @@ const data = [
     {
       "title": "Categoría",
       "question": "Pregunta 4",
+      // eslint-disable-next-line
       "content": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., \
       li tom Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicosdirecte \
       al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform \
