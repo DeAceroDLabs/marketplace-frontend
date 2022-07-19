@@ -9,21 +9,8 @@
     border: 1px solid #000000;
 }
 
-.category-arrow-container {
+.title-arrow-container {
     font-weight: typography.$bold;
     font-size: typography.$header-s;
     display: flex;
-}
-
-.question-content-container {
-    margin-top: 25px;
-
-    .question {
-        font-size: typography.$body-m;
-    }
-
-    .content {
-        margin-top: 14px;
-        font-size: typography.$body-s;
-    }
 }
