@@ -1,3 +1,25 @@
+@use 'styles/colors';
+@use 'styles/typography';
+
 .last-question{
-    margin-bottom: 10%;
+    margin-bottom: 15%;
+}
+
+.category-arrow-container {
+    font-weight: typography.$bold;
+    font-size: typography.$header-s;
+    display: flex;
+}
+
+.question-content-container {
+    margin-top: 25px;
+
+    .question {
+        font-size: typography.$body-m;
+    }
+
+    .content {
+        margin-top: 14px;
+        font-size: typography.$body-s;
+    }
 }

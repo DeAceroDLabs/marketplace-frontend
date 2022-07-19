@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ToogleCategories renders ToogleCategories with no issue 1`] = `
+exports[`ExpandableContent renders ExpandableContent with no issue 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
@@ -9,7 +9,7 @@ Object {
         class="container"
       >
         <div
-          class="category-arrow-container"
+          class="title-arrow-container"
         >
           <div>
             Mock categoryName
@@ -41,7 +41,7 @@ Object {
       class="container"
     >
       <div
-        class="category-arrow-container"
+        class="title-arrow-container"
       >
         <div>
           Mock categoryName

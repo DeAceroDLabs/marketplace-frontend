@@ -1,1 +1,1 @@
-export { default } from "./ToogleCategories";
+export { default } from "./ExpandableContent";
