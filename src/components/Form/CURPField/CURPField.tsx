@@ -16,11 +16,15 @@ const CURPField: React.FC<OptionsField> = ({
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
-  const validateCURP = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const curp = e.target.value;
+  const validateCURP = (curp: string) => {
     const CURPpattern =
       /^([A-Z][AEIOUX][A-Z]{2}\d{2}(?:0[1-9]|1[0-2])(?:0[1-9]|[12]\d|3[01])[HM](?:AS|B[CS]|C[CLMSH]|D[FG]|G[TR]|HG|JC|M[CNS]|N[ETL]|OC|PL|Q[TR]|S[PLR]|T[CSL]|VZ|YN|ZS)[B-DF-HJ-NP-TV-Z]{3}[A-Z\d])(\d)$/;
-    CURPpattern.test(curp) ? setError("") : setError(errorMessage);
+    if (CURPpattern.test(curp)) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
 
   const activeError = error !== "";
@@ -49,7 +53,11 @@ const CURPField: React.FC<OptionsField> = ({
     <div className={styles.container}>
       <label>{label}</label>
       <input
-        {...methods.register(name, { value, required })}
+        {...methods.register(name, {
+          value,
+          required,
+          validate: (value) => validateCURP(value),
+        })}
         className={`${styles.input} ${styles["input-curp"]} ${styles[errorStyle]}`}
         defaultValue={currentValue}
         type={type}
@@ -58,7 +66,7 @@ const CURPField: React.FC<OptionsField> = ({
         onChange={(e) => {
           const value = e.target.value;
           setCurrentValue(value);
-          validateCURP(e);
+          validateCURP(value);
         }}
       />
       {requiredMessage}

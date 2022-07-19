@@ -18,9 +18,12 @@ const PhoneField: React.FC<OptionsField> = ({
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
   const validatePhone = (phoneValue: string) => {
-    validator.isMobilePhone(phoneValue, "es-MX")
-      ? setError("")
-      : setError(errorMessage);
+    if (validator.isMobilePhone(phoneValue, "es-MX")) {
+      setError("");
+      return true;
+    }
+    setError(errorMessage);
+    return false;
   };
 
   useEffect(() => {
@@ -43,13 +46,18 @@ const PhoneField: React.FC<OptionsField> = ({
     <span className={styles["error-text"]}>Este campo es requerido</span>
   );
 
-  activeError && (methods.formState.errors[name] = {type: 'validation', message: error});
+  activeError &&
+    (methods.formState.errors[name] = { type: "validation", message: error });
 
   return (
     <div className={styles.container}>
       <label>{label}</label>
       <input
-        {...methods.register(name, { value, required })}
+        {...methods.register(name, {
+          value,
+          required,
+          validate: (value) => validatePhone(value),
+        })}
         className={`${styles.input} ${styles[errorStyle]}`}
         type={type}
         placeholder={placeholder}
