@@ -8,16 +8,16 @@ interface ToogleCategoriesProps {
   categoryName: string;
   question: string;
   content: string;
-  defaultVisibility?: boolean;
+  isOpen?: boolean;
 }
 
 const ToogleCategories: React.FC<ToogleCategoriesProps> = ({
   categoryName,
   question,
   content,
-  defaultVisibility = false,
+  isOpen = false,
 }) => {
-  const [visible, setVisible] = useState(defaultVisibility);
+  const [visible, setVisible] = useState(isOpen);
   const handleVisibility = () => {
     setVisible(!visible);
   };
