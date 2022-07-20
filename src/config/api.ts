@@ -1,5 +1,6 @@
 import { API, Category, Product, ZipCodeLocation } from "./api.types";
 import axios from "axios";
+import { USER_API } from "./user.api.types";
 
 const fetchData = (url: string) => {
   async function fetchUrl() {
@@ -11,8 +12,7 @@ const fetchData = (url: string) => {
 };
 
 const postRequest = async (url: string, body: any) => {
-  const headers = {};
-  const response = await axios.post(url, body, { headers });
+  const response = await axios.post(USER_API.createAuth0User, body);
   return response;
 };
 
@@ -48,4 +48,10 @@ const searchProducts = (query: string): Promise<any> => {
   return postRequest(API.search, body);
 };
 
-export { fetchCategories, fetchProducts, searchProducts, getLocation };
+export {
+  postRequest,
+  fetchCategories,
+  fetchProducts,
+  searchProducts,
+  getLocation,
+};
