@@ -18,6 +18,7 @@ import styles from "./Signup.module.scss";
 import SignupController from "./SignupController";
 import { Neighborhood } from "config/api.types";
 import { DynamicDataProvider } from "config/dynamicDataContext";
+import { createAuth0User } from "config/user.api";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
@@ -28,7 +29,10 @@ const Signup = () => {
   const [dynamicData, setDynamicData] = useState([] as Neighborhood[]);
 
   const onSubmit = (data: FieldValues) => {
-    setopenPopup(true);
+    const user = { email: data["email"], password: data["password"] };
+    createAuth0User(user)
+      .then(() => setopenPopup(true))
+      .catch((error) => console.log(error));
   };
 
   const popupContent = (
