@@ -18,7 +18,7 @@ const PhoneField: React.FC<OptionsField> = ({
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
   const validatePhone = (phoneValue: string) => {
-    if (validator.isMobilePhone(phoneValue, "es-MX")) {
+    if (validator.isMobilePhone(phoneValue) && phoneValue.length === 13) {
       setError("");
       return true;
     }
