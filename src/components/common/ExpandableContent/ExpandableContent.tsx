@@ -3,6 +3,7 @@ import { useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import Button from "components/common/Button";
+import Divider from "components/common/Divider";
 
 interface ExpandableContentProps {
   title: string;
@@ -28,7 +29,7 @@ const ExpandableContent: React.FC<ExpandableContentProps> = ({
           {!visible && <ArrowDropDownIcon />}
         </Button>
       </div>
-      <hr className={styles.line} />
+      <Divider color="black"/>
       {visible && children}
     </div>
   );

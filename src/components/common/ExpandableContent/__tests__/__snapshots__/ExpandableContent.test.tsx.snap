@@ -31,7 +31,7 @@ Object {
           </button>
         </div>
         <hr
-          class="line"
+          class="black"
         />
       </div>
     </div>
@@ -63,7 +63,7 @@ Object {
         </button>
       </div>
       <hr
-        class="line"
+        class="black"
       />
     </div>
   </div>,
