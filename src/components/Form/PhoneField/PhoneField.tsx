@@ -18,7 +18,7 @@ const PhoneField: React.FC<OptionsField> = ({
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
   const validatePhone = (phoneValue: string) => {
-    if (validator.isMobilePhone(phoneValue) && phoneValue.length === 13) {
+    if (validator.isMobilePhone(phoneValue, "es-MX") && phoneValue.length === 13) {
       setError("");
       return true;
     }
@@ -56,7 +56,7 @@ const PhoneField: React.FC<OptionsField> = ({
         {...methods.register(name, {
           value,
           required,
-          validate: (value) => validatePhone(value),
+          validate: (value) => (validator.isMobilePhone(value, "es-MX") && value.length === 13),
         })}
         className={`${styles.input} ${styles[errorStyle]}`}
         type={type}
