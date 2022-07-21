@@ -20,8 +20,6 @@ const SignupController: React.FC = () => {
           neighborhood: data.location.neighborhood,
         });
       });
-    } else {
-      setDynamicData({});
     }
     // eslint-disable-next-line
   }, [zipCode]);
