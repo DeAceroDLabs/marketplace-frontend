@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Frequent asked questions renders AboutUs with no issue 1`] = `
+<div
+  className="about-us-container"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="title margin-title"
+    >
+      Conócenos
+       
+    </div>
+    <div
+      className="body"
+    >
+       
+       
+    </div>
+  </div>
+  <div>
+    <div
+      className="horizontal"
+    >
+      <img
+        alt=""
+        className="bgImage"
+        src="/background.png"
+      />
+      <div
+        className="content transparent middle"
+      >
+        <div
+          className="image-content"
+        >
+          <div
+            className="image-text"
+          >
+            <div>
+              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
+            </div>
+            <br />
+            <div>
+              Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    className="container"
+  >
+    <div
+      className="title margin-title"
+    >
+      Quiénes somos
+       
+    </div>
+    <div
+      className="body"
+    >
+       
+      <div
+        className="about-us-content"
+      >
+        <div>
+          Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilit? de un nov lingua franca: on refusa continuar payar custosi traductores. It solmen va esser necessi far uniform grammatica, pronunciation e plu sommun paroles.
+        </div>
+        <br />
+        <div>
+          Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc., li tot Europa usa li sam vocabularium. Li lingues differe solmen in.
+        </div>
+      </div>
+       
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,40 @@
+@use 'styles/colors';
+@use 'styles/typography';
+
+.about-us-container {
+    margin-bottom: 15%;
+}
+
+.image-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    text-align: left;
+}
+
+.image-content::after {
+    content: '';
+    background: rgba(45, 88, 35, 0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 19.38%, rgba(0, 0, 0, 0.3) 52.15%, rgba(0, 0, 0, 0.05) 88.61%);
+}
+
+.image-text {
+    position: relative;
+    font-size: typography.$body-m;
+    z-index: 1;
+    color: white;
+    margin: auto auto ;
+    width: 90%;
+    
+}
+
+.about-us-content{
+    font-size: typography.$body-m;
+    text-align: left;
+}

@@ -68,7 +68,7 @@ const Home: React.FunctionComponent = () => {
   }
 
   const homeHeader = (
-    <BgSection bgImage="/background.png">
+    <BgSection bgImage="/background.png" position="top">
       <div className={styles["header-content"]}>
         <div className={styles["header-title"]}>
           Somos tu aliado de confianza para hacer crecer tu negocio

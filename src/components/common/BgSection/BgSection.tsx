@@ -5,7 +5,7 @@ interface BgSectionProps {
   orientation?: "vertical" | "horizontal";
   children?: React.ReactNode;
   color?: "primary" | "secondary";
-  position?: "left" | "right";
+  position?: "left" | "right" | "top" | "middle";
 }
 
 const BgSection: React.FC<BgSectionProps> = ({
