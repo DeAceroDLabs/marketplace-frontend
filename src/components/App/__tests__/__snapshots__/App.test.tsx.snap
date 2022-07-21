@@ -15,7 +15,7 @@ Array [
           src="/background.png"
         />
         <div
-          className="content transparent left"
+          className="content transparent top"
         >
           <div
             className="header-content"

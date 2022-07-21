@@ -1,4 +1,5 @@
 @use "styles/colors";
+
 .bgImage {
     height: 100%;
     object-fit: cover;
@@ -9,6 +10,7 @@
 .horizontal {
     height: 382px;
     width: 100%;
+    position: relative;
 }
 
 .vertical {
@@ -19,18 +21,29 @@
 
 .content {
     height: inherit;
-    position: absolute;
     text-align: center;
     width: inherit;
+}
+
+.top {
+    position: absolute;
     top: 0%;
 }
 
 .left {
+    position: absolute;
     left: 0%;
 }
 
 .right {
+    position: absolute;
     right: 0%;
+}
+
+.middle {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .primary {

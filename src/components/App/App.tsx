@@ -12,6 +12,7 @@ import Login from "views/Login";
 import Signup from "views/Signup";
 import PageNotFound from "views/PageNotFound";
 import FrequentQuestions from "views/FrequentQuestions";
+import AboutUs from "views/AboutUs";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import ProtectedRoute from "components/ProtectedRoute";
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/" element={<Home />}></Route>
             <Route path="/search/:query" element={<Search />}></Route>
             <Route path="/ayuda" element={<FrequentQuestions />}></Route>
+            <Route path="/conocenos" element={<AboutUs />}></Route>
             <Route path="/404" element={<PageNotFound />}></Route>
             <Route path="*" element={<Navigate to="/404" />} />
           </Route>
