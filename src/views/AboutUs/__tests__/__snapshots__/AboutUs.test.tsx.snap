@@ -5,16 +5,16 @@ exports[`Frequent asked questions renders AboutUs with no issue 1`] = `
   className="about-us-container"
 >
   <div
-    className="container"
+    className="medium-container-width container"
   >
     <div
-      className="title margin-title"
+      className="large-title margin-title"
     >
       Conócenos
        
     </div>
     <div
-      className="body"
+      className="children"
     >
        
        
@@ -51,16 +51,16 @@ exports[`Frequent asked questions renders AboutUs with no issue 1`] = `
     </div>
   </div>
   <div
-    className="container"
+    className="medium-container-width container"
   >
     <div
-      className="title margin-title"
+      className="large-title margin-title"
     >
       Quiénes somos
        
     </div>
     <div
-      className="body"
+      className="children"
     >
        
       <div

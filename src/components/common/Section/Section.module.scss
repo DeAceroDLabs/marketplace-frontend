@@ -1,6 +1,9 @@
 @use "styles/typography";
+@use "styles/colors";
+
 .container {
     margin: auto auto 0;
+    color: colors.$color-text-02;
     .margin-title {
         margin-bottom: 32px;
         margin-top: 40px;

@@ -66,16 +66,16 @@ Array [
   >
     <div>
       <div
-        className="container"
+        className="large-container-width container"
       >
         <div
-          className="title margin-title"
+          className="medium-title margin-title"
         >
           Catálogo de Productos
            
         </div>
         <div
-          className="body"
+          className="children"
         >
            
           <div
