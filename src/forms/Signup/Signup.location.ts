@@ -29,12 +29,12 @@ export const locationSignupForm: Form = {
       disabled: true,
     },
     {
-      name: "suburb",
+      name: "neighborhood",
       label: "Colonia",
       required: true,
       placeholder: "Colonia",
       type: "dropdown",
-      dynamicOptionsProp: "dynamicData",
+      dynamicOptionsProp: "neighborhood",
       optionsContext: DynamicDataContext,
     },
     {

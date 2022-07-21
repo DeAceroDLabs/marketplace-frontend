@@ -19,7 +19,7 @@ const Dropdown: React.FC<OptionsField> = ({
   ) as any;
 
   const availableOptions = dynamicOptionsProp
-    ? dynamicOptionsContext[dynamicOptionsProp]
+    ? dynamicOptionsContext["dynamicData"][dynamicOptionsProp]
     : options;
 
   const defaultValue =
