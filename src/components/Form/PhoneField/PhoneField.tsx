@@ -56,7 +56,7 @@ const PhoneField: React.FC<OptionsField> = ({
         {...methods.register(name, {
           value,
           required,
-          validate: (value) => (validator.isMobilePhone(value, "es-MX") && value.length === 13),
+          validate: (value) => (validator.isMobilePhone(value, "es-MX") && (value.length === 10 || value.length === 13)),
         })}
         className={`${styles.input} ${styles[errorStyle]}`}
         type={type}
