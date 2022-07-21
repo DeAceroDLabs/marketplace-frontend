@@ -18,7 +18,7 @@ const Section: React.FC<SectionProps> = ({
   return (
     <div className={`${styles[`${widthSize}-container-width`]} ${styles.container}`}>
       <div className={`${styles[`${titleSize}-title`]} ${styles[variant]}`}>{title} </div>
-      <div className={styles.body}> {children} </div>
+      <div className={styles.children}> {children} </div>
     </div>
   );
 };

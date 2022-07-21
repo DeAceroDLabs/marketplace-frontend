@@ -2,15 +2,15 @@
 
 exports[`renders Section with no issue 1`] = `
 <div
-  className="container"
+  className="large-container-width container"
 >
   <div
-    className="title margin-title"
+    className="medium-title margin-title"
   >
      
   </div>
   <div
-    className="body"
+    className="children"
   >
      
      

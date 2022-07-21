@@ -18,15 +18,15 @@ Object {
             class="container"
           >
             <div
-              class="container"
+              class="large-container-width container"
             >
               <div
-                class="title margin-title"
+                class="medium-title margin-title"
               >
                  
               </div>
               <div
-                class="body"
+                class="children"
               >
                  
                 <div
@@ -42,16 +42,16 @@ Object {
                         class=""
                       >
                         <div
-                          class="container"
+                          class="large-container-width container"
                         >
                           <div
-                            class="title margin-title"
+                            class="large-title margin-title"
                           >
                             Información General
                              
                           </div>
                           <div
-                            class="body"
+                            class="children"
                           >
                              
                             <p
@@ -264,15 +264,15 @@ Object {
             class="container"
           >
             <div
-              class="container"
+              class="large-container-width container"
             >
               <div
-                class="title margin-title"
+                class="medium-title margin-title"
               >
                  
               </div>
               <div
-                class="body"
+                class="children"
               >
                  
                 <div
@@ -288,16 +288,16 @@ Object {
                         class=""
                       >
                         <div
-                          class="container"
+                          class="large-container-width container"
                         >
                           <div
-                            class="title margin-title"
+                            class="large-title margin-title"
                           >
                             Información General
                              
                           </div>
                           <div
-                            class="body"
+                            class="children"
                           >
                              
                             <p
@@ -511,15 +511,15 @@ Object {
           class="container"
         >
           <div
-            class="container"
+            class="large-container-width container"
           >
             <div
-              class="title margin-title"
+              class="medium-title margin-title"
             >
                
             </div>
             <div
-              class="body"
+              class="children"
             >
                
               <div
@@ -535,16 +535,16 @@ Object {
                       class=""
                     >
                       <div
-                        class="container"
+                        class="large-container-width container"
                       >
                         <div
-                          class="title margin-title"
+                          class="large-title margin-title"
                         >
                           Información General
                            
                         </div>
                         <div
-                          class="body"
+                          class="children"
                         >
                            
                           <p

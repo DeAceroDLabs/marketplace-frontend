@@ -5,16 +5,16 @@ exports[`Frequent asked questions renders FrequentQuestions with no issue 1`] = 
   className="question-container"
 >
   <div
-    className="container"
+    className="medium-container-width container"
   >
     <div
-      className="title margin-title"
+      className="large-title margin-title"
     >
       Preguntas frecuentes
        
     </div>
     <div
-      className="body"
+      className="children"
     >
        
       <div

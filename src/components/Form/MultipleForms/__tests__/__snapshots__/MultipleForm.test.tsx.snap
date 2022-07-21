@@ -15,16 +15,16 @@ Object {
             class=""
           >
             <div
-              class="container"
+              class="large-container-width container"
             >
               <div
-                class="title margin-title"
+                class="large-title margin-title"
               >
                 Mock Form 1
                  
               </div>
               <div
-                class="body"
+                class="children"
               >
                  
                 <p
@@ -86,16 +86,16 @@ Object {
           class=""
         >
           <div
-            class="container"
+            class="large-container-width container"
           >
             <div
-              class="title margin-title"
+              class="large-title margin-title"
             >
               Mock Form 1
                
             </div>
             <div
-              class="body"
+              class="children"
             >
                
               <p
