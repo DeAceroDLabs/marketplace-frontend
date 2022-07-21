@@ -12,7 +12,7 @@ const fetchData = (url: string) => {
 };
 
 const postRequest = async (url: string, body: any) => {
-  const response = await axios.post(USER_API.createAuth0User, body);
+  const response = await axios.post(USER_API.createUser, body);
   return response;
 };
 

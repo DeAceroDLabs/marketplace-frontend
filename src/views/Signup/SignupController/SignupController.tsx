@@ -15,10 +15,16 @@ const SignupController: React.FC = () => {
       location.then((data) => {
         formState.setValue("state", data.location.state);
         formState.setValue("city", data.location.city);
-        setDynamicData(data.location.neighborhood);
+        setDynamicData({
+          ...data.location,
+          neighborhood: data.location.neighborhood,
+        });
       });
+    } else {
+      setDynamicData({});
     }
-  }, [setDynamicData, zipCode, formState]);
+    // eslint-disable-next-line
+  }, [zipCode]);
 
   useEffect(() => {
     if (taxZipCode && taxZipCode.length === 5) {

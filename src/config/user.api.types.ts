@@ -1,5 +1,5 @@
 export const USER_API = {
-  createUser: `user`,
+  createUser: `users`,
 };
 
 export type User = {
