@@ -9,6 +9,16 @@ export const generalSignupForm: Form = {
       required: true,
       placeholder: "Nombre",
       type: "text",
+      size: "half-width",
+      value: "",
+    },
+    {
+      name: "lastName",
+      label: "Apellido",
+      required: true,
+      placeholder: "Apellido",
+      type: "text",
+      size: "half-width",
       value: "",
     },
     {
@@ -37,7 +47,8 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
-      errorMessage: "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial.",
+      errorMessage:
+        "Tu contraseña debe de contener al menos 8 caracteres, una minúscula, una mayúscula, un número y un caracter especial.",
     },
     {
       name: "password-confirm",
@@ -46,7 +57,8 @@ export const generalSignupForm: Form = {
       placeholder: "Contraseña",
       type: "password",
       value: "",
-      errorMessage: "La contraseña debe de coincidir con la que ingresaste previamente.",
+      errorMessage:
+        "La contraseña debe de coincidir con la que ingresaste previamente.",
       needsValidationFrom: "password",
     },
   ],

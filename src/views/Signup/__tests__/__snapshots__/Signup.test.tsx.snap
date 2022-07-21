@@ -63,7 +63,7 @@ Object {
                               class="form-container"
                             >
                               <div
-                                class="field-container full-width"
+                                class="field-container half-width"
                               >
                                 <div
                                   class="container"
@@ -75,6 +75,24 @@ Object {
                                     class="input "
                                     mock="[object Object]"
                                     placeholder="Nombre"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container half-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Apellido
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="Apellido"
                                     type="text"
                                     value=""
                                   />
@@ -309,7 +327,7 @@ Object {
                               class="form-container"
                             >
                               <div
-                                class="field-container full-width"
+                                class="field-container half-width"
                               >
                                 <div
                                   class="container"
@@ -321,6 +339,24 @@ Object {
                                     class="input "
                                     mock="[object Object]"
                                     placeholder="Nombre"
+                                    type="text"
+                                    value=""
+                                  />
+                                </div>
+                              </div>
+                              <div
+                                class="field-container half-width"
+                              >
+                                <div
+                                  class="container"
+                                >
+                                  <label>
+                                    Apellido
+                                  </label>
+                                  <input
+                                    class="input "
+                                    mock="[object Object]"
+                                    placeholder="Apellido"
                                     type="text"
                                     value=""
                                   />
@@ -556,7 +592,7 @@ Object {
                             class="form-container"
                           >
                             <div
-                              class="field-container full-width"
+                              class="field-container half-width"
                             >
                               <div
                                 class="container"
@@ -568,6 +604,24 @@ Object {
                                   class="input "
                                   mock="[object Object]"
                                   placeholder="Nombre"
+                                  type="text"
+                                  value=""
+                                />
+                              </div>
+                            </div>
+                            <div
+                              class="field-container half-width"
+                            >
+                              <div
+                                class="container"
+                              >
+                                <label>
+                                  Apellido
+                                </label>
+                                <input
+                                  class="input "
+                                  mock="[object Object]"
+                                  placeholder="Apellido"
                                   type="text"
                                   value=""
                                 />

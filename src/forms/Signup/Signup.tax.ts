@@ -24,7 +24,8 @@ export const taxSignupForm: Form = {
       required: true,
       placeholder: "ABCD990022ABCDEF00",
       type: "curp",
-      errorMessage: "Por favor ingresa tu CURP completo con homoclave a 18 caracteres.",
+      errorMessage:
+        "Por favor ingresa tu CURP completo con homoclave a 18 caracteres.",
     },
     {
       name: "taxRegime",
@@ -58,12 +59,13 @@ export const taxSignupForm: Form = {
       disabled: true,
     },
     {
-      name: "taxAdditionalEmail",
+      name: "taxEmail",
       label: "Email adicional a la cuenta CC",
       required: true,
       placeholder: "ejemplo@deacero.com",
       type: "email",
-      errorMessage: "Por favor ingresa una dirección de correo personal/adicional.",
+      errorMessage:
+        "Por favor ingresa una dirección de correo personal/adicional.",
     },
   ],
 };
