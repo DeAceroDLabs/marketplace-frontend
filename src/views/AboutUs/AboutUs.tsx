@@ -35,9 +35,9 @@ const AboutUs: React.FunctionComponent = () => {
 
   return (
     <div className={styles["about-us-container"]}>
-      <Section title="Conócenos"></Section>
+      <Section title="Conócenos" titleSize="large" widthSize="medium"></Section>
       <div>{imageContainer}</div>
-      <Section title="Quiénes somos">
+      <Section title="Quiénes somos" titleSize="large" widthSize="medium">
         <div className={styles["about-us-content"]}>
           <div>
             Li Europan lingues es membres del sam familie. Lor separat

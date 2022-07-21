@@ -21,7 +21,7 @@ const Form: React.FC<FormProps> = ({ inputForm, onSubmit, submitTitle }) => {
           onSubmit={form.handleSubmit(onSubmit)}
           className={styles["form-container"]}
         >
-          <Section title={inputForm.formTitle}>
+          <Section title={inputForm.formTitle} titleSize="large">
             {inputForm.formDescription && (
               <p className={styles["form-description"]}>
                 {inputForm.formDescription}

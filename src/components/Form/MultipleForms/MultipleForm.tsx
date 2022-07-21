@@ -28,7 +28,7 @@ const MultipleForms: React.FC<MultipleFormsInterface> = ({
         key={form.formTitle}
         className={inputForms[currentIndex] !== form ? `${styles.hidden}` : ""}
       >
-        <Section title={form.formTitle}>
+        <Section title={form.formTitle} titleSize="large">
           {form.formDescription && (
             <p className={styles["form-description"]}>{form.formDescription}</p>
           )}

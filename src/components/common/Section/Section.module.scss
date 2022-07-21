@@ -1,13 +1,32 @@
 @use "styles/typography";
 .container {
     margin: auto auto 0;
-    width: 90%;
-    .title {
-        font-size: typography.$header-m;
-        font-weight: typography.$bold;
-    }
     .margin-title {
         margin-bottom: 32px;
         margin-top: 40px;
+    }
+}
+
+.large-container-width{
+    width: 90%;
+}
+
+.medium-container-width{
+    width: 80%;
+}
+
+.medium-title {
+    font-size: typography.$header-m;
+    font-weight: typography.$bold;
+}
+
+.large-title {
+    font-size: typography.$header-m;
+    font-weight: typography.$bold;
+}
+
+@media (min-width: 1300px){
+    .large-title {
+        font-size: typography.$header-l;
     }
 }
