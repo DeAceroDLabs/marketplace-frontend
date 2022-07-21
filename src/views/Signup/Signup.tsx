@@ -16,9 +16,8 @@ import StateIcon from "components/common/StateIcon";
 import Button from "components/common/Button";
 import styles from "./Signup.module.scss";
 import SignupController from "./SignupController";
-import { Neighborhood } from "config/api.types";
 import { DynamicDataProvider } from "config/dynamicDataContext";
-import { createAuth0User } from "config/user.api";
+import { createUser } from "config/user.api";
 
 const Signup = () => {
   const forms = [generalSignupForm, locationSignupForm, taxSignupForm];
@@ -26,11 +25,35 @@ const Signup = () => {
   const formState = useForm();
   const [activeForm, setActiveForm] = useState(forms[0] as Form);
   const [openPopup, setopenPopup] = useState(false);
-  const [dynamicData, setDynamicData] = useState([] as Neighborhood[]);
+  const [dynamicData, setDynamicData] = useState({});
 
   const onSubmit = (data: FieldValues) => {
-    const user = { email: data["email"], password: data["password"] };
-    createAuth0User(user)
+    const userData = {
+      name: data["name"],
+      lastName: data["lastName"],
+      rfc: data["taxRfc"],
+      curp: data["taxCurp"],
+      phone: data["phone"],
+      fiscalDoc: data["taxDocument"],
+      email: data["email"],
+      additionalEmail: data["taxEmail"],
+      password: data["password"],
+    };
+
+    const userLocation = {
+      country: data["email"],
+      zipCode: data["zipCode"],
+      state: data["email"],
+      city: data["email"],
+      neighborhood: data["email"],
+      street: data["street"],
+      externalNumber: data["externalNumber"],
+      lat: 0,
+      lon: 0,
+    };
+
+    const user = { user: userData, location: userLocation };
+    createUser(user)
       .then(() => setopenPopup(true))
       .catch((error) => console.log(error));
   };
