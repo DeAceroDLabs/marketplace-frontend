@@ -11,7 +11,7 @@ const FrequentQuestions: React.FunctionComponent = () => {
   }, [])
   return (
     <div className={styles["question-container"]}>
-      <Section title="Preguntas frecuentes">
+      <Section title="Preguntas frecuentes" titleSize="large" widthSize="medium">
         {data.map((data, key) => {
           return (
             <ExpandableContent title={data.title} isOpen={data.isOpen}>
