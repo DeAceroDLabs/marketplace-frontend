@@ -54,7 +54,7 @@ describe("Login", () => {
       expect((password as HTMLInputElement).value).toBe("mock_password");
     });
 
-    const loginButton = screen.getByRole("button");
+    const loginButton = screen.getAllByRole("button")[1];
     fireEvent.click(loginButton);
     await waitFor(() => {
       expect(mockedUsedNavigate).toBeCalled();

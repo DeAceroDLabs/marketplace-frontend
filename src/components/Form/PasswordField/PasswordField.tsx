@@ -3,6 +3,8 @@ import { useState, useEffect } from "react";
 import { useFormContext } from "react-hook-form";
 import styles from "./PasswordField.module.scss";
 import validator from "validator";
+import VisibilityIcon from "@mui/icons-material/Visibility";
+import Button from "components/common/Button";
 
 const PasswordField: React.FC<OptionsField> = ({
   name,
@@ -18,6 +20,7 @@ const PasswordField: React.FC<OptionsField> = ({
   const [error, setError] = useState("");
   const methods = useFormContext();
   const [currentValue, setCurrentValue] = useState(value);
+  const [visible, setVisible] = useState(false);
 
   const validatePassword = (password: string) => {
     if (
@@ -87,7 +90,7 @@ const PasswordField: React.FC<OptionsField> = ({
           },
         })}
         className={`${styles.input} ${styles[errorStyle]}`}
-        type={type}
+        type={!visible ? type : "text"}
         placeholder={placeholder}
         disabled={disabled}
         onPaste={(e) => {
@@ -105,6 +108,17 @@ const PasswordField: React.FC<OptionsField> = ({
           needsValidationFrom && confirmPassword(value);
         }}
       />
+      <div className={styles.visibility}>
+        <Button
+          color="transparent-grey"
+          action={(e) => {
+            setVisible(!visible);
+            e.preventDefault();
+          }}
+        >
+          <VisibilityIcon />
+        </Button>
+      </div>
       {requiredMessage}
       {error !== "" && <div className={styles["error-text"]}> {error}</div>}
     </div>

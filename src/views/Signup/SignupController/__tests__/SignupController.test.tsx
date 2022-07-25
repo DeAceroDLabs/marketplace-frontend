@@ -51,7 +51,7 @@ describe("SignupController", () => {
         </FormProvider>
       </DynamicDataProvider>
     );
-    const continueButton = screen.getByRole("button");
+    const continueButton = screen.getAllByRole("button")[2];
     let zipCodeField = null as unknown as HTMLElement;
     fireEvent.click(continueButton);
     await waitFor(() => {
