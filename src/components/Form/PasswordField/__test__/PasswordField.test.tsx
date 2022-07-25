@@ -57,6 +57,19 @@ describe("PasswordField", () => {
     });
   });
 
+  it("simulates change on visibility, type is text when click on eye icon", async () => {
+    setup();
+    const input = screen.getByPlaceholderText("password");
+    fireEvent.change(input, {
+      target: { value: "Password123@" },
+    });
+    const eyeIconButton = screen.getAllByRole("button")[0];
+    fireEvent.click(eyeIconButton);
+    await waitFor(() => {
+      expect((input as HTMLInputElement).type).toBe('text');
+    });
+  });
+
   it("simulates paste with prevent", async () => {
     setup();
     const input = screen.getByPlaceholderText("password");
